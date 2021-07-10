@@ -1,0 +1,52 @@
+[UISP-P][UISP-P-Pro]
+1. Wait for formal FW/cmd for completing FCD.
+
+[UF-WIFI-6]
+1. Some strange logs and behaviors will discuss with FW/HW.
+
+[USW-Enterprise-8-PoE]
+1. LCM issues from end user.
+
+[USW-LCM-Issue]
+1. BacktoT1 issue.
+2. Todo model:  USW-16-PoE / USW-24-PoE / USW-24 / USW-48-PoE / USW-48, USW-Aggregation, USW-Enterprise-8-PoE and USW-Flex-XG
+
+
+=======================================================================
+[USW-LCM-Issue]
+1. Released FCD with new FW, supported LCM touch counts in Burnin test.
+2. Applied on:
+    * USW-Pro-24 / USW-Pro-24-PoE / USW-Pro-48 / USW-Pro-48-PoE
+    * USW-Enterprise-24-PoE, USW-Pro-Aggregation, USW-EnterpriseXG-24, USW-Enterprise-48-PoE
+3. ISSUE: BacktoT1 FAILED when updated to new FW..., wait for FW's reply.
+
+[LVDU-4]
+1. Released FCD with latest FW.
+    * Fixed timout issue for FW upgrade.
+2. Released FTU:
+    + Added instructions for LED test, Iperf test.
+    * Fixed power comsumption test.
+
+[UA-Elevator]
+1. Released FCD with latest FW.
+2. Released FTU:
+    * Fixed terminal block test, Digital input test, FW upgrade path.
+
+[LVDU-24]
+1. Released FCD with latest FW.
+
+[UISP-P][UISP-P-Pro]
+1. Completed registration process with initial FW.
+
+[UF-WIFI-6]
+1. Completed Python FCD with TCL FCD, but sitll has some concerns.
+
+[USW-Enterprise-8-PoE]
+1. End user reported that LCM FW upgrade failed, discussing with HW.
+
+========================================
+1. Fixed CPK computation errors.
+2. Changed result filter logics.
+3. Fixed data ordering issue.
+============================================
+
