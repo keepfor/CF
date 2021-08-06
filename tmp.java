@@ -1,101 +1,78 @@
-	class Solution {
-		public int waysToBuildRooms(int[] par) {
-			int[][] g = parentToG(par);
-			int n = par.length;
-			int[][] pars = parents(g, 0);
+class Solution {
+		public int maxCompatibilitySum(int[][] students, int[][] mentors) {
+			int m = students.length, n = students[0].length;
 
-			final int mod = 1000000007;
-			int[] ord = pars[1];
-			int[][] fif = enumFIF(200000, mod);
-			int[] des = new int[n];
-			long ans = 1;
-			for(int i = n-1;i >= 0;i--){
-				int cur = ord[i];
-				des[cur]++;
-				for(int e : g[cur]){
-					if(par[cur] == e)continue;
-					des[cur] += des[e];
-					ans = ans * fif[1][des[e]] % mod;
+			int[] s = new int[m];
+			for(int i = 0;i < m;i++){
+				for(int j = 0;j < n;j++){
+					s[i] = s[i] * 2 + students[i][j];
 				}
-				ans = ans * fif[0][des[cur]-1] % mod;
 			}
-			return (int)ans;
+			int[] t = new int[m];
+			for(int i = 0;i < m;i++){
+				for(int j = 0;j < n;j++){
+					t[i] = t[i] * 2 + mentors[i][j];
+				}
+			}
+
+			int max = 0;
+			for(int[] a : new (m)){
+				int sc = 0;
+				for(int i = 0;i < m;i++){
+					sc += n - Integer.bitCount(s[i] ^ t[a[i]]);
+				}
+				max = Math.max(max, sc);
+			}
+			return max;
 		}
 
+			public class IterablePermutation implements Iterable<int[]>, Iterator<int[]>
+				{
+					int[] a;
+					boolean first = true;
 
-		public int[][] enumFIF(int n, int mod) {
-			int[] f = new int[n + 1];
-			int[] invf = new int[n + 1];
-			f[0] = 1;
-			for (int i = 1; i <= n; i++) {
-				f[i] = (int) ((long) f[i - 1] * i % mod);
-			}
-			long a = f[n];
-			long b = mod;
-			long p = 1, q = 0;
-			while (b > 0) {
-				long c = a / b;
-				long d;
-				d = a;
-				a = b;
-				b = d % b;
-				d = p;
-				p = q;
-				q = d - c * q;
-			}
-			invf[n] = (int) (p < 0 ? p + mod : p);
-			for (int i = n - 1; i >= 0; i--) {
-				invf[i] = (int) ((long) invf[i + 1] * (i + 1) % mod);
-			}
-			return new int[][]{f, invf};
-		}
+					public IterablePermutation(int n) {
+						assert n >= 1;
+						a = new int[n];
+						for(int i = 0;i < n;i++)a[i] = i;
+					}
 
+					public IterablePermutation(int... a) {
+						this.a = Arrays.copyOf(a, a.length);
+					}
 
-		int[][] parents(int[][] g, int root) {
-			int n = g.length;
-			int[] par = new int[n];
-			Arrays.fill(par, -1);
+					@Override
+					public boolean hasNext() {
+						if(first)return true;
+						int n = a.length;
+						int i;
+						for(i = n - 2;i >= 0 && a[i] >= a[i+1];i--);
+						return i != -1;
+					}
 
-			int[] depth = new int[n];
-			depth[0] = 0;
+					@Override
+					public int[] next() {
+						if(first) {
+							first = false;
+							return a;
+						}
+						int n = a.length;
+						int i;
+						for(i = n - 2;i >= 0 && a[i] >= a[i+1];i--);
+						assert i != -1;
+						int j;
+						for(j = i + 1;j < n && a[i] < a[j];j++);
+						int d = a[i]; a[i] = a[j - 1]; a[j - 1] = d;
+						for(int p = i + 1, q = n - 1;p < q;p++,q--){
+							d = a[p]; a[p] = a[q]; a[q] = d;
+						}
+						return a;
+					}
 
-			int[] q = new int[n];
-			q[0] = root;
-			for (int p = 0, r = 1; p < r; p++) {
-				int cur = q[p];
-				for (int nex : g[cur]) {
-					if (par[cur] != nex) {
-						q[r++] = nex;
-						par[nex] = cur;
-						depth[nex] = depth[cur] + 1;
+					@Override
+					public Iterator<int[]> iterator() {
+						return this;
 					}
 				}
-			}
-			return new int[][]{par, q, depth};
-		}
-
-
-		public int[][] parentToG(int[] par)
-		{
-			int n = par.length;
-			int[] ct = new int[n];
-			for(int i = 0;i < n;i++){
-				if(par[i] >= 0){
-					ct[i]++;
-					ct[par[i]]++;
-				}
-			}
-			int[][] g = new int[n][];
-			for(int i = 0;i < n;i++){
-				g[i] = new int[ct[i]];
-			}
-			for(int i = 0;i < n;i++){
-				if(par[i] >= 0){
-					g[par[i]][--ct[par[i]]] = i;
-					g[i][--ct[i]] = par[i];
-				}
-			}
-			return g;
-		}
-
 	}
+

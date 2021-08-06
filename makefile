@@ -16,3 +16,4 @@ main:
 
 clean:
 	rm -f sol.o
+	cp sol.cc tmp.cc
