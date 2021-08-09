@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 #pragma GCC optimize("Ofast")
-#define debug(a) cerr << #a << " = " << a << '\n';
-// #define debug(a) cout << #a << " = " << a << '\n';
+#define debug(a) cout << #a << " = " << a << '\n';
 using namespace std;
 #define cy cout << "YES" << '\n';
 #define cn cout << "NO" << '\n';
