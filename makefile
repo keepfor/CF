@@ -1,6 +1,6 @@
 CC=clang++
 
-.PHONY: initialize
+.PHONY: resete
 
 all: clear sol.o main copy clean
 	
@@ -20,5 +20,5 @@ clean:
 copy:
 	cp sol.cc last.cc
 
-initialize:
-	cp ini.cc sol.cc
+reset:
+	cp reset.cc sol.cc
