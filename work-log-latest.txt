@@ -53,3 +53,12 @@ FCECDAFF7D2E-ce4pig
 Release FTU 1.0.1_5.47.2 for USW-EnterpriseXG-24
 Release FTU 1.0.2_5.47.2 for USW-EnterpriseXG-24
 Release FTU 1.0.3_5.47.2 for USW-EnterpriseXG-24
+
+<2021.8.28>
+Local build FCD ISO.
+1. Download FCD-BASE-20200819.iso 
+2. mv FCD-BASE-20200819.iso to output
+3. rename FCD-BASE-20200819.iso to FCD-base.iso
+4. sudo make VER=1.0.0 FWVER=12.27.1 PRD=UniFiSwitch -f fcdmaker32.mk new-rootfs
+5. create soft link for fcd-image, fcd-script-tools, fcd-ubntlib on fcd/ folder.
+6. sudo make VER=1.0.0 FWVER=5.47.2 PRD=UniFiSwitch -f fcdmaker32.mk USW-EnterpriseXG-24-update

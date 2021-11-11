@@ -1,12 +1,7 @@
-def do():
-    with open("/tmp/ubnt_burnin_log", "rb") as file:
-         data = file.read(8)
+import warnings
 
-    print(data)
-    
-    with open("/tmp/out.txt", "w") as f:
-        f.write(" ".join(map(str,data)))
-        f.write("\n")
+warnings.warn('this is a warning')
 
-if __name__ == "__main__":
-    do()
+
+x = 1
+assert x == 0, 'x should equal to zero'

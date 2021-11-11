@@ -1,6 +1,6 @@
 CC=clang++
 
-.PHONY: initialize
+.PHONY: reset
 
 all: clear sol.o main copy clean
 	
@@ -18,7 +18,9 @@ clean:
 	rm -f sol.o
 
 copy:
-	cp sol.cc last.cc
+	cp sol.cc copy.cc
 
-initialize:
-	cp ini.cc sol.cc
+reset:
+	> input.txt
+	cp reset.cc sol.cc
+	vim sol.cc
