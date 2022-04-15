@@ -1,24 +1,27 @@
-CC=clang++
+#CC=clang++
+CC=g++
+#CC=gcc
 
-.PHONY: resete
+.PHONY: reset
 
-all: clear sol.o main copy clean
+all: sol.exe main copy clean 
 	
 clear:
 	clear
 
-sol.o: sol.cc
-	$(CC) -std=gnu++17 sol.cc -o sol.o
+sol.exe: sol.cc
+	$(CC) -Wall -DLOCAL -std=gnu++17  sol.cc -o sol.exe -DDEBUG -g 
 
 main:
-	./sol.o <input.txt> output.txt
+	./sol.exe <input.txt> output.txt 
 	cat output.txt
-
 clean:
-	rm -f sol.o
+	rm -f sol.exe
 
 copy:
-	cp sol.cc last.cc
+	cp sol.cc copy.cc
 
 reset:
+	echo > input.txt
 	cp reset.cc sol.cc
+	vim sol.cc
