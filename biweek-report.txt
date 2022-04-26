@@ -1,32 +1,31 @@
-* USP-Battery
-1. TWFCD-681, update FTU with new diag firmware.
-2. TWFCD-682, support burnin test.
+* USW-Pro-Series: USW-Pro-24, USW-Pro-24-PoE, USW-Pro-48, USW-Pro-48-PoE
+1. TWFCD-808, update FCD image to fix LCM issues.
 
-* UNAS-Pro
-1. TWFCD-720, check LCM function failed with new Diag firmware.
+* UA-elevator
+1. TWFCD-792/812, update user fw and diag fw for alpha sample.
 
-* UISP-R-Pro
-1. TWFCD-702, FCD firmware can not work with latest FTU.
-2. TWFCD-731, FCD failed in SZ.
-3. TWFCD-652, SZ test failed.
-
-* USP-RPS
-1. TWFCD-729, FXN reports burnin test has bugs.
+* UISP-P
+1. TWFCD-837, update LCM test cmd with new diag.
 
 * UISP-P-Pro
-1. TWFCD-520, release first edition of FTU with test plan.
-2. TWFCD-718, LCM upgrade issues.
+1. TWFCD-736, add disable burnin to LCM test.
 
-* USP-RPS-Pro
-1. TWFCD-699, add check temperature of PSU.
-2. TWFCD-732, burnin test has errors, but pass.
+* UISP-R-Pro
+1. TWFCD-768, WAN port LED can not be controlled.
+2. TWFCD-834, update firmware upgrade process for TE's advices.
+3. TWFCD-780, update sfp loopback test with new test flow from firmware team.
 
-* USW-Enterprise-8-PoE
-1. TWFCD-730, some sample could not redo FCD.
-2. TWFCD-716, seems HW revision issues.
+* USP-Battery
+1. TWFCD-824, charge current issues.
+2. TWFCD-746, need to add recovery image firmware upgrade.
+3. TWFCD-748, update LCM firmware upgrade due to log is changed.
+
+* USP-RPS-PRo
+1. TWFCD-786, check temperature test could not catch the peek value. 
+
+* UNAS-PRO
+1. TWFCD-720, update FCD's check lcm prcess with udm se's methodology.
+2. TWFCD-778, update FCD firmware for SRT2.
 
 * LVDU-24
-1. TWFCD-625, Completed LCM touch function check.
-
-* USW-Mission-Critical
-1. TWFCD-683, fix LTE module test issues with retry.
+1. TWFCD-836, update diag image to support parse all 24 ports log in one time.

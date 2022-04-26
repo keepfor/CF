@@ -1,0 +1,32 @@
+* USP-Battery
+1. TWFCD-681, update FTU with new diag firmware.
+2. TWFCD-682, support burnin test.
+
+* UNAS-Pro
+1. TWFCD-720, check LCM function failed with new Diag firmware.
+
+* UISP-R-Pro
+1. TWFCD-702, FCD firmware can not work with latest FTU.
+2. TWFCD-731, FCD failed in SZ.
+3. TWFCD-652, SZ test failed.
+
+* USP-RPS
+1. TWFCD-729, FXN reports burnin test has bugs.
+
+* UISP-P-Pro
+1. TWFCD-520, release first edition of FTU with test plan.
+2. TWFCD-718, LCM upgrade issues.
+
+* USP-RPS-Pro
+1. TWFCD-699, add check temperature of PSU.
+2. TWFCD-732, burnin test has errors, but pass.
+
+* USW-Enterprise-8-PoE
+1. TWFCD-730, some sample could not redo FCD.
+2. TWFCD-716, seems HW revision issues.
+
+* LVDU-24
+1. TWFCD-625, Completed LCM touch function check.
+
+* USW-Mission-Critical
+1. TWFCD-683, fix LTE module test issues with retry.
