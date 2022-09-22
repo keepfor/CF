@@ -1,2 +1,0 @@
-https://docs.microsoft.com/zh-tw/azure/postgresql/connect-nodejs
-https://zhuanlan.zhihu.com/p/33355636

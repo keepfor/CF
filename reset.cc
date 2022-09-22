@@ -1,12 +1,14 @@
+#ifndef CP
+#define CP
 #include<bits/stdc++.h>
+using namespace std;
+#endif
 
 #ifdef LOCAL
-#include"debug.h"
+#include"./lib/debug.h"
 #else 
 #define debug(...) 0
 #endif
-
-using namespace std;
 
 int32_t main() {
   ios::sync_with_stdio(false);
