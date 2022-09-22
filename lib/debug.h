@@ -1,46 +1,3 @@
-#include<bits/stdc++.h>
-#pragma GCC optimize("Ofast")
-#define debug(a) cout << #a << " = " << a << '\n';
-using namespace std;
-#define cy cout << "YES" << '\n';
-#define cn cout << "NO" << '\n';
-#define ios_cin ios::sync_with_stdio(false);cin.tie(0);
-#define fio freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
-#define re0 return 0;
-static const int mod = 1e9 + 7;
-typedef long long ll;
- 
-void code_jam() {
-    int tt;
-    cin >> tt;
-    for (int qq = 1; qq <= tt; ++qq) {
-        cout << "Case #" << qq << ": ";
-    
-    }
-}
-
-void codeforces() {
-    int t;
-    cin >> t;
-    auto resolve = [&]() {
-         
-    };
-    while (t--) {
-        resolve();
-    }
-}
-
-int main() {
-    ios_cin
-    // codeforces();
-    code_jam();
-    re0
-}
-
-
-// 
-#undef LOCAL
- 
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -132,18 +89,3 @@ void debug_out(Head H, Tail... T) {
 #else
 #define debug(...) 42
 #endif
-
-int main() {
-	fastIO();
-	clock_t start = clock();
-	// Write code here...
-
-	solve();
-
-#ifndef ONLINE_JUDGE
-	clock_t stop = clock(); cout.precision(10);
-	cout << "\n\nTime taken: " << (double)(stop - start) / CLOCKS_PER_SEC * 1000 << " seconds" << endl;
-#endif
-
-	return 0;
-}

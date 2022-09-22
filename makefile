@@ -1,21 +1,24 @@
-CC=clang++
+CC=g++
+#CC=clang++
 
-.PHONY: reset
+.PHONY: reset gen
 
-all: clear sol.o main copy clean
+all: sol.exe main copy clean
 	
 clear:
 	clear
+	rm -rf sol.exe*
+	rm -rf .sol.cc*
 
-sol.o: sol.cc
-	$(CC) -std=gnu++17 sol.cc -o sol.o
-
+sol.exe: sol.cc
+	$(CC) -DLOCAL -O2 -g -Wall -Werror -Wshadow -D_GLIBCXX_DEBUG -Wc++17-extensions -std=gnu++17  sol.cc -o sol.exe
 main:
-	./sol.o <input.txt> output.txt
+	./sol.exe <input.txt> output.txt 
 	cat output.txt
 
 clean:
-	rm -f sol.o
+	rm -rf sol.exe*
+	rm -rf .sol.cc*
 
 copy:
 	cp sol.cc copy.cc
@@ -23,4 +26,12 @@ copy:
 reset:
 	> input.txt
 	cp reset.cc sol.cc
+	vim sol.cc
+
+gen:
+	${CC} gen.cc -o gen
+	./gen > input.txt
+
+empty:
+	echo "" > sol.cc
 	vim sol.cc
