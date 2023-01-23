@@ -1,5 +1,4 @@
 CC=g++
-#CC=clang++
 
 .PHONY: reset gen
 
@@ -11,7 +10,7 @@ clear:
 	rm -rf .sol.cc*
 
 sol.exe: sol.cc
-	$(CC) -DLOCAL -O2 -g -Wall -Werror -Wshadow -D_GLIBCXX_DEBUG -Wc++17-extensions -std=gnu++17  sol.cc -o sol.exe
+	$(CC) -DLOCAL -O2 -g -Wall -Werror -Wshadow -D_GLIBCXX_DEBUG -Wc++17-extensions -std=gnu++2a  sol.cc -o sol.exe
 main:
 	./sol.exe <input.txt> output.txt 
 	cat output.txt

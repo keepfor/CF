@@ -1,2 +1,5 @@
-5 8
-4 9
+b bb a
+a b a
+a a a
+a bb a
+a bb b
