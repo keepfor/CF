@@ -1,6 +1,9 @@
 set timeoutlen=50
 " Set keystroke waiting time to 50 ms.
 
+set splitbelow
+" Set terminal bottom
+
 set autoindent
 
 let &t_SI = "\e[6 q"
