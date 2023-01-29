@@ -1,4 +1,12 @@
+set timeoutlen=50
+" Set keystroke waiting time to 50 ms.
+
 set autoindent
+
+let &t_SI = "\e[6 q"
+" Set cursor steady line in insert mode.
+let &t_EI = "\e[2 q" 
+" Set cursor steady block in normal mode.
 
 "inoremap jj <esc>
 inoremap jk <esc>
@@ -47,7 +55,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
  
-
 "******************************************************************************************************************
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -100,11 +107,9 @@ call vundle#begin()
 	Plugin 'gmarik/Vundle.vim'
 	"檔案目錄增加git 狀態
 	Plugin 'Xuyuanp/nerdtree-git-plugin'
-
 	
 	"tab智慧補全
 	Plugin 'ervandew/supertab'
-
 
 	"彩虹括號
 	Plugin 'kien/rainbow_parentheses.vim'
@@ -189,19 +194,6 @@ call vundle#begin()
         let g:airline#extensions#tabline#left_alt_sep = '|'      "tabline中
         let g:airline#extensions#tabline#buffer_nr_show = 1      "buffer顯示編號
  
-        let g:airline_left_sep = ' '
-        let g:airline_left_alt_sep = '▶'
-        let g:airline_right_sep = ' '
-        let g:airline_right_alt_sep = '◀'
-        let g:airline_symbols.crypt = '?'
-        let g:airline_symbols.linenr = '¶'
-        let g:airline_symbols.maxlinenr = '㏑'
-        let g:airline_symbols.branch = '⎇'
-        let g:airline_symbols.paste = 'ρ'
-        let g:airline_symbols.spell = 'Ꞩ'
-        let g:airline_symbols.notexists = 'Ɇ'
-        let g:airline_symbols.whitespace = 'Ξ'
- 
         " 對映切換buffer的鍵位
         nnoremap [b :bp<CR>
         nnoremap ]b :bn<CR>
@@ -225,18 +217,6 @@ call vundle#begin()
     "在needtree中顯示檔案圖示
     Plugin 'ryanoasis/vim-devicons'
  
-    "c++ 語法高亮
-    Plugin 'octol/vim-cpp-enhanced-highlight'
-        "let g:cpp_class_scope_highlight = 1
-        "let g:cpp_member_variable_highlight = 1
-        "let g:cpp_class_decl_highlight = 1
-        "let g:cpp_posix_standard = 1
-        "let g:cpp_experimental_simple_template_highlight = 1
-        "let g:cpp_experimental_template_highlight = 1
-        "let g:cpp_concepts_highlight = 1
-        "let g:cpp_no_function_highlight = 1
-    "switch .h <->.cpp
-    
     "查詢檔案
     Plugin 'junegunn/fzf'
         ":FZF 從當前目錄查詢
@@ -245,12 +225,16 @@ call vundle#begin()
         nnoremap <leader>F :FZF<CR>
  
 
+    Plugin 'octol/vim-cpp-enhanced-highlight'
         
     Plugin 'Valloric/YouCompleteMe'
         "往前跳和往後跳的快捷鍵為Ctrl+O以及Ctrl+I
         let g:ycm_key_list_select_completion=['<c-n>']
         let g:ycm_key_list_previous_completion=['<c-p>']
- 
+        
+        let g:ycm_auto_hover=''
+        " Disable hint prompt.
+
         set completeopt=menu  "關閉preview window
         "let g:ycm_add_preview_to_completeopt =0
         "let g:ycm_autoclose_preview_window_after_completion=1
