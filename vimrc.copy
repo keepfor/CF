@@ -1,179 +1,73 @@
-inoremap jj <esc> 
-" Remap ESC
+map <F4> :! . ~/ff/start_ftu.sh
+map <F3> :e ~/ff/latestftulog 
 
-let g:python_recommended_style = 0
+command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
+
+set timeoutlen=50
+" Set keystroke waiting time to 50 ms.
+
+set t_TI= t_TE=
+" To fix weired charater on Ubuntu.
+
+set splitbelow
+" Set terminal bottom
+
+
+let &t_SI = "\e[6 q"
+" Set cursor steady line in insert mode.
+let &t_EI = "\e[2 q" 
+" Set cursor steady block in normal mode.
+
+"inoremap jj <esc>
+inoremap jk <esc>
+inoremap kj <esc>
 
 let mapleader = "\<space>"
-
-nnoremap <leader>m :!make
-nnoremap <leader>i :sp input.txt
+map <leader>i :e input.txt
+map <leader>m :!make 
 
 nnoremap ; :
 nnoremap q1 :q!
 
-set hlsearch "
-" Hightlighting search matches
+set mouse=a
 
-set t_TI= t_TE=
-" To fix weired charater
-
-set ft=messages
-set tags=~/tags " For ctags
-map <F4> :! . ~/s/start_ftu.sh
-map <F3> :sp ~/s/latestftulog 
-
-execute pathogen#infect() 
-" Support syntastic
-"
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" Recommended settings
-
-set clipboard^=unnamed,unnamedplus " System clipboard setting
+set tags=./tags;/
+set clipboard=unnamed
 set nocompatible " 關閉 vi 相容模式
-set smartindent " 當在大括號中間回車的時候，他會智慧縮排，因為他知道括號中間要縮排
-syntax on " 自動語法高亮
-set number " 顯示行號
-"設定程式碼參考線
-"highlight ColorColumn ctermbg=darkgray
-"set colorcolumn=140 " a column line
-set t_ti= t_te=     "關閉vim後，vim的內容依然顯示在terminal上
- 
-" 高亮顯示當前行
-" set cursorline 
-"hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE
-"hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white 
-
-set ruler " 開啟狀態列標尺
-
-set shiftwidth=2 " 設定 << 和 >> 命令移動時的寬度為 
-set softtabstop=2 " 使得按退格鍵時可以一次刪掉  個空格
-set tabstop=2 " 設定 tab 長度為 
+set smartindent "當在大括號中間回車的時候，他會智慧縮排，因為他知道括號中間要縮排
+set autoindent
 
 set expandtab
+syntax on " 自動語法高亮
+set number " 顯示行號
+
+set t_ti= t_te=     "關閉vim後，vim的內容依然顯示在terminal上
+ 
+set shiftwidth=2 " 設定 << 和 >> 命令移動時的寬度為 4
+set softtabstop=2 " 使得按退格鍵時可以一次刪掉 4 個空格
+set tabstop=2 " 設定 tab 長度為 4
 
 set nobackup " 覆蓋檔案時不備份
-"set autochdir " 自動切換當前目錄為當前檔案所在的目錄
+set autochdir " 自動切換當前目錄為當前檔案所在的目錄
 set backupcopy=yes " 設定備份時的行為為覆蓋
 
+" Search
 set ignorecase smartcase " 搜尋時忽略大小寫，但在有一個或以上大寫字母時仍保持對大小寫敏感
-
-"set nowrapscan " 禁止在搜尋到檔案兩端時重新搜尋
+set nowrapscan " 禁止在搜尋到檔案兩端時重新搜尋
 set incsearch " 輸入搜尋內容時就顯示搜尋結果
+set hlsearch " 搜尋時高亮顯示被找到的文字
 
-set noerrorbells " 關閉錯誤資訊響鈴
-set novisualbell " 關閉使用可視響鈴代替呼叫
-set t_vb= " 置空錯誤鈴聲的終端程式碼
-set showmatch " 插入括號時，短暫地跳轉到匹配的對應括號
-" set matchtime=2 " 短暫跳轉到匹配括號的時間
-set magic " 設定魔術
-set hidden " 允許在有未儲存的修改時切換緩衝區，此時的修改由 vim 負責儲存
-set guioptions-=T " 隱藏工具欄
-set guioptions-=m " 隱藏選單欄
 set smartindent " 開啟新行時使用智慧自動縮排
 set backspace=indent,eol,start
-" 不設定在插入狀態無法用退格鍵和 Delete 鍵刪除回車符
-set cmdheight=1 " 設定命令列的行數為 1
-set laststatus=2 " 顯示狀態列 (預設值為 1, 無法顯示狀態列)
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
- 
-" 設定在狀態行顯示的資訊
-set foldenable " 開啟摺疊
-"set foldmethod=syntax " 設定語法摺疊************************
-set foldcolumn=0 " 設定摺疊區域的寬度
-setlocal foldlevel=1 " 設定摺疊層數為
-"set foldclose=all " 設定為自動關閉摺疊 
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-" 用空格鍵來開關摺疊
-" return OS type, eg: windows, or linux, mac, et.st..
-function! MySys()
-    if has("win16") || has("win32") || has("win64") || has("win95")
-        return "windows"
-    elseif has("unix")
-        return "linux"
-    endif
-endfunction
- 
-" 使用者目錄變數$VIMFILES
-if MySys() == "windows"
-    let $VIMFILES = $VIM.'/vimfiles'
-elseif MySys() == "linux"
-    let $VIMFILES = $HOME.'/.vim'
-endif
-" 設定doc文件目錄
-let helptags=$VIMFILES.'/doc'
- 
-" 設定字型 以及中文支援
-if has("win32")
-    set guifont=Inconsolata:h12:cANSI
-endif
-" 配置多語言環境
-if has("multi_byte")
-" UTF-8 編碼
-set encoding=utf-8
-set termencoding=utf-8
-set formatoptions+=mM
-set fencs=utf-8,gbk
-if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
-    set ambiwidth=double
-endif
-if has("win32")
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
-    language messages zh_CN.utf-8
-endif
-else
-    echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
-endif
-" Buffers操作快捷方式!
-"nnoremap <C-RETURN> :bnext<CR>
-"nnoremap <C-S-RETURN> :bprevious<CR>
- 
-" Tab操作快捷方式!
-"nnoremap <C-TAB> :tabnext<CR>
-"nnoremap <C-S-TAB> :tabprev<CR>
-"關於tab的快捷鍵
-" nnoremap tn :tabnext<cr>
-" nnoremap tp :tabprevious<cr>
-" nnoremap td :tabnew .<cr>
-" nnoremap te :tabedit
-" nnoremap tc :tabclose<cr>
-"視窗分割時,進行切換的按鍵熱鍵需要連線兩次,比如從下方視窗移動
-"游標到上方視窗,需要<c-w><c-w>k,非常麻煩,現在重對映為<c-k>,切換的
-"時候會變得非常方便.
 
+" Switch window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
  
-" set fileformats=unix,dos,mac
- nnoremap <leader>fd :se fileformat=dos<CR>
- nnoremap <leader>fu :se fileformat=unix<CR>
-" use Ctrl+[l|n|p|cc] to list|next|previous|jump to count the result
-" nnoremap <C-x>l <ESC>:cl<CR>
-" nnoremap <C-x>n <ESC>:cn<CR>
-" nnoremap <C-x>p <ESC>:cp<CR>
-" nnoremap <C-x>c <ESC>:cc<CR>
- 
- 
-" Python 檔案的一般設定，比如不要 tab 等
-" autocmd FileType python set tabstop=2 shiftwidth=2 expandtab
-" autocmd FileType python map <F12> :!python %<CR>
-" 選中狀態下 Ctrl+c 複製
-"vmap <C-c> "+y
- 
-"十六進位制顯示檔案 
-nnoremap <leader>H :%!xxd<CR>     
-"二進位制顯示檔案
-nnoremap <leader>B :%!xxd -r<CR>
- 
 "******************************************************************************************************************
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 	filetype plugin indent on    " 必須載入vim自帶和外掛相應的語法和檔案型別相關指令碼
@@ -218,8 +112,8 @@ call vundle#begin()
     " <Plug>(PearTreeSpace)
     " <Plug>(PearTreeJump)
     " <Plug>(PearTreeExpandOne)
-    " <Plug>(PearTreeJNR)  
-
+    " <Plug>(PearTreeJNR)
+    
 	"vim包管理工具
 	Plugin 'gmarik/Vundle.vim'
 	"檔案目錄增加git 狀態
@@ -227,33 +121,14 @@ call vundle#begin()
 	
 	"tab智慧補全
 	Plugin 'ervandew/supertab'
-	"程式碼視覺化縮排塊
-  Plugin 'yggdroot/indentline'
-        let g:indentLine_enabled = 0
-        let g:indentLine_color_term = 230
-        "let g:indentLine_char_list = ['|', '¦', '┆', '┊','|'] 會出現游標的錯行，慎用
-        let g:indentLine_char_list = ['|', '¦', '¦', '¦']
+
 	"彩虹括號
 	Plugin 'kien/rainbow_parentheses.vim'
  
-	"真彩色
-	Plugin 'tpope/vim-sensible'
 	"git左邊欄增刪改提示
 	Plugin 'airblade/vim-gitgutter'
  
-  "Plugin 'altercation/solarized'
-	"Plugin 'altercation/vim-colors-solarized'  "solarized
-	"    let g:solarized_termtrans  = 1         " 使用 termnal 背景
-	"    let g:solarized_visibility = "high"    " 使用 :set list 顯示特殊字元時的高亮級別
-	"    " GUI 模式淺色背景，終端模式深色背景
-	"    if has('gui_running')
-	"		set background=light
-	"    else
-	"		set background=dark
-	"    endif
-	"    " 主題設定為 solarized
-	"	  colorscheme solarized
- 
+
 	"檔案目錄分屏
 	Plugin 'scrooloose/nerdtree'
 		let NERDTreeHighlightCursorline = 1       " 高亮當前行
@@ -261,17 +136,13 @@ call vundle#begin()
 		" 忽略列表中的檔案
 		let NERDTreeIgnore = [ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.egg$', '^\.git$', '^\.repo$', '^\.svn$', '^\.hg$' ]
 		" 啟動 vim 時開啟 NERDTree
-		" autocmd vimenter * NERDTree
-
+		"autocmd vimenter * NERDTree
 		" 當開啟 VIM，沒有指定檔案時和開啟一個目錄時，開啟 NERDTree
-    " Only input vim
-		" autocmd StdinReadPre * let s:std_in = 1
-    
-		" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-		" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+		"autocmd StdinReadPre * let s:std_in = 1
+		"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+		"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 		" 關閉 NERDTree，當沒有檔案開啟的時候
-		" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end
+		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end
         
 		" <leader>nt 開啟 nerdtree 視窗，在左側欄顯示
 		nnoremap <leader>nt :NERDTreeToggle<CR>
@@ -285,48 +156,7 @@ call vundle#begin()
 		nnoremap <leader>tp :tabp<CR>
 		" <leader>tn 後一個 tab
 		nnoremap <leader>tn :tabn<CR
- 
-    "tagbar
-    Plugin 'majutsushi/tagbar'
-        let g:tagbar_ctags_bin = 'ctags' " tagbar 依賴 ctags 外掛
-        let g:tagbar_width     = 30      " 設定 tagbar 的寬度為 30 列，預設 40 列
-        let g:tagbar_autofocus = 1       " 開啟 tagbar 時游標在 tagbar 頁面內，預設在 vim 開啟的檔案內
-        let g:tagbar_left      = 1       " 讓 tagbar 在頁面左側顯示，預設右邊
-        "let g:tagbar_sort      = 0       " 標籤不排序，預設排序
-         
-        " <leader>tb 開啟 tagbar 視窗，在左側欄顯示
-        nnoremap <leader>tb :TagbarToggle<CR>
- 
-    "taglist
-    "Plugin 'vim-scripts/taglist.vim'
-    "    let Tlist_Show_One_File           = 1    " 只顯示當前檔案的tags
-    "    let Tlist_GainFocus_On_ToggleOpen = 1    " 開啟 Tlist 視窗時，游標跳到 Tlist 視窗
-    "    let Tlist_Exit_OnlyWindow         = 1    " 如果 Tlist 視窗是最後一個視窗則退出 Vim
-    "    let Tlist_Use_Left_Window         = 1    " 在左側視窗中顯示
-    "    let Tlist_File_Fold_Auto_Close    = 1    " 自動摺疊
-    "    let Tlist_Auto_Update             = 1    " 自動更新
-    "     
-    "    " <leader>tl 開啟 Tlist 視窗，在左側欄顯示
-    "     nnoremap <leader>tl :TlistToggle<CR>
- 
-    "winmanager
-    Plugin 'vim-scripts/winmanager'
-        let g:NERDTree_title="[NERDTree]"
-        "let g:winManagerWindowLayout="TagList|NERDTree"
-        let g:winManagerWindowLayout='FileExplorer|TagList'
- 
-        function! NERDTree_Start()
-            exec 'NERDTree'
-        endfunction
-        function! NERDTree_IsValid()
-            return 1
-        endfunction
- 
-        nnoremap wm :WMToggle<CR>
- 
-    "powerline fonts
-    Plugin 'powerline/powerline-fonts'
-    "狀態列
+     "狀態列
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
  
@@ -349,24 +179,27 @@ call vundle#begin()
  
         "Vim 在與螢幕/鍵盤互動時使用的編碼(取決於實際的終端的設定)        
         set encoding=utf-8
-        "set langmenu=zh_CN.UTF-8
+        set langmenu=zh_CN.UTF-8
         " 設定開啟檔案的編碼格式  
-        "set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
+        set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
         set fileencoding=utf-8
         " 解決選單亂碼
         source $VIMRUNTIME/delmenu.vim
         source $VIMRUNTIME/menu.vim
+
         " 解決consle輸出亂碼
-        "set termencoding = cp936  
+        " set termencoding = cp936  
         " 設定中文提示
-        "language messages zh_CN.utf-8 "Skip this feature.
+        " language messages zh_CN.utf-8 
         " 設定中文幫助
-        "set helplang=cn
+        set helplang=cn
         " 設定為雙字寬顯示，否則無法完整顯示如:☆
         set ambiwidth=double
+
         " 總是顯示狀態列 
         let laststatus = 2
-        "let g:airline_theme='dark'      " 設定主題,simple、dark、solarized、bubblegum 詳見.vim/bundle/vim-airline-themes
+        " let g:airline_theme='solarized'      " 設定主題,simple、dark、solarized、bubblegum 詳見.vim/bundle/vim-airline-themes
+        let g:airline_theme='papercolor'      " 設定主題,simple、dark、solarized、bubblegum 詳見.vim/bundle/vim-airline-themes
  
         " 開啟tabline
         let g:airline#extensions#tabline#enabled = 1      "tabline中當前
@@ -374,125 +207,21 @@ call vundle#begin()
         let g:airline#extensions#tabline#left_alt_sep = '|'      "tabline中
         let g:airline#extensions#tabline#buffer_nr_show = 1      "buffer顯示編號
  
-       " let g:airline_left_sep = ' '
-       " let g:airline_left_alt_sep = '▶'
-       " let g:airline_right_sep = ' '
-       " let g:airline_right_alt_sep = '◀'
-       " let g:airline_symbols.crypt = '?'
-       " let g:airline_symbols.linenr = '¶'
-       " let g:airline_symbols.maxlinenr = '㏑'
-       " let g:airline_symbols.branch = '⎇'
-       " let g:airline_symbols.paste = 'ρ'
-       " let g:airline_symbols.spell = 'Ꞩ'
-       " let g:airline_symbols.notexists = 'Ɇ'
-       " let g:airline_symbols.whitespace = 'Ξ'
- 
         " 對映切換buffer的鍵位
         nnoremap [b :bp<CR>
         nnoremap ]b :bn<CR>
         " 設定字型 
-        "set guifont=Powerline_Consolas:h14:cANSI
+        set guifont=Powerline_Consolas:h14:cANSI
  
-    "Plugin 'enricobacis/vim-airline-clock'
+    Plugin 'enricobacis/vim-airline-clock'
         "let g:airline#extensions#clock#auto = 0  關閉
         let g:airline#extensions#clock#format = '%H:%M:%S'
     
-    ""程式碼動態檢查(使用YCM自帶的即可)
-    "Plugin 'w0rp/ale'
-    "    let g:ale_lint_on_text_changed       = 'normal'                     " 程式碼更改後啟動檢查 
-    "    let g:ale_lint_on_insert_leave       = 1                            " 退出插入模式即檢查
-    "    let g:ale_sign_column_always         = 1                            " 總是顯示動態檢查結果
-    "    "let g:ale_statusline_format = ['✗ %d', ':zap:%d','✔  OK']
-    "    let g:ale_sign_error                 = '>>'                         " error 告警符號
-    "    let g:ale_sign_warning               = '--'                         " warning 告警符號
-    "    let g:ale_echo_msg_error_str         = 'E'                          " 錯誤顯示字元
-    "    let g:ale_echo_msg_warning_str       = 'W'                          " 警告顯示字元
-    "    let g:ale_echo_msg_format            = '[%linter%] %s [%severity%]' " 告警顯示格式
-    "     
-    "    " C 語言配置檢查引數
-    "    let g:ale_c_gcc_options              = '-Wall -Werror -O2 -std=c11'
-    "    let g:ale_c_clang_options            = '-Wall -Werror -O2 -std=c11'
-    "    let g:ale_c_cppcheck_options         = ''
-    "    " C++ 配置檢查引數
-    "    let g:ale_cpp_gcc_options            = '-Wall -Werror -O2 -std=c++14'
-    "    let g:ale_cpp_clang_options          = '-Wall -Werror -O2 -std=c++14'
-    "    let g:ale_cpp_cppcheck_options       = ''
-    "     
-    "    "使用clang對c和c++進行語法檢查，對python使用pylint進行語法檢查
-    "    let g:ale_linters = {  'c++': ['clang', 'gcc'] }
-    "    " <F9> 觸發/關閉程式碼動態檢查
-    "    map <F9> :ALEToggle<CR>
-    "    "普通模式下，ak 前往上一個錯誤或警告，aj 前往下一個錯誤或警告                                                                                                                                                    
-    "    nmap ak <Plug>(ale_previous_wrap)
-    "    nmap aj <Plug>(ale_next_wrap)
-    "    " ad 檢視錯誤或警告的詳細資訊
-    "    nmap ad :ALEDetail<CR>
-    "模糊查詢檔案，ctrl+p
-    "Plugin 'ctrlp/ctrlp.vim'
-    Plugin 'kien/ctrlp.vim'
- 
-    "git log與code對應
-    "Plugin 'vim-fugitive'
- 
+
     "顯示檔案修改痕跡
     Plugin 'chrisbra/changesPlugin'
     
-     
-    "Plugin 'bufexplorer'
- 
-    "瀏覽最近開啟的檔案
-    "Plugin 'vim-startify'
-    "撤銷
-    "Plugin 'Gundo'
- 
-    "恢復上次關閉時所開啟的檔案
-    "Plugin 'Sessionman'
-    "set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-    "nnoremap <leader>sl :SessionList<CR>
-    "nnoremap <leader>ss :SessionSave<CR>
-    "nnoremap <leader>sc :SessionClose<CR>
- 
-    "Plugin 'Powerline'
-    "Plugin 'rainbow_parentheses'
- 
-    "Plugin 'ludovicchabant/vim-gutentags' 
-        "gutentags搜尋工程目錄的標誌，碰到這些檔案/目錄名就停止向上一級目錄遞迴
-        
-        let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
-        
-        " 所生成的資料檔案的名稱 "
-        let g:gutentags_ctags_tagfile = '.tags'
-        " 將自動生成的 tags 檔案全部放入 ~/.cache/tags 目錄中，避免汙染工程目錄 "
-         let s:vim_tags = expand('~/.cache/tags')
-         let g:gutentags_cache_dir = s:vim_tags
-         " 檢測 ~/.cache/tags 不存在就新建 "
-         if !isdirectory(s:vim_tags)
-            silent! call mkdir(s:vim_tags, 'p')
-         endif
-        
-            " 配置 ctags 的引數 "
-        let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-        let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
-        let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-    Plugin 'skywind3000/gutentags_plus'
-        " gutentags搜尋工程目錄的標誌，碰到這些檔案/目錄名就停止向上一級目錄遞迴
-        " let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
-        
-        " 所生成的資料檔案的名稱 "
-        let g:gutentags_ctags_tagfile = '.tags'
-        
-        " 將自動生成的 tags 檔案全部放入 ~/.cache/tags 目錄中，避免汙染工程目錄
-        let s:vim_tags = expand('~/.cache/tags')
-        let g:gutentags_cache_dir = s:vim_tags
-        " 檢測 ~/.cache/tags 不存在就新建 "
-        if !isdirectory(s:vim_tags)
-           silent! call mkdir(s:vim_tags, 'p')
-           endif
-        
-           " 配置 ctags 的引數 "
-           let g:gutentags_ctags_extra_args = ['--fields=+niazS','--extra=+q']
-           let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
-           "let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+    
     "json viewer
     Plugin 'elzr/vim-json'
  
@@ -501,18 +230,6 @@ call vundle#begin()
     "在needtree中顯示檔案圖示
     Plugin 'ryanoasis/vim-devicons'
  
-    "c++ 語法高亮
-    Plugin 'octol/vim-cpp-enhanced-highlight'
-        "let g:cpp_class_scope_highlight = 1
-        "let g:cpp_member_variable_highlight = 1
-        "let g:cpp_class_decl_highlight = 1
-        "let g:cpp_posix_standard = 1
-        "let g:cpp_experimental_simple_template_highlight = 1
-        "let g:cpp_experimental_template_highlight = 1
-        "let g:cpp_concepts_highlight = 1
-        "let g:cpp_no_function_highlight = 1
-    "switch .h <->.cpp
-    "Plugin 'a.vim'
     "查詢檔案
     Plugin 'junegunn/fzf'
         ":FZF 從當前目錄查詢
@@ -520,140 +237,31 @@ call vundle#begin()
         nnoremap <leader>f :FZF ~<CR>
         nnoremap <leader>F :FZF<CR>
  
-    "查詢
-    Plugin 'FuzzyFinder'
-        ":FufBuffer|       - Buffer mode (|fuf-buffer-mode|)
-        ":FufFile|         - File mode (|fuf-file-mode|)
-        ":FufCoverageFile| - Coverage-File mode (|fuf-coveragefile-mode|)
-        ":FufDir|          - Directory mode (|fuf-dir-mode|)
-        ":FufMruFile|      - MRU-File mode (|fuf-mrufile-mode|)
-        ":FufMruCmd|       - MRU-Command mode (|fuf-mrucmd-mode|)
-        ":FufBookmarkFile| - Bookmark-File mode (|fuf-bookmarkfile-mode|)
-        ":FufBookmarkDir|  - Bookmark-Dir mode (|fuf-bookmarkdir-mode|)
-        ":FufTag|          - Tag mode (|fuf-tag-mode|)
-        ":FufBufferTag|    - Buffer-Tag mode (|fuf-buffertag-mode|)
-        ":FufTaggedFile|   - Tagged-File mode (|fuf-taggedfile-mode|)
-        ":FufJumpList|     - Jump-List mode (|fuf-jumplist-mode|)
-        ":FufChangeList|   - Change-List mode (|fuf-changelist-mode|)
-        ":FufQuickfix|     - Quickfix mode (|fuf-quickfix-mode|)
-        ":FufLine|         - Line mode (|fuf-line-mode|)
-        ":FufHelp|         - Help mode (|fuf-help-mode|)
+
+    Plugin 'octol/vim-cpp-enhanced-highlight'
         
-    "doc    
-    Plugin 'DoxygenToolkit.vim'
-        ":Dox
-        ":DoxAuthor
-        ":DoxBlock
-        ":DoxLic
- 
-    "draw txt graph
-    Plugin 'DrawIt'
-        "\di start
-        "\ds stop
-    ""bookmarks
-    "Plugin 'mattesgroeger/vim-bookmarks'
-    "    highlight BookmarkSign ctermbg=NONE ctermfg=160
-    "    highlight BookmarkLine ctermbg=NONE ctermfg=NONE
-    "    let g:bookmark_sign = '♥'
-    "    let g:bookmark_highlight_lines = 1
-    "    nnoremap <leader><leader> <Plug>BookmarkToggle
-    "    nnoremap <leader>i <Plug>BookmarkAnnotate
-    "    nnoremap <leader>a <Plug>BookmarkShowAll
-    "    nnoremap <leader>j <Plug>BookmarkNext
-    "    nnoremap <leader>k <Plug>BookmarkPrev
-    "    nnoremap <leader>c <Plug>BookmarkClear
-    "    nnoremap <leader>x <Plug>BookmarkClearAll
-    "    nnoremap <leader>kk <Plug>BookmarkMoveUp
-    "    nnoremap <leader>jj <Plug>BookmarkMoveDown
-    "    nnoremap <leader>g <Plug>BookmarkMoveToLine
- 
- 
-    "highlighting for Google's Protocol Buffers
-    "Plugin 'uarun/vim-protobuf'
- 
-    "顯示所有的leader對映
-    Plugin 'hecal3/vim-leader-guide'
-       ":LeaderGuide '\' 
-    
-    "cmake 
-    Plugin 'jansenm/vim-cmake'   
-    "Plugin 'ihacklog/hicursorwords'
-    "    let g:HiCursorWords_delay = 200
-    "    let g:HiCursorWords_hiGroupRegexp = ''
-    "    let g:HiCursorWords_debugEchoHiName = 0
-    ""語法檢查(使用YCM自帶的即可)
-    "Plugin 'scrooloose/syntastic'
-    "    set statusline+=%#warningmsg#
-    "    set statusline+=%{SyntasticStatuslineFlag()}
-    "    set statusline+=%*
-    "    let g:syntastic_always_populate_loc_list = 1
-    "    let g:syntastic_auto_loc_list = 0
-    "    let g:syntastic_check_on_open = 1
-    "    let g:syntastic_check_on_wq = 0
-    "    let g:syntastic_cpp_checkers = ['gcc']
-    "    let g:syntastic_cpp_compiler = 'g++'
-    "    let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
-    "    "if !exists('g:syntastic_cpp_compiler_options')
-    "    "    let g:syntastic_cpp_compiler_options = ' -std=c++11 -lstdc++ '
-    "    "endif
- 
-    "註釋
-    Plugin 'scrooloose/nerdcommenter'
-        "\cc 註釋
-        " Add spaces after comment delimiters by default
-        let g:NERDSpaceDelims = 1
-        
-        " Use compact syntax for prettified multi-line comments
-        let g:NERDCompactSexyComs = 1
-        
-        " Align line-wise comment delimiters flush left instead of following code indentation
-        let g:NERDDefaultAlign = 'left'
-        
-        " Set a language to use its alternate delimiters by default
-        let g:NERDAltDelims_java = 1
-        
-        " Add your own custom formats or override the defaults
-        let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-        
-        " Allow commenting and inverting empty lines (useful when commenting a region)
-        let g:NERDCommentEmptyLines = 1
-        
-        " Enable trimming of trailing whitespace when uncommenting
-        let g:NERDTrimTrailingWhitespace = 1
-        
-        " Enable NERDCommenterToggle to check all selected lines is commented or not 
-        let g:NERDToggleCheckAllLines = 1
-        
- 
-    "Plugin 'tpope/surround-vim'
-    "程式碼版段，詳見~/.vim/bundle/vim-snippets/UltiSnips/cpp.snippets
-    Plugin 'SirVer/ultisnips'
-    Plugin 'honza/vim-snippets'
-        " Trigger configuration. Do not use <tab> if you use https:
-        let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets/UltiSnips', 'UltiSnips']
-        let g:UltiSnipsExpandTrigger = "<c-b>"
-        "let g:UltiSnipsJumpForwardTrigger = "<c-n>"
-        "let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
-        
-     Plugin 'Valloric/YouCompleteMe'  
+    Plugin 'Valloric/YouCompleteMe'
         "往前跳和往後跳的快捷鍵為Ctrl+O以及Ctrl+I
         let g:ycm_key_list_select_completion=['<c-n>']
         let g:ycm_key_list_previous_completion=['<c-p>']
- 
-        set completeopt-=menu  "關閉preview window
-        set completeopt-=preview  "關閉preview window
-        let g:ycm_add_preview_to_completeopt =0
-        let g:ycm_autoclose_preview_window_after_completion=1
-        let g:ycm_autoclose_preview_window_after_insertion=1
-        let g:ycm_always_populate_location_list = 0
-        let g:ycm_confirm_extra_conf=0 "關閉載入.ycm_extra_conf.py提示
+        
+        let g:ycm_auto_hover=''
+        " Disable hint prompt.
+
+        set completeopt=menu  "關閉preview window
+        "let g:ycm_add_preview_to_completeopt =0
+        "let g:ycm_autoclose_preview_window_after_completion=1
+        "let g:ycm_autoclose_preview_window_after_insertion=1
+        "let g:ycm_always_populate_location_list = 0
+        "let g:ycm_confirm_extra_conf=0 "關閉載入.ycm_extra_conf.py提示
+        let g:ycm_confirm_extra_conf='$HOME/.vim/bundle/YouCompleteMe/ycm_extra_conf.py' " C++ 20
         let g:ycm_collect_identifiers_from_tags_files=1 " 開啟 YCM 基於標籤引擎
         let g:ycm_min_num_of_chars_for_completion=1 " 從第1個鍵入字元就開始羅列匹配項
         let g:ycm_cache_omnifunc=0 " 禁止快取匹配項,每次都重新生成匹配項
         let g:ycm_seed_identifiers_with_syntax=1 " 語法關鍵字補全
          nnoremap <F5> :YcmForceCompileAndDiagnostics<CR> "force recomile with syntastic
         "nnoremap <leader>lo :lopen<CR> "open locationlist
-        nnoremap <leader>lc :lclose<CR>    "close locationlist
+        "nnoremap <leader>lc :lclose<CR>    "close locationlist
         "inoremap <leader><leader> <C-x><C-o>
         let g:ycm_complete_in_comments = 1 "在註釋輸入中也能補全
         let g:ycm_complete_in_strings = 1 "在字串輸入中也能補全
@@ -662,25 +270,5 @@ call vundle#begin()
         let g:ycm_auto_trigger = 1
         let g:ycm_error_symbol = '>>'
         let g:ycm_warning_symbol = '>'
-        "sub commands
-        "YcmCompleter RefactorRename :重新命名
-        "YcmCompleter GoToSymbol  
-        nnoremap <leader>go :YcmCompleter GoTo<CR> "跳轉
-        nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR> "跳轉到定義或宣告
-        nnoremap <leader>gt :YcmCompleter GetType<CR> "get型別
-        nnoremap gi :YcmCompleter GoToInclude<CR>   "跳轉到include、宣告或定義(向回跳轉：Ctrl+o)
-        nnoremap gm :YcmCompleter GoToImprecise<CR> "跳轉到實現
-        nnoremap gr :YcmCompleter GoToReferences<CR> "跳轉到引用
-        "nnoremap fi :YcmCompleter FixIt<CR> "根據Ycm的建議修復錯誤
-        nnoremap <F5> :YcmDiags<CR>  "F4進行診斷並顯示診斷列表
-        nnoremap <F6> :YcmForceCompileAndDiagnostics<CR> "重新編譯和診斷
-        "noremap <leader>gl :YcmCompleter GoToDeclaration<CR> "跳轉到宣告
-        "nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>  "跳轉到定義
-        "highlight Pmenu ctermfg=4 ctermbg=0 guifg=#ffffff guibg=#000000  "提示不再是粉紅色(pink)
-        highlight Pmenu ctermfg=4 ctermbg=8 guifg=#ffffff guibg=#000000  "提示不再是粉紅色(pink)
+
 call vundle#end()
-
-let g:syntastic_auto_loc_list = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/ycm_extra_conf.py'
-command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
-

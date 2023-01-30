@@ -1,24 +1,29 @@
-#ifndef CP
-#define CP
 #include<bits/stdc++.h>
 using namespace std;
-#endif
 
 #ifdef LOCAL
 #include"./lib/debug.h"
 #else 
-#define debug(...) 0
+#define debug(...) 
 #endif
-
-#include "./atcoder/dsu.hpp"
 
 int32_t main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
-  int tt = 1;
-  atcoder::dsu d(15);
-  cin >> tt;
-  while (tt--) {
+  int TESTCASE = 1;
+  cin >> TESTCASE;
+  while (TESTCASE--) {
+    int n, k; cin >> n >> k;
+    for (int i = 0, l = 1, r = n; i < n; ++i) {
+      if (i & 1) {
+        cout << l << ' ';
+        ++l;
+      } else {
+        cout << r << ' ';
+        --r;
+      }
+    }
+    cout << '\n';
   }
   return 0;
 }

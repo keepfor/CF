@@ -1,21 +1,18 @@
-#ifndef CP
-#define CP
 #include<bits/stdc++.h>
 using namespace std;
-#endif
 
 #ifdef LOCAL
 #include"./lib/debug.h"
 #else 
-#define debug(...) 0
+#define debug(...) 
 #endif
 
 int32_t main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
-  int tt = 1;
-  cin >> tt;
-  while (tt--) {
+  int TESTCASE = 1;
+  cin >> TESTCASE;
+  while (TESTCASE--) {
   }
   return 0;
 }
