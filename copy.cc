@@ -13,17 +13,31 @@ int32_t main() {
   int TESTCASE = 1;
   cin >> TESTCASE;
   while (TESTCASE--) {
-    int n, k; cin >> n >> k;
-    for (int i = 0, l = 1, r = n; i < n; ++i) {
-      if (i & 1) {
-        cout << l << ' ';
-        ++l;
-      } else {
-        cout << r << ' ';
-        --r;
-      }
+    int n, m, d;
+    cin >> n >> m >> d;
+    vector<int> p(n);
+    for (int i = 0; i < n; ++i) {
+      int x; 
+      cin >> x;
+      --x;
+      p[x] = i;
     }
-    cout << '\n';
+    vector<int> a(m);
+    for (auto& i : a) {
+      cin >> i;
+      --i;
+    }
+    int ans = 1e9;
+    for (int i = 0; i + 1 < m; ++i) {
+      int x = p[a[i + 1]] - p[a[i]];
+      if (x <= 0 or d - x + 1 <= 0) {
+        ans = 0;
+        break;
+      }
+      ans = min(ans, x);
+      if (d < n - 1) ans = min(ans, d - x + 1);
+    }
+    cout << ans << '\n';
   }
   return 0;
 }

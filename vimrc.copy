@@ -18,21 +18,22 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q" 
 " Set cursor steady block in normal mode.
 
-"inoremap jj <esc>
 inoremap jk <esc>
 inoremap kj <esc>
 
 let mapleader = "\<space>"
-map <leader>i :e input.txt
-map <leader>m :!make 
+map <leader>k :e input.txt
+map <leader>j :!make 
+map <leader>l :q!
 
 nnoremap ; :
-nnoremap q1 :q!
 
 set mouse=a
 
 set tags=./tags;/
-set clipboard=unnamed
+
+set clipboard^=unnamed,unnamedplus " System clipboard setting
+
 set nocompatible " 關閉 vi 相容模式
 set smartindent "當在大括號中間回車的時候，他會智慧縮排，因為他知道括號中間要縮排
 set autoindent
@@ -53,7 +54,7 @@ set backupcopy=yes " 設定備份時的行為為覆蓋
 
 " Search
 set ignorecase smartcase " 搜尋時忽略大小寫，但在有一個或以上大寫字母時仍保持對大小寫敏感
-set nowrapscan " 禁止在搜尋到檔案兩端時重新搜尋
+"set nowrapscan " 禁止在搜尋到檔案兩端時重新搜尋
 set incsearch " 輸入搜尋內容時就顯示搜尋結果
 set hlsearch " 搜尋時高亮顯示被找到的文字
 
