@@ -1,0 +1,10 @@
+[
+	{
+		"keys": ["command+j"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "cd ~/contest && make"
+		}
+	}
+
+]
