@@ -1,6 +1,11 @@
 CC=g++
 
-.PHONY: reset gen
+define re 
+	> input.txt
+	cp reset.cc sol.cc
+endef
+
+.PHONY: reset gen reset revim empty
 
 all: sol.exe main copy clean
 	
@@ -11,6 +16,7 @@ clear:
 
 sol.exe: sol.cc
 	$(CC) -DLOCAL -g -O3 -Wall -Werror -Wshadow  -Wc++17-extensions -std=gnu++2a  sol.cc -o sol.exe
+
 main:
 	./sol.exe <input.txt> output.txt 
 	cat output.txt
@@ -23,8 +29,10 @@ copy:
 	cp sol.cc copy.cc
 
 reset:
-	> input.txt
-	cp reset.cc sol.cc
+	$(re)
+
+revim: 
+	$(re)
 	vim sol.cc
 
 gen:

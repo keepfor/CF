@@ -13,10 +13,6 @@ int32_t main() {
   int TESTCASES = 1;
   cin >> TESTCASES;
   while (TESTCASES--) {
-    const int n = 1e3;
-    for (int i = 0; i < n; ++i) cout << i;
-    for (int i = 0; i < n; ++i) cout << i;
-    for (int i = 0; i < n; ++i) cout << i;
   }
   return 0;
 }
