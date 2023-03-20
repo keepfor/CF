@@ -11,44 +11,27 @@ int32_t main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
   int TESTCASE = 1;
-  auto f = [&](int x, int y) {
-    if (x == y or x == '?' or y == '?') {
-      return true;
-    }
-    return false;
-  };
+  cin >> TESTCASE;
   while (TESTCASE--) {
-    string s, t; cin >> s >> t;
-    int n = s.size();
-    int m = t.size();
-    vector<int> pre(m + 1), suf(m + 1);
-    pre[0] = suf[0] = 1;
-    for (int i = 0; i < min(m, n); ++i) {
-      if (!pre[i]) {
-        break;
-      }
-      if (pre[i] and f(s[i], t[i])) {
-        pre[i + 1] = 1;
-      }
+    long long l;
+    int n, m;
+    cin >> l >> n >> m;
+    vector<int> a(n), b(m);
+    for (auto& i : a) cin >> i;
+    for (auto& i : b) cin >> i;
+    int ai = 0, bi = 0;
+    long long ans = 0;
+    while (ai < n) {
+      auto& [v1, l1] = a[ai];
+      auto& [v2, l2] = b[bi];
+      if (!l1) ++ai;
+      if (!l2) ++bi;
+      int mn = min(l1, l2);
+      l1 -= mn;
+      l2 -= mn;
+      if (v1 == v2) ++ans;
     }
-    reverse(s.begin(), s.end());
-    reverse(t.begin(), t.end());
-    for (int i = 0; i < min(m, n); ++i) {
-      if (!suf[i]) {
-        break;
-      }
-      if (suf[i] and f(s[i], t[i])) {
-        suf[i + 1] = 1;
-      }
-    }   
-    bool ok = true;
-    for (int i = 0; i <= m; ++i) {
-      if (!pre[i] or !suf[m - i]) {
-        cout << "No\n";
-      } else {
-        cout << "Yes\n";
-      }
-    }
+    cout << ans << '\n';
   }
   return 0;
 }
