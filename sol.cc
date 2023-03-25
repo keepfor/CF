@@ -11,27 +11,53 @@ int32_t main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
   int TESTCASE = 1;
-  cin >> TESTCASE;
   while (TESTCASE--) {
-    long long l;
     int n, m;
-    cin >> l >> n >> m;
-    vector<int> a(n), b(m);
-    for (auto& i : a) cin >> i;
-    for (auto& i : b) cin >> i;
-    int ai = 0, bi = 0;
-    long long ans = 0;
-    while (ai < n) {
-      auto& [v1, l1] = a[ai];
-      auto& [v2, l2] = b[bi];
-      if (!l1) ++ai;
-      if (!l2) ++bi;
-      int mn = min(l1, l2);
-      l1 -= mn;
-      l2 -= mn;
-      if (v1 == v2) ++ans;
+    cin >> n >> m;
+    vector<int> d(n);
+    vector<pair<int, int>> e(m);
+    for (int i = 0; i < m; ++i) {
+      cin >> e[i].first >> e[i].second;
+      --e[i].first;
+      --e[i].second;
     }
-    cout << ans << '\n';
+    int k;
+    cin >> k;
+    vector<int> vis(m);
+    while (k--) {
+      int x;
+      cin >> x;
+      --x;
+      ++d[e[x].first];
+      ++d[e[x].second];
+      vis[x] = 1;
+    }
+    vector<int> p(n);
+    iota(p.begin(), p.end(), 0);
+    function<int(int)> find = [&](int x) -> int {
+      return p[x] == x ? x : p[x] = find(p[x]);
+    };
+    auto unite = [&](int u, int v) -> void {
+      u = find(u);
+      v = find(v);
+      if (u == v) return;
+      d[u] += d[v];
+      p[v] = u;
+    };
+    for (int i = 0; i < m; ++i) {
+      if (!vis[i]) {
+        unite(e[i].first, e[i].second);
+      }
+    }
+    int c = 0;
+    for (int i = 0; i < n; ++i) {
+      if (find(i) == i and d[i] & 1) {
+        ++c;
+      }
+    }
+    if (c <= 2) cout << "Yes";
+    else cout << "No";
+    cout << '\n';
   }
   return 0;
 }

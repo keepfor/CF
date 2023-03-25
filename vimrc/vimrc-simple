@@ -1,7 +1,14 @@
-execute "set <M-j>=\ej"
+set visualbell
 
+set t_ti= t_te=
+
+execute "set <M-j>=\ej"
 nnoremap <M-j> :!make
+
+execute "set <M-k>=\ek"
 nnoremap <M-k> :e input.txt
+
+execute "set <M-l>=\el"
 nnoremap <M-l> :q!
 
 set completeopt=longest,menu
@@ -17,8 +24,13 @@ set t_TI= t_TE=
 
 set splitbelow
 
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q" 
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[6 q\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+else
+    let &t_SI = "\e[6 q"
+    let &t_EI = "\e[2 q"
+endif
 
 inoremap jk <esc>
 inoremap kj <esc>
@@ -39,8 +51,6 @@ set backspace=indent,eol,start
 set expandtab
 syntax on 
 set number 
-
-set t_ti= t_te=  
  
 set shiftwidth=2
 set softtabstop=2
