@@ -1,0 +1,62 @@
+inoremap { {}<left>
+inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
+inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+
+inoremap ( ()<Left>
+inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+
+inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+
+set complete+=k
+
+set timeoutlen=50
+
+set splitbelow
+
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q" 
+
+inoremap jk <esc>
+inoremap kj <esc>
+
+nnoremap ; :
+
+set mouse=a
+
+set clipboard=unnamed
+set nocompatible 
+
+set expandtab
+syntax on 
+set number 
+set t_ti= t_te=   
+ 
+set shiftwidth=2 
+set softtabstop=2 
+set tabstop=2 
+set nobackup 
+
+set autochdir 
+set backupcopy=yes 
+
+set ignorecase 
+set smartcase 
+
+set incsearch 
+set hlsearch 
+
+set cindent
+set smartindent 
+set autoindent
+filetype indent on 
+filetype plugin indent on 
+set backspace=indent,eol,start
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <s-j> :e input.txt
+nnoremap <s-k> :!make 
+nnoremap <s-l> :q!

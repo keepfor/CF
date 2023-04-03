@@ -28,10 +28,10 @@ clean:
 copy:
 	cp sol.cc copy.cc
 
-reset:
+re:
 	$(re)
 
-revim: 
+rev: 
 	$(re)
 	vim sol.cc
 
