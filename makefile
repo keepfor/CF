@@ -22,8 +22,8 @@ main:
 	cat output.txt
 
 clean:
-	rm -rf sol.exe*
 	rm -rf .sol.cc*
+	rm -rf sol.exe.*
 
 copy:
 	cp sol.cc copy.cc
