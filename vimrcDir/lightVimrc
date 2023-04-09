@@ -60,3 +60,4 @@ nnoremap <C-l> <C-w>l
 nnoremap <s-j> :e input.txt
 nnoremap <s-k> :!make 
 nnoremap <s-l> :q!
+nnoremap <s-r> :make re

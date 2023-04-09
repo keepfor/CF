@@ -1,44 +1,51 @@
-CC=g++
+cc = g++
+cfg = -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions -std=gnu++2a
+dfg = -g -DLOCAL
+
+prog = obj
+src = sol.cc
+input = input.txt
+output = output.txt
 
 define re 
-	> input.txt
-	cp reset.cc sol.cc
+	> $(input)
+	cp reset.cc $(src)
 endef
 
 .PHONY: reset gen reset revim empty
 
-all: sol.exe main copy clean
+all: $(prog) main copy clean
 	
 clear:
 	clear
-	rm -rf sol.exe*
-	rm -rf .sol.cc*
+	rm -rf $(prog)*
+	rm -rf .$(src)*
 
-sol.exe: sol.cc
-	$(CC) -DLOCAL -g -O3 -Wall -Werror -Wshadow  -Wc++17-extensions -std=gnu++2a  sol.cc -o sol.exe
+$(prog): $(src)
+	$(cc) $(dfg) $(cfg) $(src) -o $(prog)
 
 main:
-	./sol.exe <input.txt> output.txt 
+	./$(prog) <$(input)> output.txt 
 	cat output.txt
 
 clean:
-	rm -rf .sol.cc*
-	rm -rf sol.exe.*
+	rm -rf .$(src)*
+	rm -rf $(prog).*
 
 copy:
-	cp sol.cc copy.cc
+	cp $(src) copy.cc
 
 re:
 	$(re)
 
 rev: 
 	$(re)
-	vim sol.cc
+	vim $(src)
 
 gen:
 	${CC} gen.cc -o gen
-	./gen > input.txt
+	./gen > $(input)
 
 empty:
-	echo "" > sol.cc
-	vim sol.cc
+	echo "" > $(src)
+	vim $(src)
