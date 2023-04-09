@@ -12,6 +12,7 @@ int32_t main() {
   cin.tie(0);
   int TESTCASES = 1;
   cin >> TESTCASES;
-  cout << TESTCASES * 3;
+  while (TESTCASES--) {
+  }
   return 0;
 }
