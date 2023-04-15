@@ -13,18 +13,22 @@ int32_t main() {
   int TESTCASES = 1;
   cin >> TESTCASES;
   while (TESTCASES--) {
-    long long k;
-    cin >> k;
-    vector<int> d;
-    while (k) {
-      d.push_back(k % 9);
-      k /= 9;
-    }
-    reverse(d.begin(), d.end());
-    for (auto& i : d) {
-      if (i >= 4) ++i;
-      cout << i;
-    }
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto & i : a) 
+        cin >> i;
+
+    long long sum = 0;
+    for (int i = 0; i < n; ++i) 
+        if (i % 2 == 0 and i + 1 < n)
+            sum += 1ll * a[i + 1] - a[i];
+
+    if (n % 2 == 0 and sum < 0) 
+        cout << "NO";
+    else 
+        cout << "Yes";
+
     cout << '\n';
   }
   return 0;
