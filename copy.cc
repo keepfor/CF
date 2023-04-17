@@ -12,9 +12,17 @@ int32_t main() {
   cin.tie(0);
   int TESTCASE = 1;
   while (TESTCASE--) {
-    int n; 
+    int n;
     cin >> n;
-    cout << 2 * n << '\n';
+    vector<int> t(2 * n + 2);
+    for (int i = 1; i <= n; ++i) {
+      int p;
+      cin >> p;
+      t[2 * i] = t[2 * i + 1] = t[p] + 1;
+    }
+    for (int i = 1; i < 2 * n + 2; ++i) {
+      cout << t[i] << " \n"[i == 2 * n + 1];
+    }
   }
   return 0;
 }

@@ -12,10 +12,10 @@ int32_t main() {
   cin.tie(0);
   int TESTCASE = 1;
   auto stolower = [](string& s) {
-    for (auto& i : s) i = tolower(i);
+    for (auto& i : s) i = char(tolower(i));
   };
   auto stoupper = [](string& s) {
-    for (auto& i : s) i = toupper(i);
+    for (auto& i : s) i = char(toupper(i));
   };
   while (TESTCASE--) {
     unordered_map<string, vector<string>> all;
@@ -28,8 +28,9 @@ int32_t main() {
       if (s.find("TWFCD") != string::npos) break;
       cs.push_back(s);
     }
+    sort(cs.begin(), cs.end());
 
-    int sz = cs.size();
+    int sz = (int) cs.size();
     int ix = 0;
     debug(sz);
     
@@ -47,10 +48,18 @@ int32_t main() {
         sp.push_back(ss);
       }
       bool ok = false;
+      stolower(sp[1]);
       for (auto& j : p) {
-        stolower(sp[1]);
         stolower(j);
         if (sp[1].find(j) != string::npos) {
+
+          string ii = i;
+          stolower(ii);
+          auto it = ii.find(sp[1]);
+          for (int k = 0; k < (int) sp[1].size(); ++k) {
+            i[it + k] = char(toupper(i[it + k])); 
+          }
+
           all[j].push_back(i);
           --sz;
           ok = true;
@@ -73,4 +82,3 @@ int32_t main() {
   }
   return 0;
 }
-
