@@ -250,6 +250,7 @@ update lcm reset pin test id.
 usw-enterprise-48-poe, update fcd fw to 6.3.8.
 usw-enterprise-48-poe, update fcd fw to 6.4.19.
 verify lcm reset pin command process.
+new fcd fw. (6.5.46, PoE MCU 2nd source
 
 usw-enterprisexg-24, update fcd fw to 6.4.19.
 usw-enterprisexg-24, power consumption.
@@ -330,6 +331,12 @@ uisp-r-pro, rpi4, usb not mount. reported by fw andrew.
 10. Update LCM burnin time to 30.
 11. Update burnTemp to 105.
 https://drive.google.com/file/d/1Kv2p36LP9BiOiguyCxHbTq89jc6FnR61/view?usp=share_link
+add upgrade to diag fw.
+remove ssh login in cmd_diag.
+fw upgrade, add scp logging.
+remove fwupdate.bin first.
+upgrade to diag fw, cmd can not reboot.
+upgrade to diag fw, want to reboot -f but ssh client crash. 
 
 //usw-flex-xg, add retry for portlink test for FW 6.3.8.
 //usw-flex-xg, update fcd fw to 6.3.8.
