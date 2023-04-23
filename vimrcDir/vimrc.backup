@@ -1,3 +1,9 @@
+
+syntax on 
+
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q" 
+
 inoremap { {}<left>
 inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
 inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"

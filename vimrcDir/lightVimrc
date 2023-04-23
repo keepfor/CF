@@ -1,4 +1,5 @@
 nnoremap ; :
+
 nnoremap <c-a> ggvG$
 
 nnoremap <s-j> :e input.txt
@@ -14,38 +15,26 @@ nnoremap <C-l> <C-w>l
 inoremap jk <esc>
 inoremap kj <esc>
 
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q" 
-
 set complete+=k
-set timeoutlen=50
+set timeoutlen=20
 set splitbelow
 set mouse=a
 set clipboard=unnamed
 
 set nocompatible 
-
 set expandtab
-
 set number 
 set t_ti= t_te=   
 
-set shiftwidth=2 
-set softtabstop=2 
-set tabstop=2 
+set shiftwidth=2 softtabstop=2 tabstop=2 
 set nobackup 
 set autochdir 
 set backupcopy=yes 
 
-set ignorecase 
-set smartcase 
-set incsearch 
-set hlsearch 
-set cindent
-set smartindent 
-set autoindent
+set ignorecase smartcase 
+set incsearch hlsearch 
+set cindent smartindent autoindent
 set backspace=indent,eol,start
 
 filetype indent on 
 filetype plugin indent on 
-syntax on 

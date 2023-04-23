@@ -1,57 +1,64 @@
-
-#include <algorithm>
-#include <iostream>
-
+#include<bits/stdc++.h>
 using namespace std;
 
-const int N = 1000;
+#ifdef LOCAL
+#include"lib/debug.h"
+#else
+#define debug(...) 
+#endif
 
-int qu[N], dd[N], pp[N], qq[N];
-
-int main() {
-	int t; cin >> t;
-	while (t--) {
-		int n; cin >> n;
-		cout << "+ " << n << endl;
-		int a; cin >> a;
-		cout << "+ " << n + 1 << endl;
-		cin >> a;
-		for (int h = 0, i = 0, j = n - 1; i <= j; i++, j--) {
-			qu[h++] = j;
-			if (i < j)
-				qu[h++] = i;
-		}
-		int i_ = 0, d_ = 0;
-		for (int i = 1; i < n; i++)
-			if (i) {
-				cout << "? 1 " << i + 1 << endl;
-				int d; cin >> d;
-				if (d_ < d) {
-					i_ = i;
-					d_ = d;
-				}
-			}
-		for (int i = 0; i < n; i++)
-			if (i != i_) {
-				cout << "? " << i_ + 1 << ' ' << i + 1 << endl;
-				cin >> dd[i];
-			}
-		pp[i_] = qu[0];
-		for (int i = 0; i < n; i++)
-			if (i != i_)
-				pp[i] = qu[dd[i]];
-		qq[i_] = qu[n - 1];
-		for (int i = 0; i < n; i++)
-			if (i != i_)
-				qq[i] = qu[n - 1 - dd[i]];
-		cout << '!';
-		for (int i = 0; i < n; i++)
-			cout << ' ' << pp[i] + 1;
-		for (int i = 0; i < n; i++)
-			cout << ' ' << qq[i] + 1;
-		cout << endl;
-		cin >> a;
-	}
-	return 0;
+int32_t main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int TESTCASES = 1;
+  while (TESTCASES--) {
+    int n, m;
+    cin >> n >> m;
+    vector<int> a(n);
+    for (auto& i : a) {
+      cin >> i;
+    }
+    vector<vector<int>> g(n);
+    for (int i = 0; i < n - 1; ++i) {
+      int u, v;
+      cin >> u >> v;
+      --u;
+      --v;
+      g[u].push_back(v);
+      g[v].push_back(u);
+    }
+    vector<int> cnt(n, 1), sum(n), p(n, -1);
+    vector<set<pair<int, int>> ch(n);
+    function<void(int, int)> dfs = [&](int u, int fa) -> void {
+      sum[u] = a[u];
+      for (auto& v : g[u]) {
+        if (v != fa) {
+          p[v] = u;
+          dfs(v, u);
+          sum[u] += sum[v];
+          cnt[u] += cnt[v];
+          ch[u].emplace(-cnt[v], v);
+        }
+      }
+    };
+    dfs(0, -1);
+    while (m--) {
+      int t, x;
+      cin >> t >> x;
+      --x;
+      if (t == 1) {
+        cout << sum[x] << '\n';
+      } else {
+        if (ch[x].empty()) {
+          continue;
+        }
+        int c = ch[x].begin()->second;
+        ch[p[x]].erase({-cnt[p[x]], p[x]});
+        ch[x].erase({-cnt[x], x});
+        ch[p[x]].erase({-cnt[p[x]], p[x]});
+        ch[x].erase({-cnt[x], x});
+      }
+    }
+  }
+  return 0;
 }
-
