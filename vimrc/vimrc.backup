@@ -1,3 +1,8 @@
+
+set completeopt=longest,menu
+set complete+=k
+colorscheme risto
+
 nnoremap <F4> :terminal bash /home/jackcai/scripts/start_ftu.sh
 
 inoremap { {}<left>

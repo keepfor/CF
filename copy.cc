@@ -12,68 +12,39 @@ int32_t main() {
   cin.tie(0);
   int TESTCASE = 1;
   while (TESTCASE--) {
-    int h, w, x, y;
-    cin >> h >> w >> x >> y;
-    int n;
-    cin >> n;
-    vector<pair<int, int>> v1, v2;
+    int n, m;
+    cin >> n >> m;
+    vector<vector<long long>> v(m);
     for (int i = 0; i < n; ++i) {
-      int r, c;
-      cin >> r >> c;
-      v1.emplace_back(r, c);
-      v2.emplace_back(c, r);
-    }
-    sort(v1.begin(), v1.end());
-    sort(v2.begin(), v2.end());
-    int q;
-    cin >> q;
-    while (q--) {
-      char d;
-      int l;
-      cin >> d >> l;
-      if (d == 'R') {
-        int z = w;
-        auto it = upper_bound(v1.begin(), v1.end(), make_pair(x, y));
-        if (it != v1.end()) {
-          auto t = *it;
-          if (t.first == x) {
-            z = t.second - 1;
-          }
-        }
-        y = min(z, y + l);
-      } else if (d == 'L') {
-        int z = 1;
-        auto it = lower_bound(v1.begin(), v1.end(), make_pair(x, y));
-        if (it != v1.begin()) {
-          auto t = *prev(it);
-          if (t.first == x) {
-            z = t.second + 1;
-          }
-        } 
-        y = max(z, y - l);
-      } else if (d == 'U') {
-        int z = 1;
-        auto it = lower_bound(v2.begin(), v2.end(), make_pair(y, x));
-        if (it != v2.begin()) {
-          auto t = *prev(it);
-          if (t.first == y) {
-            z = t.second + 1;
-          }
-        }
-        x = max(z, x - l);
-      } else {
-        int z = h;
-        auto it = upper_bound(v2.begin(), v2.end(), make_pair(y, x));
-        if (it != v2.end()) {
-          auto t = *it;
-          if (t.first == y) {
-            z = t.second - 1;
-          }
-        }
-        x = min(z, x + l);
+      long long s;
+      cin >> s;
+      int j = i + 1;
+      s += j;
+      int cnt = 0;
+      if (s < 0) {
+        int c = (int) (-s + j - 1) / j;
+        cnt = c;
+        s += 1ll * c * j;
       }
-      cout << x << ' ' << y << '\n';
-    } 
+      while (s < n and cnt < m) {
+        v[cnt++].push_back(s);
+        s += 1ll * j;
+      }
+    }
+    for (auto& i : v) {
+      vector<bool> vis(n + 1);
+      for (auto& j : i) {
+        if (j < n) {
+          vis[j] = 1;
+        }
+      }
+      for (int j = 0;j <= n; ++j) {
+        if (!vis[j]) {
+          cout << j << '\n';
+          break;
+        }
+      }
+    }
   }
   return 0;
 }

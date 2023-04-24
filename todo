@@ -221,6 +221,14 @@ add ble.
 update FCD for new diag fw. (DIAG_v1.0.1)
 update FTU for new diag fw. (DIAG_v1.0.1)
 port led not work. (DIAG_v1.0.1)
+fcd add clear env.
+fcd add set env.
+fcd update upgrade diag fw.
+fcd update diag fw.
+fcd update helper.
+fcd update mtdblock.
+fine tune fcd ping timeout.
+ftu 8 items.
 
 //usw-aggregation-pro, update fcd fw to 6.4.19. 
 //verify lcm reset pin command process.

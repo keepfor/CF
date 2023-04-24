@@ -1,29 +1,22 @@
-set visualbell
-
-set t_ti= t_te=
-
-execute "set <M-j>=\ej"
-nnoremap <M-j> :!make
-
-execute "set <M-k>=\ek"
-nnoremap <M-k> :e input.txt
-
-execute "set <M-l>=\el"
-nnoremap <M-l> :q!
-
-set completeopt=longest,menu
-
-nnoremap <F4> :! . ~/j/start_ftu.sh
+nnoremap <c-a> ggvG$
+nnoremap <s-j> :e input.txt
+nnoremap <s-k> :!make
+nnoremap <s-l> :q!
+nnoremap <s-r> :!make re
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <F4> :!bash /home/jackcai/scripts/start_ftu.sh
 nnoremap <F3> :e ~/j/ftu_log_folder
-
-command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
-
-set timeoutlen=50
-
+inoremap jk <esc>
+inoremap kj <esc>
+nnoremap ; :
+set visualbell
+set t_ti= t_te=
 set t_TI= t_TE=
-
+set timeoutlen=10
 set splitbelow
-
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\e[6 q\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
@@ -31,39 +24,18 @@ else
     let &t_SI = "\e[6 q"
     let &t_EI = "\e[2 q"
 endif
-
-inoremap jk <esc>
-inoremap kj <esc>
-
-nnoremap ; :
-
-set mouse=a
-
-set clipboard^=unnamed,unnamedplus 
-
-set nocompatible 
-
-set smartindent 
-set autoindent
-filetype plugin indent on   
-set backspace=indent,eol,start
-
 set expandtab
-syntax on 
+set nocompatible 
 set number 
- 
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-
 set nobackup
 set autochdir
+set clipboard^=unnamed,unnamedplus 
+set mouse=a
+set smartindent autoindent cindent
+set backspace=indent,eol,start
+set shiftwidth=2 softtabstop=2 tabstop=2
 set backupcopy=yes 
-
 set ignorecase smartcase 
 set incsearch hlsearch 
-
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+filetype plugin indent on   
+command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
