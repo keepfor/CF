@@ -1,6 +1,53 @@
-1
-3
-2
-0
-0
-0
+Count = 44
+UISP
+TWFCD-3033, [UISP-P], Update la battery discharge test, to change the logic of checking dc output0.
+TWFCD-3032, [UISP-P], Update li battery discharge test, to change the logic of checking dc output0.
+TWFCD-3122, [UISP-S] EE6F, FTU support, new pcba 113-01261-xx.
+TWFCD-3037, [UISP-S], ee6f, FCD support, new pcba 113-01261-xx.
+TWFCD-3038, [UISP-S], update shipping fw. (rtl930x.v1.5.1.bix.)
+TWFCD-3135, UISP-P-PRO, add Check LCM test after shipping FW upgraded.
+TWFCD-3031, UISP-P-PRO, update fcd diag fw to UISPP.v9.0.7-diag.
+TWFCD-3030, UISP-P-PRO, update ftu diag fw to UISPP.v9.0.7-diag.
+TWFCD-3124, UISP-R, update fcd, remove redundant files.
+TWFCD-3036, UISP-R-PLUS, develop fcd, new platform, Marvell OCTEON TX2 CN913X.
+TWFCD-3125, UISP-R-PLUS, new platform npi, verify registration process.
+TWFCD-3132, UISP-R-PRO, add burntemp to config panel.
+TWFCD-3035, UISP-R-PRO, add burntimout to config panel.
+TWFCD-3133, UISP-R-PRO, rewrite upgrade-lcm-firmware with lcm-load.
+TWFCD-3034, UISP-R-PRO, update expect process for setenv.
+TWFCD-3126, UISP-S-PLUS, new platform npi, verify registration process.
+TWFCD-3136, UISP-S-PRO, add snake config 100.
+
+ULED
+TWFCD-3042, [ULED-BAR], add 2nd 3000K CT power.
+TWFCD-3137, [ULED-BAR], add 2nd 4000K CT power.
+TWFCD-3139, [ULED-DOWN-100MM], add 2nd 3000k ct power test.
+TWFCD-3043, [ULED-DOWN-100MM], add 2nd id test.
+TWFCD-3044, [ULED-DOWN-150MM], update 3000k ct power test, support two edges testing.
+TWFCD-3045, [ULED-DOWN-150MM], update 4000k ct power test, support two edges testing.
+TWFCD-3140, [ULED-DOWN-150MM], update 5000k ct power test, support two edges testing.
+TWFCD-3046, [ULED-PANEL], update 4000k ct power test, support two edges testing.
+TWFCD-3049, [ULED-STRIP-10M], add model, define sysid-bom, b008-80008.
+TWFCD-3047, [ULED-STRIP-1M], add id test.
+TWFCD-3048, [ULED-STRIP-5M], add model, define sysid-bom, b007-80007.
+TWFCD-3050, [ULED-STRIP-COLOR-1M], update blue channel test, support Two Edges testing.
+TWFCD-3141, [ULED-STRIP-COLOR-1M], update W/R/G/B total power test, support Two Edges testing.
+TWFCD-3142, [ULED-STRIP-COLOR-5M], add 2nd id test.
+TWFCD-3041, [ULED-STRIP-COLOR-5M], add W/R/G/B total power.
+TWFCD-3138, ULED-BAR, add switch to another edge instruction window to 2nd check-id-test.
+
+USP
+TWFCD-3123, USP-BATTERY, update xmodem app fw to v1.1.4.332.
+TWFCD-3121, USP-RPS-PRO, update burnin.cfg of FTU.
+
+USW
+TWFCD-3129, USW-AGGREGATION, fcd fail, helper fail.
+TWFCD-3128, USW-AGGREGATION, verify lcm reset pin command process.
+TWFCD-3127, USW-AGGREGATION-PRO, verify lcm reset pin command process.
+TWFCD-3130, USW-ENTERPRISE-48-POE, update fcd fw to 6.4.19.
+TWFCD-3155, USW-ENTERPRISE-48-POE, verify lcm reset pin fw command and process. (Brcm)
+TWFCD-3131, USW-ENTERPRISEXG-24, add lcm reset pin test.
+TWFCD-3134, USW-FLEX, update fcd fw to, US.mt7621_6.4.15.
+TWFCD-3039, USW-FLEX-XG, add retry for portlink test, improve retest rate.
+TWFCD-3040, USW-FLEX-XG, reset button FAIL, it will reboot.
+

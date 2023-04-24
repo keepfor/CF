@@ -17,13 +17,6 @@ set t_ti= t_te=
 set t_TI= t_TE=
 set timeoutlen=10
 set splitbelow
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[6 q\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
-else
-    let &t_SI = "\e[6 q"
-    let &t_EI = "\e[2 q"
-endif
 set expandtab
 set nocompatible 
 set number 

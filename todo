@@ -221,14 +221,29 @@ add ble.
 update FCD for new diag fw. (DIAG_v1.0.1)
 update FTU for new diag fw. (DIAG_v1.0.1)
 port led not work. (DIAG_v1.0.1)
+fcd update upgrade diag fw.DIAG_v2.0.0: uisp-s-plus_256.ubi
 fcd add clear env.
 fcd add set env.
-fcd update upgrade diag fw.
 fcd update diag fw.
 fcd update helper.
 fcd update mtdblock.
 fine tune fcd ping timeout.
-ftu 8 items.
+
+Port LED test, cmd flow change.
+System LED test, cmd flow change.
+DDR test, cmd flow change.
+SFP Flash test, cmd flow change.
+NAND Flash test, remove.
+Bt connect, remove.
+FAN test, criteria change.
+BLE RSSI test, add and verify.
+Port LED test, cmd flow change.
+Burn-in test, setenv burnTimeout 16200.
+Burn-in test, setenv burnFailedstop 1.
+Upgrade runtime Image. *UISPS.act5.recovery.v0.0.1-dev1+ubnt.28073.76a3f79.230406.1100.bin
+
+showmac issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
+showSys issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
 
 //usw-aggregation-pro, update fcd fw to 6.4.19. 
 //verify lcm reset pin command process.
@@ -345,6 +360,8 @@ fw upgrade, add scp logging.
 remove fwupdate.bin first.
 upgrade to diag fw, cmd can not reboot.
 upgrade to diag fw, want to reboot -f but ssh client crash. 
+new FW 3.2.0 - 等馬丁哥 release
+pre burnin buffer
 
 //usw-flex-xg, add retry for portlink test for FW 6.3.8.
 //usw-flex-xg, update fcd fw to 6.3.8.
@@ -381,7 +398,7 @@ uisp-p-pro, charger dc output is too low.
 3. Update runtime FW to UISPP.v1.0.0-rc.3.1bf95c.230301.0836.bin.
 - Update BLE test, rewrite parser and calculation.
 Bundle runtime FW to UISPP.v1.0.1.d1000fd.230321.1633.bin.
-add upgrade to diag fw.
+add upgrade to diag fw. (Diag: 9.0.8
 remove ssh login in cmd_diag.
 fw upgrade, add scp logging.
 remove fwupdate.bin first.

@@ -1,1 +1,88 @@
-
+USW-ENTERPRISE-48-POE, verify lcm reset pin fw command and process. (Brcm)
+[uled-strip-color-5m], add 2nd id test.
+[uled-strip-color-1m], update W/R/G/B total power test, support Two Edges testing.
+[ULED-Down-150mm], update 5000k ct power test, support two edges testing.
+[ULED-Down-100mm], add 2nd 3000k ct power test.
+uled-bar, add switch to another edge instruction window to 2nd check-id-test.
+[uled-bar], add 2nd 4000K CT power.
+uisp-s-pro, add snake config 100.
+uisp-p-pro, add Check LCM test after shipping FW upgraded.
+usw-flex, update fcd fw to, US.mt7621_6.4.15.
+uisp-r-pro, rewrite upgrade-lcm-firmware with lcm-load.
+uisp-r-pro, add burntemp to config panel.
+usw-enterprisexg-24, add lcm reset pin test.
+usw-enterprise-48-poe, update fcd fw to 6.4.19.
+usw-aggregation, fcd fail, helper fail.
+usw-aggregation, verify lcm reset pin command process.
+usw-aggregation-pro, verify lcm reset pin command process.
+uisp-s-plus, new platform npi, verify registration process.
+uisp-r-plus, new platform npi, verify registration process.
+uisp-r, update fcd, remove redundant files.
+usp-battery, update xmodem app fw to v1.1.4.332.
+[uisp-s] ee6f, FTU support, new pcba 113-01261-xx.
+usp-rps-pro, update burnin.cfg of FTU.
+[uled-strip-color-1m], update blue channel test, support Two Edges testing.
+[uled-strip-10m], add model, define sysid-bom, b008-80008.
+[uled-strip-5m], add model, define sysid-bom, b007-80007.
+[uled-strip-1m], add id test.
+[uled-panel], update 4000k ct power test, support two edges testing.
+[ULED-Down-150mm], update 4000k ct power test, support two edges testing.
+[ULED-Down-150mm], update 3000k ct power test, support two edges testing.
+[ULED-Down-100mm], add 2nd id test.
+[uled-bar], add 2nd 3000K CT power.
+[uled-strip-color-5m], add W/R/G/B total power.
+usw-flex-xg, reset button FAIL, it will reboot.
+usw-flex-xg, add retry for portlink test, improve retest rate.
+[uisp-s], update shipping fw. (rtl930x.v1.5.1.bix.)
+[uisp-s], ee6f, FCD support, new pcba 113-01261-xx.
+uisp-r-plus, develop fcd, new platform, Marvell OCTEON TX2 CN913X.
+uisp-r-pro, add burntimout to config panel.
+uisp-r-pro, update expect process for setenv.
+[uisp-p], Update la battery discharge test, to change the logic of checking dc output0.
+[uisp-p], Update li battery discharge test, to change the logic of checking dc output0.
+uisp-p-pro, update fcd diag fw to UISPP.v9.0.7-diag.
+uisp-p-pro, update ftu diag fw to UISPP.v9.0.7-diag.
+TWFCD-3155
+TWFCD-3142
+TWFCD-3141
+TWFCD-3140
+TWFCD-3139
+TWFCD-3138
+TWFCD-3137
+TWFCD-3136
+TWFCD-3135
+TWFCD-3134
+TWFCD-3133
+TWFCD-3132
+TWFCD-3131
+TWFCD-3130
+TWFCD-3129
+TWFCD-3128
+TWFCD-3127
+TWFCD-3126
+TWFCD-3125
+TWFCD-3124
+TWFCD-3123
+TWFCD-3122
+TWFCD-3121
+TWFCD-3050
+TWFCD-3049
+TWFCD-3048
+TWFCD-3047
+TWFCD-3046
+TWFCD-3045
+TWFCD-3044
+TWFCD-3043
+TWFCD-3042
+TWFCD-3041
+TWFCD-3040
+TWFCD-3039
+TWFCD-3038
+TWFCD-3037
+TWFCD-3036
+TWFCD-3035
+TWFCD-3034
+TWFCD-3033
+TWFCD-3032
+TWFCD-3031
+TWFCD-3030
