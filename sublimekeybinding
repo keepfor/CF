@@ -9,3 +9,9 @@
 
 ]
 "always_prompt_for_file_reload": false
+
+	"word_wrap": "true",
+	"font_size": 17,
+	"find_selected_text": true,
+	"tab_size":2,
+}
