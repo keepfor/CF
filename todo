@@ -1,10 +1,10 @@
-rps-pro, lcm reset pin test.
-verify ftu tests.
+//verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
+usp-rps, lcm reset pin test.
 create new build for ftu.
-uls error.Find file: data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
+Find the cause of uls error. Find file: data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
 
 //usp-rps-pro, update enable burnin, update burnin.cfg. 
-usp-rps-pro, update enable burnin, update burnin.sh. 
+//usp-rps-pro, update enable burnin, update burnin.sh. (15 secs delay)
 usp-rps-pro, update lead acid battery, add wait 15 secs for battery stability.
 usp-rps-pro, update lead acid battery, update fast charging current criteria.
 usp-rps-pro, update lead acid battery, update slow charging current criteria.
@@ -41,10 +41,8 @@ FTU UM.mt7621_6.5.39.
 //uisp-s, add new test item, snake 10.
 //uisp-s, 3/24, UISP-S,	ee6f,	113-00988-xx,	113-01261-xx
 //uisp-s, update shipping fw.
-uisp-s, login kernel hang.
-uisp-s, telnet fail.
-uisp-s, update ftu with new pcba.
-//uisp-s, update fcd with new pcba.
+Find the cause of, login kernel hang.
+Find the cause of, uisp-s, telnet fail.
 update ble test, calculation.
 update ble test, parser.
 1. Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
@@ -90,14 +88,8 @@ cmd.exe lanuage issues.
 python path issues.
 help fw team to resign fcd to fix eeprom issues.
 
-//uisp-r, 3/24,	ee6e,	113-00989-xx,	113-01262-xx.
-//uisp-r, update ftu with new pcba.
-//uisp-r, update fcd with new pcba.
-//uisp-r, update fcd, remove redundant files.
-//uisp-r, update ftu with new diag.
-add fw upgrade.
+//add fw upgrade.
 update fw update, add scp logging.
-update enable ssh, only update sshServer.enabled.
 update runtime fw.
 update check runtime ver.
 update factory reset test ordering.
@@ -172,8 +164,10 @@ poe test issue. diag v9.0.1
 separate poe function and led.
 burnin reboot issue, update diag.
 fcd, emmc format issues, update fcd.
+r+ Port LED test順序幫我修改一下
 
 //uisp-s-plus, develop fcd, new platform, Marvell Prestera 98DX25xx.
+//uisp-s-plus, verify upgrade to diag fw with fcd process.
 uisp-s-plus, add devreg debug at the end of fcd.
 uisp-s-plus, fcd fail with fw 001.
 uisp-s-plus, ssh password is not correct.
@@ -240,49 +234,43 @@ BLE RSSI test, add and verify.
 Port LED test, cmd flow change.
 Burn-in test, setenv burnTimeout 16200.
 Burn-in test, setenv burnFailedstop 1.
+Burn-in test, sync r-pro.
 Upgrade runtime Image. *UISPS.act5.recovery.v0.0.1-dev1+ubnt.28073.76a3f79.230406.1100.bin
-
 showmac issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
 showSys issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
+S+ Port LED test順序幫我修改一下
 
 //usw-aggregation-pro, update fcd fw to 6.4.19. 
 //verify lcm reset pin command process.
 
-usw-aggregation, update fcd fw to 6.4.19. 
+//usw-aggregation, update fcd fw to 6.4.19. 
 //usw-aggregation, fcd fail, helper fail.
 //verify lcm reset pin command process.
 
 doc, how to enable fail_stop feature of FTU.
 
 //usw-industrial, update fcd fw to ubidiag fw.
-usw-industrial, create ftu, support upgrade to shipping fw.
+//usw-industrial, create ftu, support upgrade to shipping fw.
 
-usw-brcm5616, update fw to US.bcm5616x_6.4.19+14340.221224.1437-uboot.bin.
-usw-pro-series, release fcd with US.bcm5616x_6.4.19+14340.221224.1437-uboot.bin.
-usw-enterprise-24-poe, release fcd with US.bcm5616x_6.4.19+14340.221224.1437-uboot.bin.
-verify lcm reset pin command process.
+//usw-enterprise-24-poe, release fcd with US.bcm5616x_6.4.19+14340.221224.1437-uboot.bin.
 
-usw-enterprise-8-poe, update fcd fw to 6.4.19.
 usw-enterprise-8-poe, power consumption.
-usw-enterprise-8-poe, lcm backlight behavior.
 at poe test issues.
 update poe test board setting.
 add poe check output power.
 update lcm reset pin test id.
 
-usw-enterprise-48-poe, update fcd fw to 6.3.8.
-usw-enterprise-48-poe, update fcd fw to 6.4.19.
-verify lcm reset pin command process.
-new fcd fw. (6.5.46, PoE MCU 2nd source
+usw-enterprise-48-poe, new fcd fw. (6.5.48, PoE MCU 2nd source
+usw-enterprise-48-poe, update t1 fw to fix syswrapper.sh upgrade2 issues. (6.5.48, PoE MCU 2nd source
+usw-enterprise-48-poe, create and verify rpi4 fcd build files.
 
-usw-enterprisexg-24, update fcd fw to 6.4.19.
+//usw-enterprisexg-24, update fcd fw to 6.4.19.
 usw-enterprisexg-24, power consumption.
 usw-enterprisexg-24, update ups test. 
 add lcm reset pin.
 usw-enterprisexg-24, add lcm reset pin test.
 portal ecof issues.
 
-uisp-box-pro, create fcd for new product, new platfrom/cpu.
 uisp-box-pro, rsa key issues when doing registration.
 
 //uisp-p-ups, update Diag FW to fix flash uid issues of registration.
@@ -298,12 +286,9 @@ update eu lte test, add at retry improve retest rate.
 update br lte test, add at retry improve retest rate.
 update ar lte test, add at retry improve retest rate.
 
-usw-mission-critical, add new Test Item:  Slide 20: FP.7 External Batt. Start-up Charging Test
 usw-mission-critical, update external battery.
-usw-mission-critical, remove lead battery tests.
-usw-mission-critical, support and verify eu version.
+usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
 usw-mission-critical, add, FP.8.1 LTE - band check
-usw-mission-critical, verify all ftu test items.
 usw-mission-critical, lcm failed in fcd.
 usw-mission-critical, lcm failed in ftu.
 usw-mission-critical, lte check band failed.
@@ -312,17 +297,13 @@ usw-mission-critical, eu, update fcd fw to 6.4.20.
 usw-mission-critical, external battery issue, usp battery does not show charging.
 usw-mission-critical, external battery test, update mcu power setting.
 lcm reset pin test.
-
-uisp-r-pro, update expect process for setenv.
+update external battery test.
+remove external battery test.
+add lead acid battery test.
 
 uisp-r-pro, burnin fail in ltn, cpu high temperature.
-//uisp-r-pro, add burntimout to config panel.
-//uisp-r-pro, add burntemp to config panel.
-uisp-r-pro, add test fan1 to enable-burnin-test.
-uisp-r-pro, add test fan2 to enable-burnin-test.
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
-//uisp-r-pro, rewrite upgrade-lcm-firmware with lcm-load.
 uisp-r-pro, rewrite lcm test with new diag v9.0.10.
 uisp-r-pro, remove test lcm aligment, backlight, touch, burnin.
 uisp-r-pro, update runtime fw to UISPR.alpinev2r.v2.4.1-rc.1.c1f2393.221117.1215.bin.
@@ -362,30 +343,24 @@ upgrade to diag fw, cmd can not reboot.
 upgrade to diag fw, want to reboot -f but ssh client crash. 
 new FW 3.2.0 - 等馬丁哥 release
 pre burnin buffer
+uisp-r-pro, update upgrade to diag image, change cmd flow.
+setenv burnDelay 600 (10 mins).
+separate kill process cmd with fw upgrade cmd.
+lcm dfu mode fail.
 
-//usw-flex-xg, add retry for portlink test for FW 6.3.8.
-//usw-flex-xg, update fcd fw to 6.3.8.
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
-//usw-flex-xg, reset button will reboot.
 usw-flex-xg, factory default issues.
 usw-flex-xg, ping failed with factory pc.
 usw-flex-xg, update fw to 6.4.19.
 usw-flex-xg, remove reset button.
 usw-flex-xg, merge reset button test to factory default.
 
-usw-flex, done, usw-flex, update enable burnin to fix burnin led issues.
-usw-flex, update fcd fw, v6.3.10.
-usw-flex, update fcd fw, v6.3.12.
-usw-flex, update fcd fw, v6.3.16.
-//usw-flex, re-sign board-id to enable poe output for usw-flex-inwall internal development.
-//usw-flex, update fcd fw to, US.mt7621_6.4.15+14311.221128.1450-uboot.bin.
-usw-flex, update burnin script to improve retest rate of burnin test.
+usw-flex, update burnin script to improve retest rate of burnin test. (increase delay)
 usw-flex, update, update shipping fw to US.mt7621_6.4.18+14328.221213.1324-uboot.bin.
 
-//uisp-p-pro, add Check LCM after shipping FW upgraded.
-uisp-p-pro, update testing order of lcm and lte test.
-uisp-p-pro, Update la battery charge test, to change the logic of checking dc output 0, 1, 2.
+//uisp-p-pro, update testing order of lcm and lte test.
+//uisp-p-pro, Update la battery charge test, to change the logic of checking dc output 0, 1, 2.
 uisp-p-pro, Update la battery charge test, to change the criteria of psu voltage.
 uisp-p-pro, Update la battery charge test, add retry and update test flow.
 uisp-p-pro, Update li battery discharge test, to change the logic of checking dc output 0, 1, 2.
@@ -404,13 +379,10 @@ fw upgrade, add scp logging.
 remove fwupdate.bin first.
 
 uisp-p, Update charger test, change the logic of checking dc output0.
-//uisp-p, Update li battery discharge test, to change the logic of checking dc output0.
-//uisp-p, Update la battery discharge test, to change the logic of checking dc output0.
-
 uisp-p, add retry to charge test.
 uisp-p, add retry to li battery discharge test.
 uisp-p, add retry to la battery discharge test.
-uisp-p, update parser and criteria of charge test, mv to V.
+//uisp-p, update parser and criteria of charge test, mv to V.
 uisp-p, update parser and criteria of li discharge test, mv to V.
 uisp-p, update parser and criteria of la discharge test, mv to V.
 uisp-p, la battery log parsing failed.
@@ -427,15 +399,11 @@ remove oqc1 Check Power Status.
 remove oqc2 Check Voltage/Current Status.
 remove oqc3 System Shutdown.
 
-uisp-s-pro, update fcd with new diag fw, 1.3.8-DEV07.bix.
-uisp-s-pro, update ftu with new diag fw, 1.3.8-DEV07.bix.
-uisp-s-pro, update ftu with new runtime fw, rtl930x.v1.5.1.bix.
-uisp-s-pro, update fcd with new diag fw, .
 update ble test, rewrite parser and calculation.
 update ble test, update tx checking process..
 update ble criteria issue.
 //add snake config 100.
-add snake config 10.
+//add snake config 10.
 add port speed 100.
 add port speed 10.
 add port information.
@@ -452,10 +420,11 @@ uisp-s-pro, update ftu with new diag fw, 1.3.8-DEV08.bix.
 refactor snake.
 refactor port speed.
 refactor port information.
+help ee to resign some uisp-s-pro.
 
 //uled-bar, add 2nd id test. 
 //uled-bar, add switch to another edge instruction window to 2nd check-id-test.
-uled-bar, PM and FW ask for verifying new FW with FTU.
+uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.gadcae88.221209.0740-uboot.bin.
 uled-bar, add delay after recognizing dut id.
 uled-bar, add delay after dimming dut.
 uled-bar, PM ask for verifying lvdu4 with lvdu24 FTU.
@@ -473,7 +442,6 @@ uled-bar, add mapping of port and serialnumber.
 uled-bar, add 4 port serial number config.
 uled-bar, update used ports to 4 ports.
 uled-bar, update used ports to 1 ports.
-uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.gadcae88.221209.0740-uboot.bin.
 
 uled-down-100mm, add switch to another edge instruction window to 2nd check-id-test.
 
@@ -483,8 +451,8 @@ uled-down-150mm, add switch to another edge instruction window to 2nd check-id-t
 uled-strip-color-1m, remove all plugin instruction windowns of white channel test, requests from factory.
 uled-strip-color-1m, add switch to another edge instruction window to 2nd check-id-test.
 
-uled-color-strip-5m
-uled-color-strip-10m
+uled-strip-color-5m
+uled-strip-color-10m
 uled-strip-1m
 uled-strip-5m
 uled-strip-10m
