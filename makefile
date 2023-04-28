@@ -5,7 +5,7 @@ dotSwap=.sol.*
 copySrc=copy.cc
 output=output.txt
 input=input.txt
-resetCc=reset.cc
+resetSrc=reset.cc
 
 define re
 	echo > ${input}
