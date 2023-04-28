@@ -1,8 +1,15 @@
 CC=g++
+obj=objSolCc
+src=sol.cc
+dotSwap=.sol.*
+copySrc=copy.cc
+output=output.txt
+input=input.txt
+resetCc=reset.cc
 
 define re
-	echo > input.txt
-	cp reset.cc sol.cc
+	echo > ${input}
+	cp ${resetSrc} ${src}
 endef
 
 debug="-DLOCAL"
@@ -11,8 +18,6 @@ DEBUGFLAGS = -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsan
 
 .PHONY: reset new
 
-obj=o
-src=sol.cc
 all: ${obj} main copy clean 
 	
 clear:
@@ -22,22 +27,22 @@ ${obj}: ${src}
 	$(CC) ${CXXFLAGS} ${debug} ${src} -o ${obj} -DDEBUG -g 
 
 main:
-	./${obj} <input.txt> output.txt 
-	cat output.txt
+	./${obj} <${input}> ${output}
+	cat ${output}
 
 clean:
-	rm -f .sol.*
+	rm -f ${dotSwap}
 
 copy:
-	cp sol.cc copy.cc
+	cp ${src} ${copySrc}
 
 re:
 	$(re)
 
 rev:
 	$(re)
-	vim sol.cc
+	vim ${src}
 
 new:
-	echo > input.txt
-	cp reset.cc sol.cc
+	echo > ${input}
+	cp ${resetSrc} ${src}
