@@ -1,0 +1,38 @@
+
+{
+	"word_wrap": true,
+	"hot_exit": false,
+    "remember_open_files": false,
+	"font_size": 11,
+	"theme": "auto",
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"find_selected_text": true
+}
+
+[
+	{
+		"keys": ["ctrl+j"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "make"
+		}
+	},
+	{
+		"keys": ["ctrl+u"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "bash ~/j/start_ftu.sh"
+		}
+	},
+	{
+		"keys": ["ctrl+r"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "make re"
+		}
+	},
+	{ 
+	    "keys"    : ["f5"], 
+	    "command" : "refresh_folder_list" 
+	}
+]
