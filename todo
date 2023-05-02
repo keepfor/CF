@@ -353,6 +353,8 @@ fcd port 9 uboot no network. UISPR.alpinev2.v9.0.12
 fcd port 1 uboot no network. UISPR.alpinev2.v9.0.12
 remove eeprom and port 9 fcd fail.
 lcm normal and dfu fail.
+update process of lcm dfu.
+help ee sign some boards. regitration fail.
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
