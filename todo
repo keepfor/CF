@@ -353,8 +353,13 @@ fcd port 9 uboot no network. UISPR.alpinev2.v9.0.12
 fcd port 1 uboot no network. UISPR.alpinev2.v9.0.12
 remove eeprom and port 9 fcd fail.
 lcm normal and dfu fail.
-update process of lcm dfu.
+lcm dfu second loop fail.
+update process of lcm dfu, add boot lcm gipo to loop test.
 help ee sign some boards. regitration fail.
+update fcd port to port 1 to 8, for uboot network for uboot 1.8.1.
+update boot.img to ubnt_uispr_alpinev2_rev1_boot _v1.6.1.img.
+update network env to ethact al_eth1 for port 9.
+diag 9.0.13 is coming.
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
