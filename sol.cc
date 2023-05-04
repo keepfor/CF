@@ -7,6 +7,7 @@ public:
         for (int i = x; i <= n; i += (i & -i)) {
           f[i] += 1ll * v;
         }
+        countOperationsToEmptyArray
       };
       auto get = [&](int x) -> long long {
         long long ans = 0;
