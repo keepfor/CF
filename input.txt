@@ -1,31 +1,100 @@
-
-FTU_ee6d_1.0.13_3.2.0.zip
-MD5: 1335a5976f60512b3bd619d7769ef648
-https://drive.google.com/file/d/1BCHXVFquD9R2h9SzAjRPVoIMwKPAEt1G/view?usp=share_link
-
-FTU_ee6d_1.0.13_3.2.0
-* 改 killall ulcmd => /etc/init.d/ulcmd stop (Upgrade to runtime image)
-* Check 9.0.13 版的 diag imag 
-* Introduce FW2DIAG (9.0.13 版的 diag imag )
-* Bump final FW version to 3.2.0
-* Add delay buffer before burn-in start (10 mins)
-* Introduce DFU test before final FW upgrade
-	- Sleep time before dfu-util -l change to 3
-	- Using command /etc/init.d/ulcmd stop to replace systemctl stop ulcmd
-
-
-FCD_UbiquitiNMS_UISP-R-PRO_1.0.0_9.0.13.tgz
-MD5: fd65b9430ac96ebc81dbcc8b8ed70c66
-https://drive.google.com/file/d/1260ybQJY-AP4iTREAvWB4Ff_7d7q71AU/view?usp=share_link
-
-FCD_UbiquitiNMS_UISP-R-PRO_1.0.0_9.0.13
-* Bump new diag image (9.0.13 版的 diag imag)
-
-
-
-
-
-
-
-
-
+usp-rps, add lcm reset pin test (ftu).
+usp-battery, update lcm fw (v0.1.0.0) for lcm upgrade. (ftu)
+uisp-r-plus, new platform npi, verify and develop upgrade diag process. (fcd)
+uisp-r, update fw update, add scp logging.
+uisp-r-pro, update fcd with new pcba. (ee6d, 113-01265-xx)
+uisp-p, add retry to li battery discharge test.
+uisp-p-pro, Update li battery discharge test, to change the logic of checking dc output 0, 1, 2.
+uisp-s, Add snake config 100M.
+uisp-s-plus, add devreg debug at the end of fcd.
+uled-panel, add 2nd 3000k ct test.
+uled-strip-10m, add 3000k ct power test.
+uled-strip-5m, add 3000k ct power test.
+uled-strip-1m, add ct 4000k power test.
+uled-strip-color-10m, add red channel test.
+uled-strip-color-5m, add 2nd red channel test.
+uled-strip-color-1m, add 2nd white channel test.
+uled-down-150mm, add 2nd 3000k ct power test.
+uled-down-100mm, add 2nd 5000k ct power test.
+uled-bar, add delay after recognizing dut id. (all 3000k ct power tests)
+uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
+uisp-s-pro, add snake config 10.
+uisp-p, update parser and criteria of charge test, mv to V.
+uisp-p-pro, update testing order of lcm and lte test.
+uisp-r-pro, add test fan2 to enable-burnin-test.
+usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
+usw-enterprisexg-24, update fcd fw to 6.4.19.
+usw-enterprise-48-poe, new fcd fw. (6.5.46, PoE MCU 2nd source)
+usw-enterprise-8-poe, lcm backlight behavior issues.
+uisp-r, add fw upgrade. (Runtime FW)
+usp-rps-pro, update burnin.sh. (15 secs delay)
+usp-rps, verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
+uisp-p-pro, add Check LCM test after shipping FW upgraded.
+usw-flex, update fcd fw to, US.mt7621_6.4.15.
+uisp-r-pro, rewrite upgrade-lcm-firmware with lcm-load.
+usw-aggregation, fcd fail, helper fail.
+usw-aggregation-pro, verify lcm reset pin command process.
+uisp-r-plus, new platform npi, verify registration process.
+usp-battery, update xmodem app fw to v1.1.4.332.
+usw-flex-xg, reset button FAIL, it will reboot.
+[uisp-s], update shipping fw. (rtl930x.v1.5.1.bix.)
+uacc-lte, update input serial number test, add a pop-up window.
+[uisp-s], add new test item, snake 10.
+uisp-r-pro, burnin fail in ltn, cpu high temperature.
+usw-mission-critical, remove lead battery tests.
+usw-mission-critical, add, FP.8.1 LTE - band check
+usw-aggregation-pro, update fcd fw to 6.4.19.
+usw-industrial, create ftu, support upgrade to shipping fw.
+uisp-p-pro, update lcm expected string to cover different lcm types.
+[uisp-p], update ftu with new runtime fw, UISPP.v1.0.0-rc.1.c751e5.221201.0947.bin.
+UACC-LTE, add new test case, get imei of LTE.
+TWFCD-3377
+TWFCD-3376
+TWFCD-3375
+TWFCD-3374
+TWFCD-3373
+TWFCD-3372
+TWFCD-3371
+TWFCD-3370
+TWFCD-3369
+TWFCD-3368
+TWFCD-3367
+TWFCD-3366
+TWFCD-3365
+TWFCD-3364
+TWFCD-3363
+TWFCD-3362
+TWFCD-3361
+TWFCD-3360
+TWFCD-3359
+TWFCD-3278
+TWFCD-3277
+TWFCD-3276
+TWFCD-3274
+TWFCD-3273
+TWFCD-3272
+TWFCD-3271
+TWFCD-3270
+TWFCD-3269
+TWFCD-3266
+TWFCD-3265
+TWFCD-3264
+TWFCD-3135
+TWFCD-3134
+TWFCD-3133
+TWFCD-3129
+TWFCD-3127
+TWFCD-3125
+TWFCD-3123
+TWFCD-3040
+TWFCD-3038
+TWFCD-2895
+TWFCD-2891
+TWFCD-2793
+TWFCD-2791
+TWFCD-2790
+TWFCD-2787
+TWFCD-2452
+TWFCD-2426
+TWFCD-2292
+TWFCD-1914

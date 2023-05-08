@@ -4,9 +4,9 @@ TWFCD-1914, UACC-LTE, add new test case, get imei of LTE.
 TWFCD-2895, UACC-LTE, update input serial number test, add a pop-up window.
 
 UISP
-TWFCD-2292, [UISP-P], update ftu with new runtime fw, UISPP.v1.0.0-rc.1.c751e5.221201.0947.bin.
-TWFCD-2891, [UISP-S], add new test item, snake 10.
-TWFCD-3038, [UISP-S], update shipping fw. (rtl930x.v1.5.1.bix.)
+TWFCD-2292, UISP-P, update ftu with new runtime fw, UISPP.v1.0.0-rc.1.c751e5.221201.0947.bin.
+TWFCD-2891, UISP-S, add new test item, snake 10.
+TWFCD-3038, UISP-S, update shipping fw. (rtl930x.v1.5.1.bix.)
 TWFCD-3372, UISP-P, add retry to li battery discharge test.
 TWFCD-3276, UISP-P, update parser and criteria of charge test, mv to V.
 TWFCD-3135, UISP-P-PRO, add Check LCM test after shipping FW upgraded.
