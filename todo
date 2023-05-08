@@ -1,3 +1,5 @@
+usw, help fw rd search usage of 'syswrapper.sh save-config '.
+
 //verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
 usp-rps, lcm reset pin test.
 create new build for ftu.
@@ -41,24 +43,24 @@ FTU UM.mt7621_6.5.39.
 //uisp-s, add new test item, snake 10.
 //uisp-s, 3/24, UISP-S,	ee6f,	113-00988-xx,	113-01261-xx
 //uisp-s, update shipping fw.
-Find the cause of, login kernel hang.
-Find the cause of, uisp-s, telnet fail.
-update ble test, calculation.
-update ble test, parser.
-1. Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
-2. Add snake config 100M.
-3. Add snake config 10M.
-4. Add Port speed change 100.
-5. Add Port speed change 10.
-6. Add Port information 100.
-6. Add Port information 10.
-7. Remove LCM check of check burnin result.
-refactor snake.
-refactor port speed.
-refactor port information.
+uisp-s, Find the cause of, login kernel hang.
+uisp-s, Find the cause of, uisp-s, telnet fail.
+uisp-s, update ble test, calculation.
+uisp-s, update ble test, parser.
+uisp-s, Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
+uisp-s, Add snake config 100M.
+uisp-s, Add snake config 10M.
+uisp-s, Add Port speed change 100.
+uisp-s, Add Port speed change 10.
+uisp-s, Add Port information 100.
+uisp-s, Add Port information 10.
+uisp-s, Remove LCM check of check burnin result.
+uisp-s, refactor snake.
+uisp-s, refactor port speed.
+uisp-s, refactor port information.
 
 usp-battery, update xmodem app fw to v1.1.4.332.
-usp-battery, update lcm fw to .
+//usp-battery, update lcm fw (v0.1.0.0) for lcm upgrade. (ftu) 
 usp-battery, update battery fw. 
 usp-battery, update recovery fw to v1.1.4.332.
 usp-battery, update ble app fw to v1.1.4.332.
@@ -69,54 +71,57 @@ usp-battery, ble tool dir path issues.
 usp-battery, i2c error after ble upgrade fw 
 usp-battery, lcm shows booting error after ble upgrade fw 
 usp-battery, update ble ftu tools to v. 
-getqrcode fail.
-Check LCM backlight Test，DUT复位后有测试到，再重复测试，LCM不会出现可以滑动的界面
-Check LCM alignment LCM没有界面出现
-Check LCM burnin FTU上提示需要看几种颜色，但测试时只有红，绿之后LCM跳入Test Pass
-Check BLE FAIL
-1. LCMTEST 有溢位處理問題, 先改用以下指令處理
-backlight 請改用 `lcmstr:test:backlight`
-alightment 請改用 `lcmstr:test:alightment`
-2. LCM Burnin command 少了秒數參數
-`lcmtest:burnin:10`
-3. BLE 問題請幫忙下 CLI
-`getblestatus`, `getblerssi`
-，試著用手機掃看看有沒有該台 battery 訊號 。
-lcm reset pin test.
-ltn issue, not install python.
-cmd.exe lanuage issues.
-python path issues.
-help fw team to resign fcd to fix eeprom issues.
+usp-battery, getqrcode fail.
+usp-battery, Check LCM backlight Test，DUT复位后有测试到，再重复测试，LCM不会出现可以滑动的界面
+usp-battery, Check LCM alignment LCM没有界面出现
+usp-battery, Check LCM burnin FTU上提示需要看几种颜色，但测试时只有红，绿之后LCM跳入Test Pass
+usp-battery, Check BLE FAIL
+usp-battery, 1. LCMTEST 有溢位處理問題, 先改用以下指令處理
+usp-battery, backlight 請改用 `lcmstr:test:backlight`
+usp-battery, alightment 請改用 `lcmstr:test:alightment`
+usp-battery, 2. LCM Burnin command 少了秒數參數
+usp-battery, `lcmtest:burnin:10`
+usp-battery, 3. BLE 問題請幫忙下 CLI
+usp-battery, `getblestatus`, `getblerssi`
+usp-battery, ，試著用手機掃看看有沒有該台 battery 訊號 。
+usp-battery, lcm reset pin test.
+usp-battery, ltn issue, not install python.
+usp-battery, cmd.exe lanuage issues.
+usp-battery, python path issues.
+usp-battery, help fw team to resign fcd to fix eeprom issues.
+usp-battery, lcm shows errors. 
+usp-battery, factory lcm process issues.
 
 //add fw upgrade.
-update fw update, add scp logging.
-update runtime fw.
-update check runtime ver.
-update factory reset test ordering.
-update test shell of burnin test..
-add user config for ip after upgrade runtime fw.
-update enable ssh port to 2 to 8.
-update runtime fw ip to 100.104.103.1.
-add expected runtime fw.
-1. Remove UISPR.mt7621.recovery.v1.10.1-rc.1.c592d31.210630.0809.bin
-2. Remove UISPR.mt7621.v1.10.1-rc.1.c592d31.210630.0754.bin
-3. Add new BOM ID support UISP-R Rev.B 113-01262-xx
-1. Update enable SSH, avoid overwriting of sshServer settings. 
-2. Remove UNMSR.mt7621.v1.1.0-rc.4.420d3d4.200904.0856.bin
-3. Remove UISPR.mt7621.v1.13.0.0437331.211129.1432.bin
-4. Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
-5. Add user config for expected FW version for FW upgrade test.
-6. Add user config for ip after FW upgrade for FW upgrade test.
-7. Update test.sh of burnin test.
-8. Update test ordering Factory reset test item.
-9. Support of UISP-R Rev.B 113-01262-xx, please update user config "bomrev".
-update burnin test tool.
-update fwupgrade, support reset ftu.
-fw 3.0.1 factory reset port 9 can not ping.
+//uisp-r, update fw update, add scp logging.
+uisp-r, update runtime fw.
+uisp-r, update check runtime ver.
+uisp-r, update factory reset test ordering.
+uisp-r, update test shell of burnin test..
+uisp-r, add user config for ip after upgrade runtime fw.
+uisp-r, update enable ssh port to 2 to 8.
+uisp-r, update runtime fw ip to 100.104.103.1.
+uisp-r, add expected runtime fw.
+uisp-r, Remove UISPR.mt7621.recovery.v1.10.1-rc.1.c592d31.210630.0809.bin
+uisp-r, Remove UISPR.mt7621.v1.10.1-rc.1.c592d31.210630.0754.bin
+uisp-r, Add new BOM ID support UISP-R Rev.B 113-01262-xx
+uisp-r, Update enable SSH, avoid overwriting of sshServer settings. 
+uisp-r, Remove UNMSR.mt7621.v1.1.0-rc.4.420d3d4.200904.0856.bin
+uisp-r, Remove UISPR.mt7621.v1.13.0.0437331.211129.1432.bin
+uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
+uisp-r, Add user config for expected FW version for FW upgrade test.
+uisp-r, Add user config for ip after FW upgrade for FW upgrade test.
+uisp-r, Update test.sh of burnin test.
+uisp-r, Update test ordering Factory reset test item.
+uisp-r, Support of UISP-R Rev.B 113-01262-xx, please update user config "bomrev".
+uisp-r, update burnin test tool.
+uisp-r, update fwupgrade, support reset ftu.
+uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 
 //usp-rps, update fcd fw to 6.4.20.
 
 //uisp-r-plus, develop fcd, new platform, Marvell OCTEON TX2 CN913X.
+//uisp-r-plus, new platform npi, verify and develop upgrade diag process.
 uisp-r-plus, ping uboot failed.
 uisp-r-plus, registration failed, eeprom pcba failed.
 uisp-r-plus, add fcd tlv data failed.
@@ -168,7 +173,7 @@ r+ Port LED test順序幫我修改一下
 
 //uisp-s-plus, develop fcd, new platform, Marvell Prestera 98DX25xx.
 //uisp-s-plus, verify upgrade to diag fw with fcd process.
-uisp-s-plus, add devreg debug at the end of fcd.
+//uisp-s-plus, add devreg debug at the end of fcd.
 uisp-s-plus, fcd fail with fw 001.
 uisp-s-plus, ssh password is not correct.
 uisp-s-plus, update diag fw to 004.
@@ -285,6 +290,7 @@ update ua lte test, add at retry improve retest rate.
 update eu lte test, add at retry improve retest rate.
 update br lte test, add at retry improve retest rate.
 update ar lte test, add at retry improve retest rate.
+survey control NE6000, lte retry.
 
 usw-mission-critical, update external battery.
 usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
@@ -301,7 +307,7 @@ update external battery test.
 remove external battery test.
 add lead acid battery test.
 
-uisp-r-pro, burnin fail in ltn, cpu high temperature.
+?uisp-r-pro, burnin fail in ltn, cpu high temperature.
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
 uisp-r-pro, rewrite lcm test with new diag v9.0.10.
@@ -317,8 +323,8 @@ uisp-r-pro, update lcm cmd to fix, undecode error.
 uisp-r-pro, update shipping fw to: UISPR.alpinev2r.v3.0.1.4938c4c.221215.1246.bin.
 uisp-r-pro, check burnin result, dump log when pass.
 uisp-r-pro, 3/3, ee6d,	113-01061-xx,	113-01265-xx
-uisp-r-pro, update ftu with new pcba.
-uisp-r-pro, update fcd with new pcba.
+uisp-r-pro, update ftu with new pcba. ()
+//uisp-r-pro, update fcd with new pcba. (ee6d, 113-01265-xx)
 uisp-r-pro, rpi4, usb not mount. reported by fw andrew.
 1. Remove UISPR.alpinev2.v9.0.10.a683096.221116.0525.bin
 2. Update Diag FW to UISPR.alpinev2.v9.0.11.246ff2f.230303.0209.bin 
@@ -359,7 +365,10 @@ help ee sign some boards. regitration fail.
 update fcd port to port 1 to 8, for uboot network for uboot 1.8.1.
 update boot.img to ubnt_uispr_alpinev2_rev1_boot _v1.6.1.img.
 update network env to ethact al_eth1 for port 9.
-diag 9.0.13 is coming.
+ee tools not found issues.
+fcd update with diag 9.0.13.
+ftu update with diag 9.0.13.
+update fwupgrade support exec /etc/init.d/ulcmd stop.
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
@@ -391,11 +400,11 @@ remove ssh login in cmd_diag.
 fw upgrade, add scp logging.
 remove fwupdate.bin first.
 
-uisp-p, Update charger test, change the logic of checking dc output0.
+//isp-p, Update charger test, change the logic of checking dc output0.
 uisp-p, add retry to charge test.
-uisp-p, add retry to li battery discharge test.
+//uisp-p, add retry to li battery discharge test.
 uisp-p, add retry to la battery discharge test.
-//uisp-p, update parser and criteria of charge test, mv to V.
+uisp-p, update parser and criteria of charge test, mv to V.
 uisp-p, update parser and criteria of li discharge test, mv to V.
 uisp-p, update parser and criteria of la discharge test, mv to V.
 uisp-p, la battery log parsing failed.
@@ -411,34 +420,32 @@ remove fwupdate.bin first.
 remove oqc1 Check Power Status.
 remove oqc2 Check Voltage/Current Status.
 remove oqc3 System Shutdown.
+uisp-p, revB fcd issues.
 
-update ble test, rewrite parser and calculation.
-update ble test, update tx checking process..
-update ble criteria issue.
-//add snake config 100.
-//add snake config 10.
-add port speed 100.
-add port speed 10.
-add port information.
+uisp-s-pro, 
+uisp-s-pro, update ble test, rewrite parser and calculation.
+uisp-s-pro, update ble test, update tx checking process.
+uisp-s-pro, update ble criteria issue.
+uisp-s-pro, add port speed 100.
+uisp-s-pro, add port speed 10.
+uisp-s-pro, add port information.
 uisp-s-pro, update fcd with new diag fw, 1.3.8-DEV08.bix.
 uisp-s-pro, update ftu with new diag fw, 1.3.8-DEV08.bix.
-1. Update Diag fw upgrade test with Diag fw v1.3.8-DEV08.
-2. Add snake config 100M.
-3. Add snake config 10M.
-4. Add Port speed change 100.
-5. Add Port speed change 10.
-6. Add Port information 100.
-6. Add Port information 10.
-7. Remove LCM check of check burnin result.
-refactor snake.
-refactor port speed.
-refactor port information.
-help ee to resign some uisp-s-pro.
+uisp-s-pro, Update Diag fw upgrade test with Diag fw v1.3.8-DEV08.
+uisp-s-pro, Add Port speed change 100.
+uisp-s-pro, Add Port speed change 10.
+uisp-s-pro, Add Port information 100.
+uisp-s-pro, Add Port information 10.
+uisp-s-pro, Remove LCM check of check burnin result.
+uisp-s-pro, refactor snake.
+uisp-s-pro, refactor port speed.
+uisp-s-pro, refactor port information.
+uisp-s-pro, help ee to resign some uisp-s-pro.
 
 //uled-bar, add 2nd id test. 
 //uled-bar, add switch to another edge instruction window to 2nd check-id-test.
-uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.gadcae88.221209.0740-uboot.bin.
-uled-bar, add delay after recognizing dut id.
+//uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.gadcae88.221209.0740-uboot.bin.
+//uled-bar, add delay after recognizing dut id. (all 3000k ct power tests) 
 uled-bar, add delay after dimming dut.
 uled-bar, PM ask for verifying lvdu4 with lvdu24 FTU.
 uled-bar, update code for lvdu4 version ftu with lvdu4-version test plan.

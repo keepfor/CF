@@ -1,0 +1,30 @@
+
+
+
+FCD_UbiquitiNMS_UISP-R-PRO_1.0.0_9.0.13.tgz
+MD5: fd65b9430ac96ebc81dbcc8b8ed70c66
+https://drive.google.com/file/d/1260ybQJY-AP4iTREAvWB4Ff_7d7q71AU/view?usp=share_link
+
+* Ver: FCD_UbiquitiNMS_UISP-R-PRO_1.0.0_9.0.13
+* Bump new diag image (9.0.13 版的 diag imag)
+
+
+FTU_ee6d_1.0.13_3.2.0.zip
+MD5: 1335a5976f60512b3bd619d7769ef648
+https://drive.google.com/file/d/1BCHXVFquD9R2h9SzAjRPVoIMwKPAEt1G/view?usp=share_link
+
+* Ver: FTU_ee6d_1.0.13_3.2.0
+* 改 killall ulcmd => /etc/init.d/ulcmd stop (Upgrade to runtime image)
+* Check 9.0.13 版的 diag imag 
+* Introduce FW2DIAG (FW 3.2.0 -> 9.0.13 版的 diag imag )
+* Bump final FW version to 3.2.0
+* Add delay buffer before burn-in start (10 mins) [setenv burnDelay 600]
+* Introduce DFU test before final FW upgrade
+	- Sleep time before dfu-util -l change to 3
+	- Using command /etc/init.d/ulcmd stop to replace systemctl stop ulcmd
+
+
+
+
+
+
