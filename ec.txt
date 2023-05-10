@@ -1,0 +1,15 @@
+1/ Note:
+- Remark: None
+- Shared models: None
+- Implementation: Roll in
+- Sample demand: None
+
+2/ FCD/FTU versions:
+
+3/ Change log:
+
+4/ Miscellaneous
+if there is any information associated with the following items, please refer to PM who is in charge of this model.
+PM in charge: 
+Routing/stage/implement/Approval Deadline/Effectivity/CM
+Rework: please refer to the PM for the details.

@@ -1,61 +1,10 @@
-Count = 50
-UACC
-TWFCD-1914, UACC-LTE, add new test case, get imei of LTE.
-TWFCD-2895, UACC-LTE, update input serial number test, add a pop-up window.
-
-UISP
-TWFCD-2292, [UISP-P], update ftu with new runtime fw, UISPP.v1.0.0-rc.1.c751e5.221201.0947.bin.
-TWFCD-2891, [UISP-S], add new test item, snake 10.
-TWFCD-3038, [UISP-S], update shipping fw. (rtl930x.v1.5.1.bix.)
-TWFCD-3372, UISP-P, add retry to li battery discharge test.
-TWFCD-3276, UISP-P, update parser and criteria of charge test, mv to V.
-TWFCD-3135, UISP-P-PRO, add Check LCM test after shipping FW upgraded.
-TWFCD-2426, UISP-P-PRO, update lcm expected string to cover different lcm types.
-TWFCD-3371, UISP-P-PRO, Update li battery discharge test, to change the logic of checking dc output 0, 1, 2.
-TWFCD-3274, UISP-P-PRO, update testing order of lcm and lte test.
-TWFCD-3266, UISP-R, add fw upgrade. (Runtime FW)
-TWFCD-3374, UISP-R, update fw update, add scp logging.
-TWFCD-3375, UISP-R-PLUS, new platform npi, verify and develop upgrade diag process. (fcd)
-TWFCD-3125, UISP-R-PLUS, new platform npi, verify registration process.
-TWFCD-3273, UISP-R-PRO, add test fan2 to enable-burnin-test.
-TWFCD-2793, UISP-R-PRO, burnin fail in ltn, cpu high temperature.
-TWFCD-3133, UISP-R-PRO, rewrite upgrade-lcm-firmware with lcm-load.
-TWFCD-3373, UISP-R-PRO, update fcd with new pcba. (ee6d, 113-01265-xx)
-TWFCD-3370, UISP-S, Add snake config 100M.
-TWFCD-3369, UISP-S-PLUS, add devreg debug at the end of fcd.
-TWFCD-3277, UISP-S-PRO, add snake config 10.
-
-ULED
-TWFCD-3359, ULED-BAR, add delay after recognizing dut id. (all 3000k ct power tests)
-TWFCD-3278, ULED-BAR, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
-TWFCD-3360, ULED-DOWN-100MM, add 2nd 5000k ct power test.
-TWFCD-3361, ULED-DOWN-150MM, add 2nd 3000k ct power test.
-TWFCD-3368, ULED-PANEL, add 2nd 3000k ct test.
-TWFCD-3367, ULED-STRIP-10M, add 3000k ct power test.
-TWFCD-3365, ULED-STRIP-1M, add ct 4000k power test.
-TWFCD-3366, ULED-STRIP-5M, add 3000k ct power test.
-TWFCD-3364, ULED-STRIP-COLOR-10M, add red channel test.
-TWFCD-3362, ULED-STRIP-COLOR-1M, add 2nd white channel test.
-TWFCD-3363, ULED-STRIP-COLOR-5M, add 2nd red channel test.
-
-USP
-TWFCD-3376, USP-BATTERY, update lcm fw (v0.1.0.0) for lcm upgrade. (ftu)
-TWFCD-3123, USP-BATTERY, update xmodem app fw to v1.1.4.332.
-TWFCD-3377, USP-RPS, add lcm reset pin test (ftu).
-TWFCD-3264, USP-RPS, verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
-TWFCD-3265, USP-RPS-PRO, update burnin.sh. (15 secs delay)
-
-USW
-TWFCD-3129, USW-AGGREGATION, fcd fail, helper fail.
-TWFCD-2787, USW-AGGREGATION-PRO, update fcd fw to 6.4.19.
-TWFCD-3127, USW-AGGREGATION-PRO, verify lcm reset pin command process.
-TWFCD-3270, USW-ENTERPRISE-48-POE, new fcd fw. (6.5.46, PoE MCU 2nd source)
-TWFCD-3269, USW-ENTERPRISE-8-POE, lcm backlight behavior issues.
-TWFCD-3271, USW-ENTERPRISEXG-24, update fcd fw to 6.4.19.
-TWFCD-3134, USW-FLEX, update fcd fw to, US.mt7621_6.4.15.
-TWFCD-3040, USW-FLEX-XG, reset button FAIL, it will reboot.
-TWFCD-2452, USW-INDUSTRIAL, create ftu, support upgrade to shipping fw.
-TWFCD-2790, USW-MISSION-CRITICAL, add, FP.8.1 LTE - band check
-TWFCD-2791, USW-MISSION-CRITICAL, remove lead battery tests.
-TWFCD-3272, USW-MISSION-CRITICAL-EU, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
-
+Yes
+No
+Yes
+Yes
+No
+No
+Yes
+No
+Yes
+No

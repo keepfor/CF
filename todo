@@ -369,6 +369,9 @@ ee tools not found issues.
 fcd update with diag 9.0.13.
 ftu update with diag 9.0.13.
 update fwupgrade support exec /etc/init.d/ulcmd stop.
+lcm dfu update stop ulcmd.
+lcm update flow, loop boot dfu.
+increase sleep to 3.
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
@@ -441,6 +444,8 @@ uisp-s-pro, refactor snake.
 uisp-s-pro, refactor port speed.
 uisp-s-pro, refactor port information.
 uisp-s-pro, help ee to resign some uisp-s-pro.
+uisp-s-pro, add a new test item, set wait time, and user config wait-time. 
+uisp-s-pro, update criteria of fan test. 
 
 //uled-bar, add 2nd id test. 
 //uled-bar, add switch to another edge instruction window to 2nd check-id-test.
