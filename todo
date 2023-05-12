@@ -446,6 +446,7 @@ uisp-s-pro, refactor port information.
 uisp-s-pro, help ee to resign some uisp-s-pro.
 uisp-s-pro, add a new test item, set wait time, and user config wait-time. 
 uisp-s-pro, update criteria of fan test. 
+uisp-s-pro, lcm dfu.
 
 //uled-bar, add 2nd id test. 
 //uled-bar, add switch to another edge instruction window to 2nd check-id-test.
