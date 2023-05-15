@@ -13,17 +13,19 @@ int32_t main() {
   int TESTCASE = 1;
   cin >> TESTCASE;
   while (TESTCASE--) {
-    int n;
-    cin >> n;
-    for (int i = 1; i <= n; ++i) {
-      cout << i << ' ';
-      for (int j = n; j >= 1; --j) {
-        if (j != i) {
-          cout << j << ' ';
-        }
-      }
-      cout << '\n';
+    int x;
+    cin >> x;
+    int y = x & -x;
+    if (y == x) {
+      if (y == 1) {
+        cout << 3;
+      } else {
+        cout << x + 1;
+      } 
+    } else {
+      cout << y;
     }
+    cout << '\n';
   }
   return 0;
 }

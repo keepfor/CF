@@ -1,41 +1,45 @@
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+nnoremap <F3> :e ~/j/ftu_log_folder<cr>
+nnoremap <F4> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
+nnoremap <F5> :e input.txt<cr>
+nnoremap <F6> :!make<cr>
+nnoremap <F8> :!make re<cr>
+nnoremap <right> :bn<cr>
+nnoremap <left> :bp<cr>
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 nnoremap <c-a> ggvG$
-nnoremap <s-j> :e input.txt
-nnoremap <s-k> :!make
-nnoremap <s-l> :q!
-nnoremap <s-r> :!make re
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <F4> :!bash /home/jackcai/scripts/start_ftu.sh
-nnoremap <F3> :e ~/j/ftu_log_folder
+nnoremap <F7> :q!
+nnoremap ; :
+
 inoremap jk <esc>
 inoremap kj <esc>
-nnoremap ; :
+inoremap <Up> <c-p>
+inoremap <Down> <c-n>
+
+set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell
-set t_ti= t_te=
-set t_TI= t_TE=
-set timeoutlen=10
+set t_ti= t_te= t_TI= t_TE=
+set timeoutlen=20
 set splitbelow
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[6 q\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
-else
-    let &t_SI = "\e[6 q"
-    let &t_EI = "\e[2 q"
-endif
 set expandtab
 set nocompatible 
-set number 
 set nobackup
+set backupcopy=yes 
 set autochdir
 set clipboard^=unnamed,unnamedplus 
 set mouse=a
 set smartindent autoindent cindent
 set backspace=indent,eol,start
-set shiftwidth=2 softtabstop=2 tabstop=2
-set backupcopy=yes 
 set ignorecase smartcase 
 set incsearch hlsearch 
-filetype plugin indent on   
+
+filetype plugin indent on
+
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
