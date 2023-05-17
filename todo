@@ -245,6 +245,15 @@ showmac issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
 showSys issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
 S+ Port LED test順序幫我修改一下
 
+fcd DIAG_v2.0.3: uisp-s-plus_256.ubi.
+fcd update setenv.
+ftu DIAG_v2.0.3: uisp-s-plus_256.ubi
+ftu UISPS.act5.recovery.v0.1.0.a21755e.230515.1450.bin
+ftu support check shipping ver.
+update udapi.py.
+update check shipping fw, use power class of udapi.
+ftu update mem test.
+
 //usw-aggregation-pro, update fcd fw to 6.4.19. 
 //verify lcm reset pin command process.
 
@@ -291,6 +300,7 @@ update eu lte test, add at retry improve retest rate.
 update br lte test, add at retry improve retest rate.
 update ar lte test, add at retry improve retest rate.
 survey control NE6000, lte retry.
+support checking for get imei.
 
 usw-mission-critical, update external battery.
 usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
@@ -306,6 +316,7 @@ lcm reset pin test.
 update external battery test.
 remove external battery test.
 add lead acid battery test.
+increase timeout for updating 6.4.20. (fcd)
 
 ?uisp-r-pro, burnin fail in ltn, cpu high temperature.
 uisp-r-pro, add burnfan1 to config panel.
@@ -447,6 +458,9 @@ uisp-s-pro, help ee to resign some uisp-s-pro.
 uisp-s-pro, add a new test item, set wait time, and user config wait-time. 
 uisp-s-pro, update criteria of fan test. 
 uisp-s-pro, lcm dfu.
+uisp-s-pro, verify lcm dfu cmd.
+lcm dfu cmd not work. (ucmd)
+lcm dfu cmd not work. (gpio out)
 
 //uled-bar, add 2nd id test. 
 //uled-bar, add switch to another edge instruction window to 2nd check-id-test.

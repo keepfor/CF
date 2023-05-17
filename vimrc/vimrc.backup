@@ -1,9 +1,13 @@
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 set number 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
-
 
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\e[6 q\<Esc>\\"
@@ -12,8 +16,13 @@ else
     let &t_SI = "\e[6 q"
     let &t_EI = "\e[2 q"
 endif
+
+inoremap <up> <c-p>
+inoremap <down> <c-n>
+
 set completeopt=longest,menu
 set complete+=k
+
 colorscheme risto
 
 nnoremap <F4> :terminal bash /home/jackcai/scripts/start_ftu.sh

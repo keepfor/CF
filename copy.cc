@@ -13,19 +13,14 @@ int32_t main() {
   int TESTCASE = 1;
   cin >> TESTCASE;
   while (TESTCASE--) {
-    int x;
-    cin >> x;
-    int y = x & -x;
-    if (y == x) {
-      if (y == 1) {
-        cout << 3;
-      } else {
-        cout << x + 1;
-      } 
+    long long l, r, d;
+    cin >> l >> r >> d;
+    if (d < l) {
+      cout << d << '\n';
     } else {
-      cout << y;
+      long long ans = (d + r) / d * d;
+      cout << ans << '\n';
     }
-    cout << '\n';
   }
   return 0;
 }

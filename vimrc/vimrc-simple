@@ -1,12 +1,17 @@
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-nnoremap <F3> :e ~/j/ftu_log_folder<cr>
+inoremap <silent><expr> <tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ coc#refresh()
+inoremap <expr><s-tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
 nnoremap <F4> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
 nnoremap <F5> :e input.txt<cr>
 nnoremap <F6> :!make<cr>
-nnoremap <F8> :!make re<cr>
+nnoremap <F7> :!make re<cr>
 nnoremap <right> :bn<cr>
 nnoremap <left> :bp<cr>
 
@@ -15,13 +20,12 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-a> ggvG$
-nnoremap <F7> :q!
+nnoremap <F8> :q!
+nnoremap <F3> :e ~/j/ftu_log_folder
 nnoremap ; :
 
 inoremap jk <esc>
 inoremap kj <esc>
-inoremap <Up> <c-p>
-inoremap <Down> <c-n>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell
