@@ -2,6 +2,8 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+inoremap <up> <c-p>
+inoremap <down> <c-n>
 
 filetype indent on 
 set number 

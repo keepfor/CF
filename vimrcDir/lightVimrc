@@ -1,24 +1,32 @@
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+nnoremap <s-j> :e input.txt<cr>
+nnoremap <s-k> :!make<cr>
+nnoremap <s-l> :make re<cr>
+nnoremap <left> :bp<cr>
+nnoremap <right> :bn<cr>
+
 nnoremap ; :
-nnoremap <s-j> :e input.txt
-nnoremap <s-k> :!make 
-nnoremap <s-l> :q!
-nnoremap <s-r> :make re
+nnoremap <s-;> :q!
+nnoremap <c-a> ggvG$
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
-nnoremap <c-a> ggvG$
 
 inoremap jk <esc>
 inoremap kj <esc>
-inoremap <up> <c-p>
-inoremap <down> <c-n>
-inoremap <c-i> <c-p>
-inoremap <c-k> <c-n>
 
 set timeoutlen=20
 set splitbelow
-set mouse=a
 set clipboard=unnamed
 set nocompatible 
 set expandtab
