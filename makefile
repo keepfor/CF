@@ -6,10 +6,12 @@ prog = obj
 src = sol.cc
 input = input.txt
 output = output.txt
+resetSrc = reset.cc
+copySrc = copy.cc
 
 define re 
 	> $(input)
-	cp reset.cc $(src)
+	cp $(resetSrc) $(src)
 endef
 
 .PHONY: reset gen reset revim empty
@@ -25,15 +27,15 @@ $(prog): $(src)
 	$(cc) $(dfg) $(cfg) $(src) -o $(prog)
 
 main:
-	./$(prog) <$(input)> output.txt 
-	cat output.txt
+	./$(prog) <$(input)> $(output) 
+	cat $(output)
 
 clean:
 	rm -rf .$(src)*
 	rm -rf $(prog).*
 
 copy:
-	cp $(src) copy.cc
+	cp $(src) $(copySrc)
 
 re:
 	$(re)

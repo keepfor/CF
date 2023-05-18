@@ -11,8 +11,11 @@ int32_t main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
   int TESTCASES = 1;
-  cin >> TESTCASES;
   while (TESTCASES--) {
+    string s;
+    cin >> s;
+    cout << s << '\n';
+    cout << s << '\n';
   }
   return 0;
 }
