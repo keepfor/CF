@@ -1,0 +1,31 @@
+{
+	"word_wrap": "true",
+	"font_size": 17,
+	"find_selected_text": true,
+	"tab_size":2,
+	"always_prompt_for_file_reload": false,
+	"hot_exit": true
+}
+[
+	{
+		"keys": ["command+j"],
+		"command": "open_file",
+		"args": {
+			"file": "~/contest/input.txt"
+		}
+	},
+	{
+		"keys": ["command+k"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "make"
+		}
+	},
+	{
+		"keys": ["command+l"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "make re"
+		}
+	}
+]
