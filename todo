@@ -91,6 +91,7 @@ usp-battery, python path issues.
 usp-battery, help fw team to resign fcd to fix eeprom issues.
 usp-battery, lcm shows errors. 
 usp-battery, factory lcm process issues.
+usp-battery, dut ble key missing issues.
 
 //add fw upgrade.
 //uisp-r, update fw update, add scp logging.
