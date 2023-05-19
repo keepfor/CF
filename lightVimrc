@@ -1,0 +1,43 @@
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+nnoremap <s-j> :e input.txt<cr>
+nnoremap <s-k> :!make<cr>
+nnoremap <s-l> :make re<cr>
+nnoremap <left> :bp<cr>
+nnoremap <right> :bn<cr>
+
+nnoremap ; :
+nnoremap <s-;> :q!
+nnoremap <c-a> ggvG$
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+inoremap jk <esc>
+inoremap kj <esc>
+
+set timeoutlen=20
+set splitbelow
+set clipboard=unnamed
+set nocompatible 
+set expandtab
+set t_ti= t_te=   
+set shiftwidth=2 softtabstop=2 tabstop=2 
+set nobackup 
+set autochdir 
+set backupcopy=yes 
+set ignorecase smartcase 
+set incsearch hlsearch 
+set cindent smartindent autoindent
+set backspace=indent,eol,start
+
+filetype plugin indent on 
