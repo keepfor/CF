@@ -3,14 +3,25 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-inoremap <silent><expr> <tab>
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <down>
       \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<down>" :
       \ coc#refresh()
-inoremap <expr><s-tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
+inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<tab>\<c-r>=coc#on_enter()\<tab>"
 
 nnoremap <F4> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
 nnoremap <F5> :e input.txt<cr>
-nnoremap <F6> :!make<cr>
+nnoremap <F6> :!time make<cr>
 nnoremap <F7> :!make re<cr>
 nnoremap <right> :bn<cr>
 nnoremap <left> :bp<cr>
@@ -38,7 +49,6 @@ set nobackup
 set backupcopy=yes 
 set autochdir
 set clipboard^=unnamed,unnamedplus 
-set mouse=a
 set smartindent autoindent cindent
 set backspace=indent,eol,start
 set ignorecase smartcase 
