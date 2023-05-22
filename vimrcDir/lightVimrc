@@ -3,10 +3,22 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-inoremap <silent><expr> <TAB>
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <down>
       \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<down>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
+
+inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<tab>\<tab>"
 
 nnoremap <s-j> :e input.txt<cr>
 nnoremap <s-k> :!make<cr>
@@ -15,7 +27,7 @@ nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 
 nnoremap ; :
-nnoremap <s-;> :q!
+nnoremap <s-q> :q!
 nnoremap <c-a> ggvG$
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j

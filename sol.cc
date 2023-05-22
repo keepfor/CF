@@ -6,6 +6,21 @@ using namespace std;
 #else
 #define debug(...) 
 #endif
+int
+int 
+int
+incl
+ifdef
+ifdef
+int                          ii
+ii
+ii
+
+
+
+
+
+
 for (int i = 0; i < n; ++i) {
   for (int i = 0; i < n; ++i) {
     for (int i = 0; i < n; ++i) {
