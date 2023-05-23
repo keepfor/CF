@@ -1,0 +1,32 @@
+UACC
+TWFCD-1914, UACC-LTE, add new test case, get imei of LTE.
+
+UISP
+TWFCD-3276, UISP-P, update parser and criteria of charge test, mv to V.
+TWFCD-2426, UISP-P-PRO, update lcm expected string to cover different lcm types.
+TWFCD-3374, UISP-R, update fw update, add scp logging.
+TWFCD-3375, UISP-R-PLUS, new platform npi, verify and develop upgrade diag process. (fcd)
+TWFCD-3373, UISP-R-PRO, update fcd with new pcba. (ee6d, 113-01265-xx)
+TWFCD-3038, UISP-S, update shipping fw. (rtl930x.v1.5.1.bix.)
+TWFCD-3471, UISP-S-PLUS, verify fcd fail with fw 001. (flash type not found)
+TWFCD-3482, UISP-S-PRO, Add Port speed change 10.
+
+ULED
+TWFCD-3481, ULED-BAR, update all 4000k test , add delay after recognizing dut id.
+TWFCD-3480, ULED-DOWN-100MM, add switch to another edge instruction window to 2nd check-id-test.
+TWFCD-3479, ULED-DOWN-150MM, add 2nd 4000k ct power test.
+TWFCD-3472, ULED-PANEL, add 2nd 4000k ct test.
+TWFCD-3475, ULED-STRIP-1M, add ct 5000k power test.
+TWFCD-3474, ULED-STRIP-5M, add 4000k ct power test.
+TWFCD-3473, ULED-STRIP-10M, add 4000k ct power test.
+TWFCD-3476, ULED-STRIP-COLOR-1M, add 2nd red channel test.
+TWFCD-3477, ULED-STRIP-COLOR-5M, add 2nd green channel test.
+TWFCD-3478, ULED-STRIP-COLOR-10M, add green channel test.
+
+USP
+TWFCD-3123, USP-BATTERY, update app fw to v1.1.4.332. (via xmodem)
+TWFCD-3466, USP-RPS-PRO, update lead acid battery, update fast charging current criteria.(0.6~1.1 => 0.4~1.2 A)
+
+USW
+TWFCD-2787, USW-AGGREGATION-PRO, update fcd fw to 6.4.19. (Broadcom)
+TWFCD-2791, USW-MISSION-CRITICAL, remove lead battery tests. (use usp-battery)

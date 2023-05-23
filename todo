@@ -1,37 +1,36 @@
-usw, help fw rd search usage of 'syswrapper.sh save-config '.
+usw, help fw rd search usage of 'syswrapper.sh save-config' in fcd/ftu. (usw, usp, u6)
 
-//verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
-usp-rps, lcm reset pin test.
-create new build for ftu.
-Find the cause of uls error. Find file: data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
+usp-rps, //verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
+usp-rps, create new build for ftu.
+usp-rps, find the cause of uls error. Find file: data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
 
 //usp-rps-pro, update enable burnin, update burnin.cfg. 
 //usp-rps-pro, update enable burnin, update burnin.sh. (15 secs delay)
 usp-rps-pro, update lead acid battery, add wait 15 secs for battery stability.
-usp-rps-pro, update lead acid battery, update fast charging current criteria.
-usp-rps-pro, update lead acid battery, update slow charging current criteria.
+//usp-rps-pro, update lead acid battery, update fast charging current criteria.(0.6~1.1 => 0.4~1.2 A)
+usp-rps-pro, update lead acid battery, update slow charging current criteria.(0.1~0.3 => 0.1~0.6 A)
 usp-rps-pro, update lead acid battery, add config for slow charging current.
-update lead acid battery test, update charging voltage criteria.
+update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
 update lead acid battery test, add charging voltage config.
 - Update FP.7 Lead-acid Battery Test
-  * Wait 15 seconds before test for battery stable
-  * Change current threshold in fast charge and slow charge
-    - fast charge: (0.6~1.1 => 0.4~1.2)A
-    - slow charge: (0.1~0.3 => 0.1~0.6)A
-  * Change voltage threshold
-    - From 46~51V => 46~51.5V
-  * Add Test config
-    voltlower = 46
-    voltupper = 51.5
-    currLowerForFastCharging = 0.4
-    currUpperForFastCharging = 1.2
-    currLowerForSlowCharging = 0.1
-    currUpperForSlowCharging = 0.6
+ * Wait 15 seconds before test for battery stable
+ * Change current threshold in fast charge and slow charge
+ - fast charge: (0.6~1.1 => 0.4~1.2)A
+ - slow charge: (0.1~0.3 => 0.1~0.6)A
+ * Change voltage threshold
+ - From 46~51V => 46~51.5V
+ Add Test config
+ voltlower = 46
+ voltupper = 51.5
+ currLowerForFastCharging = 0.4
+ currUpperForFastCharging = 1.2
+ currLowerForSlowCharging = 0.1
+ currUpperForSlowCharging = 0.6
 - Update Burn-in Setup
-  *  Add an operation that rename rpspro_burnin.cfg to burnin.cfg
-  *  Update burnin.sh - ver 20230301
-    - Add Wait 15 seconds before running burnin
-    - Add getting RPS-Oring, PSU, Outlet, Charge status
+ *  an operation that rename rpspro_burnin.cfg to burnin.cfg
+ *  burnin.sh - ver 20230301
+ - Add Wait 15 seconds before running burnin
+ - Add getting RPS-Oring, PSU, Outlet, Charge status
 lcm reset pin test.
 add instruction prepare 46~50V lead-acid battery.
 update instruction prepare 46~51.5V lead-acid battery.
@@ -43,25 +42,21 @@ FTU UM.mt7621_6.5.39.
 //uisp-s, add new test item, snake 10.
 //uisp-s, 3/24, UISP-S,	ee6f,	113-00988-xx,	113-01261-xx
 //uisp-s, update shipping fw.
-uisp-s, Find the cause of, login kernel hang.
-uisp-s, Find the cause of, uisp-s, telnet fail.
-uisp-s, update ble test, calculation.
+//uisp-s, update ble test, change calculation logic.
 uisp-s, update ble test, parser.
 uisp-s, Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
-uisp-s, Add snake config 100M.
-uisp-s, Add snake config 10M.
-uisp-s, Add Port speed change 100.
+//uisp-s, Add Port speed change 100.
 uisp-s, Add Port speed change 10.
 uisp-s, Add Port information 100.
 uisp-s, Add Port information 10.
-uisp-s, Remove LCM check of check burnin result.
+uisp-s, Remove LCM check when checking burnin result.
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
 uisp-s, refactor port information.
 
-usp-battery, update xmodem app fw to v1.1.4.332.
+//usp-battery, update app fw to v1.1.4.332. (via xmodem)
 //usp-battery, update lcm fw (v0.1.0.0) for lcm upgrade. (ftu) 
-usp-battery, update battery fw. 
+//usp-battery, update battery user/shipping fw v1.1.4.332. (via ble) 
 usp-battery, update recovery fw to v1.1.4.332.
 usp-battery, update ble app fw to v1.1.4.332.
 usp-battery, update ble product fw to v1.1.4.332.
@@ -91,14 +86,15 @@ usp-battery, python path issues.
 usp-battery, help fw team to resign fcd to fix eeprom issues.
 usp-battery, lcm shows errors. 
 usp-battery, factory lcm process issues.
-usp-battery, dut ble key missing issues.
+usp-battery, dut ble key missing issues from ocean.
 usp-battery, burnin issues, improve.
+usp-battery, remove disable burnin of check burnin result.
+usp-battery, new testing fw.
+usp-battery, fw upgrade fail, key duplication, from ltn.	
 
-//add fw upgrade.
-//uisp-r, update fw update, add scp logging.
-uisp-r, update runtime fw.
+uisp-r, update runtime fw. (3.0.1)
 uisp-r, update check runtime ver.
-uisp-r, update factory reset test ordering.
+//uisp-r, update factory reset test ordering.
 uisp-r, update test shell of burnin test..
 uisp-r, add user config for ip after upgrade runtime fw.
 uisp-r, update enable ssh port to 2 to 8.
@@ -122,9 +118,7 @@ uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 
 //usp-rps, update fcd fw to 6.4.20.
 
-//uisp-r-plus, develop fcd, new platform, Marvell OCTEON TX2 CN913X.
-//uisp-r-plus, new platform npi, verify and develop upgrade diag process.
-uisp-r-plus, ping uboot failed.
+//uisp-r-plus, ping uboot failed.
 uisp-r-plus, registration failed, eeprom pcba failed.
 uisp-r-plus, add fcd tlv data failed.
 uisp-r-plus, cat version failed, file not found.
@@ -176,7 +170,7 @@ r+ Port LED test順序幫我修改一下
 //uisp-s-plus, develop fcd, new platform, Marvell Prestera 98DX25xx.
 //uisp-s-plus, verify upgrade to diag fw with fcd process.
 //uisp-s-plus, add devreg debug at the end of fcd.
-uisp-s-plus, fcd fail with fw 001.
+//uisp-s-plus, fcd fail with fw 001. (flash type not found)
 uisp-s-plus, ssh password is not correct.
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, fcd fail with fw 003.
@@ -256,19 +250,13 @@ update udapi.py.
 update check shipping fw, use power class of udapi.
 ftu update mem test.
 
-//usw-aggregation-pro, update fcd fw to 6.4.19. 
-//verify lcm reset pin command process.
-
-//usw-aggregation, update fcd fw to 6.4.19. 
-//usw-aggregation, fcd fail, helper fail.
-//verify lcm reset pin command process.
+fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
+ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
+ftu, add check shipping fw version, single test item.
 
 doc, how to enable fail_stop feature of FTU.
 
-//usw-industrial, update fcd fw to ubidiag fw.
-//usw-industrial, create ftu, support upgrade to shipping fw.
-
-//usw-enterprise-24-poe, release fcd with US.bcm5616x_6.4.19+14340.221224.1437-uboot.bin.
+usw-enterprise-24-poe, fcd retest issues from fxn.
 
 usw-enterprise-8-poe, power consumption.
 at poe test issues.
@@ -303,6 +291,7 @@ update br lte test, add at retry improve retest rate.
 update ar lte test, add at retry improve retest rate.
 survey control NE6000, lte retry.
 support checking for get imei.
+lte swtich band fail, winbond flash R/W response time issues.
 
 usw-mission-critical, update external battery.
 usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
@@ -318,6 +307,7 @@ lcm reset pin test.
 update external battery test.
 remove external battery test.
 add lead acid battery test.
+reproduce, increase timeout for updating 6.4.20. (fcd)
 increase timeout for updating 6.4.20. (fcd)
 
 ?uisp-r-pro, burnin fail in ltn, cpu high temperature.
@@ -390,7 +380,7 @@ usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
 usw-flex-xg, factory default issues.
 usw-flex-xg, ping failed with factory pc.
-usw-flex-xg, update fw to 6.4.19.
+//usw-flex-xg, update fw to 6.4.19.
 usw-flex-xg, remove reset button.
 usw-flex-xg, merge reset button test to factory default.
 
@@ -416,7 +406,7 @@ remove ssh login in cmd_diag.
 fw upgrade, add scp logging.
 remove fwupdate.bin first.
 
-//isp-p, Update charger test, change the logic of checking dc output0.
+//uisp-p, Update charger test, change the logic of checking dc output0.
 uisp-p, add retry to charge test.
 //uisp-p, add retry to li battery discharge test.
 uisp-p, add retry to la battery discharge test.
@@ -442,14 +432,10 @@ uisp-s-pro,
 uisp-s-pro, update ble test, rewrite parser and calculation.
 uisp-s-pro, update ble test, update tx checking process.
 uisp-s-pro, update ble criteria issue.
-uisp-s-pro, add port speed 100.
-uisp-s-pro, add port speed 10.
 uisp-s-pro, add port information.
 uisp-s-pro, update fcd with new diag fw, 1.3.8-DEV08.bix.
 uisp-s-pro, update ftu with new diag fw, 1.3.8-DEV08.bix.
 uisp-s-pro, Update Diag fw upgrade test with Diag fw v1.3.8-DEV08.
-uisp-s-pro, Add Port speed change 100.
-uisp-s-pro, Add Port speed change 10.
 uisp-s-pro, Add Port information 100.
 uisp-s-pro, Add Port information 10.
 uisp-s-pro, Remove LCM check of check burnin result.

@@ -1,12 +1,90 @@
-
-5
-4
-abab
-7
-abacaba
-6
-aaaaaa
-7
-abcdefg
-5
-babdd
+uisp-s-pro, Add Port speed change 10.
+uled-bar, update all 4000k test , add delay after recognizing dut id.
+uled-down-100mm, add switch to another edge instruction window to 2nd check-id-test.
+uled-down-150mm, add 2nd 4000k ct power test.
+uled-strip-color-10m, add green channel test.
+uled-strip-color-5m, add 2nd green channel test.
+uled-strip-color-1m, add 2nd red channel test.
+uled-strip-1m, add ct 5000k power test.
+uled-strip-5m, add 4000k ct power test.
+uled-strip-10m, add 4000k ct power test.
+uled-panel, add 2nd 4000k ct test.
+uisp-s-plus, verify fcd fail with fw 001. (flash type not found)
+uisp-r-plus, ping uboot failed with sfp module.
+uisp-r, update factory reset test ordering.
+usp-battery, update battery user/shipping fw v1.1.4.332. (via ble)
+uisp-s, update ble test, change calculation logic.
+usp-rps-pro, update lead acid battery, update fast charging current criteria.(0.6~1.1 => 0.4~1.2 A)
+usw-flex-xg, update shipping fw to 6.4.19.
+usp-battery, update lcm fw (v0.1.0.0) for lcm upgrade. (ftu)
+uisp-r-plus, new platform npi, verify and develop upgrade diag process. (fcd)
+uisp-r, update fw update, add scp logging.
+uisp-r-pro, update fcd with new pcba. (ee6d, 113-01265-xx)
+uisp-p, add retry to li battery discharge test.
+uisp-s, Add Port speed change 100.
+uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
+uisp-p, update parser and criteria of charge test, mv to V.
+uisp-p-pro, update testing order of lcm and lte test.
+usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
+usw-enterprise-48-poe, new fcd fw. (6.5.46, PoE MCU 2nd source)
+usw-enterprise-8-poe, lcm backlight behavior issues.
+usp-rps-pro, update burnin.sh. (15 secs delay)
+usp-rps, verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
+uisp-p-pro, add Check LCM test after shipping FW upgraded.
+uisp-r-pro, rewrite upgrade-lcm-firmware with lcm-load.
+usp-battery, update app fw to v1.1.4.332. (via xmodem)
+usw-flex-xg, reset button FAIL, it will reboot.
+uisp-s, update shipping fw. (rtl930x.v1.5.1.bix.)
+uacc-lte, update input serial number test, add a pop-up window.
+uisp-r-pro, burnin fail in ltn, cpu high temperature.
+usw-mission-critical, remove lead battery tests.
+usw-mission-critical, add, FP.8.1 LTE - band check
+usw-aggregation-pro, update fcd fw to 6.4.19.
+usw-industrial, create ftu, support upgrade to shipping fw.
+uisp-p-pro, update lcm expected string to cover different lcm types.
+UACC-LTE, add new test case, get imei of LTE.
+TWFCD-3482
+TWFCD-3481
+TWFCD-3480
+TWFCD-3479
+TWFCD-3478
+TWFCD-3477
+TWFCD-3476
+TWFCD-3475
+TWFCD-3474
+TWFCD-3473
+TWFCD-3472
+TWFCD-3471
+TWFCD-3470
+TWFCD-3469
+TWFCD-3468
+TWFCD-3467
+TWFCD-3466
+TWFCD-3465
+TWFCD-3376
+TWFCD-3375
+TWFCD-3374
+TWFCD-3373
+TWFCD-3372
+TWFCD-3370
+TWFCD-3278
+TWFCD-3276
+TWFCD-3274
+TWFCD-3272
+TWFCD-3270
+TWFCD-3269
+TWFCD-3265
+TWFCD-3264
+TWFCD-3135
+TWFCD-3133
+TWFCD-3123
+TWFCD-3040
+TWFCD-3038
+TWFCD-2895
+TWFCD-2793
+TWFCD-2791
+TWFCD-2790
+TWFCD-2787
+TWFCD-2452
+TWFCD-2426
+TWFCD-1914
