@@ -12,28 +12,19 @@ int32_t main() {
   cin.tie(0);
   int TESTCASES = 1;
   while (TESTCASES--) {
-    int n, k;
-    cin >> n >> k;
-    vector<int> c(k);
-    for (int i = 0; i < n; ++i) {
-      int t;
-      cin >> t;
-      ++c[t - 1];
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto& i : a) {
+      cin >> i;
     }
-    int odd = 0;
-    int ans = 0;
-    for (auto& i : c) {
-      if (!i) {
-        continue;
-      }
-      if (i & 1) {
-        ++odd;
-        --i;
-      }
-      ans += i;
+    sort(a.begin(), a.end());
+    if (a[0] == a[n / 2 - 1] and a[n / 2] == a[n - 1] and a[n / 2] != a[n / 2 - 1]) {
+      cout << "YES\n";
+      cout << a[0] << ' ' << a[n / 2] << '\n';
+    } else {
+      cout << "NO\n";
     }
-    ans += (odd + 1) / 2;
-    cout << ans << '\n';
   }
   return 0;
 }

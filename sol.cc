@@ -6,29 +6,13 @@ using namespace std;
 #else
 #define debug(...) 
 #endif
-int
-int 
-int
-incl
-ifdef
-ifdef
-int                          ii
-ii
-ii
 
+int32_t main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int TESTCASES = 1;
+  while (TESTCASES--) {
 
-
-
-
-
-for (int i = 0; i < n; ++i) {
-  for (int i = 0; i < n; ++i) {
-    for (int i = 0; i < n; ++i) {
-      for (int i = 0; i < n; ++i) {
-        for (int i = 0; i < n; ++i) {
-
-        }
-      }
-    }
   }
+  return 0;
 }
