@@ -91,6 +91,8 @@ usp-battery, burnin issues, improve.
 usp-battery, remove disable burnin of check burnin result.
 usp-battery, new testing fw.
 usp-battery, fw upgrade fail, key duplication, from ltn.	
+usp-battery, fw upgrade fail, connect to dut ble timeout 60 seconds, from ltn.	
+usp-battery, fw upgrade fail, lcm behavior diff. 
 
 uisp-r, update runtime fw. (3.0.1)
 uisp-r, update check runtime ver.
@@ -253,6 +255,7 @@ ftu update mem test.
 fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
 ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
 ftu, add check shipping fw version, single test item.
+fcd fail from sz.
 
 doc, how to enable fail_stop feature of FTU.
 

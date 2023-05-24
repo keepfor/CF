@@ -92,7 +92,7 @@ static inline void classify(const vector<string>& pdline, vector<string>& cs, ma
         break;
       }
     }
-    assert(ok && "No productline match\n");
+    assert(ok && "No productline match");
   }
 }
 
