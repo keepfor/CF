@@ -9,56 +9,27 @@ using namespace std;
 #endif
 
 void solve() {
-  string s;
-  cin >> s;
-  int n = s.size();
-  int c = count(s.begin(), s.end(), s[0]);
-  if (c == n) {
-    cout << (n + 1) / 2 << '\n';
-    return;
+  int n, k;
+  cin >> n >> k;
+  vector<int> s(n);
+  for (auto& i : s) {
+    cin >> i;
   }
-  if (s[0] == s[n - 1]) {
-    string t;
-    int i = 0;
-    while (i < n and s[i] == s[n - 1]) {
-      ++i;
-    }
-    int j = i;
-    for (int k = j; k < n; ++k) {
-      t += s[k];
-    }
-    for (int k = 0; k < i; ++k) {
-      t += s[k];
-    }
-    swap(s, t);
-  }
-  map<char, int> dp;
-  for (auto j : "RPS") {
-    dp[j] = 1;
-  }
-  dp[s[0]] = 0;
+           k 
+   kk
+   int
+   int  
+   int  
+   ifdef
+
+  vector<vector<int>> g(n);
   for (int i = 1; i < n; ++i) {
-    map<char, int> ndp;
-    for (auto& [k, v] : dp) {
-      for (auto j : "RPS") {
-        if (k == j) {
-          continue;
-        }
-        int x = v + (s[i] != j);
-        if (ndp.count(j)) {
-          ndp[j] = min(ndp[j], x);
-        } else {
-          ndp[j] = x;
-        }
-      }
-    }
-    swap(ndp, dp);
+    int p;
+    cin >> p;
+    g[i].push_back(p);
   }
-  int ans = 1e9;
-  for (auto& [i, j] : dp) {
-    ans = min(ans, j);
-  }
-  cout << ans << '\n';
+  vector<int> pre(n), post(n);
+  dfs(0, -1);
 }
 
 int32_t main() {

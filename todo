@@ -256,6 +256,7 @@ fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
 ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
 ftu, add check shipping fw version, single test item.
 fcd fail from sz.
+ble fail from sz.
 
 doc, how to enable fail_stop feature of FTU.
 

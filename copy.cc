@@ -8,57 +8,60 @@ using namespace std;
 #define debug(...) 
 #endif
 
+#define int long long
+
 void solve() {
-  string s;
-  cin >> s;
-  int n = s.size();
-  int c = count(s.begin(), s.end(), s[0]);
-  if (c == n) {
-    cout << (n + 1) / 2 << '\n';
-    return;
+  int v, m;
+  cin >> v >> m;
+  vector<int> p(v), d(v);
+  set<pair<int, int>> pin, din;
+  for (int i = 0; i < v; ++i) {
+    cin >> p[i];
+    pin.emplace(p[i], i);
   }
-  if (s[0] == s[n - 1]) {
-    string t;
-    int i = 0;
-    while (i < n and s[i] == s[n - 1]) {
-      ++i;
-    }
-    int j = i;
-    for (int k = j; k < n; ++k) {
-      t += s[k];
-    }
-    for (int k = 0; k < i; ++k) {
-      t += s[k];
-    }
-    swap(s, t);
+  for (int i = 0; i < v; ++i) {
+    cin >> d[i];
   }
-  map<char, int> dp;
-  for (auto j : "RPS") {
-    dp[j] = 1;
-  }
-  dp[s[0]] = 0;
-  for (int i = 1; i < n; ++i) {
-    map<char, int> ndp;
-    for (auto& [k, v] : dp) {
-      for (auto j : "RPS") {
-        if (k == j) {
-          continue;
-        }
-        int x = v + (s[i] != j);
-        if (ndp.count(j)) {
-          ndp[j] = min(ndp[j], x);
-        } else {
-          ndp[j] = x;
-        }
+  int cur = 0;
+  while (m--) {
+    int x;
+    cin >> x;
+    int nx = x + cur;
+    int l = min(cur, nx);
+    int r = max(cur, nx);
+    int ans = 0;
+    auto it = din.lower_bound({l, -1});
+    while (din.size()) {
+      if (it == din.end()) {
+        break;
       }
+      if (it->first > r) {
+        break;
+      }
+      ++ans;
+      it = din.erase(it);
     }
-    swap(ndp, dp);
+    it = pin.lower_bound({l, -1}); 
+    while (pin.size()) {
+      if (it == pin.end()) {
+        break;
+      }
+      int pp = it->first;
+      if (pp > r) {
+        break;
+      }
+      int idx = it->second;
+      if (d[idx] >= l and d[idx] <= r and abs(cur - d[idx]) > abs(cur - p[idx])) {
+        ++ans;
+      } else {
+        din.emplace(d[idx], idx);
+      }
+      it = pin.erase(it);
+    }
+    cout << ans << ' ';
+    cur = nx;
   }
-  int ans = 1e9;
-  for (auto& [i, j] : dp) {
-    ans = min(ans, j);
-  }
-  cout << ans << '\n';
+  cout << '\n';
 }
 
 int32_t main() {
