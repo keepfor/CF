@@ -8,16 +8,16 @@ using namespace std;
 #define debug(...) 
 #endif
 
-void solve() {
-
-}
-
 int32_t main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
 
   int TC = 1;
   cin >> TC;
+
+  auto solve = [&]() {
+
+  };
 
   for (int i = 1; i <= TC; ++i) {
     cout << "Case #" << i << ": ";

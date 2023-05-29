@@ -37,6 +37,7 @@ update instruction prepare 46~51.5V lead-acid battery.
 Change current threshold in fast charge.
 FCD UM.mt7621_6.5.39.
 FTU UM.mt7621_6.5.39.
+lcm burnin, increase round.
 
 //uisp-s, add new test item, snake 100.
 //uisp-s, add new test item, snake 10.
@@ -168,6 +169,7 @@ separate poe function and led.
 burnin reboot issue, update diag.
 fcd, emmc format issues, update fcd.
 r+ Port LED test順序幫我修改一下
+uisp-r-plus, update ble test flow. (init_bt)
 
 //uisp-s-plus, develop fcd, new platform, Marvell Prestera 98DX25xx.
 //uisp-s-plus, verify upgrade to diag fw with fcd process.
@@ -257,6 +259,8 @@ ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
 ftu, add check shipping fw version, single test item.
 fcd fail from sz.
 ble fail from sz.
+burnin fail in sz.
+poe test issues (2 pair)
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -379,6 +383,7 @@ update fwupgrade support exec /etc/init.d/ulcmd stop.
 lcm dfu update stop ulcmd.
 lcm update flow, loop boot dfu.
 increase sleep to 3.
+uisp-r-pro, update ble test flow. (init_bt)
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
@@ -409,6 +414,8 @@ add upgrade to diag fw. (Diag: 9.0.8
 remove ssh login in cmd_diag.
 fw upgrade, add scp logging.
 remove fwupdate.bin first.
+lcm burnin test, increase test round.
+uisp-p-pro, update test flow. (init_bt)
 
 //uisp-p, Update charger test, change the logic of checking dc output0.
 uisp-p, add retry to charge test.
@@ -431,6 +438,7 @@ remove oqc1 Check Power Status.
 remove oqc2 Check Voltage/Current Status.
 remove oqc3 System Shutdown.
 uisp-p, revB fcd issues.
+uisp-p, update test flow. (init_bt)
 
 uisp-s-pro, 
 uisp-s-pro, update ble test, rewrite parser and calculation.
