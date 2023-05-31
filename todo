@@ -37,7 +37,7 @@ update instruction prepare 46~51.5V lead-acid battery.
 Change current threshold in fast charge.
 FCD UM.mt7621_6.5.39.
 FTU UM.mt7621_6.5.39.
-lcm burnin, increase round.
+lcm burnin, increase round. (from ltn te)
 
 //uisp-s, add new test item, snake 100.
 //uisp-s, add new test item, snake 10.
@@ -94,6 +94,10 @@ usp-battery, new testing fw.
 usp-battery, fw upgrade fail, key duplication, from ltn.	
 usp-battery, fw upgrade fail, connect to dut ble timeout 60 seconds, from ltn.	
 usp-battery, fw upgrade fail, lcm behavior diff. 
+usp-battery, new testing fw. 
+usp-battery, update rps-pro's check burnin result, do not disable burnin. 
+usp-battery, add disable burnin. 
+usp-battery, burin fail in ltn, issues of batteries connected in series. 
 
 uisp-r, update runtime fw. (3.0.1)
 uisp-r, update check runtime ver.
@@ -257,10 +261,11 @@ ftu update mem test.
 fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
 ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
 ftu, add check shipping fw version, single test item.
-fcd fail from sz.
-ble fail from sz.
-burnin fail in sz.
-poe test issues (2 pair)
+fcd fail from sz. (usb networking interface)
+ble fail from sz. (bt addr not update)
+ble fail from sz. (bt addr not update)
+burnin fail in sz. (loopback fail)
+poe test issues (2 pair) (from sz te)
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -292,14 +297,15 @@ uacc-lte, add new test case, get imei.
 uacc-lte, update input serial number test, add a pop-up window.
 uacc-lte, usb test fail.
 uacc-lte, ua band fail.
-update get imei, add popUP window.
-update ua lte test, add at retry improve retest rate.
-update eu lte test, add at retry improve retest rate.
-update br lte test, add at retry improve retest rate.
-update ar lte test, add at retry improve retest rate.
-survey control NE6000, lte retry.
-support checking for get imei.
-lte swtich band fail, winbond flash R/W response time issues.
+uacc-lte, update get imei, add popUP window.
+uacc-lte, update ua lte test, add at retry improve retest rate.
+uacc-lte, update eu lte test, add at retry improve retest rate.
+uacc-lte, update br lte test, add at retry improve retest rate.
+uacc-lte, update ar lte test, add at retry improve retest rate.
+uacc-lte, survey control NE6000, lte retry.
+uacc-lte, support checking format for get imei.
+uacc-lte, lte swtich band fail, winbond flash R/W response time issues.
+uacc-lte, refine LTE result check.
 
 usw-mission-critical, update external battery.
 usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
@@ -317,6 +323,7 @@ remove external battery test.
 add lead acid battery test.
 reproduce, increase timeout for updating 6.4.20. (fcd)
 increase timeout for updating 6.4.20. (fcd)
+test plan changes of world-build, outlet voltage changes.
 
 ?uisp-r-pro, burnin fail in ltn, cpu high temperature.
 uisp-r-pro, add burnfan1 to config panel.
@@ -414,7 +421,7 @@ add upgrade to diag fw. (Diag: 9.0.8
 remove ssh login in cmd_diag.
 fw upgrade, add scp logging.
 remove fwupdate.bin first.
-lcm burnin test, increase test round.
+lcm burnin test, increase test round.(from ltn te)
 uisp-p-pro, update test flow. (init_bt)
 
 //uisp-p, Update charger test, change the logic of checking dc output0.

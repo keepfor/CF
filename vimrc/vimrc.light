@@ -53,6 +53,4 @@ set backspace=indent,eol,start
 set ignorecase smartcase 
 set incsearch hlsearch 
 
-filetype plugin indent on
-
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
