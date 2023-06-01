@@ -317,13 +317,17 @@ usw-mission-critical, us, update fcd fw to 6.4.20.
 usw-mission-critical, eu, update fcd fw to 6.4.20.
 usw-mission-critical, external battery issue, usp battery does not show charging.
 usw-mission-critical, external battery test, update mcu power setting.
-lcm reset pin test.
-update external battery test.
-remove external battery test.
-add lead acid battery test.
-reproduce, increase timeout for updating 6.4.20. (fcd)
-increase timeout for updating 6.4.20. (fcd)
-test plan changes of world-build, outlet voltage changes.
+usw-mission-critical, lcm reset pin test.
+usw-mission-critical, update external battery test.
+usw-mission-critical, remove external battery test.
+usw-mission-critical, add lead acid battery test.
+usw-mission-critical, reproduce, increase timeout for updating 6.4.20. (fcd)
+usw-mission-critical, increase timeout for updating 6.4.20. (fcd)
+usw-mission-critical, test plan changes of world-build, outlet voltage changes.
+usw-mission-critical, outlet test issue, voltage is zero.
+usw-mission-critical, support check outlet voltage by region. 
+usw-mission-critical, add us / eu user configuration for outlet voltage. 
+usw-mission-critical, UM.rtl838x_ch-outlet-invalid-value+14846.230531.1525.bin. 
 
 ?uisp-r-pro, burnin fail in ltn, cpu high temperature.
 uisp-r-pro, add burnfan1 to config panel.
