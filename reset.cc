@@ -16,9 +16,9 @@ int32_t main() {
   };
 
   {
-    int tc = 1;
+    int tt = 1;
 
-    while (tc--) {
+    while (tt--) {
       solve();
     }
   }

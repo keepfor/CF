@@ -16,10 +16,9 @@ int32_t main() {
   };
 
   {
-    int TC = 1;
-    cin >> TC;
+    int tc = 1;
 
-    for (int i = 1; i <= TC; ++i) {
+    while (tc--) {
       solve();
     }
   }
