@@ -9,20 +9,20 @@ using namespace std;
 #endif
 
 int32_t main() {
-  ios::sync_with_stdio(false);
-  cin.tie(0);
+  ios::sync_with_stdio(false), cin.tie(0);
 
   auto solve = [&]() {
 
   };
 
-  int TC = 1;
-  cin >> TC;
+  {
+    int TC = 1;
+    cin >> TC;
 
-  for (int i = 1; i <= TC; ++i) {
-    cout << "Case #" << i << ": ";
-    solve();
+    for (int i = 1; i <= TC; ++i) {
+      solve();
+    }
   }
-  
+
   return 0;
 }

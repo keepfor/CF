@@ -1,3 +1,5 @@
+UISP-Console-Carrier, npi.
+
 usw, help fw rd search usage of 'syswrapper.sh save-config' in fcd/ftu. (usw, usp, u6)
 
 usp-rps, //verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
@@ -193,95 +195,94 @@ uisp-s-plus, i2c issue.
 uisp-s-plus, nand flash test issue.
 uisp-s-plus, memory issue 2, update to 50.
 uisp-s-plus, fan test, update fan count. 
-cpu test cmd is invalid.
-fcd, update Diag fw UISP-S-PLUS DIAG_v0.0.8.
-ftu, update Diag fw UISP-S-PLUS DIAG_v0.0.8.
-fcd, update Diag fw UISP-S-PLUS DIAG_v0.0.9.
-ftu, update Diag fw UISP-S-PLUS DIAG_v0.0.9.
-fcd fail, ping fail in kernel.
-fcd fail, uboot no network, after change ethernet port.
-fcd, update network inferface to tap0.
-ftu, UISP-S-PLUS DIAG_v0.0.9 not network in kernel.
-ftu, enable burnin, booting fail.
-update cpu test cmd.
-update i2c test flow.
-update poe, popwindow.
-update ble.
-2.5G fcd usb ethernet.
-10G DAC swtich GU.
-crc issues after fcd.
-add reboot saveenv fcd.
-mtdblock issues.
-update fcd upgrade uboot.
-update backup power checking logic.
-fix backup power typo.
-ble calculation.
-ble parser.
-update fan criteria.
-update system led.
-add snake.
-add ble.
-update FCD for new diag fw. (DIAG_v1.0.1)
-update FTU for new diag fw. (DIAG_v1.0.1)
-port led not work. (DIAG_v1.0.1)
-fcd update upgrade diag fw.DIAG_v2.0.0: uisp-s-plus_256.ubi
-fcd add clear env.
-fcd add set env.
-fcd update diag fw.
-fcd update helper.
-fcd update mtdblock.
-fine tune fcd ping timeout.
+uisp-s-plus, cpu test cmd is invalid.
+uisp-s-plus, fcd, update Diag fw UISP-S-PLUS DIAG_v0.0.8.
+uisp-s-plus, ftu, update Diag fw UISP-S-PLUS DIAG_v0.0.8.
+uisp-s-plus, fcd, update Diag fw UISP-S-PLUS DIAG_v0.0.9.
+uisp-s-plus, ftu, update Diag fw UISP-S-PLUS DIAG_v0.0.9.
+uisp-s-plus, fcd fail, ping fail in kernel.
+uisp-s-plus, fcd fail, uboot no network, after change ethernet port.
+uisp-s-plus, fcd, update network inferface to tap0.
+uisp-s-plus, ftu, UISP-S-PLUS DIAG_v0.0.9 not network in kernel.
+uisp-s-plus, ftu, enable burnin, booting fail.
+uisp-s-plus, update cpu test cmd.
+uisp-s-plus, update i2c test flow.
+uisp-s-plus, update poe, popwindow.
+uisp-s-plus, update ble.
+uisp-s-plus, 2.5G fcd usb ethernet.
+uisp-s-plus, 10G DAC swtich GU.
+uisp-s-plus, crc issues after fcd.
+uisp-s-plus, add reboot saveenv fcd.
+uisp-s-plus, mtdblock issues.
+uisp-s-plus, update fcd upgrade uboot.
+uisp-s-plus, update backup power checking logic.
+uisp-s-plus, fix backup power typo.
+uisp-s-plus, ble calculation.
+uisp-s-plus, ble parser.
+uisp-s-plus, update fan criteria.
+uisp-s-plus, update system led.
+uisp-s-plus, add snake.
+uisp-s-plus, add ble.
+uisp-s-plus, update FCD for new diag fw. (DIAG_v1.0.1)
+uisp-s-plus, update FTU for new diag fw. (DIAG_v1.0.1)
+uisp-s-plus, port led not work. (DIAG_v1.0.1)
+uisp-s-plus, fcd update upgrade diag fw.DIAG_v2.0.0: uisp-s-plus_256.ubi
+uisp-s-plus, fcd add clear env.
+uisp-s-plus, fcd add set env.
+uisp-s-plus, fcd update diag fw.
+uisp-s-plus, fcd update helper.
+uisp-s-plus, fcd update mtdblock.
+uisp-s-plus, fine tune fcd ping timeout.
 
-Port LED test, cmd flow change.
-System LED test, cmd flow change.
-DDR test, cmd flow change.
-SFP Flash test, cmd flow change.
-NAND Flash test, remove.
-Bt connect, remove.
-FAN test, criteria change.
-BLE RSSI test, add and verify.
-Port LED test, cmd flow change.
-Burn-in test, setenv burnTimeout 16200.
-Burn-in test, setenv burnFailedstop 1.
-Burn-in test, sync r-pro.
-Upgrade runtime Image. *UISPS.act5.recovery.v0.0.1-dev1+ubnt.28073.76a3f79.230406.1100.bin
-showmac issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
-showSys issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
-S+ Port LED test順序幫我修改一下
+uisp-s-plus, Port LED test, cmd flow change.
+uisp-s-plus, System LED test, cmd flow change.
+uisp-s-plus, DDR test, cmd flow change.
+uisp-s-plus, SFP Flash test, cmd flow change.
+uisp-s-plus, NAND Flash test, remove.
+uisp-s-plus, Bt connect, remove.
+uisp-s-plus, FAN test, criteria change.
+uisp-s-plus, BLE RSSI test, add and verify.
+uisp-s-plus, Port LED test, cmd flow change.
+uisp-s-plus, Burn-in test, setenv burnTimeout 16200.
+uisp-s-plus, Burn-in test, setenv burnFailedstop 1.
+uisp-s-plus, Burn-in test, sync r-pro.
+uisp-s-plus, Upgrade runtime Image. *UISPS.act5.recovery.v0.0.1-dev1+ubnt.28073.76a3f79.230406.1100.bin
+uisp-s-plus, showmac issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
+uisp-s-plus, showSys issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
+uisp-s-plus, S+ Port LED test順序幫我修改一下
 
-fcd DIAG_v2.0.3: uisp-s-plus_256.ubi.
-fcd update setenv.
-ftu DIAG_v2.0.3: uisp-s-plus_256.ubi
-ftu UISPS.act5.recovery.v0.1.0.a21755e.230515.1450.bin
-ftu support check shipping ver.
-update udapi.py.
-update check shipping fw, use power class of udapi.
-ftu update mem test.
+uisp-s-plus, fcd DIAG_v2.0.3: uisp-s-plus_256.ubi.
+uisp-s-plus, fcd update setenv.
+uisp-s-plus, ftu DIAG_v2.0.3: uisp-s-plus_256.ubi
+uisp-s-plus, ftu UISPS.act5.recovery.v0.1.0.a21755e.230515.1450.bin
+uisp-s-plus, ftu support check shipping ver.
+uisp-s-plus, update udapi.py.
+uisp-s-plus, update check shipping fw, use power class of udapi.
+uisp-s-plus, ftu update mem test.
 
-fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
-ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
-ftu, add check shipping fw version, single test item.
-fcd fail from sz. (usb networking interface)
-ble fail from sz. (bt addr not update)
-ble fail from sz. (bt addr not update)
-burnin fail in sz. (loopback fail)
-poe test issues (2 pair) (from sz te)
+uisp-s-plus, fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
+uisp-s-plus, ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
+uisp-s-plus, ftu, add check shipping fw version, single test item.
+uisp-s-plus, fcd fail from sz. (usb networking interface)
+uisp-s-plus, ble fail from sz. (bt addr not update)
+uisp-s-plus, ble fail from sz. (bt addr not update)
+uisp-s-plus, burnin fail in sz. (loopback fail)
+uisp-s-plus, poe test issues (2 pair) (from sz te)
 
 doc, how to enable fail_stop feature of FTU.
 
 usw-enterprise-24-poe, fcd retest issues from fxn.
 
 usw-enterprise-8-poe, power consumption.
-at poe test issues.
-update poe test board setting.
-add poe check output power.
-update lcm reset pin test id.
+usw-enterprise-8-poe, at poe test issues.
+usw-enterprise-8-poe, update poe test board setting.
+usw-enterprise-8-poe, add poe check output power.
+usw-enterprise-8-poe, update lcm reset pin test id.
 
 usw-enterprise-48-poe, new fcd fw. (6.5.48, PoE MCU 2nd source
 usw-enterprise-48-poe, update t1 fw to fix syswrapper.sh upgrade2 issues. (6.5.48, PoE MCU 2nd source
 usw-enterprise-48-poe, create and verify rpi4 fcd build files.
 
-//usw-enterprisexg-24, update fcd fw to 6.4.19.
 usw-enterprisexg-24, power consumption.
 usw-enterprisexg-24, update ups test. 
 add lcm reset pin.
@@ -290,7 +291,6 @@ portal ecof issues.
 
 uisp-box-pro, rsa key issues when doing registration.
 
-//uisp-p-ups, update Diag FW to fix flash uid issues of registration.
 uisp-p-ups, update diag to fix fw issues, v006.
 
 uacc-lte, add new test case, get imei.
@@ -305,7 +305,7 @@ uacc-lte, update ar lte test, add at retry improve retest rate.
 uacc-lte, survey control NE6000, lte retry.
 uacc-lte, support checking format for get imei.
 uacc-lte, lte swtich band fail, winbond flash R/W response time issues.
-uacc-lte, refine LTE result check.
+uacc-lte, refine LTE result check. (support update activity timer)
 
 usw-mission-critical, update external battery.
 usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
@@ -327,9 +327,9 @@ usw-mission-critical, test plan changes of world-build, outlet voltage changes.
 usw-mission-critical, outlet test issue, voltage is zero.
 usw-mission-critical, support check outlet voltage by region. 
 usw-mission-critical, add us / eu user configuration for outlet voltage. 
-usw-mission-critical, UM.rtl838x_ch-outlet-invalid-value+14846.230531.1525.bin. 
-
-?uisp-r-pro, burnin fail in ltn, cpu high temperature.
+usw-mission-critical, verify pr image, UM.rtl838x_ch-outlet-invalid-value+14846.
+usw-mission-critical, add check region. 
+usw-mission-critical, print parsed voltage and power in log. (outlet test). 
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
 uisp-r-pro, rewrite lcm test with new diag v9.0.10.
