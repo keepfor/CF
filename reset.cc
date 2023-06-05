@@ -1,11 +1,11 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 #ifdef LOCAL
-#include"lib/debug.h"
+#include "lib/debug.h"
 #else 
-#define debug(...) 
+#define debug(...) 0
 #endif
 
 int32_t main() {
@@ -17,7 +17,6 @@ int32_t main() {
 
   {
     int tt = 1;
-
     while (tt--) {
       solve();
     }

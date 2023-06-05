@@ -265,9 +265,11 @@ uisp-s-plus, ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
 uisp-s-plus, ftu, add check shipping fw version, single test item.
 uisp-s-plus, fcd fail from sz. (usb networking interface)
 uisp-s-plus, ble fail from sz. (bt addr not update)
-uisp-s-plus, ble fail from sz. (bt addr not update)
 uisp-s-plus, burnin fail in sz. (loopback fail)
 uisp-s-plus, poe test issues (2 pair) (from sz te)
+uisp-s-plus, poe test board power issues (from sz te)
+uisp-s-plus, fan test fail in sz.
+uisp-s-plus, fcd serial io error.
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -306,6 +308,8 @@ uacc-lte, survey control NE6000, lte retry.
 uacc-lte, support checking format for get imei.
 uacc-lte, lte swtich band fail, winbond flash R/W response time issues.
 uacc-lte, refine LTE result check. (support update activity timer)
+uacc-lte, enable activity timer cmd timeout.
+uacc-lte, enalbe activity timer should post action.
 
 usw-mission-critical, update external battery.
 usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
@@ -330,6 +334,10 @@ usw-mission-critical, add us / eu user configuration for outlet voltage.
 usw-mission-critical, verify pr image, UM.rtl838x_ch-outlet-invalid-value+14846.
 usw-mission-critical, add check region. 
 usw-mission-critical, print parsed voltage and power in log. (outlet test). 
+usw-mission-critical, burnin i2c test fail. 
+usw-mission-critical, burnin voltage abornormal. 
+usw-mission-critical, help rd check syswrapper.sh save config.
+
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
 uisp-r-pro, rewrite lcm test with new diag v9.0.10.
@@ -395,6 +403,7 @@ lcm dfu update stop ulcmd.
 lcm update flow, loop boot dfu.
 increase sleep to 3.
 uisp-r-pro, update ble test flow. (init_bt)
+uisp-r-pro, burnin loop back fail in pcba-b.
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
@@ -427,6 +436,9 @@ fw upgrade, add scp logging.
 remove fwupdate.bin first.
 lcm burnin test, increase test round.(from ltn te)
 uisp-p-pro, update test flow. (init_bt)
+uisp-p-pro, fcd usb error in ltn. 
+uisp-p-pro, fcd serial error in ltn. 
+uisp-p-pro, fcd tty can not 7777 in ltn. 
 
 //uisp-p, Update charger test, change the logic of checking dc output0.
 uisp-p, add retry to charge test.

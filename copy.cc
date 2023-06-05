@@ -1,43 +1,32 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 #ifdef LOCAL
-#include"lib/debug.h"
+#include "lib/debug.h"
 #else 
-#define debug(...) 
+#define debug(...) 0
 #endif
 
 int32_t main() {
   ios::sync_with_stdio(false), cin.tie(0);
 
   auto solve = [&]() {
-    int n; cin >> n;
-    vector<int> x(5 + 1);
-    vector<int> y(5 + 1);
-    for (int i = 0; i < n; ++i) {
-      int t; cin >> t;
-      ++x[t];
-    }
-    for (int i = 0; i < n; ++i) {
-      int t; cin >> t;
-      ++y[t];
-    }
-    int ans = 0;
-    for (int i = 1; i <= 5; ++i) {
-      if ((x[i] + y[i]) & 1) {
-        cout << -1 << '\n';
+    long long n;
+    cin >> n;
+
+    for (int i = 1;; ++i) {
+      if (i >= n) {
+        cout << n << '\n';
         return;
       }
-      ans += abs(x[i] - (x[i] + y[i]) / 2);
+      n -= 1ll * i;
     }
-    cout << ans / 2 << '\n';
   };
 
   {
-    int TC = 1;
-
-    for (int i = 1; i <= TC; ++i) {
+    int tt = 1;
+    while (tt--) {
       solve();
     }
   }
