@@ -264,12 +264,14 @@ uisp-s-plus, fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
 uisp-s-plus, ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
 uisp-s-plus, ftu, add check shipping fw version, single test item.
 uisp-s-plus, fcd fail from sz. (usb networking interface)
+uisp-s-plus, ble retest issues.
 uisp-s-plus, ble fail from sz. (bt addr not update)
 uisp-s-plus, burnin fail in sz. (loopback fail)
 uisp-s-plus, poe test issues (2 pair) (from sz te)
 uisp-s-plus, poe test board power issues (from sz te)
 uisp-s-plus, fan test fail in sz.
 uisp-s-plus, fcd serial io error.
+uisp-s-plus, 2nd source flash. (uid)
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -337,6 +339,8 @@ usw-mission-critical, print parsed voltage and power in log. (outlet test).
 usw-mission-critical, burnin i2c test fail. 
 usw-mission-critical, burnin voltage abornormal. 
 usw-mission-critical, help rd check syswrapper.sh save config.
+usw-mission-critical, refine outlet test, update config format.
+usw-mission-critical, verify outlet test.
 
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
