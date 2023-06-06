@@ -1,0 +1,30 @@
+USP
+TWFCD-3372, UISP-P, add retry to li battery discharge test.
+TWFCD-3593, UISP-P-PRO, Update and verify FCD with diag v9.0.8.
+TWFCD-3470, UISP-R-PLUS, ping uboot failed with sfp module.
+TWFCD-3590, UISP-R-PLUS, registration failed, eeprom pcba is wrong
+TWFCD-3592, UISP-R-PRO, update and verify FTU with new pcba. (ee6d, 113-01265-xx)
+TWFCD-3370, UISP-S, Add Port speed change 100.
+TWFCD-3588, UISP-S-PRO, update fcd with new diag fw, 1.3.8-DEV08.bix.
+TWFCD-3600, UISP-S-PLUS, verify fcd fail with fw 003. 
+TWFCD-3589, UISP-S-PLUS, ssh password is not correct.
+
+USW
+TWFCD-3270, USW-ENTERPRISE-48-POE, new fcd fw. (6.5.46, PoE MCU 2nd source)
+TWFCD-3465, USW-FLEX-XG, update shipping fw to 6.4.19. (Marvell)
+
+ULED
+TWFCD-3603, ULED-BAR, update 5000k ct power test, add delay after recognizing dut id.
+TWFCD-3572, ULED-PANEL, add 2nd 5000k ct test.
+TWFCD-3580, ULED-DOWN-100MM, add delay after recognizing dut id. (3000k ct power test)
+TWFCD-3579, ULED-DOWN-150MM, add 2nd 5000k ct power test.
+TWFCD-3573, ULED-STRIP-10M, add 5000k ct power test.
+TWFCD-3575, ULED-STRIP-1M, add 2nd id test.
+TWFCD-3574, ULED-STRIP-5M, add 5000k ct power test.
+TWFCD-3576, ULED-STRIP-COLOR-10M, add blue channel test.
+TWFCD-3577, ULED-STRIP-COLOR-1M, add 2nd green channel test.
+TWFCD-3578, ULED-STRIP-COLOR-5M, add 2nd blue channel test.
+
+USP
+TWFCD-3468, USP-BATTERY, update battery user/shipping fw v1.1.4.332. (via ble)
+TWFCD-3265, USP-RPS-PRO, update burnin.sh. (15 secs delay)

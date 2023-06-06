@@ -1,15 +1,9 @@
 UISP-Console-Carrier, npi.
 
-usw, help fw rd search usage of 'syswrapper.sh save-config' in fcd/ftu. (usw, usp, u6)
-
-usp-rps, //verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
 usp-rps, create new build for ftu.
 usp-rps, find the cause of uls error. Find file: data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
 
-//usp-rps-pro, update enable burnin, update burnin.cfg. 
-//usp-rps-pro, update enable burnin, update burnin.sh. (15 secs delay)
 usp-rps-pro, update lead acid battery, add wait 15 secs for battery stability.
-//usp-rps-pro, update lead acid battery, update fast charging current criteria.(0.6~1.1 => 0.4~1.2 A)
 usp-rps-pro, update lead acid battery, update slow charging current criteria.(0.1~0.3 => 0.1~0.6 A)
 usp-rps-pro, update lead acid battery, add config for slow charging current.
 update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
@@ -41,13 +35,10 @@ FCD UM.mt7621_6.5.39.
 FTU UM.mt7621_6.5.39.
 lcm burnin, increase round. (from ltn te)
 
-//uisp-s, add new test item, snake 100.
-//uisp-s, add new test item, snake 10.
-//uisp-s, 3/24, UISP-S,	ee6f,	113-00988-xx,	113-01261-xx
-//uisp-s, update shipping fw.
 //uisp-s, update ble test, change calculation logic.
 uisp-s, update ble test, parser.
-uisp-s, Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
+//uisp-s, Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
+uisp-s, Update FCD with Diag fw v1.3.6-DEV07.
 //uisp-s, Add Port speed change 100.
 uisp-s, Add Port speed change 10.
 uisp-s, Add Port information 100.
@@ -57,10 +48,6 @@ uisp-s, refactor snake.
 uisp-s, refactor port speed.
 uisp-s, refactor port information.
 
-//usp-battery, update app fw to v1.1.4.332. (via xmodem)
-//usp-battery, update lcm fw (v0.1.0.0) for lcm upgrade. (ftu) 
-//usp-battery, update battery user/shipping fw v1.1.4.332. (via ble) 
-usp-battery, update recovery fw to v1.1.4.332.
 usp-battery, update ble app fw to v1.1.4.332.
 usp-battery, update ble product fw to v1.1.4.332.
 usp-battery, update ble battery ftu tool to python3.
@@ -103,7 +90,6 @@ usp-battery, burin fail in ltn, issues of batteries connected in series.
 
 uisp-r, update runtime fw. (3.0.1)
 uisp-r, update check runtime ver.
-//uisp-r, update factory reset test ordering.
 uisp-r, update test shell of burnin test..
 uisp-r, add user config for ip after upgrade runtime fw.
 uisp-r, update enable ssh port to 2 to 8.
@@ -125,10 +111,6 @@ uisp-r, update burnin test tool.
 uisp-r, update fwupgrade, support reset ftu.
 uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 
-//usp-rps, update fcd fw to 6.4.20.
-
-//uisp-r-plus, ping uboot failed.
-uisp-r-plus, registration failed, eeprom pcba failed.
 uisp-r-plus, add fcd tlv data failed.
 uisp-r-plus, cat version failed, file not found.
 uisp-r-plus, sf erase wrong.
@@ -138,52 +120,46 @@ uisp-r-plus, update timeout of formating emmc to 15 secs.
 uisp-r-plus, update diag fw. 
 uisp-r-plus, enable diag mode. 
 uisp-r-plus, update fcd, support diag v9.0.0. 
-show mac cmd is not correct.
-sysid is not correct.
-no bomrev information.
-no qrcode information. 
-i2c test fail.
-stress loop back fail.
-disk test fail.
-fcd cat proc information fail.
-ble test fail.
-get switch temperature fail.
-led test not return response.
-loopback test fail.
-update diag fw, UISP-R-Plus diag v9.0.1.
-flash-image-0.0.2.bin.uisprplus
-fcd tftpboot fail.
-fcd, support exit from diag.
-fcd, support exit from diag and login.
-fcd add check info in diag shell.
-fcd add \r for diag shell cmd.
-back to flash-image-0.0.1.bin.uisprplus
-check burnin result, update parser of stress loopback sfp
-update fan expected.
-fix backup power typo.
-update backup power checking logic.
-update enable burnin fan env.
-bomrev hex.
-exec sh issue.
-ble calculation.
-ble parser.
-update test name of ble.
-update fan criteria.
-add poe test.
-poe test issue. diag v9.0.1
-separate poe function and led.
-burnin reboot issue, update diag.
-fcd, emmc format issues, update fcd.
-r+ Port LED test順序幫我修改一下
-uisp-r-plus, update ble test flow. (init_bt)
+uisp-r-plus, show mac cmd is not correct.
+uisp-r-plus, sysid is not correct.
+uisp-r-plus, no bomrev information.
+uisp-r-plus, no qrcode information. 
+uisp-r-plus, i2c test fail.
+uisp-r-plus, stress loop back fail.
+uisp-r-plus, disk test fail.
+uisp-r-plus, fcd cat proc information fail.
+uisp-r-plus, ble test fail.
+uisp-r-plus, get switch temperature fail.
+uisp-r-plus, led test not return response.
+uisp-r-plus, loopback test fail.
+uisp-r-plus, update diag fw, UISP-R-Plus diag v9.0.1.
+uisp-r-plus, flash-image-0.0.2.bin.uisprplus
+uisp-r-plus, fcd tftpboot fail.
+uisp-r-plus, fcd, support exit from diag.
+uisp-r-plus, fcd, support exit from diag and login.
+uisp-r-plus, fcd add check info in diag shell.
+uisp-r-plus, fcd add \r for diag shell cmd.
+uisp-r-plus, back to flash-image-0.0.1.bin.uisprplus
+uisp-r-plus, check burnin result, update parser of stress loopback sfp
+uisp-r-plus, update fan expected.
+uisp-r-plus, fix backup power typo.
+uisp-r-plus, update backup power checking logic.
+uisp-r-plus, update enable burnin fan env.
+uisp-r-plus, bomrev hex.
+uisp-r-plus, exec sh issue.
+uisp-r-plus, ble calculation.
+uisp-r-plus, ble parser.
+uisp-r-plus, update test name of ble.
+uisp-r-plus, update fan criteria.
+uisp-r-plus, add poe test.
+uisp-r-plus, poe test issue. diag v9.0.1
+uisp-r-plus, separate poe function and led.
+uisp-r-plus, burnin reboot issue, update diag.
+uisp-r-plus, fcd, emmc format issues, update fcd.
+uisp-r-plus, r+ Port LED test順序幫我修改一下
+uisp-r-plus, uisp-r-plus, update ble test flow. (init_bt)
 
-//uisp-s-plus, develop fcd, new platform, Marvell Prestera 98DX25xx.
-//uisp-s-plus, verify upgrade to diag fw with fcd process.
-//uisp-s-plus, add devreg debug at the end of fcd.
-//uisp-s-plus, fcd fail with fw 001. (flash type not found)
-uisp-s-plus, ssh password is not correct.
 uisp-s-plus, update diag fw to 004.
-uisp-s-plus, fcd fail with fw 003.
 uisp-s-plus, diag fw does not automatically login diag shell.
 uisp-s-plus, deveg helper issues.
 uisp-s-plus, update devreg helper, to helper_MRVL_ACT5_release_01.
@@ -275,31 +251,21 @@ uisp-s-plus, 2nd source flash. (uid)
 
 doc, how to enable fail_stop feature of FTU.
 
-usw-enterprise-24-poe, fcd retest issues from fxn.
-
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
 usw-enterprise-8-poe, update poe test board setting.
 usw-enterprise-8-poe, add poe check output power.
 usw-enterprise-8-poe, update lcm reset pin test id.
 
-usw-enterprise-48-poe, new fcd fw. (6.5.48, PoE MCU 2nd source
-usw-enterprise-48-poe, update t1 fw to fix syswrapper.sh upgrade2 issues. (6.5.48, PoE MCU 2nd source
 usw-enterprise-48-poe, create and verify rpi4 fcd build files.
+usw-enterprise-48-poe, for fw rd, search usage of 'syswrapper.sh save-config' in fcd/ftu. (usw, usp, u6)
 
 usw-enterprisexg-24, power consumption.
 usw-enterprisexg-24, update ups test. 
-add lcm reset pin.
+usw-enterprisexg-24, add lcm reset pin.
 usw-enterprisexg-24, add lcm reset pin test.
-portal ecof issues.
+usw-enterprisexg-24, portal ecof issues.
 
-uisp-box-pro, rsa key issues when doing registration.
-
-uisp-p-ups, update diag to fix fw issues, v006.
-
-uacc-lte, add new test case, get imei.
-uacc-lte, update input serial number test, add a pop-up window.
-uacc-lte, usb test fail.
 uacc-lte, ua band fail.
 uacc-lte, update get imei, add popUP window.
 uacc-lte, update ua lte test, add at retry improve retest rate.
@@ -313,7 +279,7 @@ uacc-lte, refine LTE result check. (support update activity timer)
 uacc-lte, enable activity timer cmd timeout.
 uacc-lte, enalbe activity timer should post action.
 
-usw-mission-critical, update external battery.
+//usw-mission-critical, update external battery, switch ac power and external battery.
 usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
 usw-mission-critical, add, FP.8.1 LTE - band check
 usw-mission-critical, lcm failed in fcd.
@@ -420,16 +386,13 @@ usw-flex-xg, merge reset button test to factory default.
 usw-flex, update burnin script to improve retest rate of burnin test. (increase delay)
 usw-flex, update, update shipping fw to US.mt7621_6.4.18+14328.221213.1324-uboot.bin.
 
-//uisp-p-pro, update testing order of lcm and lte test.
-//uisp-p-pro, Update la battery charge test, to change the logic of checking dc output 0, 1, 2.
 uisp-p-pro, Update la battery charge test, to change the criteria of psu voltage.
 uisp-p-pro, Update la battery charge test, add retry and update test flow.
-uisp-p-pro, Update li battery discharge test, to change the logic of checking dc output 0, 1, 2.
 uisp-p-pro, Update li battery discharge test, to change the criteria of psu voltage.
 uisp-p-pro, Update li battery discharge test, add retry and update test flow.
 uisp-p-pro, charger dc output is too low.
 1. ftu, Modify expected diag_fw_version to 9.0.8.
-1. fcd, Modify expected diag_fw_version to 9.0.8.
+//uisp-p-pro, Update and verify FCD with diag v9.0.8.
 2. Modify typo daig_fw_version to diag_fw_version.
 3. Update runtime FW to UISPP.v1.0.0-rc.3.1bf95c.230301.0836.bin.
 - Update BLE test, rewrite parser and calculation.
@@ -443,27 +406,27 @@ uisp-p-pro, update test flow. (init_bt)
 uisp-p-pro, fcd usb error in ltn. 
 uisp-p-pro, fcd serial error in ltn. 
 uisp-p-pro, fcd tty can not 7777 in ltn. 
+uisp-p-pro, cpu test retest in ltn. 
+uisp-p-pro, ble test retest in ltn. 
 
-//uisp-p, Update charger test, change the logic of checking dc output0.
 uisp-p, add retry to charge test.
-//uisp-p, add retry to li battery discharge test.
 uisp-p, add retry to la battery discharge test.
-uisp-p, update parser and criteria of charge test, mv to V.
 uisp-p, update parser and criteria of li discharge test, mv to V.
 uisp-p, update parser and criteria of la discharge test, mv to V.
 uisp-p, la battery log parsing failed.
-DIAG(v9.0.8)
-RT FW(v1.0.0)
-BT test, calculation.
-BT test, parser.
-daig typo.
-add upgrade to diag fw.
-remove ssh login in cmd_diag.
-fw upgrade, add scp logging.
-remove fwupdate.bin first.
-remove oqc1 Check Power Status.
-remove oqc2 Check Voltage/Current Status.
-remove oqc3 System Shutdown.
+uisp-p, DIAG(v9.0.8)
+uisp-p, update runtime FW (FW_v1.0.0-rc2)
+uisp-p, RT FW(v1.0.1)
+uisp-p, BT test, calculation.
+uisp-p, BT test, parser.
+uisp-p, daig typo.
+uisp-p, add upgrade to diag fw.
+uisp-p, remove ssh login in cmd_diag.
+uisp-p, fw upgrade, add scp logging.
+uisp-p, remove fwupdate.bin first.
+uisp-p, remove oqc1 Check Power Status.
+uisp-p, remove oqc2 Check Voltage/Current Status.
+uisp-p, remove oqc3 System Shutdown.
 uisp-p, revB fcd issues.
 uisp-p, update test flow. (init_bt)
 
@@ -471,8 +434,7 @@ uisp-s-pro,
 uisp-s-pro, update ble test, rewrite parser and calculation.
 uisp-s-pro, update ble test, update tx checking process.
 uisp-s-pro, update ble criteria issue.
-uisp-s-pro, add port information.
-uisp-s-pro, update fcd with new diag fw, 1.3.8-DEV08.bix.
+//uisp-s-pro, update fcd with new diag fw, 1.3.8-DEV08.bix.
 uisp-s-pro, update ftu with new diag fw, 1.3.8-DEV08.bix.
 uisp-s-pro, Update Diag fw upgrade test with Diag fw v1.3.8-DEV08.
 uisp-s-pro, Add Port information 100.

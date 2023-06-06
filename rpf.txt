@@ -6,6 +6,8 @@ Act as a subject matter expert for automation tools. Take the ownship of the int
 =========================================================================================
 Output  (Describe the end goal(s) that you contribute to with this expectation)
 
+1. Participate in discussions with UISP HW, FW and TEs to resolve UACC-LTE automation tests timeout issues. Include reproducing issues and developing retry methodology to improve retest rate. Also release hot fix to quickly help factory production. 
+
 Participate in peers and different functional teams to decide amongst available testing automation strategy.
 
 Take responsibility for release schedules and milestones, keeping up a high velocity in a fast-paced environment.
@@ -16,6 +18,8 @@ Deal with several technical issues of the automation tools, setting priorities, 
 
 =======================================================================================================
 Working Principles ( Describe how you apply our  principles to your day to day work ) 
+
+2. Based on the understanding the production automation process, cowork and communicate with UISP FW team to design to FCD process and Diag FW login behaviors. To sync many UISP products and its Diag FW, to make an efficient long-term strategy to reduce the efforts of Development.
 
 Work backforward: 
 Ability to understand technical subjects and emerging issues around production automation, then connecting cross-functional coordination, and inter/intra team communications to deliver outstanding outcomes and make all involved teams work efficiently.
@@ -29,6 +33,8 @@ Structure and communicate complex, ambiguous, and testing issues to advise the c
 ==========================================================================================================
 Leadership (Describe what leadership behaviors you will show to achieve this expectation)
 
+3. Try to create the retry class to cover all UISP Diag FW retry test issues, not just looping the test method to do retries. Also work actively and discuss with TE and RD team to discuss the necessity of retries, as it will increase production cost. 
+
 Act as aspiring develper, to make a difference in the tools design or software program. It should be able to talk about changing the status quo through out-of-the-box thinking. 
 
 Work within highly collaborative environment. Do not be working in silos. Naturally expects to hear about other members' experiences of working successfully within a project, even when the opinions conflicted with others. That should be able to explain how to handle such situations with understanding and care.
@@ -38,6 +44,8 @@ Feel recognized in a trusting culture built on an inspiring vision, vibrant miss
 ==========================================================================================================
 Capabilities & Development (Describe how you'll become stronger in your role as a result )
 
+4. Act as a Bridge between TE and RD team, transfer the TE and factory's opinions to RD team. And writing test plan for TE, also explain RD's cmd test plan to Testing Engineers to Sync two sides' Objectives to have a better understanding to each other. And often review and improve code to have the simple implementation for RD team's test plan.
+
 Bridge between different cross-functional teams. Try to act as a pivotal role to communicate information across the teams and ensure the message is understood, sharing information and help remove bottlenecks and also keep everyone feeling like they are in the loop and empowered to make decisions. 
 
 Know exactly where we're headed. To plan—in and documentarizing to help keep work on track from the start of a project to the last of delivery.
@@ -45,3 +53,4 @@ Know exactly where we're headed. To plan—in and documentarizing to help keep w
 Review code and improving code without creating new functionality that can transform a mess into clean code and simple design.
 
 Keep enhancing root cause analysis to solve problems in a tactical and strategic level.
+
