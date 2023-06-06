@@ -3,7 +3,7 @@
 =========================================================================================
 Output  (Describe the end goal(s) that you contribute to with this expectation)
 
-* Participate in discussions with UISP HW, FW and TEs to resolve UACC-LTE automation tests timeout issues. Include reproducing issues and developing retry methodology to temporarily improve retest rate. Then have a hot fix release to quickly help factory production. And keep investigating the issues, and examine the automation tool's code, eventually found out the vendor issues.
+* Participate in discussions with UISP HW, FW and TEs to resolve UACC-LTE automation tests timeout issues. Include reproducing issues and developing retry methodology to temporarily improve retest rate. Then having a hot fix release to quickly help factory production. After, keep investigating the issues, and examine the automation tool's code, eventually found out the vendor issues.
 
 * Coordinate the USP Battery FW RD and USP RPS FW RD to deal with USP Battery Burnin design, and quickly implement the tools as a POC. After the PLM rejected the original Burnin plan, we quickly figure out the plan B and implement to meet the schedules. And keep improving tools for factory's environment to optimize the user experience of TEs.
 
@@ -12,14 +12,14 @@ Working Principles ( Describe how you apply our  principles to your day to day w
 
 * Discuss actively and transparently with TE and RD team for the necessity of retries, as it will increase production cost. And using the decorator of Python, to create the retry class as a reusable snippet, to cover all UISP Diag FW retry test issues, not just looping the test method to do retries.  
 
-* Cowork and communicate with UISP FW team to discuss and design the Diag shell behaviors and common test cases log format, then align many UISP products and its Diag FW with different FW RDs, to make an efficient long-term strategy for reducing the effort of Development.
+* Cowork and communicate with UISP FW team to discuss and design the Diag shell behaviors and the log format of common test cases, then align many UISP products and its Diag FW with different FW RDs, to make an efficient long-term strategy for reducing the effort of future Development.
 
 ==========================================================================================================
 Leadership (Describe what leadership behaviors you will show to achieve this expectation)
 
-* Rather than discovering bugs after a feature has been shipped and scrambling to release a patch, always review and improve code to get the simpler implementation for RD team's test plan, and fullfill the TE's UI/UX.
+* Rather than discovering bugs after a feature has been shipped and scrambling to release a patch, always review and improve code to get the simpler implementation for RD team's test plan, and also do the best effort to fullfill the TE's user experience.
 
-* Like a Bredge between TE and RD team, transfer the TE and factory's opinions to RD team. And writing test plan for TE, also explain RD's cmd test plan to Testing Engineers to Sync two sides' Objectives to have a better understanding to each other. 
+* Like a Bredge between TE and RD team, transfer and tranlate the TE and factory's opinions to RD team. And writing test plan for TE, also explain RD's cmd test plan to Testing Engineers to Sync two sides' Objectives to have a better understanding to each other. 
 
 ==========================================================================================================
 Overall
