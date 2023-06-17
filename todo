@@ -87,6 +87,9 @@ usp-battery, new testing fw.
 usp-battery, update rps-pro's check burnin result, do not disable burnin. 
 usp-battery, add disable burnin. 
 usp-battery, burin fail in ltn, issues of batteries connected in series. 
+usp-battery, dfm of ltn.
+00001198-0001-0040-0000-${MAC}
+LTN这边用950不会有乱码
 
 uisp-r, update runtime fw. (3.0.1)
 uisp-r, update check runtime ver.
@@ -110,6 +113,7 @@ uisp-r, Support of UISP-R Rev.B 113-01262-xx, please update user config "bomrev"
 uisp-r, update burnin test tool.
 uisp-r, update fwupgrade, support reset ftu.
 uisp-r, fw 3.0.1 factory reset port 9 can not ping.
+uisp-r, ecof for update mobile app ver.
 
 uisp-r-plus, add fcd tlv data failed.
 uisp-r-plus, cat version failed, file not found.
@@ -209,6 +213,7 @@ uisp-s-plus, fcd update diag fw.
 uisp-s-plus, fcd update helper.
 uisp-s-plus, fcd update mtdblock.
 uisp-s-plus, fine tune fcd ping timeout.
+uisp-s-plus, Production test process update for improving CT
 
 uisp-s-plus, Port LED test, cmd flow change.
 uisp-s-plus, System LED test, cmd flow change.
@@ -248,6 +253,21 @@ uisp-s-plus, poe test board power issues (from sz te)
 uisp-s-plus, fan test fail in sz.
 uisp-s-plus, fcd serial io error.
 uisp-s-plus, 2nd source flash. (uid)
+然後剛剛有驗到 pid stop會有一些error
+之前聽同事說, cm的it說開pc的ftp會有資安問題.
+改好了，upgrade_diag.sh再麻煩重新下載，謝謝
+FCD Changlog:
+* Update setenv function.
+* Update bundled DIAG FW to DIAG_v2.0.5: uisp-s-plus_160623.1308.ubi 
+FTU Changlog:
+* Update bundled Runtime FW to RT_FW_v0.1.0: UISPS.act5.v0.1.0.a21755e.230515.1435.bin
+* Add PID control to fan test.
+* Burn-in test 
+	* Update setenv burnCmd 0x8f. 
+	* Update setenv burnDelay 600. 
+* Add Check Application version test case.
+* Add Upgrade to DIAG image (from Application image) test case and related tools.
+* Update Check DIAG to v2.0.5.
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -307,6 +327,21 @@ usw-mission-critical, burnin voltage abornormal.
 usw-mission-critical, help rd check syswrapper.sh save config.
 usw-mission-critical, refine outlet test, update config format.
 usw-mission-critical, verify outlet test.
+usw-mission-critical-eu, lcm dfu and burnin fail, lcm show booting error.
+usw-mission-critical-eu, lcm reset pin fail after burnin. 
+usw-mission-critical-eu, verify dev fw UM.rtl838x_gk-backport-6.4.
+usw-mission-critical-eu, update temperature check expected range.
+* Update bundled FW to UM.rtl838x_gk-backport-6.4+14359.230614.0854-uboot.bin.
+
+* Add Pre-Test Region Check
+    * Must update Test Config [Pre-Test][region] to "EU" or "US" according to the region of DUT, before running the test. 
+
+* Update FP.5 Outlet Test
+    * Add outlet_voltage test reference value for EU version
+    * Add outlet_voltage Test Config for EU version.
+
+* FP.12 Temperature Check
+    * Update expected temperature range (25000 ~ 50000)
 
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
@@ -374,6 +409,8 @@ lcm update flow, loop boot dfu.
 increase sleep to 3.
 uisp-r-pro, update ble test flow. (init_bt)
 uisp-r-pro, burnin loop back fail in pcba-b.
+uisp-r-pro, Production test process update for improving CT
+uisp-r-pro, update controller app ver, ecof.
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
@@ -408,6 +445,7 @@ uisp-p-pro, fcd serial error in ltn.
 uisp-p-pro, fcd tty can not 7777 in ltn. 
 uisp-p-pro, cpu test retest in ltn. 
 uisp-p-pro, ble test retest in ltn. 
+update controller app ver, ecof.
 
 uisp-p, add retry to charge test.
 uisp-p, add retry to la battery discharge test.
@@ -429,6 +467,8 @@ uisp-p, remove oqc2 Check Voltage/Current Status.
 uisp-p, remove oqc3 System Shutdown.
 uisp-p, revB fcd issues.
 uisp-p, update test flow. (init_bt)
+uisp-p, UISP-P的AC adapter真的很不穩，最近已經收到兩個ticket都是AC adapter斷斷續續的問題.
+update controller app ver, ecof.
 
 uisp-s-pro, 
 uisp-s-pro, update ble test, rewrite parser and calculation.

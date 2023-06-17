@@ -1,24 +1,35 @@
 1/ Note:
 - Remark: None
 - Shared models: None
-- Implementation: Roll in
+- Implementation: Roll-in
+CR 50pcs before applying to MP.
 - Sample demand: None
 
-2/ FCD/FTU versions:
-- FCD Tool: 
-  * FCD_UniFiSwitch_USW-MISSION-CRITICAL_1.0.1_6.4.20.tgz
-  * MD5: 6521c08f2669eb07f24caa05f8b61047
+2/ Remove the following test items:
+* PCBA: 55 Upgrade LCM Image
+* FT01: 10 Memory Test
+* FT01: 11 CPU Stress Test
+* FT01: 13 SPI Flash Test
+* FT01: 17 SFP+ External Loopback Test
 
-3/ Change log:
-- FCD Changelog:
-  * Increase timeout of updating firmware.
-
-4/ Miscellaneous
-if there is any information associated with the following items, please refer to PM who is in charge of this model.
-PM in charge: Sharon Chiu
+3/ Miscellaneous
+If there is any information associated with the following items, please refer to PM who is in charge of this model.
+PM in charge: Joe Liang
 Routing/stage/implement/Approval Deadline/Effectivity/CM
 Rework: please refer to the PM for the details.
 
-Hi 
-@joseph.chou, please help to approve ECOF-000782, thanks.
-https://app.bom.com/changes/detail-summary?change_id=2421719744&redirect_seqno=18996857389
+1/ Note:
+- Remark: None
+- Shared models: None
+- Implementation: Roll-in
+CR 50pcs before applying to MP.
+- Sample demand: None
+
+2/ Remove the following test items:
+* FT01: 128 Memory Test
+
+3/ Miscellaneous
+If there is any information associated with the following items, please refer to PM who is in charge of this model.
+PM in charge: Joe Liang
+Routing/stage/implement/Approval Deadline/Effectivity/CM
+Rework: please refer to the PM for the details.

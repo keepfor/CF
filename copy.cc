@@ -1,143 +1,71 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 #ifdef LOCAL
-#include"./lib/debug.h"
+#include "lib/debug.h"
 #else 
-#define debug(...) 
+#define debug(...) 0
 #endif
 
-static inline void lowStr(string& s) {
-  for (auto& i : s) {
-    i = char(tolower(i));
-  }
-}
+int32_t main() {
+  ios::sync_with_stdio(false), cin.tie(0);
 
-static inline void upStr(string& s) {
-  for (auto& i : s) {
-    i = char(toupper(i));
-  }
-}
+  auto solve = [&]() {
+    const string pc_ip = "192.168.1.198";
+    const string ap_ip = "192.168.1.40";
+    const string dut_mac = "24:5A:4C:2F:EA:0B";
+    const string default_clientID = "dbd2a0fe-2cb2-460d-a6e4-58e11cf7a8a2";
 
-static inline void readSortedPair(vector<pair<string, string>>& csp, int& sz) {
-  string s;
+    string merge = "";
 
-  while (getline(cin, s)) {
-    if (s.find("TWFCD") != string::npos) break;
-    csp.emplace_back("", s);
-  }
-
-  sz = (int) csp.size();
-  int ix = 0;
-  cout << "Count = " << sz << '\n';
-  
-  csp[ix] = {csp[ix].second, s + ", " + csp[ix].second};
-  ++ix;
-  while (getline(cin, s)) {
-    csp[ix] = {csp[ix].second, s + ", " + csp[ix].second};
-    ++ix;
-  }
-  sort(csp.begin(), csp.end(), [&](const pair<string, string>& lhs, const pair<string, string>& rhs) {
-    string l = lhs.first;
-    string r = rhs.first;
-    lowStr(l);
-    lowStr(r);
-    return l < r;
-  });
-}
-
-static inline void getList(vector<pair<string, string>>& csp, vector<string>& cs, int& sz) {
-  for (int i = 0; i < sz; ++i) {
-    cs[i] = csp[i].second;
-  }
-}
-
-static inline void getSplit(string& i, vector<string>& sp) {
-  string ss;
-  stringstream x(i); 
-
-  while (getline(x, ss, ',')) {
-    sp.push_back(ss);
-  }  
-}
-
-static inline void upProName(string& i, string& ii, vector<string>& sp) {
-  auto it = ii.find(sp[1]);
-  for (int k = 0; k < (int) sp[1].size(); ++k) {
-    i[it + k] = char(toupper(i[it + k])); 
-  }
-}
-
-static inline void classify(const vector<string>& pdline, vector<string>& cs, map<string, vector<string>>& all, int& sz) {
-  for (auto& i : cs) {
-    vector<string> sp;
-    getSplit(i, sp);
-
-    bool ok = false;
-    lowStr(sp[1]);
- 
-    for (auto& jj : pdline) {
-      string j = jj;
-      lowStr(j);
- 
-      if (sp[1].find(j) != string::npos) {
-        string ii = i;
-        lowStr(ii);
-
-        upProName(i, ii, sp);
-        all[j].push_back(i);
-
-        --sz;
-        ok = true;
-        break;
+    for (auto& i : pc_ip) {
+      if (i != '.') {
+        merge += i;
       }
     }
-    assert(ok && "No productline match");
-  }
-}
 
-static inline void outP(const map<string, vector<string>>& all) {
-  for (auto& [x, y] : all) {
-    string xx = x;
-    upStr(xx);
-    cout << xx << '\n';
- 
-    for (auto& z : y) {
-      cout << z << '\n';
+    for (auto& i : ap_ip) {
+      if (i != '.') {
+        merge += i;
+      }
     }
-    cout << '\n';
+
+    for (auto& i : dut_mac) {
+      if (i != ':') {
+        merge += i;
+      }
+    }
+
+    const int clientIdLen = (int) default_clientID.size();
+    string FinalclinetID = "";
+
+    for (int i = 0, j = 0; i < clientIdLen; ++i) {
+      if (default_clientID[i] == '-' or j >= (int) merge.size()) {
+        FinalclinetID += default_clientID[i];
+        continue;
+      }
+
+      FinalclinetID += merge[j];
+      ++j;
+    }
+
+    cout << "pc ip = " << pc_ip << '\n';
+    cout << "ap ip = " << ap_ip << '\n';
+    cout << "dut_mac = " << dut_mac << '\n';
+    cout << "merge = " << merge << '\n';
+
+    cout << "default client id = " << default_clientID << '\n';
+    cout << "final client id = " << FinalclinetID << '\n';
+
+  };
+
+  {
+    int tt = 1;
+    while (tt--) {
+      solve();
+    }
   }
-}
 
-static inline void shoudZero(int& sz) {
-  assert(!sz && "Should be Zero\n");
-}
-
-
-static inline     void genReport() {
-  const vector<string> pdline{"uisp","usw", "usp", "uled", "uacc", "uis", "usc"};
-
-  int sz = 0;
-  map<string, vector<string>> all;
-  vector<pair<string, string>> csp;
-  vector<string> cs;
-  
-  readSortedPair(csp, sz);
-  cs.resize(sz);
-  getList(csp, cs, sz);
-
-  classify(pdline, cs, all, sz);
-  shoudZero(sz);  
-  outP(all);
-}
-
-int32_t main() {
-  ios::sync_with_stdio(false);
-  cin.tie(0);
-
-  int TESTCASE = 1;
-  while (TESTCASE--) {
-    genReport();
-  }
   return 0;
 }
