@@ -1,5 +1,5 @@
 CC=g++
-obj=objSolCc
+obj=prog
 src=sol.cc
 dotSwap=.sol.*
 copySrc=copy.cc
