@@ -1,3 +1,8 @@
+usw-industrial,tests,test_MAC_check.py
+usw-industrial,tests,test_QRCODE_check.py
+usw-industrial,tests,test_bomrev_check.py
+usw-industrial,tests,test_upgrade_to_shipping_fw.py
+
 UISP-Console-Carrier, npi.
 
 usp-rps, create new build for ftu.
@@ -352,6 +357,7 @@ ble reduce testing time.
 stop daemon.
 restart daemon.
 logging ble rssi tools process count.
+ble connecting time too long after rebooted.
 
 
 uisp-r-pro, add burnfan1 to config panel.

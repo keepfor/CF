@@ -9,15 +9,12 @@ TWFCD-3579/3572 ULED-DOWN-150MM/ULED-PANEL, add 2nd 5000k ct power test.
 
 UISP
 TWFCD-3374/3591, UISP-R, FTU, update runtime fw (ver: 3.0.1), update runtime fw ip to (100.104.103.1), add user config for runtime fw ip, add scp logging.
-TWFCD-3673, UISP-P, add retry to 2 test cases, charge/la-battery-discharge test.
+TWFCD-3699, UISP-SERIES, all mp models, Update Application and Mobile Apps to newer versions. (ecof requests)
 TWFCD-3672, UISP-S-PRO, add 2 test cases, port information 10M/100M.
-TWFCD-3135, UISP-P-PRO, add Check LCM test after shipping FW upgraded.
-TWFCD-3467, UISP-S, update ble test, change calculation logic.
+TWFCD-3467, UISP-S, update ble test, change calculation logic, improve retest rate.
 
 USW
-TWFCD-3598, USW-ENTERPRISE-24-POE, fcd retest issues from fxn. (seems console issues)
 TWFCD-3599, USW-ENTERPRISE-48-POE, update and verify t1 fw to fix syswrapper.sh upgrade2 issues. (6.5.48, PoE MCU 2nd source.
 
 USP
 TWFCD-3376, USP-BATTERY, update lcm fw (v0.1.0.0) for lcm upgrade. (ftu)
-TWFCD-3264, USP-RPS, verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
