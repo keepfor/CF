@@ -1,6 +1,49 @@
-pc ip = 192.168.1.198
-ap ip = 192.168.1.40
-dut_mac = 24:5A:4C:2F:EA:0B
-merge = 1921681198192168140245A4C2FEA0B
-default client id = dbd2a0fe-2cb2-460d-a6e4-58e11cf7a8a2
-final client id = 19216811-9819-2168-1402-45A4C2FEA0B2
+Count = 38
+UACC
+TWFCD-2895, UACC-LTE, update input serial number test, add a pop-up window.
+TWFCD-3596, UACC-LTE, usb test fail in ltn, reproducing. (seems microcom timeout)
+
+UISP
+TWFCD-3673, UISP-P, add retry to 2 test cases, charge/la-battery-discharge test.
+TWFCD-3276, UISP-P, update parser and criteria of charge test, mv to V.
+TWFCD-3594, UISP-P, update runtime FW (v1.0.0-rc2)
+TWFCD-3135, UISP-P-PRO, add Check LCM test after shipping FW upgraded.
+TWFCD-3274, UISP-P-PRO, update testing order of lcm and lte test.
+TWFCD-3597, UISP-P-UPS, update diag to fix fw issues, ver: 0.0.6.
+TWFCD-3591, UISP-R, FTU, update runtime fw (ver: 3.0.1), update runtime fw ip to (100.104.103.1), add user config for runtime fw ip.
+TWFCD-3469, UISP-R, update factory reset test ordering.
+TWFCD-3374, UISP-R, update fw update, add scp logging.
+TWFCD-3133, UISP-R-PRO, rewrite upgrade-lcm-firmware with lcm-load. (new cmd)
+TWFCD-3467, UISP-S, update ble test, change calculation logic.
+TWFCD-3587, UISP-S, Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
+TWFCD-3672, UISP-S-PRO, add 2 test cases, port information 10M/100M.
+
+ULED
+TWFCD-3603, ULED-BAR, update 5000k ct power test , add delay after recognizing dut id.
+TWFCD-3278, ULED-BAR, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
+TWFCD-3580, ULED-DOWN-100MM, add delay after recognizing dut id. (3000k ct power test)
+TWFCD-3579, ULED-DOWN-150MM, add 2nd 5000k ct power test.
+TWFCD-3572, ULED-PANEL, 2nd 5000k ct test.
+TWFCD-3573, ULED-STRIP-10M, add 4 test cases, 5000k ct power test, 2nd 3000k/4000k/5000k ct power tests.
+TWFCD-3575, ULED-STRIP-1M, add 4 test cases, 2nd id test, 2nd 3000k/4000k/5000k ct power tests. 
+TWFCD-3574, ULED-STRIP-5M, add 4 test cases, 5000k ct power test, 2nd 3000k/4000k/5000k ct power tests.
+TWFCD-3576, ULED-STRIP-COLOR-10M, add 7 test cases, rgbw-total power test, 2nd id test, 2nd white/red/blue/green/rgbw-total channel tests.
+TWFCD-3577, ULED-STRIP-COLOR-1M, add 3 test cases, 2nd green/blue/rgbw-total channel test.
+TWFCD-3578, ULED-STRIP-COLOR-5M, add 2 test cases, 2nd blue/rgbw-toal channel test.
+
+USP
+TWFCD-3376, USP-BATTERY, update lcm fw (v0.1.0.0) for lcm upgrade. (ftu)
+TWFCD-3601, USP-BATTERY, update RECOVERY fw to v1.1.4.332 (via xmodem).
+TWFCD-3264, USP-RPS, verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
+TWFCD-3602, USP-RPS-PRO, update lead acid battery, add wait 15 secs for battery stability.
+
+USW
+TWFCD-3598, USW-ENTERPRISE-24-POE, fcd retest issues from fxn. (seems console issues)
+TWFCD-3599, USW-ENTERPRISE-48-POE, update and verify t1 fw to fix syswrapper.sh upgrade2 issues. (6.5.48, PoE MCU 2nd source.
+TWFCD-3269, USW-ENTERPRISE-8-POE, lcm backlight behavior issues.
+TWFCD-3040, USW-FLEX-XG, reset button FAIL in ltn, it will reboot,  reproducing (fw 6.4.19)
+TWFCD-2452, USW-INDUSTRIAL, create ftu, support upgrade to shipping fw.
+TWFCD-2790, USW-MISSION-CRITICAL, add new test, FP.8.1 LTE - band check
+TWFCD-3595, USW-MISSION-CRITICAL, update external battery test, switch ac power and external battery.
+TWFCD-3272, USW-MISSION-CRITICAL-EU, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
+

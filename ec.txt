@@ -1,35 +1,34 @@
+Title	
+[ee5b][UISP-P-Pro]UACC-Module-LTE-CAT-M1 FTU update
+
+Description	
 1/ Note:
 - Remark: None
 - Shared models: None
-- Implementation: Roll-in
-CR 50pcs before applying to MP.
-- Sample demand: None
+- Implementation: Roll in 
+- Sample demand: No need
 
-2/ Remove the following test items:
-* PCBA: 55 Upgrade LCM Image
-* FT01: 10 Memory Test
-* FT01: 11 CPU Stress Test
-* FT01: 13 SPI Flash Test
-* FT01: 17 SFP+ External Loopback Test
+2/ FCD/FTU versions:
+- FTU Tool: 
+* FTU_UACC_Module-LTE-CatM1_1.0.0_9.0.8.zip
+* MD5: 5e5d6410b4568d06f628a7b539986e10
 
-3/ Miscellaneous
-If there is any information associated with the following items, please refer to PM who is in charge of this model.
+3/ Change log:
+- FTU Changelog:
+* Input serial number test, support input serial number by the pop-up.
+* Get imei test, support input serial number by the pop-up.
+* LTE result check:
+    * Support enable RRC inactivity timer.
+    * Support disable RRC inactivity timer.
+
+- NE6000 Changelog:
+* NE6000 script file name: "20230608 UISP-P-Pro LTE MFG Test Scripts.zip"
+
+4/ Miscellaneous:
+if there is any information associated with the following items, please refer to PM who is in charge of this model.
 PM in charge: Joe Liang
 Routing/stage/implement/Approval Deadline/Effectivity/CM
 Rework: please refer to the PM for the details.
-
-1/ Note:
-- Remark: None
-- Shared models: None
-- Implementation: Roll-in
-CR 50pcs before applying to MP.
-- Sample demand: None
-
-2/ Remove the following test items:
-* FT01: 128 Memory Test
-
-3/ Miscellaneous
-If there is any information associated with the following items, please refer to PM who is in charge of this model.
-PM in charge: Joe Liang
-Routing/stage/implement/Approval Deadline/Effectivity/CM
-Rework: please refer to the PM for the details.
+Hi @joseph.chou, please help to approve the following ECOFs, thanks.
+ECOF-000809
+https://app.bom.com/changes/detail-summary?change_id=2422061472&redirect_seqno=19147295434
