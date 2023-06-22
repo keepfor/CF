@@ -1,6 +1,5 @@
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 function! CheckBackspace() abort
@@ -18,10 +17,10 @@ inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
 inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<tab>\<tab>"
+                              \: "\<C-g>u\<tab>"
 
 nnoremap <s-j> :e input.txt<cr>
-nnoremap <s-k> :!make<cr>
+nnoremap <s-k> :!time make<cr>
 nnoremap <s-l> :make re<cr>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>

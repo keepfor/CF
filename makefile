@@ -2,12 +2,14 @@ cc = g++
 cfg = -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions -std=gnu++2a
 dfg = -g -DLOCAL
 
-prog = obj
+prog = prog
 src = sol.cc
 input = input.txt
 output = output.txt
 resetSrc = reset.cc
 copySrc = copy.cc
+genSrc = gen.cc
+gen = gen
 
 define re 
 	> $(input)
@@ -42,11 +44,11 @@ re:
 
 rev: 
 	$(re)
-	vim $(src)
+	vim $(src) ${input}
 
 gen:
-	${CC} gen.cc -o gen
-	./gen > $(input)
+	${CC} ${genSrc} -o gen
+	./${gen} > $(input)
 
 empty:
 	echo "" > $(src)
