@@ -1,3 +1,9 @@
+
+nnoremap <s-l> :!make r<cr>
+inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<tab>"
+nnoremap <s-j> :e input.txt<cr>
+
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()

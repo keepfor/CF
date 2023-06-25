@@ -12,25 +12,29 @@ int32_t main() {
   ios::sync_with_stdio(false), cin.tie(0);
 
   auto solve = [&]() {
-    int n; cin >> n;
-    long long ans = 0;
-    map<long long, long long> s;
-    while (n--) {
-      long long k, v; cin >> k >> v;
-      ans += v;
-      s[k] = v;
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto& i : a)
+      cin >> i;
+
+    vector<tuple<int, int, int>> ans;
+    for (int i = 0; i < n; ++i) {
+      int mn = min_element(a.begin() + i, a.end()) - a.begin();
+      if (mn == i) continue;
+      ans.emplace_back(i + 1, n, mn - i);
+      rotate(a.begin() + i, a.begin() + mn, a.end());
     }
-    int m; cin >> m;
-    while (m--) {
-      long long k, v;
-      cin >> k >> v;
-      ans += max(0ll, v - s[k]);
+    cout << ans.size() << '\n';
+    for (auto& [x, y, z] : ans) {
+      cout << x << ' ' << y << ' ' << z << '\n';
     }
-    cout << ans << '\n';
+    cout << '\n';
   };
 
   {
     int tt = 1;
+    cin >> tt;
     while (tt--) {
       solve();
     }

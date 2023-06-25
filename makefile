@@ -42,7 +42,7 @@ copy:
 re:
 	$(re)
 
-rev: 
+new: 
 	$(re)
 	vim $(src) ${input}
 
