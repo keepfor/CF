@@ -41,7 +41,7 @@ re:
 
 rev:
 	$(re)
-	vim ${src}
+	vim ${src} ${input}
 
 new:
 	echo > ${input}
