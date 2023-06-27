@@ -11,17 +11,14 @@ inoremap <silent><expr> <down>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<down>" :
       \ coc#refresh()
+
 inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-inoremap <silent><expr><tab> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<tab>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
 nnoremap <F4> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
-nnoremap <F5> :e input.txt<cr>
 nnoremap <F6> :!time make<cr>
-nnoremap <F7> :!make re<cr>
 nnoremap <right> :bn<cr>
 nnoremap <left> :bp<cr>
 
@@ -40,7 +37,7 @@ inoremap kj <esc>
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell
 set t_ti= t_te= t_TI= t_TE=
-set timeoutlen=20
+set timeoutlen=30
 set splitbelow
 set expandtab
 set nocompatible 

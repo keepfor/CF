@@ -1,3 +1,8 @@
+
+nnoremap <F7> :!make re<cr>
+nnoremap <F5> :e input.txt<cr>
+inoremap <silent><expr><tab> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<tab>"
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :

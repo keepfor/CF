@@ -46,3 +46,4 @@ rev:
 new:
 	echo > ${input}
 	cp ${resetSrc} ${src}
+	vim ${src} ${input}
