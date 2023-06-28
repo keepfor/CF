@@ -12,13 +12,25 @@ int32_t main() {
   ios::sync_with_stdio(false), cin.tie(0);
 
   auto solve = [&]() {
-    int n, k;
-    cin >> n >> k;
-    if (k > 30) {
-      cout << n + 1 << '\n';
-    } else {
-      cout << min(n + 1, 1 << k) << '\n';
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    long long s = 0;
+    for (auto& i : a) {
+      cin >> i;
+      s += 1ll * abs(i);
     }
+    int ans = 0;
+    for (int i = 0; i < n; ++i) {
+      if (a[i] >= 0) continue;
+      int j = i;
+      while (j < n and a[j] <= 0) {
+        ++j;
+      }
+      ++ans;
+      i = j - 1;
+    }
+    cout << s << ' ' << ans << '\n';
   };
 
   {

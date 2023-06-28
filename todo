@@ -186,6 +186,24 @@ unlock write protection.
 upgrade diag fail.
 ssh fail.
 fcd ftu change.
+* PoE test, update FW commands sequence.
+* Memory test, update FW command.
+* Port LED test:
+  * Add ledscan 0/1.
+  * Update FW commands sequence.
+* System LED test:
+  * Update FW commands sequence.
+* DUT thermal test, update CPU temperature parser.
+* Burn-in test, add burnDelay env support.
+* Add new test case, Upgrade runtime firmware.
+* Add new test case, Check application version.
+* Update memory test timeout.
+* Update cpu stress test cmd.
+* Update security test timeout.
+* Update i2c test timeout.
+* Update emmc test timeout.
+* Update spi flash test timeout.
+* Update external loopback test timeout.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
