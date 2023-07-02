@@ -16,12 +16,7 @@ inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
-inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<tab>"
-
-nnoremap <s-j> :e input.txt<cr>
 nnoremap <s-k> :!time make<cr>
-nnoremap <s-l> :make re<cr>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 
@@ -36,7 +31,7 @@ nnoremap <c-l> <c-w>l
 inoremap jk <esc>
 inoremap kj <esc>
 
-set timeoutlen=20
+set timeoutlen=50
 set splitbelow
 set clipboard=unnamed
 set nocompatible 
