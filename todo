@@ -204,7 +204,8 @@ fcd ftu change.
 * Update i2c test timeout.
 * Update emmc test timeout.
 * Update spi flash test timeout.
-* Update external loopback test timeout.
+
+* Update external loopback test timeout. (40->50)
 * update diag.
 * update runtime fw.
 * update fan criteria.
@@ -334,6 +335,10 @@ FTU Changlog:
 * Add Check Application version test case.
 * Add Upgrade to DIAG image (from Application image) test case and related tools.
 upgrade_fw issue, uboot issues.
+update fcd diag.
+update fcd helper.
+fcd flash uid issues.
+uid delete device.
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -515,6 +520,7 @@ uisp-p-pro, fcd tty can not 7777 in ltn.
 uisp-p-pro, cpu test retest in ltn. 
 uisp-p-pro, ble test retest in ltn. 
 update controller app ver, ecof.
+Application FW, UISPP.v1.0.2.cb9fcc.230616.1138.bin
 
 uisp-p, add retry to charge test.
 uisp-p, add retry to la battery discharge test.
