@@ -113,6 +113,7 @@ LTN这边用950不会有乱码
 * Update LCM burnin commands.
 * Disable removing burnin log of RPS-Pro check-burnin-result.
 * Update LCM upgrade timeout to 600s.
+upgrade prod fw issue, ble can not be connected.
 
 uisp-r, update test shell of burnin test..
 uisp-r, update enable ssh port to 2 to 8.
@@ -204,6 +205,11 @@ fcd ftu change.
 * Update emmc test timeout.
 * Update spi flash test timeout.
 * Update external loopback test timeout.
+* update diag.
+* update runtime fw.
+* update fan criteria.
+* update external loopback, ledscan.
+ble issues, failure rate too high.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
@@ -327,6 +333,7 @@ FTU Changlog:
   * Update setenv burnDelay 600.
 * Add Check Application version test case.
 * Add Upgrade to DIAG image (from Application image) test case and related tools.
+upgrade_fw issue, uboot issues.
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -406,6 +413,8 @@ ble connecting time too long after rebooted.
 use ps grep.
 update expected pid count.
 new fw. (UM.rtl838x_6.4.22)
+qdc test issue.
+some test cases update for reducing testing time.
 
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
@@ -483,6 +492,7 @@ usw-flex-xg, merge reset button test to factory default.
 
 usw-flex, update burnin script to improve retest rate of burnin test. (increase delay)
 usw-flex, update, update shipping fw to US.mt7621_6.4.18+14328.221213.1324-uboot.bin.
+ux issues, cm process issues.
 
 uisp-p-pro, Update la battery charge test, to change the criteria of psu voltage.
 uisp-p-pro, Update la battery charge test, add retry and update test flow.
@@ -529,6 +539,7 @@ uisp-p, update test flow. (init_bt)
 uisp-p, UISP-P的AC adapter真的很不穩，最近已經收到兩個ticket都是AC adapter斷斷續續的問題.
 update controller app ver, ecof.
 new runtime.(UISPP.v1.0.2.cb9fcc.230616.1138.bin)
+runtime fw upgrade issues, timeout error, two network cards and ping.
 
 uisp-s-pro, 
 uisp-s-pro, update ble test, rewrite parser and calculation.
