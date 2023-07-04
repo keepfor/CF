@@ -289,6 +289,7 @@ uisp-s-plus, ftu support check shipping ver.
 uisp-s-plus, update udapi.py.
 uisp-s-plus, update check shipping fw, use power class of udapi.
 uisp-s-plus, ftu update mem test.
+upgrade_fw
 
 uisp-s-plus, fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
 uisp-s-plus, ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
@@ -339,6 +340,7 @@ update fcd diag.
 update fcd helper.
 fcd flash uid issues.
 uid delete device.
+uid delete device, delete issues.
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -420,6 +422,9 @@ update expected pid count.
 new fw. (UM.rtl838x_6.4.22)
 qdc test issue.
 some test cases update for reducing testing time.
+refine fan test.
+refine at poe.
+refine bt poe.
 
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.

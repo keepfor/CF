@@ -1,4 +1,50 @@
-
-4
-1 1 0 2
-MEEX
+uisp-s-plus, add 8 test cases, mac / fw-version / bom-revision / qr-code / devereg / resetButton /  port led / system led.
+uisp-p, add retry to 2 test cases, charge/la-battery-discharge test.
+uled-bar, update 5000k ct power test , add delay after recognizing dut id.
+usp-rps-pro, update lead acid battery, add wait 15 secs for battery stability.
+usp-battery, update RECOVERY fw to v1.1.4.332 (via xmodem).
+usw-enterprise-24-poe, fcd retest issues from fxn. (seems console issues)
+uisp-p-ups, update diag to fix fw issues, ver: 0.0.6.
+uacc-lte, usb test fail in ltn, reproducing. (seems microcom timeout)
+usw-mission-critical, update external battery test, switch ac power and external battery.
+uisp-p, update runtime FW (v1.0.0-rc2)
+uisp-s, Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
+uled-down-100mm, add delay after recognizing dut id. (3000k ct power test)
+uisp-r, update factory reset test ordering.
+uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
+uisp-p, update parser and criteria of charge test, mv to V.
+uisp-p-pro, update testing order of lcm and lte test.
+usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
+usw-enterprise-8-poe, lcm backlight behavior issues.
+usp-rps, verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
+uisp-p-pro, add Check LCM test after shipping FW upgraded.
+uisp-r-pro, rewrite upgrade-lcm-firmware with lcm-load. (new cmd)
+usw-flex-xg, reset button FAIL in ltn, it will reboot,  reproducing (fw 6.4.19)
+uacc-lte, update input serial number test, add a pop-up window.
+usw-mission-critical, add new test, FP.8.1 LTE - band check
+usw-industrial, create ftu, support upgrade to shipping fw.
+TWFCD-3781
+TWFCD-3673
+TWFCD-3603
+TWFCD-3602
+TWFCD-3601
+TWFCD-3598
+TWFCD-3597
+TWFCD-3596
+TWFCD-3595
+TWFCD-3594
+TWFCD-3587
+TWFCD-3580
+TWFCD-3469
+TWFCD-3278
+TWFCD-3276
+TWFCD-3274
+TWFCD-3272
+TWFCD-3269
+TWFCD-3264
+TWFCD-3135
+TWFCD-3133
+TWFCD-3040
+TWFCD-2895
+TWFCD-2790
+TWFCD-2452

@@ -1,55 +1,143 @@
-#include <bits/stdc++.h>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
-#include "lib/debug.h"
+#include"./lib/debug.h"
 #else 
-#define debug(...) 0
+#define debug(...) 
 #endif
 
-int32_t main() {
-  ios::sync_with_stdio(false), cin.tie(0);
+static inline void lowStr(string& s) {
+  for (auto& i : s) {
+    i = char(tolower(i));
+  }
+}
 
-  auto solve = [&]() {
-    int n; cin >> n;
-    vector<int> a(n);
-    for (auto& i : a) cin >> i;
-    string s; cin >> s;
-    vector<array<int, 3>> pre(n + 1), suf(n + 1);
-    for (int i = 0; i < n; ++i) {
-      pre[i + 1] = pre[i];
-      pre[i + 1][a[i]] += int(s[i] == 'M');
-    }
-    for (int i = n - 1; i >= 0; --i) {
-      suf[i] = suf[i + 1];
-      suf[i][a[i]] += int(s[i] == 'X');
-    }
-    long long ans = 0;
-    for (int i = 0; i < n; ++i) {
-      if (s[i] != 'E') continue;
-      for (int j = 0; j < 3; ++j) {
-        for (int k = 0; k < 3; ++k) {
-          int x = 3;
-          for (int y = 0; y < 3; ++y) {
-            if (a[i] != y and j != y and k != y) {
-              x = y;
-              break;
-            }
-          }
-          ans += 1ll * x * pre[i][j] * suf[i + 1][k]; 
-        }
-      }
-    }
-    cout << ans << '\n';
-  };
+static inline void upStr(string& s) {
+  for (auto& i : s) {
+    i = char(toupper(i));
+  }
+}
 
-  {
-    int tt = 1;
-    while (tt--) {
-      solve();
-    }
+static inline void readSortedPair(vector<pair<string, string>>& csp, int& sz) {
+  string s;
+
+  while (getline(cin, s)) {
+    if (s.find("TWFCD") != string::npos) break;
+    csp.emplace_back("", s);
   }
 
+  sz = (int) csp.size();
+  int ix = 0;
+  cout << "Count = " << sz << '\n';
+  
+  csp[ix] = {csp[ix].second, s + ", " + csp[ix].second};
+  ++ix;
+  while (getline(cin, s)) {
+    csp[ix] = {csp[ix].second, s + ", " + csp[ix].second};
+    ++ix;
+  }
+  sort(csp.begin(), csp.end(), [&](const pair<string, string>& lhs, const pair<string, string>& rhs) {
+    string l = lhs.first;
+    string r = rhs.first;
+    lowStr(l);
+    lowStr(r);
+    return l < r;
+  });
+}
+
+static inline void getList(vector<pair<string, string>>& csp, vector<string>& cs, int& sz) {
+  for (int i = 0; i < sz; ++i) {
+    cs[i] = csp[i].second;
+  }
+}
+
+static inline void getSplit(string& i, vector<string>& sp) {
+  string ss;
+  stringstream x(i); 
+
+  while (getline(x, ss, ',')) {
+    sp.push_back(ss);
+  }  
+}
+
+static inline void upProName(string& i, string& ii, vector<string>& sp) {
+  auto it = ii.find(sp[1]);
+  for (int k = 0; k < (int) sp[1].size(); ++k) {
+    i[it + k] = char(toupper(i[it + k])); 
+  }
+}
+
+static inline void classify(const vector<string>& pdline, vector<string>& cs, map<string, vector<string>>& all, int& sz) {
+  for (auto& i : cs) {
+    vector<string> sp;
+    getSplit(i, sp);
+
+    bool ok = false;
+    lowStr(sp[1]);
+ 
+    for (auto& jj : pdline) {
+      string j = jj;
+      lowStr(j);
+ 
+      if (sp[1].find(j) != string::npos) {
+        string ii = i;
+        lowStr(ii);
+
+        upProName(i, ii, sp);
+        all[j].push_back(i);
+
+        --sz;
+        ok = true;
+        break;
+      }
+    }
+    assert(ok && "No productline match");
+  }
+}
+
+static inline void outP(const map<string, vector<string>>& all) {
+  for (auto& [x, y] : all) {
+    string xx = x;
+    upStr(xx);
+    cout << xx << '\n';
+ 
+    for (auto& z : y) {
+      cout << z << '\n';
+    }
+    cout << '\n';
+  }
+}
+
+static inline void shoudZero(int& sz) {
+  assert(!sz && "Should be Zero\n");
+}
+
+
+static inline     void genReport() {
+  const vector<string> pdline{"uisp","usw", "usp", "uled", "uacc", "uis", "usc"};
+
+  int sz = 0;
+  map<string, vector<string>> all;
+  vector<pair<string, string>> csp;
+  vector<string> cs;
+  
+  readSortedPair(csp, sz);
+  cs.resize(sz);
+  getList(csp, cs, sz);
+
+  classify(pdline, cs, all, sz);
+  shoudZero(sz);  
+  outP(all);
+}
+
+int32_t main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int TESTCASE = 1;
+  while (TESTCASE--) {
+    genReport();
+  }
   return 0;
 }
