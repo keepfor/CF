@@ -1,39 +1,4 @@
-UISP
-TWFCD-3673, UISP-P, add retry to 2 test cases, charge/la-battery-discharge test.
-TWFCD-3594, UISP-P, update runtime FW (v1.0.0-rc2)
-
-TWFCD-3781, UISP-S-PLUS, add 8 test cases, mac / fw-version / bom-revision / qr-code / devereg / resetButton /  port led / system led.
-
-TWFCD-3135, UISP-P-PRO, add Check LCM test after shipping FW upgraded.
-
-TWFCD-3597, UISP-P-UPS, update diag to fix fw issues, ver: 0.0.6.
-
-TWFCD-3469, UISP-R, update factory reset test ordering.
-
-TWFCD-3587, UISP-S, Update Diag fw upgrade test with Diag fw v1.3.6-DEV07.
-
-TWFCD-3272, USW-MISSION-CRITICAL-EU, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
-
-TWFCD-3264, USP-RPS, verify old ftu, MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM.
-
-TWFCD-3598, USW-ENTERPRISE-24-POE, fcd retest issues from fxn. (seems console issues)
-
-
-ULED
-TWFCD-3603, ULED-BAR, update 5000k ct power test , add delay after recognizing dut id.
-TWFCD-3278, ULED-BAR, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
-TWFCD-3580, ULED-DOWN-100MM, add delay after recognizing dut id. (3000k ct power test)
-
-USP
-TWFCD-3601, USP-BATTERY, update RECOVERY fw to v1.1.4.332 (via xmodem).
-TWFCD-3602, USP-RPS-PRO, update lead acid battery, add wait 15 secs for battery stability.
-
-USW
-TWFCD-2452, USW-INDUSTRIAL, create ftu, support upgrade to shipping fw.
-
-TWFCD-3269, USW-ENTERPRISE-8-POE, lcm backlight behavior issues.
-TWFCD-3040, USW-FLEX-XG, reset button FAIL in ltn, it will reboot,  reproducing (fw 6.4.19)
-
-
-TWFCD-2790, USW-MISSION-CRITICAL, add new test, FP.8.1 LTE - band check
-TWFCD-3595, USW-MISSION-CRITICAL, update external battery test, switch ac power and external battery.
+0
+1
+1
+2
