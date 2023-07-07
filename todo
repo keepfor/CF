@@ -182,6 +182,9 @@ uisp-r-plus, fcd, emmc format issues, update fcd.
 uisp-r-plus, r+ Port LED test順序幫我修改一下
 uisp-r-plus, uisp-r-plus, update ble test flow. (init_bt)
 diag 9.0.3.
+ubnt_uispr_cn91xx_rev1_boot_0.0.3.img
+UISPR.cn91xx.v9.0.3+ubnt.136.446d52eM.230626.2359.bin
+UISPR.cn91xxr.recovery.v3.2.1-dev.1+ubnt.28138.7b0eca9.230605.1204.bin
 rewrite fcd.
 unlock write protection.
 upgrade diag fail.
@@ -204,13 +207,17 @@ fcd ftu change.
 * Update i2c test timeout.
 * Update emmc test timeout.
 * Update spi flash test timeout.
+run time, UISPR.cn91xxr.v3.2.2-rc.1.d776d37.230623.0851.bin.
 
 * Update external loopback test timeout. (40->50)
-* update diag.
+* update diag. 
+Update bundled uboot FW to ubnt_uispr_cn91xx_rev1_boot_0.0.5.img
+Update bundled DIAG FW to UISPR.cn91xx.v9.0.4+ubnt.138.4215fd3M.230630.1106.bin
 * update runtime fw.
 * update fan criteria.
 * update external loopback, ledscan.
 ble issues, failure rate too high.
+Update bundled application image to UISPR.cn91xxr.v3.2.2-rc.2.b121e4b.230706.0713.bin
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
@@ -429,6 +436,8 @@ refine at poe.
 refine bt poe.
 poe support port auto port list
 add test config for wait time before port show.
+remove lte bt ...... hw fw ing.
+remove lte test cases of ftu.
 
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
