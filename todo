@@ -1,3 +1,6 @@
+usw, fw / fcd / ftu ver.
+usw, project owner.
+
 usw-industrial,tests,test_MAC_check.py
 usw-industrial,tests,test_QRCODE_check.py
 usw-industrial,tests,test_bomrev_check.py
@@ -218,6 +221,7 @@ Update bundled DIAG FW to UISPR.cn91xx.v9.0.4+ubnt.138.4215fd3M.230630.1106.bin
 * update external loopback, ledscan.
 ble issues, failure rate too high.
 Update bundled application image to UISPR.cn91xxr.v3.2.2-rc.2.b121e4b.230706.0713.bin
+runtime fw, port 7 network issues, port led issues.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
@@ -432,12 +436,14 @@ new fw. (UM.rtl838x_6.4.22)
 qdc test issue.
 some test cases update for reducing testing time.
 refine fan test.
-refine at poe.
-refine bt poe.
+refine at poe. enable poe port list.
+refine bt poe. enable poe port list.
 poe support port auto port list
 add test config for wait time before port show.
 remove lte bt ...... hw fw ing.
 remove lte test cases of ftu.
+remove ble test.
+update lead battery test, support check lth battery status.
 
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
