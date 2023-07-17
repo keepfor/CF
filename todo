@@ -441,9 +441,11 @@ refine bt poe. enable poe port list.
 poe support port auto port list
 add test config for wait time before port show.
 remove lte bt ...... hw fw ing.
-remove lte test cases of ftu.
+remove 4 lte test cases of ftu.
 remove ble test.
 update lead battery test, support check lth battery status.
+fix snake1 and snake2 issues.
+
 
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
@@ -545,6 +547,7 @@ uisp-p-pro, cpu test retest in ltn.
 uisp-p-pro, ble test retest in ltn. 
 update controller app ver, ecof.
 Application FW, UISPP.v1.0.2.cb9fcc.230616.1138.bin
+cancel some test cases, reduce testing time.
 
 uisp-p, add retry to charge test.
 uisp-p, add retry to la battery discharge test.
@@ -570,6 +573,8 @@ uisp-p, UISP-P的AC adapter真的很不穩，最近已經收到兩個ticket都�
 update controller app ver, ecof.
 new runtime.(UISPP.v1.0.2.cb9fcc.230616.1138.bin)
 runtime fw upgrade issues, timeout error, two network cards and ping.
+cancel some test cases, reduce testing time.
+
 
 uisp-s-pro, 
 uisp-s-pro, update ble test, rewrite parser and calculation.
