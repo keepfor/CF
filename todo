@@ -117,6 +117,7 @@ LTN这边用950不会有乱码
 * Disable removing burnin log of RPS-Pro check-burnin-result.
 * Update LCM upgrade timeout to 600s.
 upgrade prod fw issue, ble can not be connected.
+leakage current.
 
 uisp-r, update test shell of burnin test..
 uisp-r, update enable ssh port to 2 to 8.
@@ -222,6 +223,15 @@ Update bundled DIAG FW to UISPR.cn91xx.v9.0.4+ubnt.138.4215fd3M.230630.1106.bin
 ble issues, failure rate too high.
 Update bundled application image to UISPR.cn91xxr.v3.2.2-rc.2.b121e4b.230706.0713.bin
 runtime fw, port 7 network issues, port led issues.
+sz report i2c test issues, sfp module fail.
+update set burndelay env.
+add check burnin env number.
+sz report burnin fail, fan speed 0 fail and loopback fail.
+* FTU_ee7a_1.0.1_3.2.2-rc.2.zip
+  * Update expected DIAG version to v9.0.5.
+  * Update enable burnin test, update setenv burndelay function.
+* FCD_UbiquitiNMS_UISP-R-Plus_1.0.0_9.0.5.tgz
+  * Update bundled DIAG FW to UISPR.cn91xx.v9.0.5+ubnt.140.2ff8965M.230720.1618.bin.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
@@ -374,6 +384,7 @@ usw-enterprisexg-24, portal ecof issues.
 
 uacc-lte, ua band fail.
 uacc-lte, update get imei, add popUP window.
+uacc-lte, switch to usb mode fail in ltn. (usb cable issues)
 uacc-lte, update ua lte test, add at retry improve retest rate.
 uacc-lte, update eu lte test, add at retry improve retest rate.
 uacc-lte, update br lte test, add at retry improve retest rate.
@@ -444,7 +455,8 @@ remove lte bt ...... hw fw ing.
 remove 4 lte test cases of ftu.
 remove ble test.
 update lead battery test, support check lth battery status.
-fix snake1 and snake2 issues.
+fix snake1 and snake2 issues. git reset
+improve portlink test retest, rewrite with swctrl.
 
 
 uisp-r-pro, add burnfan1 to config panel.

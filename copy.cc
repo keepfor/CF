@@ -12,26 +12,35 @@ int32_t main() {
   ios::sync_with_stdio(false), cin.tie(0);
 
   auto solve = [&]() {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    for (auto& i : a) {
-      cin >> i;
+    int h, n;
+    cin >> h >> n;
+    deque<int> d;
+    for (int i = 0; i < n; ++i) {
+      int t;
+      cin >> t;
+      d.push_back(t);
     }
-    vector<int> f;
-    for (auto& i : a) {
-      auto it = upper_bound(f.begin(), f.end(), i);
-      if (it != f.end()) {
-        *it = i;
-      } else {
-        f.push_back(i);
+    d.push_back(0);
+    d.push_back(0);
+    d.push_back(0);
+    int ans = 0;
+    while (d.size()) {
+      d.pop_front();
+      auto y = d.front();\
+      if (!y) break;
+      d.pop_front();
+      auto z = d.front();
+      if (y - z > 1) {
+        ++ans;
+        d.push_front(h + 1);
       }
     }
-    cout << f.size() << '\n';
+    cout << ans << '\n';
   };
 
   {
     int tt = 1;
+    cin >> tt;
     while (tt--) {
       solve();
     }
