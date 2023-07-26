@@ -35,7 +35,7 @@ inoremap jk <esc>
 inoremap kj <esc>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
-set visualbell
+set visualbell nu
 set t_ti= t_te= t_TI= t_TE=
 set timeoutlen=30
 set splitbelow

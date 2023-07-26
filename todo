@@ -232,6 +232,13 @@ sz report burnin fail, fan speed 0 fail and loopback fail.
   * Update enable burnin test, update setenv burndelay function.
 * FCD_UbiquitiNMS_UISP-R-Plus_1.0.0_9.0.5.tgz
   * Update bundled DIAG FW to UISPR.cn91xx.v9.0.5+ubnt.140.2ff8965M.230720.1618.bin.
+burnin mode telnet fail.
+Update shipping FW to UISPR.cn91xxr.v3.2.2-rc.3.6cfc757.230721.1021.bin.
+rewrite reset button, last three seconds.
+rewrite reset button, destruct dialog window.
+rewrite reset button, clear telnet io.
+rewrite reset button, only 19 secs.
+verify update to diag from runtime code.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
