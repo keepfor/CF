@@ -21,5 +21,5 @@ vector<int> z_function(int n, const T &s) {
 
 template <typename T>
 vector<int> z_function(const T &s) {
-  return z_function((int) s.size(), s);
+  return z_function((int)s.size(), s);
 }

@@ -16,10 +16,18 @@ struct TPoint {
 
   static constexpr T eps = static_cast<T>(1e-9);
 
-  inline TPoint operator+(const TPoint& rhs) const { return TPoint(x + rhs.x, y + rhs.y); }
-  inline TPoint operator-(const TPoint& rhs) const { return TPoint(x - rhs.x, y - rhs.y); }
-  inline TPoint operator*(const T& rhs) const { return TPoint(x * rhs, y * rhs); }
-  inline TPoint operator/(const T& rhs) const { return TPoint(x / rhs, y / rhs); }
+  inline TPoint operator+(const TPoint& rhs) const {
+    return TPoint(x + rhs.x, y + rhs.y);
+  }
+  inline TPoint operator-(const TPoint& rhs) const {
+    return TPoint(x - rhs.x, y - rhs.y);
+  }
+  inline TPoint operator*(const T& rhs) const {
+    return TPoint(x * rhs, y * rhs);
+  }
+  inline TPoint operator/(const T& rhs) const {
+    return TPoint(x / rhs, y / rhs);
+  }
 
   friend T smul(const TPoint& a, const TPoint& b) {
     return a.x * b.x + a.y * b.y;
@@ -29,9 +37,7 @@ struct TPoint {
     return a.x * b.y - a.y * b.x;
   }
 
-  inline T abs2() const {
-    return x * x + y * y;
-  }
+  inline T abs2() const { return x * x + y * y; }
 
   inline bool operator<(const TPoint& rhs) const {
     return (y < rhs.y || (y == rhs.y && x < rhs.x));
@@ -55,7 +61,7 @@ struct TPoint {
 };
 
 using Point = TPoint<long long>;
-//using Point = TPoint<long double>;
+// using Point = TPoint<long double>;
 
 template <typename T>
 string to_string(const TPoint<T>& p) {

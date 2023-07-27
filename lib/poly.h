@@ -13,9 +13,8 @@ const int BRUTE_N2_LIMIT = 50;
 int mpow(int x, int k, int p = P) {
   int ret = 1;
   while (k) {
-    if (k & 1)
-      ret = ret * (ll) x % p;
-    x = x * (ll) x % p;
+    if (k & 1) ret = ret * (ll)x % p;
+    x = x * (ll)x % p;
     k >>= 1;
   }
   return ret;
@@ -23,18 +22,14 @@ int mpow(int x, int k, int p = P) {
 
 int norm(int x) { return x >= P ? x - P : x; }
 
-int reduce(int x) {
-  return x < 0 ? x + P : x;
+int reduce(int x) { return x < 0 ? x + P : x; }
+
+void add(int &x, int y) {
+  if ((x += y) >= P) x -= P;
 }
 
-void add(int& x, int y) {
-  if ((x += y) >= P)
-    x -= P;
-}
-
-void sub(int& x, int y) {
-  if ((x -= y) < 0)
-    x += P;
+void sub(int &x, int y) {
+  if ((x -= y) < 0) x += P;
 }
 
 struct Simple {
@@ -47,25 +42,19 @@ struct Simple {
     ifac.resize(n + 1);
     inv.resize(n + 1);
     fac[0] = 1;
-    for (int x = 1; x <= n; ++x)
-      fac[x] = fac[x - 1] * (ll) x % P;
+    for (int x = 1; x <= n; ++x) fac[x] = fac[x - 1] * (ll)x % P;
     inv[1] = 1;
-    for (int x = 2; x <= n; ++x)
-      inv[x] = -(P / x) * (ll) inv[P % x] % P + P;
+    for (int x = 2; x <= n; ++x) inv[x] = -(P / x) * (ll)inv[P % x] % P + P;
     ifac[0] = 1;
-    for (int x = 1; x <= n; ++x)
-      ifac[x] = ifac[x - 1] * (ll) inv[x] % P;
+    for (int x = 1; x <= n; ++x) ifac[x] = ifac[x - 1] * (ll)inv[x] % P;
   }
 
-  Simple() {
-    build(1);
-  }
+  Simple() { build(1); }
 
   void check(int k) {
     int nn = n;
     if (k > nn) {
-      while (k > nn)
-        nn <<= 1;
+      while (k > nn) nn <<= 1;
       build(nn);
     }
   }
@@ -86,9 +75,8 @@ struct Simple {
   }
 
   int binom(int n, int m) {
-    if (m < 0 || m > n)
-      return 0;
-    return gfac(n) * (ll) gifac(m) % P * gifac(n - m) % P;
+    if (m < 0 || m > n) return 0;
+    return gfac(n) * (ll)gifac(m) % P * gifac(n - m) % P;
   }
 } simp;
 
@@ -108,11 +96,9 @@ struct NTT {
     *w2 = 1;
     w2[1 << l] = mpow(31, 1 << (21 - l));
 
-    for (i = l; i; --i)
-      w2[1 << (i - 1)] = (ull) w2[1 << i] * w2[1 << i] % P;
+    for (i = l; i; --i) w2[1 << (i - 1)] = (ull)w2[1 << i] * w2[1 << i] % P;
 
-    for (i = 1; i < n; ++i)
-      w2[i] = (ull) w2[i & (i - 1)] * w2[i & -i] % P;
+    for (i = 1; i < n; ++i) w2[i] = (ull)w2[i & (i - 1)] * w2[i & -i] % P;
   }
 
   void DIF(int *a, int l) {
@@ -121,7 +107,7 @@ struct NTT {
     for (; len; len >>= 1)
       for (j = a, o = root.data(); j != a + n; j += len << 1, ++o)
         for (k = j; k != j + len; ++k) {
-          r = (ull) *o * k[len] % P;
+          r = (ull)*o * k[len] % P;
           k[len] = reduce(*k - r);
           add(*k, r);
         }
@@ -142,7 +128,8 @@ struct NTT {
   void fft(int *a, int lgn, int d = 1) {
     if (L < lgn) prepRoot(lgn);
     int n = 1 << lgn;
-    if (d == 1) DIF(a, lgn);
+    if (d == 1)
+      DIF(a, lgn);
     else {
       DIT(a, lgn);
       reverse(a + 1, a + n);
@@ -156,8 +143,7 @@ struct Poly {
   vector<int> a;
 
   Poly(int v = 0) : a(1) {
-    if ((v %= P) < 0)
-      v += P;
+    if ((v %= P) < 0) v += P;
     a[0] = v;
   }
 
@@ -169,8 +155,7 @@ struct Poly {
   int operator[](int k) const { return k < a.size() ? a[k] : 0; }
 
   int &operator[](int k) {
-    if (k >= a.size())
-      a.resize(k + 1);
+    if (k >= a.size()) a.resize(k + 1);
     return a[k];
   }
 
@@ -183,8 +168,7 @@ struct Poly {
   Poly sunic() const;
 
   Poly slice(int d) const {
-    if (d < a.size())
-      return vector<int>(a.begin(), a.begin() + d + 1);
+    if (d < a.size()) return vector<int>(a.begin(), a.begin() + d + 1);
     vector<int> res(a);
     res.resize(d + 1);
     return res;
@@ -196,8 +180,7 @@ struct Poly {
 
   Poly println(FILE *fp) const {
     fprintf(fp, "%d", a[0]);
-    for (int i = 1; i < a.size(); ++i)
-      fprintf(fp, " %d", a[i]);
+    for (int i = 1; i < a.size(); ++i) fprintf(fp, " %d", a[i]);
     fputc('\n', fp);
     return *this;
   }
@@ -206,16 +189,14 @@ struct Poly {
   Poly operator+(const Poly &rhs) const {
     vector<int> res(max(a.size(), rhs.a.size()));
     for (int i = 0; i < res.size(); ++i)
-      if ((res[i] = operator[](i) + rhs[i]) >= P)
-        res[i] -= P;
+      if ((res[i] = operator[](i) + rhs[i]) >= P) res[i] -= P;
     return res;
   }
 
   Poly operator-() const {
     Poly ret(a);
     for (int i = 0; i < a.size(); ++i)
-      if (ret[i])
-        ret[i] = P - ret[i];
+      if (ret[i]) ret[i] = P - ret[i];
     return ret;
   }
 
@@ -228,7 +209,7 @@ struct Poly {
 
 Poly zeroes(int deg) { return vector<int>(deg + 1); }
 
-Poly operator "" _z(unsigned long long a) { return {0, (int) a}; }
+Poly operator"" _z(unsigned long long a) { return {0, (int)a}; }
 
 Poly operator+(int v, const Poly &rhs) { return Poly(v) + rhs; }
 
@@ -238,20 +219,18 @@ Poly Poly::operator*(const Poly &rhs) const {
     Poly ret = zeroes(n + m);
     for (int i = 0; i <= n; ++i)
       for (int j = 0; j <= m; ++j)
-        ret[i + j] = (ret[i + j] + a[i] * (ll) rhs[j]) % P;
+        ret[i + j] = (ret[i + j] + a[i] * (ll)rhs[j]) % P;
     return ret;
   }
   n += m;
   int l = 0;
-  while ((1 << l) <= n)
-    ++l;
+  while ((1 << l) <= n) ++l;
   vector<int> res(1 << l), tmp(1 << l);
   memcpy(res.data(), base(), a.size() * sizeof(int));
   ntt.fft(res.data(), l, 1);
   memcpy(tmp.data(), rhs.base(), rhs.a.size() * sizeof(int));
   ntt.fft(tmp.data(), l, 1);
-  for (int i = 0; i < (1 << l); ++i)
-    res[i] = res[i] * (ll) tmp[i] % P;
+  for (int i = 0; i < (1 << l); ++i) res[i] = res[i] * (ll)tmp[i] % P;
   ntt.fft(res.data(), l, -1);
   res.resize(n + 1);
   return res;
@@ -261,17 +240,15 @@ Poly Poly::taylor(int k) const {
   int n = deg();
   Poly t = zeroes(n);
   simp.check(n);
-  for (int i = 0; i <= n; ++i)
-    t[n - i] = a[i] * (ll) simp.fac[i] % P;
+  for (int i = 0; i <= n; ++i) t[n - i] = a[i] * (ll)simp.fac[i] % P;
   int pw = 1;
   Poly help = vector<int>(simp.ifac.begin(), simp.ifac.begin() + n + 1);
   for (int i = 0; i <= n; ++i) {
-    help[i] = help[i] * (ll) pw % P;
-    pw = pw * (ll) k % P;
+    help[i] = help[i] * (ll)pw % P;
+    pw = pw * (ll)k % P;
   }
   t = t * help;
-  for (int i = 0; i <= n; ++i)
-    help[i] = t[n - i] * (ll) simp.ifac[i] % P;
+  for (int i = 0; i <= n; ++i) help[i] = t[n - i] * (ll)simp.ifac[i] % P;
   return help;
 }
 
@@ -315,9 +292,11 @@ void pre(int n) {
   N = n;
   int o = 1, l = 0, r = n;
   while (l < r) {
-    l = (l + r + 1) / 2; o = o << 1 | 1;
+    l = (l + r + 1) / 2;
+    o = o << 1 | 1;
   }
-  sum.resize(o + 1); prd.resize(o + 1);
+  sum.resize(o + 1);
+  prd.resize(o + 1);
   build(1, 0, n);
 }
 
@@ -336,14 +315,15 @@ pair<Poly, Poly> solve(int o, int l, int r) {
 }
 
 Poly solve(Poly in) {
-  input = in; input.redeg(N);
+  input = in;
+  input.redeg(N);
   auto pr = solve(1, 0, N);
   auto ret = pr.first + pr.second;
   ret[0] = (ret[0] + input[0]) % P;
   return ret;
 }
 
-}
+}  // namespace DC
 
 Poly compute(Poly coeff) {
   int n = coeff.deg();
@@ -362,14 +342,15 @@ Poly solve(int n) {
 }
 
 int main() {
-  ios::sync_with_stdio(false); cin.tie(nullptr);
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
 
-  int n, s; cin >> n >> s;
+  int n, s;
+  cin >> n >> s;
   auto ans = solve(n - s);
   for (int i = 0; i < s; ++i) cout << "0 ";
   for (int i = n - s - 1; i >= 0; --i)
-    cout << ans[i] * (ll)simp.binom(n - 1, s) % P
-         << " \n"[i == 0];
+    cout << ans[i] * (ll)simp.binom(n - 1, s) % P << " \n"[i == 0];
 
   return 0;
 }

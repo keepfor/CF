@@ -1,8 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 #ifdef LOCAL
-#include"debug.h"
-#else 
+#include "debug.h"
+#else
 #define debug(...) 0
 #endif
 
@@ -16,8 +16,8 @@ int32_t main() {
     auto it = s.find("Name");
     if (it != string::npos) {
       string t = s;
-      int i = 0; 
-      while (i < (int) t.size() and t[i] == ' ') {
+      int i = 0;
+      while (i < (int)t.size() and t[i] == ' ') {
         ++i;
       }
       t = t.substr(i);

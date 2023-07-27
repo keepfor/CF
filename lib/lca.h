@@ -1,78 +1,78 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 #ifdef LOCAL
-#include"debug.h"
+#include "debug.h"
 #endif
 
 using namespace std;
 
 class LCA {
-  public:
-    int n;
-    const int LOG = 20;
-    vector<vector<int>> g;
-    vector<int> dist;
-    vector<int> que;
-    vector<int> parent;
-    vector<vector<int>> jump;
-    LCA(int n) {
-        this->n = n;
-        g.resize(n);
-        dist.resize(n, -1);
-        parent.resize(n, -1);
-        que.resize(1, 0);
-        jump.resize(n, vector<int>(LOG));
-        dist[0] = 0;
-        parent[0] = 0;
+ public:
+  int n;
+  const int LOG = 20;
+  vector<vector<int>> g;
+  vector<int> dist;
+  vector<int> que;
+  vector<int> parent;
+  vector<vector<int>> jump;
+  LCA(int n) {
+    this->n = n;
+    g.resize(n);
+    dist.resize(n, -1);
+    parent.resize(n, -1);
+    que.resize(1, 0);
+    jump.resize(n, vector<int>(LOG));
+    dist[0] = 0;
+    parent[0] = 0;
+  }
+  void build() {
+    for (int i = 0; i < n - 1; i++) {
+      int x, y;
+      cin >> x >> y;
+      --x;
+      --y;
+      g[x].push_back(y);
+      g[y].push_back(x);
     }
-    void build() {
-        for (int i = 0; i < n - 1; i++) {
-          int x, y;
-          cin >> x >> y;
-          --x; --y;
-          g[x].push_back(y);
-          g[y].push_back(x);
+    for (int b = 0; b < (int)que.size(); b++) {
+      for (int u : g[que[b]]) {
+        if (dist[u] == -1) {
+          que.push_back(u);
+          dist[u] = dist[que[b]] + 1;
+          parent[u] = que[b];
         }
-        for (int b = 0; b < (int) que.size(); b++) {
-          for (int u : g[que[b]]) {
-            if (dist[u] == -1) {
-              que.push_back(u);
-              dist[u] = dist[que[b]] + 1;
-              parent[u] = que[b];
-            }
-          }
-        }
-        for (int i = 0; i < n; i++) {
-          jump[i][0] = parent[i];
-        }
-        for (int j = 1; j < LOG; j++) {
-          for (int i = 0; i < n; i++) {
-            jump[i][j] = jump[jump[i][j - 1]][j - 1];
-          }
-        }
+      }
     }
-    
-    
-    int lca(int u, int v) {
-      if (dist[u] < dist[v]) {
-        swap(u, v);
-      }
-      for (int j = LOG - 1; j >= 0; j--) {
-        if (dist[u] - (1 << j) >= dist[v]) {
-          u = jump[u][j];
-        }
-      }
-      if (u == v) {
-        return u;
-      }
-      for (int j = LOG - 1; j >= 0; j--) {
-        if (jump[u][j] != jump[v][j]) {
-          u = jump[u][j];
-          v = jump[v][j];
-        }
-      }
-      return parent[u];
+    for (int i = 0; i < n; i++) {
+      jump[i][0] = parent[i];
     }
+    for (int j = 1; j < LOG; j++) {
+      for (int i = 0; i < n; i++) {
+        jump[i][j] = jump[jump[i][j - 1]][j - 1];
+      }
+    }
+  }
+
+  int lca(int u, int v) {
+    if (dist[u] < dist[v]) {
+      swap(u, v);
+    }
+    for (int j = LOG - 1; j >= 0; j--) {
+      if (dist[u] - (1 << j) >= dist[v]) {
+        u = jump[u][j];
+      }
+    }
+    if (u == v) {
+      return u;
+    }
+    for (int j = LOG - 1; j >= 0; j--) {
+      if (jump[u][j] != jump[v][j]) {
+        u = jump[u][j];
+        v = jump[v][j];
+      }
+    }
+    return parent[u];
+  }
 };
 
 template <typename T>
@@ -88,9 +88,7 @@ class graph {
   vector<vector<int>> g;
   int n;
 
-  graph(int _n) : n(_n) {
-    g.resize(n);
-  }
+  graph(int _n) : n(_n) { g.resize(n); }
 
   virtual int add(int from, int to, T cost) = 0;
 };
@@ -102,12 +100,11 @@ class forest : public graph<T> {
   using graph<T>::g;
   using graph<T>::n;
 
-  forest(int _n) : graph<T>(_n) {
-  }
+  forest(int _n) : graph<T>(_n) {}
 
   int add(int from, int to, T cost = 1) {
     assert(0 <= from && from < n && 0 <= to && to < n);
-    int id = (int) edges.size();
+    int id = (int)edges.size();
     assert(id < n - 1);
     g[from].push_back(id);
     g[to].push_back(id);
@@ -133,8 +130,7 @@ class dfs_forest : public forest<T> {
   vector<int> depth;
   vector<T> dist;
 
-  dfs_forest(int _n) : forest<T>(_n) {
-  }
+  dfs_forest(int _n) : forest<T>(_n) {}
 
   void init() {
     pv = vector<int>(n, -1);
@@ -162,7 +158,7 @@ class dfs_forest : public forest<T> {
 
  private:
   void do_dfs(int v) {
-    pos[v] = (int) order.size();
+    pos[v] = (int)order.size();
     order.push_back(v);
     sz[v] = 1;
     for (int id : g[v]) {
@@ -179,7 +175,7 @@ class dfs_forest : public forest<T> {
       do_dfs(to);
       sz[v] += sz[to];
     }
-    end[v] = (int) order.size() - 1;
+    end[v] = (int)order.size() - 1;
   }
 
   void do_dfs_from(int v) {
@@ -209,7 +205,7 @@ class dfs_forest : public forest<T> {
         do_dfs_from(v);
       }
     }
-    assert((int) order.size() == n);
+    assert((int)order.size() == n);
   }
 };
 
@@ -227,8 +223,7 @@ class lca_forest : public dfs_forest<T> {
   int h;
   vector<vector<int>> pr;
 
-  lca_forest(int _n) : dfs_forest<T>(_n) {
-  }
+  lca_forest(int _n) : dfs_forest<T>(_n) {}
 
   inline void build_lca() {
     assert(!pv.empty());
@@ -299,7 +294,8 @@ int main() {
     for (int i = 0; i < n - 1; i++) {
       int x, y;
       cin >> x >> y;
-      --x; --y;
+      --x;
+      --y;
       g.add(x, y);
     }
     g.dfs(0);
@@ -345,4 +341,3 @@ int main() {
   }
   return 0;
 }
-

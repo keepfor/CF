@@ -1,7 +1,7 @@
 /**
  *    author:  tourist
- *    created: 19.12.2022 18:32:26       
-**/
+ *    created: 19.12.2022 18:32:26
+ **/
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -25,9 +25,7 @@ class graph {
   vector<vector<int>> g;
   int n;
 
-  graph(int _n) : n(_n) {
-    g.resize(n);
-  }
+  graph(int _n) : n(_n) { g.resize(n); }
 
   virtual int add(int from, int to, T cost) = 0;
 };
@@ -39,12 +37,11 @@ class undigraph : public graph<T> {
   using graph<T>::g;
   using graph<T>::n;
 
-  undigraph(int _n) : graph<T>(_n) {
-  }
+  undigraph(int _n) : graph<T>(_n) {}
 
   int add(int from, int to, T cost = 1) {
     assert(0 <= from && from < n && 0 <= to && to < n);
-    int id = (int) edges.size();
+    int id = (int)edges.size();
     g[from].push_back(id);
     g[to].push_back(id);
     edges.push_back({from, to, cost});
@@ -72,8 +69,7 @@ class dfs_undigraph : public undigraph<T> {
   vector<int> was;
   int attempt;
 
-  dfs_undigraph(int _n) : undigraph<T>(_n) {
-  }
+  dfs_undigraph(int _n) : undigraph<T>(_n) {}
 
   void init() {
     pv = vector<int>(n, -1);
@@ -107,7 +103,7 @@ class dfs_undigraph : public undigraph<T> {
  private:
   void do_dfs(int v) {
     was[v] = attempt;
-    pos[v] = (int) order.size();
+    pos[v] = (int)order.size();
     order.push_back(v);
     sz[v] = 1;
     min_depth[v] = depth[v];
@@ -130,7 +126,7 @@ class dfs_undigraph : public undigraph<T> {
       sz[v] += sz[to];
       min_depth[v] = min(min_depth[v], min_depth[to]);
     }
-    end[v] = (int) order.size() - 1;
+    end[v] = (int)order.size() - 1;
   }
 
   void do_dfs_from(int v) {
@@ -161,7 +157,7 @@ class dfs_undigraph : public undigraph<T> {
         do_dfs_from(v);
       }
     }
-    assert((int) order.size() == n);
+    assert((int)order.size() == n);
   }
 };
 
@@ -187,12 +183,11 @@ class forest : public graph<T> {
   using graph<T>::g;
   using graph<T>::n;
 
-  forest(int _n) : graph<T>(_n) {
-  }
+  forest(int _n) : graph<T>(_n) {}
 
   int add(int from, int to, T cost = 1) {
     assert(0 <= from && from < n && 0 <= to && to < n);
-    int id = (int) edges.size();
+    int id = (int)edges.size();
     assert(id < n - 1);
     g[from].push_back(id);
     g[to].push_back(id);
@@ -218,8 +213,7 @@ class dfs_forest : public forest<T> {
   vector<int> depth;
   vector<T> dist;
 
-  dfs_forest(int _n) : forest<T>(_n) {
-  }
+  dfs_forest(int _n) : forest<T>(_n) {}
 
   void init() {
     pv = vector<int>(n, -1);
@@ -247,7 +241,7 @@ class dfs_forest : public forest<T> {
 
  private:
   void do_dfs(int v) {
-    pos[v] = (int) order.size();
+    pos[v] = (int)order.size();
     order.push_back(v);
     sz[v] = 1;
     for (int id : g[v]) {
@@ -264,7 +258,7 @@ class dfs_forest : public forest<T> {
       do_dfs(to);
       sz[v] += sz[to];
     }
-    end[v] = (int) order.size() - 1;
+    end[v] = (int)order.size() - 1;
   }
 
   void do_dfs_from(int v) {
@@ -294,7 +288,7 @@ class dfs_forest : public forest<T> {
         do_dfs_from(v);
       }
     }
-    assert((int) order.size() == n);
+    assert((int)order.size() == n);
   }
 };
 
@@ -312,8 +306,7 @@ class lca_forest : public dfs_forest<T> {
   int h;
   vector<vector<int>> pr;
 
-  lca_forest(int _n) : dfs_forest<T>(_n) {
-  }
+  lca_forest(int _n) : dfs_forest<T>(_n) {}
 
   inline void build_lca() {
     assert(!pv.empty());
@@ -381,14 +374,15 @@ int main() {
   for (int i = 0; i < m; i++) {
     int x, y;
     cin >> x >> y;
-    --x; --y;
+    --x;
+    --y;
     g.add(x, y);
   }
   int cnt;
   auto vc = find_bicone(g, cnt);
   lca_forest<long long> f(n + cnt);
   vector<int> weight(cnt);
-  for (auto& e : g.edges) {
+  for (auto &e : g.edges) {
     if (vc[e.from] == vc[e.to]) {
       weight[vc[e.from]] += 1;
     } else {
@@ -405,7 +399,8 @@ int main() {
   while (q--) {
     int x, y;
     cin >> x >> y;
-    --x; --y;
+    --x;
+    --y;
     int w = f.lca(x, y);
     auto ans = f.dist[x] + f.dist[y] - 2 * f.dist[w];
     assert(ans % 2 == 0);

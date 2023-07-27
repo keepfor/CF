@@ -49,12 +49,10 @@ int main() {
     vector<int> b(n);
     iota(b.begin(), b.end(), 0);
     SparseTable<int> sa(b, [&](int i, int j) { return a[i] > a[j] ? i : j; });
-    SparseTable<long long> smin(pref, [&](long long i, long long j) { return min(i, j); });
-    SparseTable<long long> smax(pref, [&](long long i, long long j) { return max(i, j); });
-    bool ok = true;
-    function<void(int, int)> Dfs = [&](int l, int r) {
-      if (l > r) {
-        return;
+    SparseTable<long long> smin(pref, [&](long long i, long long j) { return
+min(i, j); }); SparseTable<long long> smax(pref, [&](long long i, long long j) {
+return max(i, j); }); bool ok = true; function<void(int, int)> Dfs = [&](int l,
+int r) { if (l > r) { return;
       }
       int x = sa.get(l, r);
       long long mn = smin.get(l, x);

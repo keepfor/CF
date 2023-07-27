@@ -4,7 +4,7 @@ using namespace std;
 
 #ifdef LOCAL
 #include "lib/debug.h"
-#else 
+#else
 #define debug(...) 0
 #endif
 
@@ -12,7 +12,8 @@ class comb {
   long long mod;
   int m;
   vector<long long> fac, inv;
-public:
+
+ public:
   void init(const long long _mod, const int _m) {
     mod = _mod;
     m = _m;
@@ -52,8 +53,9 @@ int32_t main() {
   cb.init(mod, m);
 
   auto solve = [&]() {
-    int k; cin >> k;
-    vector<int> c(k); 
+    int k;
+    cin >> k;
+    vector<int> c(k);
     int s = 0;
     for (auto& i : c) {
       cin >> i;

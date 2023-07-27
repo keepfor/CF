@@ -1,8 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 #ifdef LOCAL
-#include"debug.h"
-#else 
+#include "debug.h"
+#else
 #define debug(...) 0
 #endif
 

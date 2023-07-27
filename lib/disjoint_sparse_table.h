@@ -9,8 +9,9 @@ struct DisjointSparseTable {
   const int n;
   const vector<unsigned char> msb;
   const vector<vector<S>> d;
-  DisjointSparseTable(vector<S> a) : n(a.size()), msb(build_msb_table(n)), d(build_table(move(a))) {}
- 
+  DisjointSparseTable(vector<S> a)
+      : n(a.size()), msb(build_msb_table(n)), d(build_table(move(a))) {}
+
   vector<unsigned char> build_msb_table(int n) {
     if (n <= 1) return {};
     unsigned char k_max = 32 - __builtin_clz(n - 1);
@@ -43,7 +44,7 @@ struct DisjointSparseTable {
     res[0] = move(a);
     return res;
   }
- 
+
   S query(int l, int r) { return query_closed(l, r - 1); }
   S query_closed(int l, int r) {
     assert(0 <= l && l <= r && r < n);

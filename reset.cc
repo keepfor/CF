@@ -4,7 +4,7 @@ using namespace std;
 
 #ifdef LOCAL
 #include "lib/debug.h"
-#else 
+#else
 #define debug(...) 0
 #endif
 
