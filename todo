@@ -239,6 +239,8 @@ rewrite reset button, destruct dialog window.
 rewrite reset button, clear telnet io.
 rewrite reset button, only 19 secs.
 verify update to diag from runtime code.
+setup sz environment for upgrade-shipping.
+shipping ip can not be pinged issues.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.

@@ -4,7 +4,7 @@ using namespace std;
 
 #ifdef LOCAL
 #include "lib/debug.h"
-#else 
+#else
 #define debug(...) 0
 #endif
 
@@ -12,25 +12,55 @@ int32_t main() {
   ios::sync_with_stdio(false), cin.tie(0);
 
   auto solve = [&]() {
-    double n, m, h;
-    cin >> n >> m >> h;
-    --h;
-    double sum = 0;
-    vector<double> b(m);
-    for (int i = 0; i < m; ++i) {
-      cin >> b[i];
-      if (i == h) b[i] -= 1;
-      sum += b[i];
+    int n;
+    long long m, s, d;
+    cin >> n >> m >> s >> d;
+    std::vector<long long> b(n);
+    for (auto& i : b) {
+      cin >> i;
     }
-    if (sum < n - 1) {
-      cout << -1 << '\n';
-      return;
+    sort(b.begin(), b.end());
+    int bb = 0;
+    int x = 0;
+    bool ru = 1;
+    vector<long long> jump, run;
+    const long long inf = 1e18;
+    b.push_back(inf);
+    while (true) {
+      if (ru) {
+        if (b[bb] > m) {
+          run.push_back(m - x);
+          int z = min(jump.size(), run.size());
+          for (int i = 0; i < z; ++i) {
+            cout << "RUN " << run[i] << '\n';
+            cout <<  "JUMP " << jump[i] << '\n';
+          }
+          if (run.size() > z and run.back() > 0) {
+            cout << "RUN " << run.back() << '\n';
+          }
+          return;
+        }  
+        int xx = b[bb] - 1;
+        if (xx - x < s) {
+          cout << "IMPOSSIBLE\n";
+          return;
+        }
+        run.push_back(xx - x);
+        x = xx;
+        ru ^= 1;
+      } else {
+        int nbb = bb + 1;
+        while (b[nbb] - 1 - (b[nbb - 1] + 1) < s) ++nbb;
+        if (b[nbb - 1] + 1 - x > d) {
+          cout << "IMPOSSIBLE\n";
+          return; 
+        }
+        jump.push_back(b[nbb - 1] + 1 - x);
+        bb = nbb;
+        ru ^= 1;
+        x = b[nbb - 1] + 1;
+      } 
     }
-    double ans = 1;
-    for (int i = 0; i < n - 1; ++i) {
-      ans *= (sum - b[h] - i) / (sum - i);
-    }
-    cout << fixed << setprecision(10) << 1.0 - ans << '\n';
   };
 
   {

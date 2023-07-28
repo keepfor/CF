@@ -23,8 +23,14 @@ all: ${obj} main copy clean
 clear:
 	clear
 
+verbose:
+	$(CC) ${CXXFLAGS} ${debug} ${src} -o ${obj} -DDEBUG 
+
+simple:
+	$(CC) ${src} -o ${obj} -DDEBUG
+
 ${obj}: ${src}
-	$(CC) ${CXXFLAGS} ${debug} ${src} -o ${obj} -DDEBUG -g 
+	$(CC) ${src} -o ${obj} -DDEBUG
 
 main:
 	./${obj} <${input}> ${output}
