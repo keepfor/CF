@@ -13,54 +13,35 @@ int32_t main() {
 
   auto solve = [&]() {
     int n;
-    long long m, s, d;
-    cin >> n >> m >> s >> d;
-    std::vector<long long> b(n);
-    for (auto& i : b) {
-      cin >> i;
-    }
-    sort(b.begin(), b.end());
-    int bb = 0;
-    int x = 0;
-    bool ru = 1;
-    vector<long long> jump, run;
-    const long long inf = 1e18;
-    b.push_back(inf);
-    while (true) {
-      if (ru) {
-        if (b[bb] > m) {
-          run.push_back(m - x);
-          int z = min(jump.size(), run.size());
-          for (int i = 0; i < z; ++i) {
-            cout << "RUN " << run[i] << '\n';
-            cout <<  "JUMP " << jump[i] << '\n';
-          }
-          if (run.size() > z and run.back() > 0) {
-            cout << "RUN " << run.back() << '\n';
-          }
-          return;
-        }  
-        int xx = b[bb] - 1;
-        if (xx - x < s) {
-          cout << "IMPOSSIBLE\n";
-          return;
-        }
-        run.push_back(xx - x);
-        x = xx;
-        ru ^= 1;
-      } else {
-        int nbb = bb + 1;
-        while (b[nbb] - 1 - (b[nbb - 1] + 1) < s) ++nbb;
-        if (b[nbb - 1] + 1 - x > d) {
-          cout << "IMPOSSIBLE\n";
-          return; 
-        }
-        jump.push_back(b[nbb - 1] + 1 - x);
-        bb = nbb;
-        ru ^= 1;
-        x = b[nbb - 1] + 1;
-      } 
-    }
+    cin >> n;
+    cerr << n;
+    debug(n);
+    debug(n);
+    debug(n);
+    //vector<vector<long long>> b(n, vector<long long>(n));
+    //vector<vector<long long>> s(n, vector<long long>(n));
+    //for (auto& i : b) for (auto& j : i) cin >> j;
+    //vector<int> p(n);
+    //for (int i = n - 1; i >= 0; --i) cin >> p[i];
+    //for (int i = 0; i < n; ++i) {
+    //  for (int j = 0; j < n; ++j) {
+    //    s[i][j] = b[p[i]][p[j]];
+    //  }
+    //}
+    //for (int k = 0; k < n; ++k) {
+    //  for (int i = 0; i < n; ++i) {
+    //    for (int j = 0; j < n; ++j) {
+    //      if (i != j and s[i][k] + s[k][j] < s[i][j]) {
+    //        s[i][j] = s[i][k] + s[k][j];
+    //      }
+    //    }
+    //  }
+    //  long long ans = 0;
+    //  for (int i = 0; i <= k; ++i) {
+    //    ans += s[i][k] + s[k][i];
+    //  }
+    //  cout << ans << '\n';
+    //}
   };
 
   {

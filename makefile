@@ -24,13 +24,13 @@ clear:
 	clear
 
 verbose:
-	$(CC) ${CXXFLAGS} ${debug} ${src} -o ${obj} -DDEBUG 
+	$(CC) ${CXXFLAGS} ${debug} ${src} -o ${obj}  
 
 simple:
-	$(CC) ${src} -o ${obj} -DDEBUG
+	$(CC) ${debug} ${src} -o ${obj}  
 
 ${obj}: ${src}
-	$(CC) ${src} -o ${obj} -DDEBUG
+	$(CC) ${debug} ${src} -o ${obj}  
 
 main:
 	./${obj} <${input}> ${output}
