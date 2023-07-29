@@ -19,7 +19,6 @@ inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
 nnoremap <s-k> :!time make<cr>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
-
 nnoremap ; :
 nnoremap <s-q> :q!
 nnoremap <c-a> ggvG$
@@ -32,9 +31,9 @@ inoremap jk <esc>
 inoremap kj <esc>
 
 set timeoutlen=50
-set splitbelow
+set splitbelow autoread
 set clipboard=unnamed
-set nocompatible 
+set nocompatible nu
 set expandtab
 set t_ti= t_te=   
 set shiftwidth=2 softtabstop=2 tabstop=2 
@@ -45,5 +44,3 @@ set ignorecase smartcase
 set incsearch hlsearch 
 set cindent smartindent autoindent
 set backspace=indent,eol,start
-
-filetype plugin indent on 

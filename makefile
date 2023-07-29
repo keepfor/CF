@@ -1,6 +1,6 @@
-cc = g++
-cfg = -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions -std=gnu++2a
-dfg = -g -DLOCAL
+cc = g++ -std=gnu++2a
+cfg = -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions  -g 
+dfg = -DLOCAL
 
 prog = prog
 src = sol.cc
@@ -18,16 +18,25 @@ endef
 
 .PHONY: reset gen reset revim empty
 
-all: $(prog) main copy clean
+all: format $(prog) main copy clean
 	
+format:
+	clang-format -style=Google -i $(src)
+
 clear:
 	clear
 	rm -rf $(prog)*
 	rm -rf .$(src)*
 
-$(prog): $(src)
+simple:
+	$(cc) $(dfg) $(src) -o $(prog)
+
+verbose:
 	$(cc) $(dfg) $(cfg) $(src) -o $(prog)
 
+$(prog): $(src)
+	$(cc) $(dfg) $(src) -o $(prog)
+	
 main:
 	./$(prog) <$(input)> $(output) 
 	cat $(output)
