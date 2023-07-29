@@ -1,39 +1,38 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 #ifdef LOCAL
-#include"debug.h"
+#include "debug.h"
 #else
 #define debug(...)
 #endif
 
 class ZFunction {
-  private:
-    string s;
-    vector<int> z;
-    int n;
-  public:
-    ZFunction(string _s) : s(_s) {
-      this->n = (int) s.size();
-      z.resize(n);
-      for (int i = 0, l = 0, r = 0; i < n; ++i) {
-        if (i <= r) {
-          z[i] = min(r - i + 1, z[i - l]);
-        }
-        while (i + z[i] < n and s[z[i]] == s[i + z[i]]) {
-          ++z[i];
-        }
-        if (i + z[i] - 1 > r) {
-          l = i;
-          r = i + z[i] - 1;
-        }
+ private:
+  string s;
+  vector<int> z;
+  int n;
+
+ public:
+  ZFunction(string _s) : s(_s) {
+    this->n = (int)s.size();
+    z.resize(n);
+    for (int i = 0, l = 0, r = 0; i < n; ++i) {
+      if (i <= r) {
+        z[i] = min(r - i + 1, z[i - l]);
+      }
+      while (i + z[i] < n and s[z[i]] == s[i + z[i]]) {
+        ++z[i];
+      }
+      if (i + z[i] - 1 > r) {
+        l = i;
+        r = i + z[i] - 1;
       }
     }
+  }
 
-    vector<int> get() {
-      return z;
-    }
+  vector<int> get() { return z; }
 };
 
 int32_t main() {

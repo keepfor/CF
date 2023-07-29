@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#ifdef LOCAL
+#ifdef DEBUG
 #include "lib/debug.h"
 #else
 #define debug(...)
@@ -34,6 +34,8 @@ int32_t main() {
       else
         cout << ' ';
     }
+    debug(v);
+    debug(v);
   };
 
   {

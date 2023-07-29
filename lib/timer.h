@@ -1,18 +1,18 @@
 #ifndef CP
 #define CP
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 
 #ifdef LOCAL
-#include"./lib/debug.h"
-#else 
+#include "./lib/debug.h"
+#else
 #define debug(...) 0
 #endif
 
 #include <unistd.h>
 
-int main(int argc, char * argv[]) {
+int main(int argc, char* argv[]) {
   cout << "argc is " << argc << '\n';
   cout << "argv is ";
   for (int i = 1; i < argc; ++i) {

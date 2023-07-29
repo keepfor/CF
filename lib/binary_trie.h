@@ -4,83 +4,74 @@ using namespace std;
 const int INF = int(1e9) + 5;
 const int BITS = 30;
 
-template<int ALPHABET = 2>
+template <int ALPHABET = 2>
 struct binary_trie {
-    struct trie_node {
-        array<int, ALPHABET> child;
-        int min_index = INF;
+  struct trie_node {
+    array<int, ALPHABET> child;
+    int min_index = INF;
 
-        trie_node() {
-            memset(&child[0], -1, ALPHABET * sizeof(int));
-        }
+    trie_node() { memset(&child[0], -1, ALPHABET * sizeof(int)); }
 
-        void update_index(int index) {
-            min_index = min(min_index, index);
-        }
-    };
+    void update_index(int index) { min_index = min(min_index, index); }
+  };
 
-    static const int ROOT = 0;
+  static const int ROOT = 0;
 
-    vector<trie_node> nodes = {trie_node()};
+  vector<trie_node> nodes = {trie_node()};
 
-    binary_trie(int total_length = -1) {
-        if (total_length >= 0)
-            nodes.reserve(total_length + 1);
+  binary_trie(int total_length = -1) {
+    if (total_length >= 0) nodes.reserve(total_length + 1);
+  }
+
+  int get_or_create_child(int node, int c) {
+    if (nodes[node].child[c] < 0) {
+      nodes[node].child[c] = int(nodes.size());
+      nodes.emplace_back();
     }
 
-    int get_or_create_child(int node, int c) {
-        if (nodes[node].child[c] < 0) {
-            nodes[node].child[c] = int(nodes.size());
-            nodes.emplace_back();
-        }
+    return nodes[node].child[c];
+  }
 
-        return nodes[node].child[c];
+  int add(int word, int index) {
+    int node = ROOT;
+
+    for (int bit = BITS - 1; bit >= 0; bit--) {
+      nodes[node].update_index(index);
+      node = get_or_create_child(node, int(word >> bit & 1));
     }
 
-    int add(int word, int index) {
-        int node = ROOT;
+    nodes[node].update_index(index);
+    return node;
+  }
 
-        for (int bit = BITS - 1; bit >= 0; bit--) {
-            nodes[node].update_index(index);
-            node = get_or_create_child(node, int(word >> bit & 1));
-        }
+  int query_max(int target, int max_index) const {
+    if (nodes[ROOT].min_index > max_index) return 0;
 
-        nodes[node].update_index(index);
-        return node;
+    int node = ROOT, ans = 0;
+
+    for (int bit = BITS - 1; bit >= 0; bit--) {
+      int want = (target >> bit & 1) ^ 1;
+      int c = nodes[node].child[want];
+      int oc = nodes[node].child[want ^ 1];
+
+      if (c >= 0 && nodes[c].min_index <= max_index) {
+        ans |= 1 << bit;
+        node = c;
+      } else {
+        node = oc;
+      }
     }
 
-    int query_max(int target, int max_index) const {
-        if (nodes[ROOT].min_index > max_index)
-            return 0;
-
-        int node = ROOT, ans = 0;
-
-        for (int bit = BITS - 1; bit >= 0; bit--) {
-            int want = (target >> bit & 1) ^ 1;
-            int c = nodes[node].child[want];
-            int oc = nodes[node].child[want ^ 1];
-
-            if (c >= 0 && nodes[c].min_index <= max_index) {
-                ans |= 1 << bit;
-                node = c;
-            } else {
-                node = oc;
-            }
-        }
-
-        return ans;
-    }
+    return ans;
+  }
 };
 
-
 struct query {
-    int start0, end0;
-    int start1, end1;
-    int max_index;
+  int start0, end0;
+  int start1, end1;
+  int max_index;
 
-    bool operator<(const query &other) const {
-        return start1 < other.start1;
-    }
+  bool operator<(const query &other) const { return start1 < other.start1; }
 };
 /*
 void run_case() {

@@ -1,11 +1,11 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 #ifdef LOCAL
-#include"lib/debug.h"
-#else 
-#define debug(...) 
+#include "lib/debug.h"
+#else
+#define debug(...)
 #endif
 
 int32_t main() {

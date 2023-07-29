@@ -1,100 +1,94 @@
 #include <bits/stdc++.h>
 
 using i64 = long long;
-template<class T>
+template <class T>
 constexpr T power(T a, i64 b) {
-    T res = 1;
-    for (; b; b /= 2, a *= a) {
-        if (b % 2) {
-            res *= a;
-        }
+  T res = 1;
+  for (; b; b /= 2, a *= a) {
+    if (b % 2) {
+      res *= a;
     }
-    return res;
+  }
+  return res;
 }
 
-template<int P>
+template <int P>
 struct MInt {
-    int x;
-    constexpr MInt() : x{} {}
-    constexpr MInt(i64 x) : x{norm(x % P)} {}
-    
-    constexpr int norm(int x) const {
-        if (x < 0) {
-            x += P;
-        }
-        if (x >= P) {
-            x -= P;
-        }
-        return x;
+  int x;
+  constexpr MInt() : x{} {}
+  constexpr MInt(i64 x) : x{norm(x % P)} {}
+
+  constexpr int norm(int x) const {
+    if (x < 0) {
+      x += P;
     }
-    constexpr int val() const {
-        return x;
+    if (x >= P) {
+      x -= P;
     }
-    explicit constexpr operator int() const {
-        return x;
-    }
-    constexpr MInt operator-() const {
-        MInt res;
-        res.x = norm(P - x);
-        return res;
-    }
-    constexpr MInt inv() const {
-        assert(x != 0);
-        return power(*this, P - 2);
-    }
-    constexpr MInt &operator*=(MInt rhs) {
-        x = 1LL * x * rhs.x % P;
-        return *this;
-    }
-    constexpr MInt &operator+=(MInt rhs) {
-        x = norm(x + rhs.x);
-        return *this;
-    }
-    constexpr MInt &operator-=(MInt rhs) {
-        x = norm(x - rhs.x);
-        return *this;
-    }
-    constexpr MInt &operator/=(MInt rhs) {
-        return *this *= rhs.inv();
-    }
-    friend constexpr MInt operator*(MInt lhs, MInt rhs) {
-        MInt res = lhs;
-        res *= rhs;
-        return res;
-    }
-    friend constexpr MInt operator+(MInt lhs, MInt rhs) {
-        MInt res = lhs;
-        res += rhs;
-        return res;
-    }
-    friend constexpr MInt operator-(MInt lhs, MInt rhs) {
-        MInt res = lhs;
-        res -= rhs;
-        return res;
-    }
-    friend constexpr MInt operator/(MInt lhs, MInt rhs) {
-        MInt res = lhs;
-        res /= rhs;
-        return res;
-    }
-    friend constexpr std::istream &operator>>(std::istream &is, MInt &a) {
-        i64 v;
-        is >> v;
-        a = MInt(v);
-        return is;
-    }
-    friend constexpr std::ostream &operator<<(std::ostream &os, const MInt &a) {
-        return os << a.val();
-    }
-    friend constexpr bool operator==(MInt lhs, MInt rhs) {
-        return lhs.val() == rhs.val();
-    }
-    friend constexpr bool operator!=(MInt lhs, MInt rhs) {
-        return lhs.val() != rhs.val();
-    }
+    return x;
+  }
+  constexpr int val() const { return x; }
+  explicit constexpr operator int() const { return x; }
+  constexpr MInt operator-() const {
+    MInt res;
+    res.x = norm(P - x);
+    return res;
+  }
+  constexpr MInt inv() const {
+    assert(x != 0);
+    return power(*this, P - 2);
+  }
+  constexpr MInt &operator*=(MInt rhs) {
+    x = 1LL * x * rhs.x % P;
+    return *this;
+  }
+  constexpr MInt &operator+=(MInt rhs) {
+    x = norm(x + rhs.x);
+    return *this;
+  }
+  constexpr MInt &operator-=(MInt rhs) {
+    x = norm(x - rhs.x);
+    return *this;
+  }
+  constexpr MInt &operator/=(MInt rhs) { return *this *= rhs.inv(); }
+  friend constexpr MInt operator*(MInt lhs, MInt rhs) {
+    MInt res = lhs;
+    res *= rhs;
+    return res;
+  }
+  friend constexpr MInt operator+(MInt lhs, MInt rhs) {
+    MInt res = lhs;
+    res += rhs;
+    return res;
+  }
+  friend constexpr MInt operator-(MInt lhs, MInt rhs) {
+    MInt res = lhs;
+    res -= rhs;
+    return res;
+  }
+  friend constexpr MInt operator/(MInt lhs, MInt rhs) {
+    MInt res = lhs;
+    res /= rhs;
+    return res;
+  }
+  friend constexpr std::istream &operator>>(std::istream &is, MInt &a) {
+    i64 v;
+    is >> v;
+    a = MInt(v);
+    return is;
+  }
+  friend constexpr std::ostream &operator<<(std::ostream &os, const MInt &a) {
+    return os << a.val();
+  }
+  friend constexpr bool operator==(MInt lhs, MInt rhs) {
+    return lhs.val() == rhs.val();
+  }
+  friend constexpr bool operator!=(MInt lhs, MInt rhs) {
+    return lhs.val() != rhs.val();
+  }
 };
 
-template<int V, int P>
+template <int V, int P>
 constexpr MInt<P> CInv = MInt<P>(V).inv();
 
 constexpr int P = 998244353;
@@ -102,90 +96,88 @@ using Z = MInt<P>;
 std::vector<int> minp, primes;
 
 void sieve(int n) {
-    minp.assign(n + 1, 0);
-    primes.clear();
-    
-    for (int i = 2; i <= n; i++) {
-        if (minp[i] == 0) {
-            minp[i] = i;
-            primes.push_back(i);
-        }
-        
-        for (auto p : primes) {
-            if (i * p > n) {
-                break;
-            }
-            minp[i * p] = p;
-            if (p == minp[i]) {
-                break;
-            }
-        }
+  minp.assign(n + 1, 0);
+  primes.clear();
+
+  for (int i = 2; i <= n; i++) {
+    if (minp[i] == 0) {
+      minp[i] = i;
+      primes.push_back(i);
     }
+
+    for (auto p : primes) {
+      if (i * p > n) {
+        break;
+      }
+      minp[i * p] = p;
+      if (p == minp[i]) {
+        break;
+      }
+    }
+  }
 }
 
 struct Comb {
-    int n;
-    std::vector<Z> _fac;
-    std::vector<Z> _invfac;
-    std::vector<Z> _inv;
-    
-    Comb() : n{0}, _fac{1}, _invfac{1}, _inv{0} {}
-    Comb(int n) : Comb() {
-        init(n);
+  int n;
+  std::vector<Z> _fac;
+  std::vector<Z> _invfac;
+  std::vector<Z> _inv;
+
+  Comb() : n{0}, _fac{1}, _invfac{1}, _inv{0} {}
+  Comb(int n) : Comb() { init(n); }
+
+  void init(int m) {
+    if (m <= n) return;
+    _fac.resize(m + 1);
+    _invfac.resize(m + 1);
+    _inv.resize(m + 1);
+
+    for (int i = n + 1; i <= m; i++) {
+      _fac[i] = _fac[i - 1] * i;
     }
-    
-    void init(int m) {
-        if (m <= n) return;
-        _fac.resize(m + 1);
-        _invfac.resize(m + 1);
-        _inv.resize(m + 1);
-        
-        for (int i = n + 1; i <= m; i++) {
-            _fac[i] = _fac[i - 1] * i;
-        }
-        _invfac[m] = _fac[m].inv();
-        for (int i = m; i > n; i--) {
-            _invfac[i - 1] = _invfac[i] * i;
-            _inv[i] = _invfac[i] * _fac[i - 1];
-        }
-        n = m;
+    _invfac[m] = _fac[m].inv();
+    for (int i = m; i > n; i--) {
+      _invfac[i - 1] = _invfac[i] * i;
+      _inv[i] = _invfac[i] * _fac[i - 1];
     }
-    
-    Z fac(int m) {
-        if (m > n) init(2 * m);
-        return _fac[m];
-    }
-    Z invfac(int m) {
-        if (m > n) init(2 * m);
-        return _invfac[m];
-    }
-    Z inv(int m) {
-        if (m > n) init(2 * m);
-        return _inv[m];
-    }
-    Z binom(int n, int m) {
-        if (n < m || m < 0) return 0;
-        return fac(n) * invfac(m) * invfac(n - m);
-    }
+    n = m;
+  }
+
+  Z fac(int m) {
+    if (m > n) init(2 * m);
+    return _fac[m];
+  }
+  Z invfac(int m) {
+    if (m > n) init(2 * m);
+    return _invfac[m];
+  }
+  Z inv(int m) {
+    if (m > n) init(2 * m);
+    return _inv[m];
+  }
+  Z binom(int n, int m) {
+    if (n < m || m < 0) return 0;
+    return fac(n) * invfac(m) * invfac(n - m);
+  }
 } comb;
 
 /*
 int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
-    
+
     int n;
     std::cin >> n;
-    
+
     sieve(1000000);
-    
+
     std::map<int, int> cnt;
     for (int i = 0; i < 2 * n; i++) {
         int a;
         std::cin >> a;
         cnt[a] += 1;
     }
-    
+
     std::vector<Z> dp(n + 1);
     dp[0] = 1;
     for (auto [x, c] : cnt) {
@@ -196,10 +188,10 @@ int main() {
             dp[i] *= comb.invfac(c);
         }
     }
-    
+
     auto ans = dp[n] * comb.fac(n);
     std::cout << ans << "\n";
-    
+
     return 0;
 }
 */

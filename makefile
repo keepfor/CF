@@ -1,6 +1,6 @@
 cc = g++ -std=gnu++2a
 cfg = -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions  -g 
-dfg = -DLOCAL
+dfg = -DDEBUG
 
 prog = prog
 src = sol.cc

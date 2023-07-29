@@ -1,1 +1,3 @@
-#define fio freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define fio                         \
+  freopen("input.txt", "r", stdin); \
+  freopen("output.txt", "w", stdout);
