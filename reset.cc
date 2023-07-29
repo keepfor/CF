@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-#ifdef LOCAL
+#ifdef DEBUG
 #include "lib/debug.h"
 #else
 #define debug(...)
@@ -17,10 +16,7 @@ int32_t main() {
 
   {
     int tt = 1;
-    while (tt--) {
-      solve();
-    }
+    while (tt--) solve();
   }
-
   return 0;
 }
