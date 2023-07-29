@@ -2,7 +2,7 @@
 using namespace std;
 
 #ifdef DEBUG
-#include "lib/debug.h"
+#include "lib/debug.cc"
 #else
 #define debug(...)
 #endif
