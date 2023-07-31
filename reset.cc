@@ -2,8 +2,8 @@
 
 using namespace std;
 
-#ifdef LOCAL
-#include "lib/debug.h"
+#ifdef DEBUG
+#include "lib/debug.cc"
 #else
 #define debug(...) 0
 #endif

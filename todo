@@ -241,6 +241,7 @@ rewrite reset button, only 19 secs.
 verify update to diag from runtime code.
 setup sz environment for upgrade-shipping.
 shipping ip can not be pinged issues.
+shipping fw port 7 can not link.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
