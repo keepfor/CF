@@ -17,10 +17,7 @@ int32_t main() {
 
   {
     int tt = 1;
-    while (tt--) {
-      solve();
-    }
+    while (tt--) solve();
   }
-
   return 0;
 }

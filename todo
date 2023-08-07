@@ -1,3 +1,6 @@
+usw-aggregation, Update bundled shipping FW to US.rtl930x_6.5.59.
+usw-aggregation, create rpi4 fcd.
+
 usw, fw / fcd / ftu ver.
 usw, project owner.
 
@@ -42,6 +45,7 @@ Change current threshold in fast charge.
 FCD UM.mt7621_6.5.39.
 FTU UM.mt7621_6.5.39.
 lcm burnin, increase round. (from ltn te)
+hw rework boost, plc.
 
 uisp-s, update ble test, parser.
 uisp-s, Update FCD with Diag fw v1.3.6-DEV07.
@@ -546,6 +550,11 @@ usw-flex-xg, merge reset button test to factory default.
 usw-flex, update burnin script to improve retest rate of burnin test. (increase delay)
 usw-flex, update, update shipping fw to US.mt7621_6.4.18+14328.221213.1324-uboot.bin.
 ux issues, cm process issues.
+usw-flex, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
+verify FCD-USW-FLEX-1.0.5-4.0.66.
+fcd not found shipping fw.
+check test flow.
+update ssh login ip to 192.168.1.20.
 
 uisp-p-pro, Update la battery charge test, to change the criteria of psu voltage.
 uisp-p-pro, Update la battery charge test, add retry and update test flow.

@@ -35,7 +35,7 @@ inoremap jk <esc>
 inoremap kj <esc>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
-set visualbell nu
+set visualbell nu 
 set t_ti= t_te= t_TI= t_TE=
 set timeoutlen=30
 set splitbelow
@@ -43,7 +43,7 @@ set expandtab
 set nocompatible 
 set nobackup
 set backupcopy=yes 
-set autochdir
+set autochdir autoread
 set clipboard^=unnamed,unnamedplus 
 set smartindent autoindent cindent
 set backspace=indent,eol,start
