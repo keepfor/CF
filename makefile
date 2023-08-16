@@ -36,7 +36,7 @@ verbose:
 
 $(prog): $(src)
 	$(cc) $(dfg) $(src) -o $(prog)
-	
+
 main:
 	./$(prog) <$(input)> $(output) 
 	cat $(output)

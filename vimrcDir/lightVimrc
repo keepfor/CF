@@ -33,7 +33,7 @@ inoremap kj <esc>
 set timeoutlen=50
 set splitbelow autoread
 set clipboard=unnamed
-set nocompatible nu
+set nocompatible 
 set expandtab
 set t_ti= t_te=   
 set shiftwidth=2 softtabstop=2 tabstop=2 
@@ -44,3 +44,4 @@ set ignorecase smartcase
 set incsearch hlsearch 
 set cindent smartindent autoindent
 set backspace=indent,eol,start
+syntax off
