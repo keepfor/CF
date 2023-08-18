@@ -47,8 +47,6 @@ FTU UM.mt7621_6.5.39.
 lcm burnin, increase round. (from ltn te)
 hw rework boost, plc.
 
-uisp-s, update ble test, parser.
-uisp-s, Update FCD with Diag fw v1.3.6-DEV07.
 uisp-s, Add Port speed change 10.
 uisp-s, Add Port information 100.
 uisp-s, Add Port information 10.
@@ -378,6 +376,29 @@ uid delete device.
 uid delete device, delete issues.
 compare regiration data fail.
 fw rd checked, will have a new helper.
+update fcd Helper, helper_MRVL_ACT5_release_04.
+update fcd DIAG_v2.0.8: uisp-s-plus_280723.1031.ubi
+update ftu RT_FW_v0.3.0: UISPS.act5.v0.3.0.d662b54.230726.1155.bin
+update ftu upgrade diag fw, upgrade_diag_v063023.01.sh
+update ftu upgrade diag fw, uisp-s-plus_280723.1031.ubi
+update ftu upgrade diag fw, uisp-s-plus_280723.1031_md5.txt
+update enable burnin, setenv burnTemp 100	
+update enable burnin, setenv burnPID 1
+rewrite poe test, 1. check bus-voltage, 2. current, 3. power.
+ftu, add efuse test.
+update ftu upgrade diag fw, upgrade_diag_v063023.01.sh
+update ftu upgrade diag fw, uisp-s-plus_090823.1826.ubi
+update ftu upgrade diag fw, uisp-s-plus_090823.1826_md5.txt
+ftu, add retry to poe test.
+fcd ftu, DIAG_v2.0.9.
+hw rework, update adapter to 27v.
+poe test fail, test board issues, 48v -> 27v.
+poe test fail, telnet connection drops, Segmentation fault.
+update poe criteria.
+update fcd ftu, DIAG_v2.0.10.
+fcd, uisp-s-plus_140823.1153.ubi
+ftu, uisp-s-plus_140823.1153.ubi
+ftu, uisp-s-plus_140823.1153_md5.txt
 
 doc, how to enable fail_stop feature of FTU.
 

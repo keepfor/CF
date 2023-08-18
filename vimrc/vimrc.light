@@ -35,7 +35,7 @@ inoremap jk <esc>
 inoremap kj <esc>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
-set visualbell nu 
+set visualbell 
 set t_ti= t_te= t_TI= t_TE=
 set timeoutlen=30
 set splitbelow
@@ -51,3 +51,4 @@ set ignorecase smartcase
 set incsearch hlsearch 
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
+syntax off
