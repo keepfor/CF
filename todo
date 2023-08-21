@@ -245,6 +245,16 @@ setup sz environment for upgrade-shipping.
 shipping ip can not be pinged issues.
 shipping fw port 7 can not link.
 
+fcd diag diag v9.0.6 image.
+(P8) Add PoE test by “pwshow” command
+(P9) Add eFuse test by “poe efuse” command
+(P6) Default FAN mode is PID, need stop PID first in fan test
+(P5) Add DEV_ISL28022_0 test in “i2ctest all”
+(P14) Enable PID mode setting for burn-in test
+(P18) Upgrade to diag image from runtime fw (diag v9.0.6 image)
+poe show can not get information.
+i2c test error.
+
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
 uisp-s-plus, deveg helper issues.
@@ -399,6 +409,7 @@ update fcd ftu, DIAG_v2.0.10.
 fcd, uisp-s-plus_140823.1153.ubi
 ftu, uisp-s-plus_140823.1153.ubi
 ftu, uisp-s-plus_140823.1153_md5.txt
+add support of i2c test for ISL28022FRZ.
 
 doc, how to enable fail_stop feature of FTU.
 
