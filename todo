@@ -47,16 +47,11 @@ FTU UM.mt7621_6.5.39.
 lcm burnin, increase round. (from ltn te)
 hw rework boost, plc.
 
-uisp-s, Add Port speed change 10.
-uisp-s, Add Port information 100.
-uisp-s, Add Port information 10.
 uisp-s, Remove LCM check when checking burnin result.
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
 uisp-s, refactor port information.
 
-usp-battery, update ble app fw to v1.1.4.332.
-usp-battery, update ble product fw to v1.1.4.332.
 usp-battery, update ble battery ftu tool to python3.
 usp-battery, python2 issue.
 usp-battery, ble tool dir path issues. 
@@ -645,12 +640,10 @@ runtime fw upgrade issues, timeout error, two network cards and ping.
 cancel some test cases, reduce testing time.
 
 
-uisp-s-pro, 
 uisp-s-pro, update ble test, rewrite parser and calculation.
 uisp-s-pro, update ble test, update tx checking process.
 uisp-s-pro, update ble criteria issue.
-//uisp-s-pro, update fcd with new diag fw, 1.3.8-DEV08.bix.
-uisp-s-pro, update ftu with new diag fw, 1.3.8-DEV08.bix.
+uisp-s-pro, update bundled diag fw of ftu, 1.3.8-DEV08.bix.
 uisp-s-pro, Update Diag fw upgrade test with Diag fw v1.3.8-DEV08.
 uisp-s-pro, Add Port information 100.
 uisp-s-pro, Add Port information 10.
