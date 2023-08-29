@@ -1,5 +1,5 @@
-usw-aggregation, Update bundled shipping FW to US.rtl930x_6.5.59.
-usw-aggregation, create rpi4 fcd.
+//usw-aggregation, Update bundled shipping FW to US.rtl930x_6.5.59.
+//usw-aggregation, create rpi4 fcd.
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -11,10 +11,10 @@ usw-industrial,tests,test_upgrade_to_shipping_fw.py
 
 UISP-Console-Carrier, npi.
 
-usp-rps, create new build for ftu.
-usp-rps, find the cause of uls error. Find file: data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
+//usp-rps, create new build for ftu.
+//usp-rps, find the cause of uls error. Find file: data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
 
-usp-rps-pro, update lead acid battery, add wait 15 secs for battery stability.
+//usp-rps-pro, update lead acid battery, add wait 15 secs for battery stability.
 usp-rps-pro, update lead acid battery, update slow charging current criteria.(0.1~0.3 => 0.1~0.6 A)
 usp-rps-pro, update lead acid battery, add config for slow charging current.
 update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
@@ -47,14 +47,12 @@ FTU UM.mt7621_6.5.39.
 lcm burnin, increase round. (from ltn te)
 hw rework boost, plc.
 
-uisp-s, Remove LCM check when checking burnin result.
+//uisp-s, Remove LCM check when checking burnin result.
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
 uisp-s, refactor port information.
 
-usp-battery, update ble battery ftu tool to python3.
-usp-battery, python2 issue.
-usp-battery, ble tool dir path issues. 
+//usp-battery, ble tool dir path issues. 
 usp-battery, i2c error after ble upgrade fw 
 usp-battery, lcm shows booting error after ble upgrade fw 
 usp-battery, update ble ftu tools to v. 
@@ -120,7 +118,7 @@ uisp-r, update test shell of burnin test..
 uisp-r, update enable ssh port to 2 to 8.
 uisp-r, Remove UISPR.mt7621.recovery.v1.10.1-rc.1.c592d31.210630.0809.bin
 uisp-r, Remove UISPR.mt7621.v1.10.1-rc.1.c592d31.210630.0754.bin
-uisp-r, Add new BOM ID support UISP-R Rev.B 113-01262-xx
+//uisp-r, Add new BOM ID support UISP-R Rev.B 113-01262-xx
 uisp-r, Update enable SSH, avoid overwriting of sshServer settings. 
 uisp-r, Remove UNMSR.mt7621.v1.1.0-rc.4.420d3d4.200904.0856.bin
 uisp-r, Remove UISPR.mt7621.v1.13.0.0437331.211129.1432.bin
@@ -128,8 +126,8 @@ uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.
 uisp-r, Add user config for ip after FW upgrade for FW upgrade test.
 uisp-r, Update test.sh of burnin test.
-uisp-r, Update test ordering Factory reset test item.
-uisp-r, Support of UISP-R Rev.B 113-01262-xx, please update user config "bomrev".
+//uisp-r, Update test ordering Factory reset test item.
+//uisp-r, Support of UISP-R Rev.B 113-01262-xx, please update user config "bomrev".
 uisp-r, update burnin test tool.
 uisp-r, update fwupgrade, support reset ftu.
 uisp-r, fw 3.0.1 factory reset port 9 can not ping.
@@ -425,9 +423,6 @@ usw-enterprise-48-poe, for fw rd, search usage of 'syswrapper.sh save-config' in
 
 usw-enterprisexg-24, power consumption.
 usw-enterprisexg-24, update ups test. 
-usw-enterprisexg-24, add lcm reset pin.
-usw-enterprisexg-24, add lcm reset pin test.
-usw-enterprisexg-24, portal ecof issues.
 
 uacc-lte, ua band fail.
 uacc-lte, update get imei, add popUP window.
@@ -443,7 +438,6 @@ uacc-lte, refine LTE result check. (support update activity timer)
 uacc-lte, enable activity timer cmd timeout.
 uacc-lte, enalbe activity timer should post action.
 
-//usw-mission-critical, update external battery, switch ac power and external battery.
 usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
 usw-mission-critical, add, FP.8.1 LTE - band check
 usw-mission-critical, lcm failed in fcd.
@@ -576,9 +570,6 @@ usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
 usw-flex-xg, factory default issues.
 usw-flex-xg, ping failed with factory pc.
-//usw-flex-xg, update fw to 6.4.19.
-usw-flex-xg, remove reset button.
-usw-flex-xg, merge reset button test to factory default.
 
 usw-flex, update burnin script to improve retest rate of burnin test. (increase delay)
 usw-flex, update, update shipping fw to US.mt7621_6.4.18+14328.221213.1324-uboot.bin.
