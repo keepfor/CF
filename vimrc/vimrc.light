@@ -37,7 +37,7 @@ inoremap kj <esc>
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
-set timeoutlen=30
+set timeoutlen=30 mouse=a
 set splitbelow expandtab nocompatible 
 set backupcopy=yes 
 set autochdir autoread
@@ -48,4 +48,3 @@ set ignorecase smartcase
 set incsearch hlsearch 
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
-syntax off

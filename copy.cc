@@ -1,44 +1,50 @@
-
-#include <algorithm>
-#include <iostream>
-#include <map>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-const int MAX_N = 100005;
+#ifdef DEBUG
+#include "lib/debug.cc"
+#else
+#define debug(...) 0
+#endif
 
-map<pair<int, int>, int> freq;
-struct Tuple {
-  int x, y, z;
-  inline bool operator<(const Tuple &other) const {
-    if (x == other.x && z == other.z) {
-      return y < other.y;
-    }
-    if (x == other.x) {
-      return z < other.z;
-    }
-    return x < other.x;
-  }
-} tuples[MAX_N];
+int32_t main() {
+  ios::sync_with_stdio(false), cin.tie(0);
 
-int main() {
-  int n;
-  cin >> n;
-  for (int i = 1; i <= n; ++i) {
-    cin >> tuples[i].x >> tuples[i].y;
-    if (!freq.count({tuples[i].x, tuples[i].y})) {
-      freq[{tuples[i].x, tuples[i].y}] = 0;
-    } else {
-      freq[{tuples[i].x, tuples[i].y}] += 1;
+  auto solve = [&]() {
+    using ll = long long;
+    int n;
+    cin >> n;
+    vector<ll> v(n);
+    for (auto& i : v) cin >> i;
+    ll mx = *max_element(v.begin(), v.end());
+    ll mn = *min_element(v.begin(), v.end());
+    ll d = (mx - mn + n - 1) / n;
+    if (!d) {
+      cout << 0 << '\n';
+      return;
     }
-    tuples[i].z = freq[{tuples[i].x, tuples[i].y}];
-  }
-  sort(tuples + 1, tuples + n + 1);
-  for (int i = 1; i <= n; ++i) {
-    cout << tuples[i].x << ' ' << tuples[i].y << ' ' << tuples[i].z << '\n';
-  }
-  for (int i = 1; i <= n; ++i) {
-    cout << tuples[i].x << " " << tuples[i].y << "\n";
+    vector<vector<ll>> b(n);
+    ll ans = 0;
+    ll pre;
+    for (auto& i : v) {
+      int x = (i - mn) / d;
+      if (x == n) --x;
+      b[x].push_back(i);
+    }
+    for (int i = 0; i < n; ++i) {
+      if (b[i].empty()) continue;
+      ll mx = *max_element(b[i].begin(), b[i].end());
+      ll mn = *min_element(b[i].begin(), b[i].end());
+      if (i) ans = max(ans, mn - pre);
+      pre = mx;
+    }
+    cout << ans << '\n';
+  };
+
+  {
+    int tt = 1;
+    while (tt--) solve();
   }
   return 0;
 }

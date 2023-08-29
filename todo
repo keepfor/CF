@@ -251,9 +251,13 @@ fcd diag diag v9.0.6 image.
 (P6) Default FAN mode is PID, need stop PID first in fan test
 (P5) Add DEV_ISL28022_0 test in “i2ctest all”
 (P14) Enable PID mode setting for burn-in test
+  burnFan1 0
+  burnFan2 0
+  burnPID 1
 (P18) Upgrade to diag image from runtime fw (diag v9.0.6 image)
 poe show can not get information.
 i2c test error.
+update shipping fw to 3.2.2-rc.8.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
@@ -410,6 +414,8 @@ fcd, uisp-s-plus_140823.1153.ubi
 ftu, uisp-s-plus_140823.1153.ubi
 ftu, uisp-s-plus_140823.1153_md5.txt
 add support of i2c test for ISL28022FRZ.
+FXN, "PoE Test" test fail.
+FXN, "Test i2c devices" and "PoE Test" test fail.
 
 doc, how to enable fail_stop feature of FTU.
 
