@@ -1,3 +1,5 @@
+ev-charger, set up environment.
+ev-charger, ubuntu dhcp.
 //usw-aggregation, Update bundled shipping FW to US.rtl930x_6.5.59.
 //usw-aggregation, create rpi4 fcd.
 
@@ -251,6 +253,7 @@ fcd diag diag v9.0.6 image.
 poe show can not get information.
 i2c test error.
 update shipping fw to 3.2.2-rc.8.
+iperf fail in fxn.
 
 uisp-s-plus, update diag fw to 004.
 uisp-s-plus, diag fw does not automatically login diag shell.
@@ -409,6 +412,15 @@ ftu, uisp-s-plus_140823.1153_md5.txt
 add support of i2c test for ISL28022FRZ.
 FXN, "PoE Test" test fail.
 FXN, "Test i2c devices" and "PoE Test" test fail.
+fcd, Update DIAG FW, DIAG_v9.0.1: uisp-s-plus_300823.1629.ubi
+ftu, Update poe tests,
+ftu, Fail recovery.
+ftu, Pre-disable.
+ftu, Update eFuse test, rewrite with new test flow without rj45.
+ftu, Update Upgrade to DIAG image (from Application image).
+ftu, upgrade_diag_v063023.01.sh
+ftu, uisp-s-plus_300823.1629.ubi
+ftu, uisp-s-plus_300823.1629_md5.txt
 
 doc, how to enable fail_stop feature of FTU.
 
@@ -503,7 +515,7 @@ improve portlink test retest, rewrite with swctrl.
 uisp-r-pro, add burnfan1 to config panel.
 uisp-r-pro, add burnfan2 to config panel.
 uisp-r-pro, rewrite lcm test with new diag v9.0.10.
-uisp-r-pro, remove test lcm aligment, backlight, touch, burnin.
+uisp-r-pro, remove test lcm aligment, backlight, touch, burnin. (lcm all in one)
 uisp-r-pro, update runtime fw to UISPR.alpinev2r.v2.4.1-rc.1.c1f2393.221117.1215.bin.
 uisp-r-pro, update bundled fcd daig fw to v9.0.10.
 uisp-r-pro, update bundled ftu daig fw to v9.0.10.
@@ -565,6 +577,7 @@ uisp-r-pro, update ble test flow. (init_bt)
 uisp-r-pro, burnin loop back fail in pcba-b.
 uisp-r-pro, Production test process update for improving CT
 uisp-r-pro, update controller app ver, ecof.
+ftu lcm burnin test,  'exec "lcm-control --command test.burnin --parameter 30 --sender fcd"'
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.

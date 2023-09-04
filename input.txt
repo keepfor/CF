@@ -1,30 +1,3 @@
-usp-battery, fix ble tool dir path issues.
-usp-battery, upgrade to testing fw by ble, update ble tools to v1.7.
-usp-battery, upgrade to testing fw by ble, update bundled testing fw to v1.1.4.332.
-uisp-s, Remove LCM check when checking burnin result.
-uisp-s-pro, update bundled diag fw of ftu, 1.3.8-DEV08.bix.
-uisp-s-pro, update ble test, rewrite parser and calculation.
-uisp-s-plus, add test case, 19 Upgrade to Application Image
-uisp-s-plus, add test case, 20 Check Application version
-uisp-s-plus, add test case, 21 Upgrade to DIAG Image
-usw-aggregation, create rpi4 fcd build.
-usw-aggregation, update bundled shipping FW to US.rtl930x_6.5.59.
-usp-rps, fix build error, ULS-RPS error, data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
-usp-rps, support test-tag build (last build is rel build)
-usp-rps, verify remaining test cases, 330 MGMT port link status / 9000 RPS test / 1000 Enable burnin mode / 1002 Check burnin result / 2002 Factory reset without reboot.
-uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
-TWFCD-4152
-TWFCD-4151
-TWFCD-4150
-TWFCD-4149
-TWFCD-4148
-TWFCD-4147
-TWFCD-4146
-TWFCD-4145
-TWFCD-4144
-TWFCD-4142
-TWFCD-4141
-TWFCD-4140
-TWFCD-4139
-TWFCD-4138
-TWFCD-3278
+
+6 11 6
+
