@@ -9,23 +9,39 @@ using namespace std;
 #endif
 
 int32_t main() {
-  ios::sync_with_stdio(false), cin.tie(0);
+  cin.tie(0)->sync_with_stdio(0);
 
   auto solve = [&]() {
-    int a, b, c;
-    cin >> a >> b >> c;
-    for (int i = 0; i <= c / a; ++i) {
-      if ((c - a * i) % b == 0) {
-        cout << "Yes\n";
-        return;
-      }
+    int n, k;
+    cin >> n >> k;
+    vector<int> p(n);
+    for (int i = 1; i < n; ++i) {
+      cin >> p[i];
+      --p[i];
     }
-    cout << "No\n";
-    return;
+    int l = 1, r = n - 1;
+    while (l < r) {
+      int mid = (l + r) >> 1;
+      int c = 0;
+      vector<int> h(n);
+      for (int i = n - 1; i; --i) {
+        h[i] += 1;
+        if (p[i] and h[i] == mid)
+          ++c;
+        else
+          h[p[i]] = max(h[p[i]], h[i]);
+      }
+      if (c <= k)
+        r = mid;
+      else
+        l = mid + 1;
+    }
+    cout << r << '\n';
   };
 
   {
     int tt = 1;
+    cin >> tt;
     while (tt--) solve();
   }
   return 0;
