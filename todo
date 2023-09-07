@@ -1,5 +1,6 @@
 ev-charger, set up environment.
 ev-charger, ubuntu dhcp.
+ev-charger, update mcu fw.
 //usw-aggregation, Update bundled shipping FW to US.rtl930x_6.5.59.
 //usw-aggregation, create rpi4 fcd.
 
