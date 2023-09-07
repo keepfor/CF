@@ -13,7 +13,7 @@ int32_t main() {
   auto SolveOne = [&]() -> void {
 
   };
-  auto Solve = [&]() {
+  auto Solve = [&]() -> void {
     int i = 1;
     while (i--) SolveOne();
   };
