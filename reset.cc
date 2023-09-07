@@ -14,8 +14,8 @@ int32_t main() {
 
   };
   auto Solve = [&]() {
-    int t;
-    while (t--) SolveOne();
+    int i = 1;
+    while (i--) SolveOne();
   };
   SetIO();
   Solve();
