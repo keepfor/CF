@@ -9,15 +9,15 @@ using namespace std;
 #endif
 
 int32_t main() {
-  cin.tie(0)->sync_with_stdio(0);
-
-  auto solve = [&]() {
+  auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
+  auto SolveOne = [&]() -> void {
 
   };
-
-  {
-    int tt = 1;
-    while (tt--) solve();
-  }
+  auto Solve = [&]() {
+    int t;
+    while (t--) SolveOne();
+  };
+  SetIO();
+  Solve();
   return 0;
 }
