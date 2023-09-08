@@ -1,22 +1,22 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 #ifdef DEBUG
 #include "lib/debug.cc"
 #else
-#define debug(...)
+#define debug(...) 0
 #endif
 
 int32_t main() {
-  ios::sync_with_stdio(false), cin.tie(0);
-
-  auto solve = [&]() {
-
+  auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
+  auto SolveOne = []() -> void {
   };
-
-  {
-    int tt = 1;
-    while (tt--) solve();
-  }
+  auto Solve = [&SolveOne]() -> void {
+    int i = 1;
+    while (i--) SolveOne();
+  };
+  SetIO();
+  Solve();
   return 0;
 }
