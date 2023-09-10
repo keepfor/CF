@@ -9,16 +9,11 @@ using namespace std;
 #endif
 
 class ZFunction {
- private:
-  string s;
-  vector<int> z;
-  int n;
-
  public:
   ZFunction(string _s) : s(_s) {
     this->n = (int)s.size();
     z.resize(n);
-    for (int i = 0, l = 0, r = 0; i < n; ++i) {
+    for (int i = 1, l = 0, r = 0; i < n; ++i) {
       if (i <= r) {
         z[i] = min(r - i + 1, z[i - l]);
       }
@@ -33,6 +28,11 @@ class ZFunction {
   }
 
   vector<int> get() { return z; }
+
+ private:
+  string s;
+  vector<int> z;
+  int n;
 };
 
 int32_t main() {
