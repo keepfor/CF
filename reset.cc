@@ -11,10 +11,13 @@ using namespace std;
 int32_t main() {
   auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
   auto SolveOne = []() -> void {
+    // TODO
   };
   auto Solve = [&SolveOne]() -> void {
-    int i = 1;
-    while (i--) SolveOne();
+    int t = 1;
+    while (t--) {
+      SolveOne();
+    }
   };
   SetIO();
   Solve();

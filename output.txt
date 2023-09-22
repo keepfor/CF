@@ -1,0 +1,2 @@
+A's Constructor called: Value of i: 10
+B's Constructor called

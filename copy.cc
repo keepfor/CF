@@ -1,21 +1,31 @@
-#include <bits/stdc++.h>
 
+#include <iostream>
 using namespace std;
 
-#ifdef DEBUG
-#include "lib/debug.cc"
-#else
-#define debug(...) 0
-#endif
+class A {
+  int i;
 
-int32_t main() {
-  auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
-  auto SolveOne = []() -> void {};
-  auto Solve = [&SolveOne]() -> void {
-    int i = 1;
-    while (i--) SolveOne();
-  };
-  SetIO();
-  Solve();
+ public:
+  A(int);
+};
+
+A::A(int arg) {
+  i = arg;
+  cout << "A's Constructor called: Value of i: " << i << endl;
+}
+
+// Class B is derived from A
+class B : A {
+ public:
+  B(int x) : A(x) { cout << "B's Constructor called\n"; }
+};
+/*
+B::B(int x) : A(x) {  // Initializer list must be used
+  cout << "B's Constructor called\n";
+}
+*/
+
+int main() {
+  B obj(10);
   return 0;
 }
