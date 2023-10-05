@@ -1,31 +1,33 @@
+#include <bits/stdc++.h>
 
-#include <iostream>
 using namespace std;
 
-class A {
-  int i;
+#ifdef DEBUG
+#include "lib/debug.cc"
+#else
+#define debug(...) 0
+#endif
 
- public:
-  A(int);
-};
-
-A::A(int arg) {
-  i = arg;
-  cout << "A's Constructor called: Value of i: " << i << endl;
-}
-
-// Class B is derived from A
-class B : A {
- public:
-  B(int x) : A(x) { cout << "B's Constructor called\n"; }
-};
-/*
-B::B(int x) : A(x) {  // Initializer list must be used
-  cout << "B's Constructor called\n";
-}
-*/
-
-int main() {
-  B obj(10);
+int32_t main() {
+  auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
+  auto SolveOne = []() -> void {
+    tuple<int, int, int> t(1, 2, 3);
+    int a, b, c;
+    tie(a, b, c) = t;
+    cout << a << ' ' << b << ' ' << c << '\n';
+    ++a;
+    ++b;
+    ++c;
+    cout << a << ' ' << b << ' ' << c << '\n';
+    cout << get<0>(t) << ' ' << get<1>(t) << ' ' << get<2>(t) << '\n';
+  };
+  auto Solve = [&SolveOne]() -> void {
+    int t = 1;
+    while (t--) {
+      SolveOne();
+    }
+  };
+  SetIO();
+  Solve();
   return 0;
 }

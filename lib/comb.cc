@@ -14,9 +14,9 @@ class comb {
   vector<long long> fac, inv;
 
  public:
-  void init(const long long _mod, const int _m) {
+  void init(const long long _mod=2000000011, const int _m=1000) {
     mod = _mod;
-    m = _m;
+    m = _m + 1;
     fac.resize(m);
     inv.resize(m);
     fac[0] = 1;
@@ -46,7 +46,7 @@ class comb {
 int32_t main() {
   ios::sync_with_stdio(false), cin.tie(0);
 
-  const long long mod = 1e9 + 7;
+  const long long mod = 2000000011;
   const int m = 1001;
 
   comb cb;

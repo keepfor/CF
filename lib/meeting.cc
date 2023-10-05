@@ -116,7 +116,7 @@ static inline void shoudZero(int& sz) { assert(!sz && "Should be Zero\n"); }
 
 static inline void genReport() {
   const vector<string> pdline{"uisp", "usw", "usp", "uled",
-                              "uacc", "uis", "usc"};
+                              "uacc", "uis", "usc", "ev"};
 
   int sz = 0;
   map<string, vector<string>> all;

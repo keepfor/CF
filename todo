@@ -1,15 +1,23 @@
 ev-station-ultra, collect product data for registration
 ev-station-ultra, ask label.
+ev-station-ultra, fcd, flashSize check fails.
+ev-station-ultra, fcd,  show "Press enter" too early when login kernel, and the linux shell prompt is "(none)-0.0.2#".
+ev-station-ultra, fcd, fcd tlv data check fails.
+ev-station-ultra, fcd, add new function, upgrade to mfg FW.
+ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
+ev-station-ultra, fcd, verify sr2 sample, hw issues. (PQ6 shortcut.) 
+
 
 ev-charger, set up environment.
 ev-charger, ubuntu dhcp.
-ev-charger, update mcu fw.
+ev-charger, update mcu fw. (version: 1.1.7)
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
 //usw-aggregation, Update bundled shipping FW to US.rtl930x_6.5.59.
 //usw-aggregation, create rpi4 fcd.
 ev-charger, als issues.
 ev-charger, wifi issues.
+ev-charger, NFC KMS test issues.
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -144,15 +152,15 @@ uisp-r, update fwupgrade, support reset ftu.
 uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 uisp-r, ecof for update mobile app ver.
 
-uisp-r-plus, add fcd tlv data failed.
-uisp-r-plus, cat version failed, file not found.
-uisp-r-plus, sf erase wrong.
-uisp-r-plus, upgrade uboot hanging.
-uisp-r-plus, update mtdblock of eeprom.
-uisp-r-plus, update timeout of formating emmc to 15 secs.
-uisp-r-plus, update diag fw. 
-uisp-r-plus, enable diag mode. 
-uisp-r-plus, update fcd, support diag v9.0.0. 
+//uisp-r-plus, add fcd tlv data failed.
+//uisp-r-plus, cat version failed, file not found.
+//uisp-r-plus, sf erase wrong.
+//uisp-r-plus, upgrade uboot hanging.
+//uisp-r-plus, update mtdblock of eeprom.
+//uisp-r-plus, update timeout of formating emmc to 15 secs.
+//uisp-r-plus, update diag fw. (version: 0.1.0)
+//uisp-r-plus, enable diag mode. (setenv board UISP-R-PLUS)
+//uisp-r-plus, update fcd, support diag v9.0.0. 
 uisp-r-plus, show mac cmd is not correct.
 uisp-r-plus, sysid is not correct.
 uisp-r-plus, no bomrev information.
@@ -272,11 +280,9 @@ update shipping, v3.3.0-rc.2
 ftu, rtc fail after burnin, fxn.
 ftu, rewrite rtc, new flow, float computation.
 
-//uisp-s-plus, update diag fw to 004.
-//uisp-s-plus, diag fw does not automatically login diag shell.
 //uisp-s-plus, deveg helper issues.
-uisp-s-plus, update devreg helper, to helper_MRVL_ACT5_release_01.
-uisp-s-plus, update diag fw to 004.
+//uisp-s-plus, update devreg helper, to helper_MRVL_ACT5_release_01.
+//uisp-s-plus, update diag fw to 004.
 uisp-s-plus, update fcd, exit diag shell. 
 //uisp-s-plus, ble issue, ble mac not correct.
 uisp-s-plus, memory issue, update to 100.
@@ -600,6 +606,7 @@ uisp-r-pro, burnin loop back fail in pcba-b.
 uisp-r-pro, Production test process update for improving CT
 uisp-r-pro, update controller app ver, ecof.
 ftu lcm burnin test,  'exec "lcm-control --command test.burnin --parameter 30 --sender fcd"'
+ubnt-upgrade UISPR.alpinev2.v9.0.11.246ff2f.230303.0209.bin, dut不會自動reboot
 
 usw-flex-xg, burnin fails, retest rate increases.
 usw-flex-xg, power consumption.
@@ -684,6 +691,9 @@ uisp-s-pro, lcm dfu.
 uisp-s-pro, verify lcm dfu cmd.
 lcm dfu cmd not work. (ucmd)
 lcm dfu cmd not work. (gpio out)
+fcd, update diag fw.
+ftu, update diag fw.
+fcd, booting issues, not in burnin mode, but env wait_time works.
 
 //uled-bar, add 2nd id test. 
 //uled-bar, add switch to another edge instruction window to 2nd check-id-test.
