@@ -7,44 +7,42 @@ using namespace std;
 #else
 #define debug(...) 0
 #endif
-
+bool isPossible(vector<int>& A) {
+  unordered_map<int, int> left, end;
+  for (int i : A) {
+    left[i]++;
+  }
+  for (int i : A) {
+    cout << i << ',';
+    if (left[i] == 0) continue;
+    left[i]--;
+    if (end[i - 1] > 0) {
+      end[i - 1]--;
+      end[i]++;
+    } else if (left[i + 1] > 0 && left[i + 2] > 0) {
+      left[i + 1]--;
+      left[i + 2]--;
+      end[i + 2]++;
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
 int32_t main() {
   auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
+  SetIO();
   auto SolveOne = []() -> void {
-    using ll = int64_t;
-    pair<ll, ll> mx{0, 0};
-    pair<ll, ll> x{0, 0};
-    pair<ll, ll> y{0, 0};
-    int n;
-    cin >> n;
-    ll ans = 0;
-    for (int i = 0; i < n; ++i) {
-      pair<ll, ll> p;
-      cin >> p.first >> p.second;
-      if (p.second > mx.second) {
-        if (p.first == mx.first) {
-          x = mx;
-        } else {
-          y = mx;
-        }
-        mx = p;
-      } else {
-        if (p.first == mx.first) {
-          x = p;
-        } else {
-          y = p;
-        }
-      }
-      if (y.second) ans = max(ans, y.second + mx.second);
-      if (x.second) ans = max(ans, mx.second + x.second / 2);
-    }
-    cout << ans << '\n';
+    vector<int> a{4, 4, 3, 3, 2, 2, 1, 1};
+    sort(a.begin(), a.end())
+    debug(isPossible(a));
   };
   auto Solve = [&SolveOne]() -> void {
-    int i = 1;
-    while (i--) SolveOne();
+    int t = 1;
+    while (t--) {
+      SolveOne();
+    }
   };
-  SetIO();
   Solve();
   return 0;
 }
