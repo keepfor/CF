@@ -10,24 +10,23 @@ using namespace std;
 
 int32_t main() {
   auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
+  SetIO();
   auto SolveOne = []() -> void {
-    tuple<int, int, int> t(1, 2, 3);
-    int a, b, c;
-    tie(a, b, c) = t;
-    cout << a << ' ' << b << ' ' << c << '\n';
-    ++a;
-    ++b;
-    ++c;
-    cout << a << ' ' << b << ' ' << c << '\n';
-    cout << get<0>(t) << ' ' << get<1>(t) << ' ' << get<2>(t) << '\n';
+    int x = 11;
+    for (int i = x; i; i -= (i & -i)) {
+      cout << i << ' ';
+    }
+    cout << '\n';
+    for (int i = x; i; i = (i - 1) & x) {
+      cout << i << ' ';
+    }
   };
   auto Solve = [&SolveOne]() -> void {
-    int t = 1;
-    while (t--) {
+    int tt = 1;
+    while (tt--) {
       SolveOne();
     }
   };
-  SetIO();
   Solve();
   return 0;
 }
