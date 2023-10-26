@@ -1,25 +1,28 @@
-class Solution {
-public:
-    int numSubarraysWithSum(vector<int>& v, int x) {
-      const int n = v.size();
-      int c = 0;
-      int ans = 0;
-      for (int i = 0, j = 0; i < n; ++i) {
-        if (v[i]) {
-          --x;
-          c = 0;
-        } 
-        while (x < 0) {
-          x += v[j];
-          ++j;
-        }
-        while (!x and j <= i) {
-          x += v[j];
-          ++j;
-          ++c;
-        }
-        ans += c;
-      }
-      return ans;
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#ifdef DEBUG
+#include "lib/debug.cc"
+#else
+#define debug(...) 0
+#endif
+
+int32_t main() {
+  auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
+  SetIO();
+  auto SolveOne = []() -> void {
+    set<vector<int>> v;
+    vector<int> a{1, 2, 3};
+    vector<int> b{1, 2, 3};
+    v.insert(a);
+  };
+  auto Solve = [&SolveOne]() -> void {
+    int tt = 1;
+    while (tt--) {
+      SolveOne();
     }
-};
+  };
+  Solve();
+  return 0;
+}

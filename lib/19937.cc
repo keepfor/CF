@@ -8,14 +8,20 @@ using namespace std;
 #define debug(...) 0
 #endif
 
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+
 int32_t main() {
   auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
   SetIO();
   auto SolveOne = []() -> void {
-    set<vector<int>> v;
-    vector<int> a{1, 2, 3};
-    vector<int> b{1, 2, 3};
-    v.insert(a);
+    priority_queue<int> q;
+    for (int i = 0; i < 10; ++i) {
+      q.push(rng() % 100);
+    }
+    while (q.size()) {
+      cout << q.top() << ' ';
+      q.pop();
+    }
   };
   auto Solve = [&SolveOne]() -> void {
     int tt = 1;

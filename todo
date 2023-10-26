@@ -1,3 +1,4 @@
+ev-station-ultra, fcd, verify registration with uap registration cmd/process.
 ev-station-ultra, fcd, flashSize check fails.
 ev-station-ultra, fcd,  show "Press enter" too early when login kernel, and the linux shell prompt is "(none)-0.0.2#".
 ev-station-ultra, fcd, fcd tlv data check fails.
@@ -5,14 +6,12 @@ ev-station-ultra, fcd, add new function, upgrade to mfg FW.
 ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
 ev-station-ultra, fcd, verify sr2 sample, hw issues. (PQ6 shortcut.) 
 ev-station-ultra, fcd, develop fcd.
+ev-station-ultra, fcd, update mfg fw to 0.0.3.
+ev-station-ultra, fcd, verify mfg fw 0.0.3.
+ev-station-ultra, fcd, add shell login, for mfg fw 0.0.3.
 
-ev-charger, set up environment.
-ev-charger, ubuntu dhcp.
-ev-charger, update mcu fw. (version: 1.1.7)
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
-//usw-aggregation, Update bundled shipping FW to US.rtl930x_6.5.59.
-//usw-aggregation, create rpi4 fcd.
 ev-charger, als issues.
 ev-charger, wifi issues.
 ev-charger, NFC KMS test issues.
@@ -27,34 +26,20 @@ usw-industrial,tests,test_upgrade_to_shipping_fw.py
 
 UISP-Console-Carrier, npi.
 
-//usp-rps, create new build for ftu.
-//usp-rps, find the cause of uls error. Find file: data/config_files\UniFiSwitch\prodprop\pd_02781_ed11.json
-
-//usp-rps-pro, update lead acid battery, add wait 15 secs for battery stability.
-//usp-rps-pro, update lead acid battery, update slow charging current criteria.(0.1~0.3 => 0.1~0.6 A)
 usp-rps-pro, update lead acid battery, add config for slow charging current.
 update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
 update lead acid battery test, add charging voltage config.
-- Update FP.7 Lead-acid Battery Test
- * Wait 15 seconds before test for battery stable
- * Change current threshold in fast charge and slow charge
- - fast charge: (0.6~1.1 => 0.4~1.2)A
- - slow charge: (0.1~0.3 => 0.1~0.6)A
- * Change voltage threshold
- - From 46~51V => 46~51.5V
- Add Test config
- voltlower = 46
- voltupper = 51.5
- currLowerForFastCharging = 0.4
- currUpperForFastCharging = 1.2
- currLowerForSlowCharging = 0.1
- currUpperForSlowCharging = 0.6
-- Update Burn-in Setup
- *  an operation that rename rpspro_burnin.cfg to burnin.cfg
- *  burnin.sh - ver 20230301
- - Add Wait 15 seconds before running burnin
- - Add getting RPS-Oring, PSU, Outlet, Charge status
-lcm reset pin test.
+Add Test config
+voltlower = 46
+voltupper = 51.5
+currLowerForFastCharging = 0.4
+currUpperForFastCharging = 1.2
+currLowerForSlowCharging = 0.1
+currUpperForSlowCharging = 0.6
+Update Burn-in Setup, an operation that rename rpspro_burnin.cfg to burnin.cfg
+Update Burn-in Setup, burnin.sh - ver 20230301.
+Add getting RPS-Oring, PSU, Outlet, Charge status
+add, lcm reset pin test.
 add instruction prepare 46~50V lead-acid battery.
 update instruction prepare 46~51.5V lead-acid battery.
 Change current threshold in fast charge.
@@ -64,11 +49,10 @@ lcm burnin, increase round. (from ltn te)
 hw rework boost, plc.
 help tatun factory.
 
-//uisp-s, Remove LCM check when checking burnin result.
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
 uisp-s, refactor port information.
-//uisp-s, ftu, update shipping FW, rtl838x.v1.5.2.
+uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix 
 
 //usp-battery, update ble ftu tools to v1.8. 
 usp-battery, getqrcode fail.
@@ -105,14 +89,15 @@ usp-battery, burin fail in ltn, issues of batteries connected in series.
 usp-battery, dfm of ltn.
 00001198-0001-0040-0000-${MAC}
 LTN这边用950不会有乱码
+
 * Test cases related to BLE tools: (Restart-burnin, Burnin-log, Upgrade-Production-firmware and Upgrade-testing-firmware)
-  - Add reset-to-default pop-up.
-  - Add AP IP test config.
-  - Add PC IP test config.
-  - Support encoding BLE client ID by PC IP, AP IP and DUT-MAC.
+Add reset-to-default pop-up.
+Add AP IP test config.
+Add PC IP test config.
+Support encoding BLE client ID by PC IP, AP IP and DUT-MAC.
 
 * FW upgrade with BLE: *Upgrade-Production-firmware and *Upgrade-testing-firmware.
-  - Add fwupdate_timeout test config.
+Add fwupdate_timeout test config.
 
 * Update BLE tool to battery_ftu_v1.8.tar.gz.
 * Update Getac Battery firmware to battery-fw-0.9.10.0.bin
@@ -131,24 +116,15 @@ leakage current.
 help tatun factory.
 fcd issues in tatun factory.
 
-//uisp-r, Update enable SSH, avoid overwriting of sshServer settings. 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.
 uisp-r, Add user config for ip after FW upgrade for FW upgrade test.
 uisp-r, Update test.sh of burnin test.
-//uisp-r, Update test ordering Factory reset test item.
-//uisp-r, Support of UISP-R Rev.B 113-01262-xx, please update user config "bomrev".
 uisp-r, update burnin test tool.
 uisp-r, update fwupgrade, support reset ftu.
 uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 uisp-r, ecof for update mobile app ver.
 
-//uisp-r-plus, show mac cmd is not correct.
-//uisp-r-plus, sysid is not correct.
-//uisp-r-plus, no bomrev information.
-uisp-r-plus, no qrcode information. 
-uisp-r-plus, i2c test fail.
-uisp-r-plus, stress loop back fail.
 uisp-r-plus, disk test fail.
 uisp-r-plus, fcd cat proc information fail.
 uisp-r-plus, ble test fail.
@@ -190,32 +166,35 @@ unlock write protection.
 upgrade diag fail.
 ssh fail.
 fcd ftu change.
-* PoE test, update FW commands sequence.
-* Memory test, update FW command.
-* Port LED test:
-  * Add ledscan 0/1.
-  * Update FW commands sequence.
-* System LED test:
-  * Update FW commands sequence.
-* DUT thermal test, update CPU temperature parser.
-* Burn-in test, add burnDelay env support.
-* Add new test case, Upgrade runtime firmware.
-* Add new test case, Check application version.
-* Update memory test timeout.
-* Update cpu stress test cmd.
-* Update security test timeout.
-* Update i2c test timeout.
-* Update emmc test timeout.
-* Update spi flash test timeout.
+PoE test, update FW commands sequence.
+Memory test, update FW command.
+
+Port LED test, Add ledscan 0/1.
+Port LED test, Update FW commands sequence.
+
+System LED test, Update FW commands sequence.
+
+DUT thermal test, update CPU temperature parser.
+Burn-in test, add burnDelay env support.
+Add new test case, Upgrade runtime firmware.
+Add new test case, Check application version.
+Update memory test timeout.
+Update cpu stress test cmd.
+Update security test timeout.
+Update i2c test timeout.
+Update emmc test timeout.
+Update spi flash test timeout.
+
 run time, UISPR.cn91xxr.v3.2.2-rc.1.d776d37.230623.0851.bin.
 
-* Update external loopback test timeout. (40->50)
-* update diag. 
+Update external loopback test timeout. (40->50)
+update diag. 
 Update bundled uboot FW to ubnt_uispr_cn91xx_rev1_boot_0.0.5.img
 Update bundled DIAG FW to UISPR.cn91xx.v9.0.4+ubnt.138.4215fd3M.230630.1106.bin
-* update runtime fw.
-* update fan criteria.
-* update external loopback, ledscan.
+update runtime fw.
+update fan criteria.
+update external loopback, ledscan.
+
 ble issues, failure rate too high.
 Update bundled application image to UISPR.cn91xxr.v3.2.2-rc.2.b121e4b.230706.0713.bin
 runtime fw, port 7 network issues, port led issues.
@@ -223,11 +202,13 @@ sz report i2c test issues, sfp module fail.
 update set burndelay env.
 add check burnin env number.
 sz report burnin fail, fan speed 0 fail and loopback fail.
-* FTU_ee7a_1.0.1_3.2.2-rc.2.zip
-  * Update expected DIAG version to v9.0.5.
-  * Update enable burnin test, update setenv burndelay function.
-* FCD_UbiquitiNMS_UISP-R-Plus_1.0.0_9.0.5.tgz
-  * Update bundled DIAG FW to UISPR.cn91xx.v9.0.5+ubnt.140.2ff8965M.230720.1618.bin.
+
+FTU_ee7a_1.0.1_3.2.2-rc.2.zip
+Update expected DIAG version to v9.0.5.
+Update enable burnin test, update setenv burndelay function.
+FCD_UbiquitiNMS_UISP-R-Plus_1.0.0_9.0.5.tgz
+Update bundled DIAG FW to UISPR.cn91xx.v9.0.5+ubnt.140.2ff8965M.230720.1618.bin.
+
 burnin mode telnet fail.
 Update shipping FW to UISPR.cn91xxr.v3.2.2-rc.3.6cfc757.230721.1021.bin.
 rewrite reset button, last three seconds.
@@ -240,15 +221,17 @@ shipping ip can not be pinged issues.
 shipping fw port 7 can not link.
 
 fcd diag diag v9.0.6 image.
-(P8) Add PoE test by “pwshow” command
-(P9) Add eFuse test by “poe efuse” command
-(P6) Default FAN mode is PID, need stop PID first in fan test
-(P5) Add DEV_ISL28022_0 test in “i2ctest all”
-(P14) Enable PID mode setting for burn-in test
+Add PoE test by “pwshow” command
+Add eFuse test by “poe efuse” command
+Default FAN mode is PID, need stop PID first in fan test
+Add DEV_ISL28022_0 test in “i2ctest all”
+
+Enable PID mode setting for burn-in test
   burnFan1 0
   burnFan2 0
   burnPID 1
-(P18) Upgrade to diag image from runtime fw (diag v9.0.6 image)
+
+Upgrade to diag image from runtime fw (diag v9.0.6 image)
 poe show can not get information.
 i2c test error.
 update shipping fw to 3.2.2-rc.8.
@@ -261,20 +244,14 @@ update diag ftu, v9.0.7
 update shipping, v3.3.0-rc.2
 ftu, rtc fail after burnin, fxn.
 ftu, rewrite rtc, new flow, float computation.
+fcd, update diag fw, UISPR.cn91xx.v9.0.8. 
+ftu, Update check Diag FW version, update to v9.0.8.
+ftu, Update enable burnin, update setenv burnNum to 260.
+ftu, Update to Diag FW from shipping, update bundled Diag FW to UISPR.cn91xx.v9.0.8+ubnt.158.790eb0cM.231018.0044.bin.
+ftu, update snake test, update the connection topology between the Package generator and the dut. 
 
-//uisp-s-plus, i2c issues with new Diag fw.
-//uisp-s-plus, nand flash test issues with new Diag fw.
-//uisp-s-plus, memory issue 2, update to 50.
-//uisp-s-plus, fan test, update fan count. 
-//uisp-s-plus, cpu test cmd is invalid.
-uisp-s-plus, fcd, update Diag fw UISP-S-PLUS DIAG_v0.0.8.
-uisp-s-plus, ftu, update Diag fw UISP-S-PLUS DIAG_v0.0.8.
-uisp-s-plus, fcd, update Diag fw UISP-S-PLUS DIAG_v0.0.9.
-uisp-s-plus, ftu, update Diag fw UISP-S-PLUS DIAG_v0.0.9.
-uisp-s-plus, fcd fail, ping fail in kernel.
-uisp-s-plus, fcd fail, uboot no network, after change ethernet port.
-uisp-s-plus, fcd, update network inferface to tap0.
-uisp-s-plus, ftu, UISP-S-PLUS DIAG_v0.0.9 not network in kernel.
+uisp-s-plus, fcd, update and verify new bundled Diag fw, UISP-S-PLUS DIAG_v0.0.9.
+uisp-s-plus, ftu, update bundled Diag fw of upgrade to diag fw from shipping fw function, UISP-S-PLUS DIAG_v0.0.9.
 uisp-s-plus, ftu, enable burnin, booting fail.
 uisp-s-plus, update cpu test cmd.
 uisp-s-plus, update i2c test flow.
@@ -346,38 +323,40 @@ uisp-s-plus, fan test fail in sz.
 uisp-s-plus, fcd serial io error.
 uisp-s-plus, 2nd source flash. (uid application)
 
-然後剛剛有驗到 pid stop會有一些error
-之前聽同事說, cm的it說開pc的ftp會有資安問題.
-改好了，upgrade_diag.sh再麻煩重新下載，謝謝
+pid stop has some errors
+update upgrade_diag.sh
+
 FCD Changlog:
-* Update setenv function.
-* Update bundled DIAG FW to DIAG_v2.0.5: uisp-s-plus_160623.1308.ubi 
+Update setenv function.
+Update bundled DIAG FW to DIAG_v2.0.5: uisp-s-plus_160623.1308.ubi 
+
 FTU Changlog:
-* Update bundled Runtime FW to RT_FW_v0.1.0: UISPS.act5.v0.1.0.a21755e.230515.1435.bin
-* Add PID control to fan test.
-* Burn-in test 
-	* Update setenv burnCmd 0x8f. 
-	* Update setenv burnDelay 600. 
-* Add Check Application version test case.
-* Add Upgrade to DIAG image (from Application image) test case and related tools.
-* Update Check DIAG to v2.0.5.
+Update bundled Runtime FW to RT_FW_v0.1.0: UISPS.act5.v0.1.0.a21755e.230515.1435.bin
+Add PID control to fan test.
+
+Burn-in test 
+Update setenv burnCmd 0x8f. 
+Update setenv burnDelay 600. 
+
+Add Check Application version test case.
+Add Upgrade to DIAG image (from Application image) test case and related tools.
+Update Check DIAG to v2.0.5.
+
 FCD, DIAG_v2.0.6: uisp-s-plus_170623.1034.ubi 
 FTU, DIAG_v2.0.6: uisp-s-plus_170623.1034.ubi 
+
 FCD Changlog:
-* Update setenv function.
-* Update bundled DIAG FW to DIAG_v2.0.6: uisp-s-plus_170623.1034.ubi
-https://drive.google.com/file/d/1J5M7M7csfznlIJmc8vQ853-yPi-GaGxR/view?usp=drive_link
+Update setenv function.
+Update bundled DIAG FW to DIAG_v2.0.6: uisp-s-plus_170623.1034.ubi
 FTU Changlog:
-* Update Check DIAG to v2.0.6.
-* Update bundled Runtime FW to RT_FW_v0.1.0: UISPS.act5.v0.1.0.a21755e.230515.1435.bin
-* Fan test.
-  * Add PID start.
-  * Add PID stop.
-* Burn-in test
-  * Update setenv burnCmd 0x8f.
-  * Update setenv burnDelay 600.
-* Add Check Application version test case.
-* Add Upgrade to DIAG image (from Application image) test case and related tools.
+Update Check DIAG to v2.0.6.
+Update bundled Runtime FW to RT_FW_v0.1.0: UISPS.act5.v0.1.0.a21755e.230515.1435.bin
+Fan test. Add PID start.
+Fan test. Add PID stop.
+Burn-in test, Update setenv burnCmd 0x8f.
+Burn-in test, Update setenv burnDelay 600.
+Add Check Application version test case.
+Add Upgrade to DIAG image (from Application image) test case and related tools.
 upgrade_fw issue, uboot issues.
 update fcd diag.
 update fcd helper.
@@ -427,8 +406,6 @@ ftu, update poe criteria.
 ftu, update fan criteria. 
 ftu, fan test pid stop error.
 
-doc, how to enable fail_stop feature of FTU.
-
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
 usw-enterprise-8-poe, update poe test board setting.
@@ -441,7 +418,6 @@ usw-enterprise-48-poe, for fw rd, search usage of 'syswrapper.sh save-config' in
 usw-enterprisexg-24, power consumption.
 usw-enterprisexg-24, update ups test. 
 
-//uacc-lte, switch to usb mode fail in ltn. (usb cable issues)
 uacc-lte, update ua lte test, add at retry improve retest rate.
 uacc-lte, update eu lte test, add at retry improve retest rate.
 uacc-lte, update br lte test, add at retry improve retest rate.
@@ -454,23 +430,16 @@ uacc-lte, enable activity timer cmd timeout.
 uacc-lte, enalbe activity timer should post action.
 
 uacc-lte, update telent expect process, keep reading until timeout. 
-LTE Switch to UART mode (Optional / R&D only)    1       1/0  
-LTE Switch to USB mode            1       1/0  
-Option 1: US(FCC)                 1       1/0  
-Option 2: EU(CE)                  1       1/0  
-Option 3: AU/BR                   1       1/0  
-Option 4: AR                      1       1/0  
-Disable RRC inactivity timer
-Enable RRC inactivity timer
+uacc-lte, LTE Switch to UART mode (Optional / R&D only)    1       1/0  
+uacc-lte, LTE Switch to USB mode            1       1/0  
+uacc-lte, Option 1: US(FCC)                 1       1/0  
+uacc-lte, Option 2: EU(CE)                  1       1/0  
+uacc-lte, Option 3: AU/BR                   1       1/0  
+uacc-lte, Option 4: AR                      1       1/0  
+uacc-lte, Disable RRC inactivity timer
+uacc-lte, Enable RRC inactivity timer
+uacc-lte, update fw upgrade method of HL7800 FW, reduce time. 
 
-//usw-mission-critical-eu, verify eu ftu. (MAC / QR / BOM / FW Ver / Rst btn / Fan / temp / LCM)
-//usw-mission-critical, add, FP.8.1 LTE - band check
-usw-mission-critical, lcm failed in fcd.
-usw-mission-critical, lcm failed in ftu.
-usw-mission-critical, lte check band failed.
-usw-mission-critical, us, update fcd fw to 6.4.20.
-usw-mission-critical, eu, update fcd fw to 6.4.20.
-usw-mission-critical, external battery issue, usp battery does not show charging.
 usw-mission-critical, external battery test, update mcu power setting.
 usw-mission-critical, lcm reset pin test.
 usw-mission-critical, update external battery test.
@@ -494,14 +463,12 @@ usw-mission-critical-eu, lcm dfu and burnin fail, lcm show booting error.
 usw-mission-critical-eu, lcm reset pin fail after burnin. 
 usw-mission-critical-eu, verify dev fw UM.rtl838x_gk-backport-6.4.
 usw-mission-critical-eu, update temperature check expected range.
-* Update bundled FW to UM.rtl838x_gk-backport-6.4+14359.230614.0854-uboot.bin.
-* Add Pre-Test Region Check
-    * Must update Test Config [Pre-Test][region] to "EU" or "US" according to the region of DUT, before running the test. 
-* Update FP.5 Outlet Test
-    * Add outlet_voltage test reference value for EU version
-    * Add outlet_voltage Test Config for EU version.
-* FP.12 Temperature Check
-    * Update expected temperature range (25000 ~ 50000)
+Update bundled FW to UM.rtl838x_gk-backport-6.4+14359.230614.0854-uboot.bin.
+Add Pre-Test Region Check, Must update Test Config [Pre-Test][region] to "EU" or "US" according to the region of DUT, before running the test. 
+Update FP.5 Outlet Test, Add outlet_voltage Test Config for EU version. 
+Update FP.5 Outlet Test, Add outlet_voltage test reference value for EU version
+FP.12 Temperature Check, Update expected temperature range (25000 ~ 50000)
+
 ble reduce testing time.
 stop daemon.
 restart daemon.
@@ -524,14 +491,8 @@ update lead battery test, support check lth battery status.
 fix snake1 and snake2 issues. git reset
 improve portlink test retest, rewrite with swctrl.
 
-
-uisp-r-pro, add burnfan1 to config panel.
-uisp-r-pro, add burnfan2 to config panel.
-uisp-r-pro, rewrite lcm test with new diag v9.0.10.
-uisp-r-pro, remove test lcm aligment, backlight, touch, burnin. (lcm all in one)
-uisp-r-pro, update runtime fw to UISPR.alpinev2r.v2.4.1-rc.1.c1f2393.221117.1215.bin.
-uisp-r-pro, update bundled fcd daig fw to v9.0.10.
-uisp-r-pro, update bundled ftu daig fw to v9.0.10.
+uisp-r-pro, update bundled ftu daig fw to v9.0.10. (for update to diag from shipping)
+uisp-r-pro, ftu, pdate runtime fw to UISPR.alpinev2r.v2.4.1-rc.1.c1f2393.221117.1215.bin.
 uisp-r-pro, update lcm firmware upgrade timeout to 90.
 uisp-r-pro, update rtc test to improve the retest rate.
 uisp-r-pro, update security test with new parsing pattern and expected result.
@@ -593,10 +554,9 @@ uisp-r-pro, update controller app ver, ecof.
 ftu lcm burnin test,  'exec "lcm-control --command test.burnin --parameter 30 --sender fcd"'
 ubnt-upgrade UISPR.alpinev2.v9.0.11.246ff2f.230303.0209.bin, dut不會自動reboot
 
-usw-flex-xg, ltn reports burnin retest rate increases.
+?usw-flex-xg, ltn reports burnin retest rate increases.
 usw-flex-xg, power consumption.
 usw-flex-xg, factory default issues.
-usw-flex-xg, ping failed with factory pc.
 
 usw-flex, update burnin script to improve retest rate of burnin test. (increase delay)
 usw-flex, update, update shipping fw to US.mt7621_6.4.18+14328.221213.1324-uboot.bin.
@@ -659,8 +619,6 @@ uisp-s-pro, update ble criteria issue.
 uisp-s-pro, refactor snake.
 uisp-s-pro, refactor port speed.
 uisp-s-pro, refactor port information.
-//uisp-s-pro, ftu, add a new test item, set wait time, and user config "wait_time" for burnin test.
-//uisp-s-pro, ftu, update criteria of fan test. 
 uisp-s-pro, verify lcm dfu test cmds.
 uisp-s-pro, verify lcm dfu cmd.
 lcm dfu cmd not work. (ucmd)
