@@ -47,6 +47,6 @@ set clipboard^=unnamed,unnamedplus
 set smartindent autoindent cindent
 set backspace=indent,eol,start
 set ignorecase smartcase 
-set incsearch hlsearch 
+set incsearch hlsearch nu
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
