@@ -1,3 +1,6 @@
+usw-aggregation, enable burnin issues.
+usw-aggregation, fix with new cmd for enable burnin issues.
+
 ev-station-ultra, fcd, verify registration with uap registration cmd/process.
 ev-station-ultra, fcd, flashSize check fails.
 ev-station-ultra, fcd,  show "Press enter" too early when login kernel, and the linux shell prompt is "(none)-0.0.2#".
@@ -15,6 +18,7 @@ ev-charger, add new test case, unplug.
 ev-charger, als issues.
 ev-charger, wifi issues.
 ev-charger, NFC KMS test issues.
+ev-charger, card reader issues.
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -48,6 +52,7 @@ FTU UM.mt7621_6.5.39.
 lcm burnin, increase round. (from ltn te)
 hw rework boost, plc.
 help tatun factory.
+ble test time too long issues, tatun.
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
@@ -406,6 +411,10 @@ ftu, update poe criteria.
 ftu, update fan criteria. 
 ftu, fan test pid stop error.
 
+fcd, update fcd env.
+ftu, upgrade new shipping fw fail. (md5)
+ftu, update shipping fw.UISPS.act5.v1.0.0+ubnt.33495.5623d1e.231019.1243.bin
+
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
 usw-enterprise-8-poe, update poe test board setting.
@@ -438,7 +447,9 @@ uacc-lte, Option 3: AU/BR                   1       1/0
 uacc-lte, Option 4: AR                      1       1/0  
 uacc-lte, Disable RRC inactivity timer
 uacc-lte, Enable RRC inactivity timer
+
 uacc-lte, update fw upgrade method of HL7800 FW, reduce time. 
+uacc-lte, update fw downgrade method of HL7800 FW, reduce time. 
 
 usw-mission-critical, external battery test, update mcu power setting.
 usw-mission-critical, lcm reset pin test.
