@@ -12,6 +12,8 @@ ev-station-ultra, fcd, develop fcd.
 ev-station-ultra, fcd, update mfg fw to 0.0.3.
 ev-station-ultra, fcd, verify mfg fw 0.0.3.
 ev-station-ultra, fcd, add shell login, for mfg fw 0.0.3.
+ev-station-ultra, ftu.....
+
 
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
