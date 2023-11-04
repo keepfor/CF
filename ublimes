@@ -1,11 +1,3 @@
-{
-	"word_wrap": "true",
-	"font_size": 17,
-	"find_selected_text": true,
-	"tab_size":2,
-	"always_prompt_for_file_reload": false,
-	"hot_exit": true
-}
 [
 	{
 		"keys": ["command+j"],
@@ -29,3 +21,16 @@
 		}
 	}
 ]
+
+{
+	"word_wrap": "true",
+	"find_selected_text": true,
+	"tab_size":2,
+	"always_prompt_for_file_reload": false,
+	"hot_exit": true,
+	"remember_open_files": false,
+	"close_windows_when_empty": true,
+	"hardware_acceleration": "none",
+	"font_size": 11,
+	"color_scheme": "Celeste.sublime-color-scheme",
+}
