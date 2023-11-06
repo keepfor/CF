@@ -1,1 +1,42 @@
-
+uisp-r-pro, ftu, pdate runtime fw to UISPR.alpinev2r.v2.4.1-rc.1.c1f2393.221117.1215.bin.
+uisp-r-pro, update bundled ftu diag fw to v9.0.10. (support update to diag from shipping)
+uisp-r-plus, update fan test criteria.
+uisp-r-plus, update diag fw, UISP-R-Plus diag v9.0.1.
+uisp-r-plus, poe led test not return response.
+uisp-r-plus, ble test fails sometimes, fw rd found it is caused by uboot version.
+ev-station-ultra, FCD, porting registration from UAP's registration cmd/process.
+uisp-s-plus, ftu, no network in kernel.
+uisp-s-plus, fcd, update network inferface to tap0.
+uisp-s-plus, ftu, update diag fw version config to UISP-S-PLUS DIAG_v0.0.8.
+uisp-s-plus, fcd, update and verify new bundled Diag fw, UISP-S-PLUS DIAG_v0.0.8.
+uisp-p-pro, la battery log parsing failed.
+uacc-lte, switch to usb mode fail in ltn. (usb cable issues)
+uisp-r, Update enable SSH login, avoid overwriting of sshServer settings.
+ev-station-ultra, fcd, flashSize check fails.
+uisp-s, ftu, update shipping FW, rtl838x.v1.5.2.
+usp-battery, update ble ftu tools to v1.8.
+usw-flex-xg, ltn reports burnin retest rate increases.
+uisp-s-pro, ftu, update criteria of fan test.
+uisp-s-pro, ftu, add a new test item, set wait time, and user config "wait_time" for burnin test.
+uled-bar, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
+TWFCD-4610
+TWFCD-4609
+TWFCD-4608
+TWFCD-4607
+TWFCD-4606
+TWFCD-4600
+TWFCD-4530
+TWFCD-4520
+TWFCD-4519
+TWFCD-4516
+TWFCD-4514
+TWFCD-4447
+TWFCD-4446
+TWFCD-4445
+TWFCD-4444
+TWFCD-4442
+TWFCD-4441
+TWFCD-4432
+TWFCD-4431
+TWFCD-4430
+TWFCD-3278
