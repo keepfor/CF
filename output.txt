@@ -1,38 +1,4 @@
-Count = 21
-EV
-TWFCD-4444, EV-STATION-ULTRA, fcd, flashSize check fails.
-TWFCD-4530, EV-STATION-ULTRA, FCD, porting registration from UAP's registration cmd/process.
-
-UACC
-TWFCD-4446, UACC-LTE, switch to usb mode fail in ltn. (usb cable issues)
-
-UISP
-TWFCD-4447, UISP-P-PRO, la battery log parsing failed.
-TWFCD-4445, UISP-R, Update enable SSH login, avoid overwriting of sshServer settings.
-
-TWFCD-4600, UISP-R-PLUS, ble test fails sometimes, fw rd found it is caused by uboot version.
-TWFCD-4606, UISP-R-PLUS, poe led test not return response.
-TWFCD-4607, UISP-R-PLUS, update diag fw, UISP-R-Plus diag v9.0.1.
-TWFCD-4608, UISP-R-PLUS, update fan test criteria.
-
-TWFCD-4610, UISP-R-PRO, ftu, pdate runtime fw to UISPR.alpinev2r.v2.4.1-rc.1.c1f2393.221117.1215.bin.
-TWFCD-4609, UISP-R-PRO, update bundled ftu diag fw to v9.0.10. (support update to diag from shipping)
-TWFCD-4442, UISP-S, ftu, update shipping FW, rtl838x.v1.5.2.
-
-TWFCD-4514, UISP-S-PLUS, fcd, update and verify new bundled Diag fw, UISP-S-PLUS DIAG_v0.0.8.
-TWFCD-4519, UISP-S-PLUS, fcd, update network inferface to tap0.
-TWFCD-4516, UISP-S-PLUS, ftu, update diag fw version config to UISP-S-PLUS DIAG_v0.0.8.
-TWFCD-4520, UISP-S-PLUS, ftu, no network in kernel.
-
-TWFCD-4430, UISP-S-PRO, ftu, add a new test item, set wait time, and user config "wait_time" for burnin test.
-TWFCD-4431, UISP-S-PRO, ftu, update criteria of fan test.
-
-ULED
-TWFCD-3278, ULED-BAR, verfify ftu with new FW, LH.qca953x.v5.4.13.5.
-
-USP
-TWFCD-4441, USP-BATTERY, update ble ftu tools to v1.8.
-
+Count = 1
 USW
-TWFCD-4432, USW-FLEX-XG, ltn reports burnin retest rate increases.
+TWFCD-4631, USW-AGGREGATION, enable burnin issues, enable burin fail in the first time, it can pass in the 2nd tests.
 

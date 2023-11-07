@@ -1,4 +1,4 @@
-usw-aggregation, enable burnin issues.
+usw-aggregation, enable burnin issues, enable burin fail in the first time, it can pass in the 2nd tests.
 usw-aggregation, fix with new cmd for enable burnin issues.
 
 ev-station-ultra, fcd, verify registration with uap registration cmd/process.
@@ -12,7 +12,8 @@ ev-station-ultra, fcd, develop fcd.
 ev-station-ultra, fcd, update mfg fw to 0.0.3.
 ev-station-ultra, fcd, verify mfg fw 0.0.3.
 ev-station-ultra, fcd, add shell login, for mfg fw 0.0.3.
-ev-station-ultra, ftu.....
+ev-station-ultra, ftu, many items.
+ev-station-ultra, ftu, help EE set up ev-station-pro ftu, dhcp ...
 
 
 ev-charger, add new test case, stop charging.
@@ -55,6 +56,7 @@ lcm burnin, increase round. (from ltn te)
 hw rework boost, plc.
 help tatun factory.
 ble test time too long issues, tatun.
+sz reports, rps test fail, voltage is not correct.
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
