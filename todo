@@ -136,7 +136,7 @@ uisp-r-plus, disk test fail.
 //uisp-r-plus, fcd cat proc information fail.
 uisp-r-plus, ble test fails sometimes, fw rd found it is caused by uboot version.
 uisp-r-plus, get switch temperature fail.
-uisp-r-plus, update fan test criteria.
+//uisp-r-plus, update fan test criteria.
 
 uisp-r-plus, poe led test not return response.
 uisp-r-plus, loopback test fail.
