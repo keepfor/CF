@@ -213,3 +213,84 @@ class segtree {
     return find_last(0, 0, n - 1, ll, rr, f);
   }
 };
+
+class SegTreeLazy {
+public:
+    using ll = long long;
+    const ll mod = 1e9 + 7;
+    const int n = 1e5 + 1;
+    
+    vector<ll> tr;
+    vector<ll> tag;
+    SegTreeLazy() {
+        tr.assign(n << 2, 0);
+        tag.assign(n << 2, 0);  
+    }
+    void push(int no, int l, int r) {
+        tag[2 * no] += tag[no];
+        tag[2 * no + 1] += tag[no];
+        tr[no] += tag[no] * (r - l + 1);
+        tag[no] = 0;
+    }
+    ll get(int no, int l, int r, int ql, int qr) {
+        if (l > r) {
+            return 0;
+        }
+        if (r < ql or qr < l) {
+            return 0;
+        }
+        if (ql <= l and r <= qr) {
+            ll res = tr[no] + (r - l + 1) * tag[no];
+            return res;
+        }
+        push(no, l, r);
+        int mid = (l + r) >> 1;
+        return get(2 * no, l, mid, ql, qr) + get(2 * no + 1, mid + 1, r, ql, qr);
+    }
+    void pull(int no, int l, int r, int mid) {
+        tr[no] = tr[2 * no] + tag[2 * no] * (mid - l + 1) + tr[2 * no + 1] + (r - mid) * tag[2 * no + 1];
+    }
+    void set(int no, int l, int r, int ql, int qr, ll val) {
+        if (l > r) {
+            return;
+        }
+        if (r < ql or qr < l) {
+            return;
+        }
+        if (ql == qr and ql == l and l == r) {
+            tr[no] += val;
+            return;
+        }
+        if (ql <= l and r <= qr) {
+            tag[no] += val;
+            return;
+        }
+        int mid = (l + r) >> 1;
+        set(2 * no, l, mid, ql, qr, val);
+        set(2 * no + 1, mid + 1, r, ql, qr, 1);
+        pull(no, l, r, mid);
+    }
+};
+class Solution {
+public:
+    int sumCounts(vector<int>& v) {
+        using ll = long long;
+        const ll mod = 1e9 + 7;
+        const int n = v.size();
+        int mx = *max_element(v.begin(), v.end());
+        SegTreeLazy seg;
+        ll ans = 0;
+        ll sum = 0;
+        vector<int> pre(mx + 1, -1);
+        for (int i = 0; i < n; ++i) {
+            int p = pre[v[i]];
+            int ql = p + 1;
+            ll x = seg.get(1, 0, n - 1, ql, i);
+            sum = (sum + 2 * x + (i - ql + 1)) % mod;
+            ans = (ans + sum) % mod;
+            seg.set(1, 0, n - 1, ql, i, 1);
+            pre[v[i]] = i;
+        }
+        return ans;
+    }
+};

@@ -1,11 +1,10 @@
 usw-aggregation, enable burnin issues, enable burin fail in the first time, it can pass in the 2nd tests.
 usw-aggregation, fix with new cmd for enable burnin issues.
 
-ev-station-ultra, fcd, verify registration with uap registration cmd/process.
-ev-station-ultra, fcd, flashSize check fails.
-ev-station-ultra, fcd,  show "Press enter" too early when login kernel, and the linux shell prompt is "(none)-0.0.2#".
-ev-station-ultra, fcd, fcd tlv data check fails.
-ev-station-ultra, fcd, add new function, upgrade to mfg FW.
+ev-station-ultra, fcd, flashSize check fails. (fw v0.0.2)
+ev-station-ultra, fcd,  show "Press enter" too early when login kernel, and the linux shell prompt is "(none)-0.0.2#". (fw v0.0.2)
+ev-station-ultra, fcd, fcd tlv data check fails. (fw v0.0.2)
+ev-station-ultra, fcd, add new function, upgrade to mfg FW.(fw v0.0.2)
 ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
 ev-station-ultra, fcd, verify sr2 sample, hw issues. (PQ6 shortcut.) 
 ev-station-ultra, fcd, develop fcd.
@@ -13,8 +12,77 @@ ev-station-ultra, fcd, update mfg fw to 0.0.3.
 ev-station-ultra, fcd, verify mfg fw 0.0.3.
 ev-station-ultra, fcd, add shell login, for mfg fw 0.0.3.
 ev-station-ultra, ftu, many items.
-ev-station-ultra, ftu, help EE set up ev-station-pro ftu, dhcp ...
+ev-station-ultra, ftu, help EE set up ev-station-pro ftu, dhcp, ssh, putty, udm ....
+ev-station-ultra, fcd, verify US, 002a.
+ev-station-ultra, ftu, add led control. 0.0.4
+ev-station-ultra, fcd, support upgrade uboot. 0.0.4
+ev-station-ultra, ftu, no loopback ip, .20 . 0.0.4
+ev-station-ultra, ftu, display test fail, not found acm0 dev. 0.0.4
+ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
+ev-station-ultra, ftu, nfc test show some errors. 0.0.4
+ev-station-ultra, fcd, upgrade fcd img .0.0.5
+ev-station-ultra, ftu, remove some cmds of led test .0.0.5
+ev-station-ultra, ftu, power board get version fail .0.0.5
+ev-station-ultra, ftu, lcm upgrade get tty fail .0.0.5
+ev-station-ultra, ftu, reset button test wiil reboot .0.0.5
+ev-station-ultra, ftu, add reset gpio to lcm get version flow .0.0.5
+ev-station-ultra, ftu, nfc remove drive cmd not show expected string .0.0.5
+ev-station-ultra, ftu, lcm dfu mode fail, need delay .0.0.5
+ev-station-ultra, ftu, get lcm version log can not redirect .0.0.5
+ev-station-ultra, ftu, add more reset gpio to lcm get version flow .0.0.5
+ev-station-ultra, ftu, add more delay to reset gpio flow for lcm get version flow .0.0.5
+ev-station-ultra, ftu, nfc test, program hang.0.0.5
+ev-station-ultra, ftu, wifi ip can not set up manually. 0.0.5
+ev-station-ultra, fcd, upgrade fcd img. 0.0.6
+ev-station-ultra, ftu, ble test fail. 0.0.6
+ev-station-ultra, fcd, upgrade fcd img. 0.0.7
+ev-station-ultra, ftu, check wifi md5 fail. 0.0.7
+ev-station-ultra, ftu, check wifi mtd (calibration) fail. 0.0.7
+ev-station-ultra, ftu, ble test fail, not found sysctl. 0.0.7
+ev-station-ultra, ftu, system get info fail for charging tests. 0.0.7
+ev-station-ultra, ftu, nfc test log does not show nfc id. 0.0.7
+ev-station-ultra, ftu, update nfc test flow. 0.0.7
+ev-station-ultra, ftu, update dut wifi ip,  0.0.7
+ev-station-ultra, ftu, wifi fail throughput not meet,  0.0.7
+ev-station-ultra, ftu, nfc test, need to add delay,  0.0.7
+ev-station-ultra, ftu, move wifi station to t5,  0.0.7
+ev-station-ultra, ftu, move ble station to t5,  0.0.7
+ev-station-ultra, ftu, keep wifi check md5 in t3,  0.0.7
+ev-station-ultra, ftu, keep ble check md5 in t3,  0.0.7
+ev-station-ultra, ftu, keep wifi check mtd to t3,  0.0.7.
 
+ev-station-ultra, ftu, ev-pro ground-fail tes fail, log show json parsing fail,  0.0.7.
+ev-station-ultra, ftu, ev-pro suspend tes fail, not show "suspendedev",  0.0.7.
+ev-station-ultra, ftu, help ee search all power test's criteria and expected string,  0.0.7.
+ev-station-ultra, ftu, use 110v, manaully disable dut error flag,  0.0.7.
+ev-station-ultra, ftu, charging started test fail, log show firmware version,  0.0.7.
+ev-station-ultra, ftu, ovp fail, log not show "ovp" key,  0.0.7.
+ev-station-ultra, ftu, gmo fail, log not show "ground_fail" key,  0.0.7.
+ev-station-ultra, ftu, leakage fail, log not show "leakage" key,  0.0.7.
+ev-station-ultra, ftu, leakage fail 2, log not show "leakage" key,  0.0.7.
+ev-station-ultra, ftu, leakage fail, log show , f_relay_wielding_fail. 0.0.7.
+ev-station-ultra, ftu, leakage test fail, log show firmware version,  0.0.7.
+ev-station-ultra, ftu, charging test fail, log show key "charging",  0.0.7.
+ev-station-ultra, ftu, charging started test fail, log show "lockdown" not "availale",  0.0.7.
+ev-station-ultra, ftu, charging started test fail, log show "lockdown2" not "availale",  0.0.7.
+ev-station-ultra, ftu, verify new power board, hw reworked,  0.0.7.
+ev-station-ultra, ftu, new power board can not power up dut, hw reworked,  0.0.7.
+ev-station-ultra, ftu, verify new fixtures, hw reworked,  0.0.7.
+
+ev-station-ultra, ftu, update started test expected string, lowercase to uppercase,  0.0.7.
+ev-station-ultra, ftu, update suspend test expected string, lowercase to uppercase,  0.0.7.
+ev-station-ultra, ftu, update charging test expected string, lowercase to uppercase,  0.0.7.
+ev-station-ultra, ftu, update stop charging test expected string, lowercase to uppercase,  0.0.7.
+ev-station-ultra, ftu, update unplug test expected string, lowercase to uppercase,  0.0.7.
+ev-station-ultra, ftu, update gmo test expected string, lowercase to uppercase,  0.0.7.
+
+ev-station-ultra, fcd, upgrade fcd img. 0.0.8
+ev-station-ultra, ftu, update reset button, kill burnin process. 0.0.8
+ev-station-ultra, ftu, use ac power source for 220V. 0.0.8
+ev-station-ultra, ftu, leakage fail, ma -> mA. 0.0.8
+ev-station-ultra, ftu, charge test, availabe to prepareing2 fail. 0.0.8
+start_transaction issues, log show request timed out.
+started test fail, log show update firmware.
 
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
@@ -62,6 +130,8 @@ uisp-s, refactor snake.
 uisp-s, refactor port speed.
 uisp-s, refactor port information.
 uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix 
+Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
+
 
 //usp-battery, update ble ftu tools to v1.8. 
 usp-battery, getqrcode fail.
@@ -420,6 +490,7 @@ ftu, fan test pid stop error.
 fcd, update fcd env.
 ftu, upgrade new shipping fw fail. (md5)
 ftu, update shipping fw.UISPS.act5.v1.0.0+ubnt.33495.5623d1e.231019.1243.bin
+Update bundled shipping FW to UISPS.act5.v1.1.0.7d997e2.231114.1307.bin.
 
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
@@ -645,6 +716,7 @@ lcm dfu cmd not work. (gpio out)
 fcd, update diag fw. (UISP-S-Pro-1.3.8-DEV09.bix)
 ftu, update diag fw. (UISPS.rtl930x.v1.5.2.bix.)
 fcd, booting issues, not in burnin mode, but env wait_time works.
+Update bundled shipping FW to UISPS.rtl930x.v1.6.0.bix.
 
 //uled-bar, add 2nd id test. 
 //uled-bar, add switch to another edge instruction window to 2nd check-id-test.
