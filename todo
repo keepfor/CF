@@ -83,6 +83,10 @@ ev-station-ultra, ftu, leakage fail, ma -> mA. 0.0.8
 ev-station-ultra, ftu, charge test, availabe to prepareing2 fail. 0.0.8
 start_transaction issues, log show request timed out.
 started test fail, log show update firmware.
+[Charge] Normal state leakage fail, test fails, log not show  '"f_leakage_current_fail":1.
+diff between shipping and mfg issues.
+help plm id test nfc.
+help ee test lcm.
 
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
@@ -491,6 +495,7 @@ fcd, update fcd env.
 ftu, upgrade new shipping fw fail. (md5)
 ftu, update shipping fw.UISPS.act5.v1.0.0+ubnt.33495.5623d1e.231019.1243.bin
 Update bundled shipping FW to UISPS.act5.v1.1.0.7d997e2.231114.1307.bin.
+update snake test, test flow changes.
 
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.

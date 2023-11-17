@@ -2,160 +2,227 @@
 
 using i64 = long long;
 struct HLD {
-  int n;
-  std::vector<int> siz, top, dep, parent, in, out, seq;
-  std::vector<std::vector<int>> adj;
-  HLD(int n)
-      : n(n),
-        siz(n),
-        top(n),
-        dep(n),
-        parent(n, -1),
-        in(n),
-        out(n),
-        seq(n),
-        adj(n) {}
-  void addEdge(int u, int v) {
-    adj[u].push_back(v);
-    adj[v].push_back(u);
-  }
-  void init(int root = 0) {
-    top[root] = root;
-    dfs1(root);
-    dfs2(root);
-  }
-  void dfs1(int u) {
-    if (parent[u] != -1) {
-      adj[u].erase(std::find(adj[u].begin(), adj[u].end(), parent[u]));
-    }
-
-    siz[u] = 1;
-    for (auto &v : adj[u]) {
-      parent[v] = u;
-      dep[v] = dep[u] + 1;
-      dfs1(v);
-      siz[u] += siz[v];
-      if (siz[v] > siz[adj[u][0]]) {
-        std::swap(v, adj[u][0]);
-      }
-    }
-  }
-  int cur = 0;
-  void dfs2(int u) {
-    in[u] = cur++;
-    seq[in[u]] = u;
-    for (auto v : adj[u]) {
-      top[v] = v == adj[u][0] ? top[u] : v;
-      dfs2(v);
-    }
-    out[u] = cur;
-  }
-  int lca(int u, int v) {
-    while (top[u] != top[v]) {
-      if (dep[top[u]] > dep[top[v]]) {
-        u = parent[top[u]];
-      } else {
-        v = parent[top[v]];
-      }
-    }
-    return dep[u] < dep[v] ? u : v;
-  }
-};
-
-/*
-void solve() {
     int n;
-    std::cin >> n;
-
-    std::vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        std::cin >> a[i];
+    std::vector<int> siz, top, dep, parent, in, out, seq;
+    std::vector<std::vector<int>> adj;
+    int cur;
+    
+    HLD() {}
+    HLD(int n) {
+        init(n);
     }
-
-    HLD tree(n);
-    for (int i = 1; i < n; i++) {
-        int u, v;
-        std::cin >> u >> v;
-        u--, v--;
-        tree.addEdge(u, v);
+    void init(int n) {
+        this->n = n;
+        siz.resize(n);
+        top.resize(n);
+        dep.resize(n);
+        parent.resize(n);
+        in.resize(n);
+        out.resize(n);
+        seq.resize(n);
+        cur = 0;
+        adj.assign(n, {});
     }
-    tree.init();
-
-    int q;
-    std::cin >> q;
-
-    std::vector<int> ans(q);
-    std::vector<std::vector<std::array<int, 2>>> qry(2 * n);
-
-    auto get = [&](int x, int y) {
-        auto &a = tree.adj[y];
-        auto it = std::upper_bound(a.begin(), a.end(), x, [&](int i, int j) {
-            return tree.in[i] < tree.in[j];
+    void addEdge(int u, int v) {
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    void work(int root = 0) {
+        top[root] = root;
+        dep[root] = 0;
+        parent[root] = -1;
+        dfs1(root);
+        dfs2(root);
+    }
+    void dfs1(int u) {
+        if (parent[u] != -1) {
+            adj[u].erase(std::find(adj[u].begin(), adj[u].end(), parent[u]));
+        }
+        
+        siz[u] = 1;
+        for (auto &v : adj[u]) {
+            parent[v] = u;
+            dep[v] = dep[u] + 1;
+            dfs1(v);
+            siz[u] += siz[v];
+            if (siz[v] > siz[adj[u][0]]) {
+                std::swap(v, adj[u][0]);
+            }
+        }
+    }
+    void dfs2(int u) {
+        in[u] = cur++;
+        seq[in[u]] = u;
+        for (auto v : adj[u]) {
+            top[v] = v == adj[u][0] ? top[u] : v;
+            dfs2(v);
+        }
+        out[u] = cur;
+    }
+    int lca(int u, int v) {
+        while (top[u] != top[v]) {
+            if (dep[top[u]] > dep[top[v]]) {
+                u = parent[top[u]];
+            } else {
+                v = parent[top[v]];
+            }
+        }
+        return dep[u] < dep[v] ? u : v;
+    }
+    
+    int dist(int u, int v) {
+        return dep[u] + dep[v] - 2 * dep[lca(u, v)];
+    }
+    
+    int jump(int u, int k) {
+        if (dep[u] < k) {
+            return -1;
+        }
+        
+        int d = dep[u] - k;
+        
+        while (dep[top[u]] > d) {
+            u = parent[top[u]];
+        }
+        
+        return seq[in[u] - dep[u] + d];
+    }
+    
+    bool isAncester(int u, int v) {
+        return in[u] <= in[v] && in[v] < out[u];
+    }
+    
+    int rootedParent(int u, int v) {
+        std::swap(u, v);
+        if (u == v) {
+            return u;
+        }
+        if (!isAncester(u, v)) {
+            return parent[u];
+        }
+        auto it = std::upper_bound(adj[u].begin(), adj[u].end(), v, [&](int x, int y) {
+            return in[x] < in[y];
         }) - 1;
         return *it;
-    };
+    }
+    
+    int rootedSize(int u, int v) {
+        if (u == v) {
+            return n;
+        }
+        if (!isAncester(v, u)) {
+            return siz[v];
+        }
+        return n - siz[rootedParent(u, v)];
+    }
+    
+    int rootedLca(int a, int b, int c) {
+        return lca(a, b) ^ lca(b, c) ^ lca(c, a);
+    }
+};
+template <typename T>
+struct Fenwick {
+    int n;
+    std::vector<T> a;
+    
+    Fenwick(int n_ = 0) {
+        init(n_);
+    }
+    
+    void init(int n_) {
+        n = n_;
+        a.assign(n, T{});
+    }
+    
+    void add(int x, const T &v) {
+        for (int i = x + 1; i <= n; i += i & -i) {
+            a[i - 1] = a[i - 1] + v;
+        }
+    }
+    
+    T sum(int x) {
+        T ans{};
+        for (int i = x; i > 0; i -= i & -i) {
+            ans = ans + a[i - 1];
+        }
+        return ans;
+    }
+    
+    T rangeSum(int l, int r) {
+        return sum(r) - sum(l);
+    }
+    
+    int select(const T &k) {
+        int x = 0;
+        T cur{};
+        for (int i = 1 << std::__lg(n); i; i /= 2) {
+            if (x + i <= n && cur + a[x + i - 1] <= k) {
+                x += i;
+                cur = cur + a[x - 1];
+            }
+        }
+        return x;
+    }
+};
 
+void solve() {
+    int q;
+    std::cin >> q;
+    
+    std::vector<std::array<int, 3>> qry(q);
+    std::vector<int> p{-1};
     for (int i = 0; i < q; i++) {
-        int r, v;
-        std::cin >> r >> v;
-        r--, v--;
-
-        if (r == v) {
-            qry[n - 1].push_back({0, i});
-        } else if (tree.lca(r, v) == v) {
-            int y = get(r, v);
-            qry[tree.in[y] + n - 1].push_back({tree.out[y], i});
+        int o;
+        std::cin >> o;
+        
+        if (o == 1) {
+            int x;
+            std::cin >> x;
+            x--;
+            p.push_back(x);
+            qry[i] = {1, int(p.size()) - 1, x};
         } else {
-            qry[tree.out[v] - 1].push_back({tree.in[v], i});
+            int x, y;
+            std::cin >> x >> y;
+            x--;
+            qry[i] = {2, x, y};
         }
     }
-
-    std::array<int, 30> t{}, p{};
-    for (int i = 0; i < 2 * n; i++) {
-        int x = a[tree.seq[i % n]], y = i;
-        for (int j = 29; j >= 0; j--) {
-            if (x >> j & 1) {
-                if (t[j]) {
-                    if (y > p[j]) {
-                        std::swap(x, t[j]);
-                        std::swap(y, p[j]);
-                    }
-                    x ^= t[j];
-                } else {
-                    t[j] = x;
-                    p[j] = y;
-                    break;
-                }
-            }
-        }
-
-        for (auto [l, j] : qry[i]) {
-            int x = 0;
-            for (int k = 29; k >= 0; k--) {
-                if ((~x >> k & 1) && l <= p[k]) {
-                    x ^= t[k];
-                }
-            }
-            ans[j] = x;
+    
+    int n = p.size();
+    HLD t(p.size());
+    for (int i = 1; i < p.size(); i++) {
+        t.addEdge(p[i], i);
+    }
+    
+    t.work();
+    
+    Fenwick<i64> fen(n);
+    for (auto [o, x, y] : qry) {
+        if (o == 1) {
+            i64 v = fen.sum(t.in[x] + 1);
+            fen.add(t.in[x], -v);
+            fen.add(t.out[x], v);
+        } else {
+            fen.add(t.in[x], y);
+            fen.add(t.out[x], -y);
         }
     }
-
-    for (int i = 0; i < q; i++) {
-        std::cout << ans[i] << "\n";
+    for (int i = 0; i < n; i++) {
+        std::cout << fen.sum(t.in[i] + 1) << " \n"[i == n - 1];
     }
 }
 
 int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
-
+    
     int t;
     std::cin >> t;
-
+    
     while (t--) {
         solve();
     }
-
+    
     return 0;
 }
-*/
