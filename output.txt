@@ -1,4 +1,1 @@
-Count = 1
-USW
-TWFCD-4631, USW-AGGREGATION, enable burnin issues, enable burin fail in the first time, it can pass in the 2nd tests.
-
+2 2

@@ -86,6 +86,7 @@ started test fail, log show update firmware.
 [Charge] Normal state leakage fail, test fails, log not show  '"f_leakage_current_fail":1.
 diff between shipping and mfg issues.
 help plm id test nfc.
+help ee / plm id test lcm, upgrade lcm.
 help ee test lcm.
 
 ev-charger, add new test case, stop charging.
