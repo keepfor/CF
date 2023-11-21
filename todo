@@ -81,13 +81,46 @@ ev-station-ultra, ftu, update reset button, kill burnin process. 0.0.8
 ev-station-ultra, ftu, use ac power source for 220V. 0.0.8
 ev-station-ultra, ftu, leakage fail, ma -> mA. 0.0.8
 ev-station-ultra, ftu, charge test, availabe to prepareing2 fail. 0.0.8
-start_transaction issues, log show request timed out.
-started test fail, log show update firmware.
-[Charge] Normal state leakage fail, test fails, log not show  '"f_leakage_current_fail":1.
-diff between shipping and mfg issues.
-help plm id test nfc.
-help ee / plm id test lcm, upgrade lcm.
-help ee test lcm.
+ev-station-ultra, start_transaction issues, log show request timed out.
+ev-station-ultra, started test fail, log show update firmware.
+ev-station-ultra, [Charge] Normal state leakage fail, test fails, log not show  '"f_leakage_current_fail":1.
+ev-station-ultra, diff between shipping and mfg issues.
+ev-station-ultra, help plm id test nfc.
+ev-station-ultra, help ee / plm id test lcm, upgrade lcm.
+ev-station-ultra, help ee test lcm.
+ev-station-ultra, cmd hangs with fw rd's tools.
+
+
+ev-station-ultra, add check is_mfg.
+ev-station-ultra, update fcd mfg img. MFG Firmware 0.0.9
+ev-station-ultra, update ftu shipping img. shipping FW 0.0.9
+ev-station-ultra, update enter dfu mode for sr2 hw.
+ev-station-ultra, update enter app mode for sr2 hw.
+ev-station-ultra, update upgrade lcm fw for sr2 hw.
+ev-station-ultra, lcm upgrade fails in sr2 hw.
+
+ev-station-ultra, suspend test fail, found "Prepareing1" not found "SuspendedEV"
+ev-station-ultra, gmo fail found "Charging" but not "prepareing1"
+ev-station-ultra, 287.8V but not show ovp, ovp test fail.
+
+ev-station-ultra, charging start test, print criteria and parse pilot value.
+ev-station-ultra, charging suspend test, print criteria and parse pilot value.
+ev-station-ultra, charging charging test, print criteria and parse pilot value.
+ev-station-ultra, charging stop-charging test, print criteria and parse pilot value.
+ev-station-ultra, charging unplug test, print criteria and parse pilot value.
+ev-station-ultra, charging leakage test, print criteria and parse pilot value.
+
+ev-station-ultra, Update charging suspend test, add start-transaction before get-info.
+ev-station-ultra, Update charging error test, add all-stop cmd at the end of test.
+ev-station-ultra, Update charging leakage test, add all-stop cmd at the end of test.
+ev-station-ultra, Update charging gmi test, add all-stop cmd at the end of test.
+ev-station-ultra, Update charging gmo test, add all-stop cmd at the end of test.
+ev-station-ultra, Update charging ovp test, add all-stop cmd at the end of test.
+ev-station-ultra, need fixtures/switch for gmo, gmi.
+ev-station-ultra, update ovp steps expected string to f_ovp:0.
+
+
+
 
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
@@ -95,6 +128,8 @@ ev-charger, als issues.
 ev-charger, wifi issues.
 ev-charger, NFC KMS test issues.
 ev-charger, card reader issues.
+ev-charger, increae fcd retry count. te propose.
+ev-charger, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
