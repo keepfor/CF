@@ -1,9 +1,13 @@
-usw-aggregation, enable burnin issues, enable burin fail in the first time, it can pass in the 2nd tests.
-usw-aggregation, fix with new cmd for enable burnin issues.
 
-ev-station-ultra, fcd, flashSize check fails. (fw v0.0.2)
-ev-station-ultra, fcd,  show "Press enter" too early when login kernel, and the linux shell prompt is "(none)-0.0.2#". (fw v0.0.2)
-ev-station-ultra, fcd, fcd tlv data check fails. (fw v0.0.2)
+
+
+ev-station-ultra, fcd, add upgrade to mfg.
+ev-station-ultra, fcd, "press enter early, none prompt" issue.
+ev-station-ultra, fcd, fcd tlv check fail issue.
+
+
+
+
 ev-station-ultra, fcd, add new function, upgrade to mfg FW.(fw v0.0.2)
 ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
 ev-station-ultra, fcd, verify sr2 sample, hw issues. (PQ6 shortcut.) 
@@ -124,8 +128,8 @@ ev-station-ultra, update ovp steps expected string to f_ovp:0.
 
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
-ev-charger, als issues.
-ev-charger, wifi issues.
+ev-charger, fix als issues, update cmd.
+ev-charger, fix wifi issues, update adb reconnect.
 ev-charger, NFC KMS test issues.
 ev-charger, card reader issues.
 ev-charger, increae fcd retry count. te propose.
@@ -173,12 +177,7 @@ uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix
 Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
 
-//usp-battery, update ble ftu tools to v1.8. 
-usp-battery, getqrcode fail.
-usp-battery, Check LCM backlight Test，DUT复位后有测试到，再重复测试，LCM不会出现可以滑动的界面
-usp-battery, Check LCM alignment LCM没有界面出现
-usp-battery, Check LCM burnin FTU上提示需要看几种颜色，但测试时只有红，绿之后LCM跳入Test Pass
-usp-battery, Check BLE FAIL
+
 usp-battery, 1. LCMTEST 有溢位處理問題, 先改用以下指令處理
 usp-battery, backlight 請改用 `lcmstr:test:backlight`
 usp-battery, alightment 請改用 `lcmstr:test:alightment`
@@ -245,16 +244,8 @@ uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 uisp-r, ecof for update mobile app ver.
 
 uisp-r-plus, disk test fail.
-//uisp-r-plus, fcd cat proc information fail.
-uisp-r-plus, ble test fails sometimes, fw rd found it is caused by uboot version.
 uisp-r-plus, get switch temperature fail.
-//uisp-r-plus, update fan test criteria.
 
-uisp-r-plus, poe led test not return response.
-uisp-r-plus, loopback test fail.
-uisp-r-plus, update diag fw, UISP-R-Plus diag v9.0.1.
-uisp-r-plus, flash-image-0.0.2.bin.uisprplus
-uisp-r-plus, fcd tftpboot fail.
 uisp-r-plus, fcd, support exit from diag.
 uisp-r-plus, fcd, support exit from diag and login.
 uisp-r-plus, fcd add check info in diag shell.
@@ -371,14 +362,7 @@ ftu, Update enable burnin, update setenv burnNum to 260.
 ftu, Update to Diag FW from shipping, update bundled Diag FW to UISPR.cn91xx.v9.0.8+ubnt.158.790eb0cM.231018.0044.bin.
 ftu, update snake test, update the connection topology between the Package generator and the dut. 
 
-uisp-s-plus, fcd, update and verify new bundled Diag fw, UISP-S-PLUS DIAG_v0.0.9.
-uisp-s-plus, ftu, update bundled Diag fw of upgrade to diag fw from shipping fw function, UISP-S-PLUS DIAG_v0.0.9.
-uisp-s-plus, ftu, enable burnin, booting fail.
-uisp-s-plus, update cpu test cmd.
-uisp-s-plus, update i2c test flow.
-uisp-s-plus, update poe, popwindow.
-uisp-s-plus, update ble.
-uisp-s-plus, 2.5G fcd usb ethernet.
+
 uisp-s-plus, 10G DAC swtich GU.
 uisp-s-plus, crc issues after fcd.
 uisp-s-plus, add reboot saveenv fcd.
@@ -620,15 +604,11 @@ update lead battery test, support check lth battery status.
 fix snake1 and snake2 issues. git reset
 improve portlink test retest, rewrite with swctrl.
 
-//uisp-r-pro, update bundled ftu diag fw to v9.0.10. (support update to diag from shipping)
-//uisp-r-pro, ftu, pdate runtime fw to UISPR.alpinev2r.v2.4.1-rc.1.c1f2393.221117.1215.bin.
-uisp-r-pro, update lcm firmware upgrade timeout to 90.
-uisp-r-pro, update rtc test to improve the retest rate.
+
 uisp-r-pro, update security test with new parsing pattern and expected result.
 uisp-r-pro, update lcm cmd to fix lcm backlight and burnin issues.
 uisp-r-pro, update lcm cmd to fix, undecode error.
 uisp-r-pro, update shipping fw to: UISPR.alpinev2r.v3.0.1.4938c4c.221215.1246.bin.
-uisp-r-pro, check burnin result, dump log when pass.
 uisp-r-pro, rpi4, usb not mount. reported by fw andrew.
 1. Remove UISPR.alpinev2.v9.0.10.a683096.221116.0525.bin
 2. Update Diag FW to UISPR.alpinev2.v9.0.11.246ff2f.230303.0209.bin 
@@ -687,8 +667,11 @@ ubnt-upgrade UISPR.alpinev2.v9.0.11.246ff2f.230303.0209.bin, dut不會自動rebo
 usw-flex-xg, power consumption.
 usw-flex-xg, factory default issues.
 
-usw-flex, update burnin script to improve retest rate of burnin test. (increase delay)
-usw-flex, update, update shipping fw to US.mt7621_6.4.18+14328.221213.1324-uboot.bin.
+usw-flex, update shipping fw. 6.4.18.
+usw-flex, update burnin.sh, increase delay.
+
+
+
 ux issues, cm process issues.
 usw-flex, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
 verify FCD-USW-FLEX-1.0.5-4.0.66.
@@ -696,16 +679,9 @@ fcd not found shipping fw.
 check test flow.
 update ssh login ip to 192.168.1.20.
 
-uisp-p-pro, Update la battery charge test, to change the criteria of psu voltage.
-uisp-p-pro, Update la battery charge test, add retry and update test flow.
-uisp-p-pro, Update li battery discharge test, to change the criteria of psu voltage.
-uisp-p-pro, Update li battery discharge test, add retry and update test flow.
-uisp-p-pro, charger dc output is too low.
 
-uisp-p-pro, la battery log parsing failed.
 
 2. Modify typo daig_fw_version to diag_fw_version.
-3. Update runtime FW to UISPP.v1.0.0-rc.3.1bf95c.230301.0836.bin.
 - Update BLE test, rewrite parser and calculation.
 Bundle runtime FW to UISPP.v1.0.1.d1000fd.230321.1633.bin.
 add upgrade to diag fw. (Diag: 9.0.8
@@ -722,6 +698,8 @@ uisp-p-pro, ble test retest in ltn.
 update controller app ver, ecof.
 Application FW, UISPP.v1.0.2.cb9fcc.230616.1138.bin
 cancel some test cases, reduce testing time.
+add upgrade to diag fw from shipping fw.
+
 
 uisp-p, update fcd with new DIAG(v9.0.8)
 uisp-p, update ftu with new runtime FW (FW_v1.0.0-rc3)
@@ -743,15 +721,10 @@ update controller app ver, ecof.
 new runtime.(UISPP.v1.0.2.cb9fcc.230616.1138.bin)
 runtime fw upgrade issues, timeout error, two network cards and ping.
 cancel some test cases, reduce testing time.
+fw sail upgrade firmware test timeout fail.
+add upgrade to diag fw from shipping fw.
 
 
-uisp-s-pro, update ble test, update tx checking process.
-uisp-s-pro, update ble criteria issue.
-uisp-s-pro, refactor snake.
-uisp-s-pro, refactor port speed.
-uisp-s-pro, refactor port information.
-uisp-s-pro, verify lcm dfu test cmds.
-uisp-s-pro, verify lcm dfu cmd.
 lcm dfu cmd not work. (ucmd)
 lcm dfu cmd not work. (gpio out)
 fcd, update diag fw. (UISP-S-Pro-1.3.8-DEV09.bix)
