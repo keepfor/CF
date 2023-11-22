@@ -12,29 +12,10 @@ int32_t main() {
   auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
   SetIO();
   auto SolveOne = []() -> void {
-    int n, x, y;
-    cin >> n >> x >> y;
-    vector<int> a(n);
-    for (auto& i : a) {
-      cin >> i;
-    }
-    sort(a.rbegin(), a.rend());
-    if (x > y) {
-      swap(x, y);
-    }
-    double xs = 0;
-    double ys = 0;
-
-    for (int i = 0; i < x + y; ++i) {
-      if (i < x) {
-        xs += a[i];
-      } else {
-        ys += a[i];
-      }
-    }
-    xs /= x;
-    ys /= y;
-    cout << fixed << setprecision(10) << xs + ys << '\n';
+    vector<int> a(3);
+    debug(a);
+    a.resize(-1);
+    debug(a);
   };
   auto Solve = [&SolveOne]() -> void {
     int tt = 1;

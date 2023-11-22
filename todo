@@ -1,12 +1,6 @@
-
-
-
 ev-station-ultra, fcd, add upgrade to mfg.
 ev-station-ultra, fcd, "press enter early, none prompt" issue.
 ev-station-ultra, fcd, fcd tlv check fail issue.
-
-
-
 
 ev-station-ultra, fcd, add new function, upgrade to mfg FW.(fw v0.0.2)
 ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
@@ -123,9 +117,6 @@ ev-station-ultra, Update charging ovp test, add all-stop cmd at the end of test.
 ev-station-ultra, need fixtures/switch for gmo, gmi.
 ev-station-ultra, update ovp steps expected string to f_ovp:0.
 
-
-
-
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
 ev-charger, fix als issues, update cmd.
@@ -134,6 +125,7 @@ ev-charger, NFC KMS test issues.
 ev-charger, card reader issues.
 ev-charger, increae fcd retry count. te propose.
 ev-charger, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
+ev-charger, shipping fw downgrade fail, ota_update_evcharger_release_v1.0.262.zip  
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
