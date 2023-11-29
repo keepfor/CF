@@ -12,13 +12,25 @@ int32_t main() {
   auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
   SetIO();
   auto SolveOne = []() -> void {
-    vector<int> a(3);
-    debug(a);
-    a.resize(-1);
-    debug(a);
+    using ll = long long;
+    ll n, q;
+    cin >> n >> q;
+    vector<int> a(n);
+    ll x = (1 + n) * n / 2;
+    q %= (1 + n)
+    for (int i = 0; i < n; ++i) {
+      cin >> a[i];
+      x -= 1ll * a[i];
+    }
+    a.push_back(x);
+    rotate(a.begin(), a.end() - q, a.end());
+    for (int i = 0; i < n; ++i) {
+      cout << a[i] << " \n"[i + 1 == n];
+    }
   };
   auto Solve = [&SolveOne]() -> void {
     int tt = 1;
+    cin >> tt;
     while (tt--) {
       SolveOne();
     }

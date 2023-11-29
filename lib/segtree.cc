@@ -270,27 +270,103 @@ public:
         set(2 * no + 1, mid + 1, r, ql, qr, 1);
         pull(no, l, r, mid);
     }
+  class Solution {
+  public:
+      int sumCounts(vector<int>& v) {
+          using ll = long long;
+          const ll mod = 1e9 + 7;
+          const int n = v.size();
+          int mx = *max_element(v.begin(), v.end());
+          SegTreeLazy seg;
+          ll ans = 0;
+          ll sum = 0;
+          vector<int> pre(mx + 1, -1);
+          for (int i = 0; i < n; ++i) {
+              int p = pre[v[i]];
+              int ql = p + 1;
+              ll x = seg.get(1, 0, n - 1, ql, i);
+              sum = (sum + 2 * x + (i - ql + 1)) % mod;
+              ans = (ans + sum) % mod;
+              seg.set(1, 0, n - 1, ql, i, 1);
+              pre[v[i]] = i;
+          }
+          return ans;
+      }
+  };
 };
-class Solution {
+
+
+class SegTree {
 public:
-    int sumCounts(vector<int>& v) {
-        using ll = long long;
-        const ll mod = 1e9 + 7;
-        const int n = v.size();
-        int mx = *max_element(v.begin(), v.end());
-        SegTreeLazy seg;
-        ll ans = 0;
-        ll sum = 0;
-        vector<int> pre(mx + 1, -1);
+    vector<int> seg;
+    int n;
+    SegTree(vector<int> v) {
+        this->n = (int) v.size();
+        seg.resize(n << 2);
         for (int i = 0; i < n; ++i) {
-            int p = pre[v[i]];
-            int ql = p + 1;
-            ll x = seg.get(1, 0, n - 1, ql, i);
-            sum = (sum + 2 * x + (i - ql + 1)) % mod;
-            ans = (ans + sum) % mod;
-            seg.set(1, 0, n - 1, ql, i, 1);
-            pre[v[i]] = i;
+            Add(0, 0, n - 1, i, v[i]);
         }
-        return ans;
     }
+    void Add(int nd, int l, int r, int x, int y) {
+        if (l > r) {
+            return;
+        }
+        if (x > r or x < l) {
+            return;
+        }
+        if (x == l and l == r) {
+            seg[nd] = y;
+            return;
+        }
+        int mid = (l + r) >> 1;
+        Add(2 * nd + 1, l, mid, x, y);
+        Add(2 * nd + 2, mid + 1, r, x, y);
+        seg[nd] = max(seg[2 * nd + 1], seg[2 * nd + 2]);
+    }
+    int GetFirstGreater(int nd, int l, int r, int x, int y) {
+        if (l > r) {
+            return -1;
+        }
+        if (x > r) {
+            return -1;
+        }
+        if (seg[nd] <= y) {
+            return -1;
+        }
+        if (l == r) {
+            return l;
+        }
+        int mid = (l + r) >> 1;
+        if (x <= mid) {
+            int res = GetFirstGreater(2 * nd + 1, l, mid, x, y);
+            if (res != -1) {
+                return res;
+            }
+        }
+        return GetFirstGreater(2 * nd + 2, mid + 1, r, x, y);
+    }
+    
+    class Solution {
+    public:
+        vector<int> leftmostBuildingQueries(vector<int>& v, vector<vector<int>>& q) {
+            const int n = q.size();
+            SegTree segtree(v);
+            vector<int> ans(n);
+            for (int i = 0; i < n; ++i) {
+                int x = q[i][0];
+                int y = q[i][1];
+                if (x > y) {
+                    swap(x, y);
+                }
+                if (x == y) {
+                    ans[i] = x;
+                } else if (v[x] < v[y]) {
+                    ans[i] = y;
+                } else {
+                    ans[i] = segtree.GetFirstGreater(0, 0, segtree.n - 1, y + 1, v[x]);
+                }
+            }
+            return ans;
+        }
+    };
 };

@@ -116,6 +116,36 @@ ev-station-ultra, Update charging gmo test, add all-stop cmd at the end of test.
 ev-station-ultra, Update charging ovp test, add all-stop cmd at the end of test.
 ev-station-ultra, need fixtures/switch for gmo, gmi.
 ev-station-ultra, update ovp steps expected string to f_ovp:0.
+ev-station-ultra, update gmo test flow, update expected string to available.
+ev-station-ultra, update lcm upgrade, bundled new lcm fw. v0.1.3-0-g9b0c682
+ev-station-ultra, update lcm control check for new lcm fw. v0.1.3-0-g9b0c682
+ev-station-ultra, wifi iperf, ping fail, host ip issue.
+ev-station-ultra, wifi rssi, the real value is too high.
+
+lcm issue, show white edge abnormally.
+
+add leakage.jpg to leakage test.
+fallback ip issue, when wifi test.
+wifi test need to partition to three tests, test order issue.
+wifi test spec update to 30M.
+burnin lcm behavior issue. lcm does not go stable.
+ovp test issue, power off when 220 -> 270.
+wifi 2g rssi fail, value is too low.
+verify wifi ip .21.
+wifi iperf test, retest ip issue.
+
+enter dfu mode fail, not found dev. in factory.
+upgrade mtd with caldata.bin
+wifi iperf test, ping fail.
+ath0 and eth0 are the same issue.
+wifi iperf, gu ap wifi does not link up. password is wrong in factory.
+verify new 2g wifi rssi. workaround.
+
+verify new wifi iperf. support retest.
+Refine wifi 2G RSSI. 
+Refine WIFI iperf test. support retest.
+Add a new test case, Setup WIFI caldata.bin.
+update test order of iperf and rssi.
 
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
@@ -126,6 +156,7 @@ ev-charger, card reader issues.
 ev-charger, increae fcd retry count. te propose.
 ev-charger, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
 ev-charger, shipping fw downgrade fail, ota_update_evcharger_release_v1.0.262.zip  
+ev-charger, shipping fw upgrade fail, ota_update_evcharger_release_v1.0.262.zip  
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
