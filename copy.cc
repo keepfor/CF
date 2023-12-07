@@ -13,20 +13,10 @@ int32_t main() {
   SetIO();
   auto SolveOne = []() -> void {
     using ll = long long;
-    ll n, q;
-    cin >> n >> q;
-    vector<int> a(n);
-    ll x = (1 + n) * n / 2;
-    q %= (1 + n);
-    for (int i = 0; i < n; ++i) {
-      cin >> a[i];
-      x -= 1ll * a[i];
-    }
-    a.push_back(x);
-    rotate(a.begin(), a.end() - q, a.end());
-    for (int i = 0; i < n; ++i) {
-      cout << a[i] << " \n"[i + 1 == n];
-    }
+    ll n, k, g;
+    cin >> n >> k >> g;
+    ll x = (g - 1) >> 1;
+    cout << min((x * n) / g, k) * g << '\n';
   };
   auto Solve = [&SolveOne]() -> void {
     int tt = 1;

@@ -1,8 +1,4 @@
-ev-station-ultra, fcd, add upgrade to mfg.
-ev-station-ultra, fcd, "press enter early, none prompt" issue.
-ev-station-ultra, fcd, fcd tlv check fail issue.
-
-ev-station-ultra, fcd, add new function, upgrade to mfg FW.(fw v0.0.2)
+ev-station-ultra, fcd, bundled and verify new mfg FW.(fw v0.0.2)
 ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
 ev-station-ultra, fcd, verify sr2 sample, hw issues. (PQ6 shortcut.) 
 ev-station-ultra, fcd, develop fcd.
@@ -124,7 +120,7 @@ ev-station-ultra, wifi rssi, the real value is too high.
 
 lcm issue, show white edge abnormally.
 
-add leakage.jpg to leakage test.
+add 17ma leakage.jpg to leakage test.
 fallback ip issue, when wifi test.
 wifi test need to partition to three tests, test order issue.
 wifi test spec update to 30M.
@@ -137,7 +133,7 @@ wifi iperf test, retest ip issue.
 enter dfu mode fail, not found dev. in factory.
 upgrade mtd with caldata.bin
 wifi iperf test, ping fail.
-ath0 and eth0 are the same issue.
+ath0 and eth0 are the same issue. 192.168.1.20
 wifi iperf, gu ap wifi does not link up. password is wrong in factory.
 verify new 2g wifi rssi. workaround.
 
@@ -146,6 +142,26 @@ Refine wifi 2G RSSI.
 Refine WIFI iperf test. support retest.
 Add a new test case, Setup WIFI caldata.bin.
 update test order of iperf and rssi.
+wifi rssi still fail, after supporting caldata and update test order of iperf and rssi.
+help fw_rd verify caldata.bin
+check nor flash test case, hw_rd asked.
+swap test order of iperf and rssi again.
+add a new test case, recover udhcp. from iperf test.
+add a new test case, check udhcp.
+add a new test case, setup wifi.
+
+verify caldata.bin content.
+rssi fail but iperf ok.
+add new test case, setup caldata.bin.
+update test order of wifi iperf and wifi rssi 2.
+update setup wifi, support sed udhcpc.
+update wifi iperf, support recover udhcpc and wifi down.
+update setup caldata.bin, support update udhcpc.
+update wif iperf, restart wifi at the end of test.
+
+update ethernet iperf options, -t 10 -O 4 -P 20.
+update wifi iperf options, -t 10 -O 3 -P 2.
+Update bundled shipping FW to UM-EVS-v0.1.1-0-8f4efc5-231205.0949-M.bin.
 
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
@@ -201,14 +217,18 @@ Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
 
 
-usp-battery, 1. LCMTEST 有溢位處理問題, 先改用以下指令處理
-usp-battery, backlight 請改用 `lcmstr:test:backlight`
+usp-battery, update ftu lcm 1. LCMTEST 有溢位處理問題, 先改用以下指令處理
+obacklight 請改用 `lcmstr:test:backlight`
 usp-battery, alightment 請改用 `lcmstr:test:alightment`
 usp-battery, 2. LCM Burnin command 少了秒數參數
-usp-battery, `lcmtest:burnin:10`
 usp-battery, 3. BLE 問題請幫忙下 CLI
-usp-battery, `getblestatus`, `getblerssi`
 usp-battery, ，試著用手機掃看看有沒有該台 battery 訊號 。
+
+usp-battery, update ftu lcm backlight cmd, to fix fw overflow issue.
+usp-battery, update ftu lcm alignment cmd, to fix fw overflow issue.
+usp-battery, update ble test to support `getblestatus`, `getblerssi`.
+usp-battery, update lcm burnin cmd. `lcmtest:burnin:10`
+
 usp-battery, lcm reset pin test.
 usp-battery, ltn issue, not install python.
 usp-battery, cmd.exe lanuage issues.
@@ -269,7 +289,7 @@ uisp-r, ecof for update mobile app ver.
 uisp-r-plus, disk test fail.
 uisp-r-plus, get switch temperature fail.
 
-uisp-r-plus, fcd, support exit from diag.
+uisp-r-plus, fcd, support exit from diag and check ubnthal.
 uisp-r-plus, fcd, support exit from diag and login.
 uisp-r-plus, fcd add check info in diag shell.
 uisp-r-plus, fcd add \r for diag shell cmd.
@@ -386,8 +406,9 @@ ftu, Update to Diag FW from shipping, update bundled Diag FW to UISPR.cn91xx.v9.
 ftu, update snake test, update the connection topology between the Package generator and the dut. 
 
 
-uisp-s-plus, 10G DAC swtich GU.
+uisp-s-plus, fcd with 2.5G usw, use DAC, instead of sfp module.
 uisp-s-plus, crc issues after fcd.
+uisp-s-plus, fcd, upgrade to new uboot.
 uisp-s-plus, add reboot saveenv fcd.
 uisp-s-plus, mtdblock issues.
 uisp-s-plus, update fcd upgrade uboot.
@@ -626,6 +647,7 @@ remove ble test.
 update lead battery test, support check lth battery status.
 fix snake1 and snake2 issues. git reset
 improve portlink test retest, rewrite with swctrl.
+update fan 100_rpm criteria to 8000~10000.
 
 
 uisp-r-pro, update security test with new parsing pattern and expected result.
@@ -696,7 +718,7 @@ usw-flex, update burnin.sh, increase delay.
 
 
 ux issues, cm process issues.
-usw-flex, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
+usw-flex, ftu, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
 verify FCD-USW-FLEX-1.0.5-4.0.66.
 fcd not found shipping fw.
 check test flow.
@@ -704,14 +726,14 @@ update ssh login ip to 192.168.1.20.
 
 
 
-2. Modify typo daig_fw_version to diag_fw_version.
-- Update BLE test, rewrite parser and calculation.
-Bundle runtime FW to UISPP.v1.0.1.d1000fd.230321.1633.bin.
-add upgrade to diag fw. (Diag: 9.0.8
-remove ssh login in cmd_diag.
-fw upgrade, add scp logging.
-remove fwupdate.bin first.
-lcm burnin test, increase test round.(from ltn te)
+uisp-pro, ftu, Modify typo daig_fw_version to diag_fw_version.
+uisp-pro, ftu, Update BLE test, rewrite parser and calculation.
+uisp-pro, ftu, Bundle runtime FW to UISPP.v1.0.1.d1000fd.230321.1633.bin.
+uisp-pro, add upgrade to diag fw. (Diag: 9.0.8
+uisp-pro, remove ssh login in cmd_diag.
+uisp-pro, fw upgrade, add scp logging.
+uisp-pro, remove fwupdate.bin first.
+uisp-pro, lcm burnin test, increase test round.(from ltn te)
 uisp-p-pro, update test flow. (init_bt)
 uisp-p-pro, fcd usb error in ltn. 
 uisp-p-pro, fcd serial error in ltn. 
