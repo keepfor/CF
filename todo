@@ -162,6 +162,19 @@ update wif iperf, restart wifi at the end of test.
 update ethernet iperf options, -t 10 -O 4 -P 20.
 update wifi iperf options, -t 10 -O 3 -P 2.
 Update bundled shipping FW to UM-EVS-v0.1.1-0-8f4efc5-231205.0949-M.bin.
+wifi rssi issue, too low.
+update wifi rssi, check the average of maximum 3.
+ethernet iperf issue, too low.
+verify sample, ethernet iperf for plm.
+update bundled shipping to .
+adopt issue from sz.
+adopt issue. need do factory reset.
+update bundled shipping fw to, UM-EVS-v0.1.2-0-17480cd-231208.1506-M.bin
+update wifi rssi test, update get_max filter.
+pb firmware version issue. te got v1.2.99
+burnin issue. te reports, burnin lets dut get into ovp and power off.
+burnin log store issue. te asked. if relay does not switch.
+burnin log store issue. te asked. if ovp.
 
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
@@ -404,6 +417,11 @@ ftu, Update check Diag FW version, update to v9.0.8.
 ftu, Update enable burnin, update setenv burnNum to 260.
 ftu, Update to Diag FW from shipping, update bundled Diag FW to UISPR.cn91xx.v9.0.8+ubnt.158.790eb0cM.231018.0044.bin.
 ftu, update snake test, update the connection topology between the Package generator and the dut. 
+
+sign some duts from hw_rd.
+crc error, can not boot by uboot.
+help hw_rd boot from uart.
+boot from uart fail.
 
 
 uisp-s-plus, fcd with 2.5G usw, use DAC, instead of sfp module.
