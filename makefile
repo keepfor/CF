@@ -35,15 +35,14 @@ verbose:
 	$(cc) $(dfg) $(cfg) $(src) -o $(prog)
 
 $(prog): $(src)
-	$(cc) $(dfg) $(src) -o $(prog)
+	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(output)
 
 main:
-	./$(prog) <$(input)> $(output) 
-	cat $(output)
+	./$(prog) < $(input) 2>&1 | tee $(output) 
 
 clean:
 	rm -rf .$(src)*
-	rm -rf $(prog).*
+	rm -rf $(prog)*
 
 copy:
 	cp $(src) $(copySrc)
