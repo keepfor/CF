@@ -1,15 +1,15 @@
-cc = g++ -std=gnu++2a
-cfg = -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions  -g 
-dfg = -DDEBUG
+cc := g++ -std=gnu++2a
+cfg := -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions  -g 
+dfg := -DDEBUG
 
-prog = prog
-src = sol.cc
-input = input.txt
-output = output.txt
-resetSrc = reset.cc
-copySrc = copy.cc
-genSrc = gen.cc
-gen = gen
+prog := prog
+src := sol.cc
+input := input.txt
+output := output.txt
+resetSrc := reset.cc
+copySrc := copy.cc
+genSrc := gen.cc
+gen := gen
 
 define re 
 	> $(input)
@@ -18,7 +18,7 @@ endef
 
 .PHONY: reset gen reset revim empty
 
-all: format $(prog) main copy clean
+all: format main copy clean
 	
 format:
 	clang-format -style=Google -i $(src)
@@ -37,12 +37,11 @@ verbose:
 $(prog): $(src)
 	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(output)
 
-main:
+main: $(prog)
 	./$(prog) < $(input) 2>&1 | tee $(output) 
 
 clean:
 	rm -rf .$(src)*
-	rm -rf $(prog)*
 
 copy:
 	cp $(src) $(copySrc)
