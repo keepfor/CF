@@ -33,14 +33,14 @@ simple:
 	$(CC) ${debug} ${src} -o ${obj}  
 
 ${obj}: ${src}
-	$(CC) ${debug} ${src} -o ${obj}  
+	$(CC) ${debug} ${src} -o ${obj} 2>&1 | tee ${output} 
 
 main:
-	./${obj} <${input}> ${output}
-	cat ${output}
+	./${obj} < ${input} 2>&1 | tee ${output} 
 
 clean:
 	rm -f ${dotSwap}
+	rm -f ${obj}
 
 copy:
 	cp ${src} ${copySrc}

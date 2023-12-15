@@ -8,60 +8,30 @@ using namespace std;
 #define debug(...) 0
 #endif
 
-#define int long long
-
 int32_t main() {
   auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
   SetIO();
   auto SolveOne = []() -> void {
-    using ll = long long;
-    int n;
-    cin >> n;
-    vector<vector<ll>> sum(1 + n, vector<ll>(31));
-    for (int i = 1; i <= n; ++i) {
-      int t;
-      cin >> t;
-      for (int j = 0; j < 31; ++j) {
-        if ((t >> j) & 1) {
-          sum[i][j] += 1ll;
-        }
-        sum[i][j] += sum[i - 1][j];
+    set<pair<pair<int, int>, pair<int, int>>> vis;
+    int x = 0, y = 0;
+    cin >> s;
+    int ans = 0;
+    for (auto& i : s) {
+      int px = x;
+      int py = y;
+      if (i == 'N') ++x;
+      if (i == 'S') --x;
+      if (i == 'E') ++y;
+      if (i == 'W') --y;
+      if (vis.emplace(min(make_pair(px, py), make_pair(x, y)),
+                      max(make_pair(px, py), make_pair(x, y)))
+              .second) {
+        ans += 5;
+      } else {
+        ans += 1;
       }
     }
-
-    auto get = [&](ll mid, ll l) -> ll {
-      ll c = 0;
-      for (int i = 0; i < 31; ++i) {
-        int x = (sum[mid][i] - sum[l - 1][i]);
-        if (x == (mid - l + 1)) {
-          c ^= (1ll << i);
-        }
-      }
-      return c;
-    };
-    int q;
-    cin >> q;
-    while (q--) {
-      ll l, k;
-      cin >> l >> k;
-      int oril = l;
-      ll r = n;
-      if (get(l, l) < k) {
-        cout << -1 << ' ';
-        continue;
-      }
-      while (l != r) {
-        ll mid = (1ll + l + r) / 2;
-        assert(mid >= l);
-        if (get(mid, oril) >= k) {
-          l = mid;
-        } else {
-          r = mid - 1;
-        }
-      }
-      cout << l << ' ';
-    }
-    cout << '\n';
+    cout << ans << '\n';
   };
   auto Solve = [&SolveOne]() -> void {
     int tt = 1;
