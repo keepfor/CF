@@ -1,1 +1,1 @@
-/bin/sh: 1: ./prog: not found
+2 1 3 4 

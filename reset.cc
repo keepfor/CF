@@ -8,18 +8,21 @@ using namespace std;
 #define debug(...) 0
 #endif
 
-int32_t main() {
-  auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
-  SetIO();
-  auto SolveOne = []() -> void {
+void SetIO() { cin.tie(0)->sync_with_stdio(0); }
+
+void SolveOne(){
     // TODO
-  };
-  auto Solve = [&SolveOne]() -> void {
-    int tt = 1;
-    while (tt--) {
-      SolveOne();
-    }
-  };
+};
+
+void Solve() {
+  int t = 1;
+  while (t--) {
+    SolveOne();
+  }
+}
+
+int32_t main() {
+  SetIO();
   Solve();
   return 0;
 }

@@ -12,30 +12,35 @@ int32_t main() {
   auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
   SetIO();
   auto SolveOne = []() -> void {
-    set<pair<pair<int, int>, pair<int, int>>> vis;
-    int x = 0, y = 0;
-    cin >> s;
-    int ans = 0;
-    for (auto& i : s) {
-      int px = x;
-      int py = y;
-      if (i == 'N') ++x;
-      if (i == 'S') --x;
-      if (i == 'E') ++y;
-      if (i == 'W') --y;
-      if (vis.emplace(min(make_pair(px, py), make_pair(x, y)),
-                      max(make_pair(px, py), make_pair(x, y)))
-              .second) {
-        ans += 5;
+    int q;
+    cin >> q;
+    set<pair<int, int>> fi, la;
+    int now = 1;
+    while (q--) {
+      int t;
+      cin >> t;
+      if (t == 1) {
+        int m;
+        cin >> m;
+        fi.emplace(now, m);
+        la.emplace(-m, now);
+        ++now;
+      } else if (t == 2) {
+        auto x = *fi.begin();
+        cout << x.first << ' ';
+        fi.erase(x);
+        la.erase({-x.second, x.first});
       } else {
-        ans += 1;
+        auto x = *la.begin();
+        cout << x.second << ' ';
+        fi.erase({x.second, -x.first});
+        la.erase(x);
       }
     }
-    cout << ans << '\n';
+    cout << '\n';
   };
   auto Solve = [&SolveOne]() -> void {
     int tt = 1;
-    cin >> tt;
     while (tt--) {
       SolveOne();
     }
