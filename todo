@@ -176,6 +176,8 @@ burnin issue. te reports, burnin lets dut get into ovp and power off.
 burnin log store issue. te asked. if relay does not switch.
 burnin log store issue. te asked. if ovp.
 
+update bundled shipping fw to.UM-EVS-v0.1.3-0-a162aa0-231215.1837-M.bin
+
 ev-charger, add new test case, stop charging.
 ev-charger, add new test case, unplug.
 ev-charger, fix als issues, update cmd.

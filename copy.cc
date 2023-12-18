@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+using ll = long long;
 
 #ifdef DEBUG
 #include "lib/debug.cc"
@@ -8,43 +9,55 @@ using namespace std;
 #define debug(...) 0
 #endif
 
-int32_t main() {
-  auto SetIO = []() -> void { cin.tie(0)->sync_with_stdio(0); };
-  SetIO();
-  auto SolveOne = []() -> void {
-    int q;
-    cin >> q;
-    set<pair<int, int>> fi, la;
-    int now = 1;
-    while (q--) {
-      int t;
-      cin >> t;
-      if (t == 1) {
-        int m;
-        cin >> m;
-        fi.emplace(now, m);
-        la.emplace(-m, now);
-        ++now;
-      } else if (t == 2) {
-        auto x = *fi.begin();
-        cout << x.first << ' ';
-        fi.erase(x);
-        la.erase({-x.second, x.first});
-      } else {
-        auto x = *la.begin();
-        cout << x.second << ' ';
-        fi.erase({x.second, -x.first});
-        la.erase(x);
+void SetIO() { cin.tie(0)->sync_with_stdio(0); }
+
+void SolveOne() {
+  int n, k;
+  cin >> n >> k;
+  vector<int> v(n);
+  int x = 0;
+  for (auto& i : v) {
+    cin >> i;
+    x = max(x, i);
+  }
+  ll l = 1, r = 1e12;
+  while (l < r) {
+    ll mid = (l + r + 1) >> 1;
+    bool ok = false;
+    for (int i = 0; !ok and i < n; ++i) {
+      ll t = mid;
+      ll cost = 0;
+      for (int j = i; !ok and j < n; ++j) {
+        if (t <= v[j]) {
+          ok = true;
+          if (ok) {
+            ok &= cost <= k;
+          }
+          break;
+        }
+        cost += 1ll * t - v[j];
+        --t;
       }
     }
-    cout << '\n';
-  };
-  auto Solve = [&SolveOne]() -> void {
-    int tt = 1;
-    while (tt--) {
-      SolveOne();
+    if (ok) {
+      l = mid;
+    } else {
+      r = mid - 1;
     }
-  };
+  }
+  cout << l << '\n';
+};
+
+void Solve() {
+  int t = 1;
+  cin >> t;
+  while (t--) {
+    SolveOne();
+  }
+}
+
+int32_t main() {
+  SetIO();
   Solve();
   return 0;
 }

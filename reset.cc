@@ -1,14 +1,13 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+using ll = long long;
 
 #ifdef DEBUG
 #include "lib/debug.cc"
 #else
 #define debug(...) 0
 #endif
-
-void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
 void SolveOne(){
     // TODO
@@ -20,6 +19,8 @@ void Solve() {
     SolveOne();
   }
 }
+
+void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
 int32_t main() {
   SetIO();
