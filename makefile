@@ -35,6 +35,7 @@ verbose:
 	$(cc) $(dfg) $(cfg) $(src) -o $(prog)
 
 $(prog): $(src)
+	rm -rf $(prog)
 	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(output)
 
 main: $(prog)
