@@ -3,8 +3,8 @@ obj := prog
 src := sol.cc
 dotSwap := .sol.*
 copySrc := copy.cc
-output := output.txt
-input := input.txt
+output := out
+input := in
 resetSrc := reset.cc
 
 define re
@@ -33,6 +33,7 @@ simple:
 	$(CC) ${debug} ${src} -o ${obj}  
 
 ${obj}: ${src}
+	rm -f ${obj}*
 	$(CC) ${debug} ${src} -o ${obj} 2>&1 | tee ${output} 
 
 main: ${obj}

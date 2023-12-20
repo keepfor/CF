@@ -17,18 +17,21 @@ inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
-nnoremap <F4> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
-nnoremap <F6> :!time make<cr>
-nnoremap <right> :bn<cr>
-nnoremap <left> :bp<cr>
+nnoremap <right> :tabn<cr>
+nnoremap <left> :tabp<cr>
 
+nnoremap <s-u> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
+nnoremap <s-k> :!time make<cr>
+nnoremap <s-q> :q!
+nnoremap <s-t> :tabedit<Space>
+
+nnoremap <c-l> :e ~/j/ftu_log_folder <cr> 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-a> ggvG$
-nnoremap <F8> :q!
-nnoremap <F3> :e ~/j/ftu_log_folder
+
 nnoremap ; :
 
 inoremap jk <esc>
@@ -39,7 +42,7 @@ vnoremap kj <esc>
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
-set timeoutlen=30 
+set timeoutlen=50 
 set splitbelow expandtab nocompatible 
 set backupcopy=yes 
 set autochdir autoread

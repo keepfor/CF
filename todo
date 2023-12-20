@@ -1,11 +1,17 @@
-ev-station-ultra, fcd, bundled and verify new mfg FW.(fw v0.0.2)
 ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
 ev-station-ultra, fcd, verify sr2 sample, hw issues. (PQ6 shortcut.) 
 ev-station-ultra, fcd, develop fcd.
 ev-station-ultra, fcd, update mfg fw to 0.0.3.
 ev-station-ultra, fcd, verify mfg fw 0.0.3.
-ev-station-ultra, fcd, add shell login, for mfg fw 0.0.3.
+ev-station-ultra, fcd, add shell login with password.
 ev-station-ultra, ftu, many items.
+
+ftu, [System] Check the integrity (devreg)    
+ftu, [System] Check the integrity (ubnthal)   
+ftu, [System] Check SysID       
+ftu, [System] Check MAC Address 
+ftu, [System] Check Shortname   
+
 ev-station-ultra, ftu, help EE set up ev-station-pro ftu, dhcp, ssh, putty, udm ....
 ev-station-ultra, fcd, verify US, 002a.
 ev-station-ultra, ftu, add led control. 0.0.4
@@ -178,8 +184,6 @@ burnin log store issue. te asked. if ovp.
 
 update bundled shipping fw to.UM-EVS-v0.1.3-0-a162aa0-231215.1837-M.bin
 
-ev-charger, add new test case, stop charging.
-ev-charger, add new test case, unplug.
 ev-charger, fix als issues, update cmd.
 ev-charger, fix wifi issues, update adb reconnect.
 ev-charger, NFC KMS test issues.
@@ -231,18 +235,6 @@ uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix
 Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
 
-
-usp-battery, update ftu lcm 1. LCMTEST 有溢位處理問題, 先改用以下指令處理
-obacklight 請改用 `lcmstr:test:backlight`
-usp-battery, alightment 請改用 `lcmstr:test:alightment`
-usp-battery, 2. LCM Burnin command 少了秒數參數
-usp-battery, 3. BLE 問題請幫忙下 CLI
-usp-battery, ，試著用手機掃看看有沒有該台 battery 訊號 。
-
-usp-battery, update ftu lcm backlight cmd, to fix fw overflow issue.
-usp-battery, update ftu lcm alignment cmd, to fix fw overflow issue.
-usp-battery, update ble test to support `getblestatus`, `getblerssi`.
-usp-battery, update lcm burnin cmd. `lcmtest:burnin:10`
 
 usp-battery, lcm reset pin test.
 usp-battery, ltn issue, not install python.
@@ -426,15 +418,11 @@ help hw_rd boot from uart.
 boot from uart fail.
 
 
-uisp-s-plus, fcd with 2.5G usw, use DAC, instead of sfp module.
-uisp-s-plus, crc issues after fcd.
-uisp-s-plus, fcd, upgrade to new uboot.
-uisp-s-plus, add reboot saveenv fcd.
-uisp-s-plus, mtdblock issues.
+uisp-s-plus, fcd, update mtdblock.
 uisp-s-plus, update fcd upgrade uboot.
-uisp-s-plus, update backup power checking logic.
+uisp-s-plus, ftu, update backup power test, update checking logic.
 uisp-s-plus, fix backup power typo.
-uisp-s-plus, ble calculation.
+uisp-s-plus, update ble test flow.
 uisp-s-plus, ble parser.
 uisp-s-plus, update fan criteria.
 uisp-s-plus, update system led.
