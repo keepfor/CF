@@ -10,25 +10,11 @@ using ll = long long;
 #endif
 
 void SolveOne() {
-  int n;
-  cin >> n;
-  vector<int> v(n);
-  for (auto& i : v) cin >> i;
-  const int inf = 1e9;
-  vector<int> dp(n + 1, inf);
-  dp[n] = 0;
-  for (int i = n - 1; i >= 0; --i) {
-    dp[i] = min(dp[i], 1 + dp[i + 1]);
-    if (i + v[i] + 1 <= n) {
-      dp[i] = min(dp[i], dp[i + v[i] + 1]);
-    }
-  }
-  cout << dp[0] << '\n';
+  // TODO
 }
 
 void Solve() {
   int t = 1;
-  cin >> t;
   while (t--) {
     SolveOne();
   }

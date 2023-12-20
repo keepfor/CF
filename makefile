@@ -4,8 +4,8 @@ dfg := -DDEBUG
 
 prog := prog
 src := sol.cc
-input := input.txt
-output := output.txt
+input := in
+output := out
 resetSrc := reset.cc
 copySrc := copy.cc
 genSrc := gen.cc

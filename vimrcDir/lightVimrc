@@ -16,16 +16,20 @@ inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
-nnoremap <s-k> :!time make<cr>
-nnoremap <left> :bp<cr>
-nnoremap <right> :bn<cr>
-nnoremap ; :
+nnoremap <left> :tabprevious<cr>
+nnoremap <right> :tabnext<cr>
+
+nnoremap <s-t> :tabedit<space>
 nnoremap <s-q> :q!
+nnoremap <s-k> :!time make<cr>
+
 nnoremap <c-a> ggvG$
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
+
+nnoremap ; :
 
 inoremap jk <esc>
 inoremap kj <esc>
