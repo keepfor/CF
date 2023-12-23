@@ -183,6 +183,10 @@ burnin log store issue. te asked. if relay does not switch.
 burnin log store issue. te asked. if ovp.
 
 update bundled shipping fw to.UM-EVS-v0.1.3-0-a162aa0-231215.1837-M.bin
+help dqa address ssh issues.
+help hw_rd address dut ip issues.
+
+dfu fw upgrade fail, seems ssh lost.
 
 ev-charger, fix als issues, update cmd.
 ev-charger, fix wifi issues, update adb reconnect.

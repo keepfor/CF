@@ -9,8 +9,30 @@ using ll = long long;
 #define debug(...) 0
 #endif
 
-void SolveOne(){
-    // TODO
+void Freopen() {
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
+}
+
+void SolveOne() {
+  Freopen();
+  int n, x;
+  cin >> n >> x;
+  vector<int> v(n);
+  for (int i = 0; i < n; ++i) {
+    cin >> v[i];
+    v[i] *= n - i;
+  }
+  sort(v.begin(), v.end());
+  for (int i = 0; i < n; ++i) {
+    if (x >= v[i]) {
+      x -= v[i];
+    } else {
+      cout << i << '\n';
+      return;
+    }
+  }
+  cout << n << '\n';
 };
 
 void Solve() {

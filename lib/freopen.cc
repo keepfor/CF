@@ -9,13 +9,7 @@ using ll = long long;
 #define debug(...) 0
 #endif
 
-void Freopen() {
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
-}
-
 void SolveOne() {
-  Freopen();
   int n, x;
   cin >> n >> x;
   vector<int> v(n);
@@ -44,8 +38,14 @@ void Solve() {
 
 void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
+void Freopen() {
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
+}
+
 int32_t main() {
   SetIO();
+  Freopen();
   Solve();
   return 0;
 }
