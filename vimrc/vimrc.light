@@ -31,6 +31,7 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-a> ggvG$
+nnoremap <c-t> :tab ter<cr>
 
 nnoremap ; :
 
@@ -38,6 +39,9 @@ inoremap jk <esc>
 inoremap kj <esc>
 vnoremap jk <esc>
 vnoremap kj <esc>
+
+tnoremap <left> <C-W>:tabprevious<CR>
+tnoremap <right> <C-W>:tabnext<CR>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup

@@ -9,30 +9,18 @@ using ll = long long;
 #define debug(...) 0
 #endif
 
-void Freopen() {
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
-}
-
 void SolveOne() {
-  Freopen();
-  int n, x;
-  cin >> n >> x;
-  vector<int> v(n);
-  for (int i = 0; i < n; ++i) {
-    cin >> v[i];
-    v[i] *= n - i;
+  // TODO
+  using ull = unsigned long long;
+  ull a, b;
+  cin >> a >> b;
+  ull y = a + b;
+  ull x = a - b;
+  if (x & 1 or y & 1) {
+    cout << -1 << '\n';
+  } else {
+    cout << x / 2 << ' ' << y / 2 << '\n';
   }
-  sort(v.begin(), v.end());
-  for (int i = 0; i < n; ++i) {
-    if (x >= v[i]) {
-      x -= v[i];
-    } else {
-      cout << i << '\n';
-      return;
-    }
-  }
-  cout << n << '\n';
 };
 
 void Solve() {
