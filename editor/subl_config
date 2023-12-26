@@ -22,6 +22,12 @@
 	}
 ]
 
+[
+    { 
+        "keys": ["command+q"], "command": "toggle_terminus_panel"
+    }
+]
+
 {
 	"word_wrap": "true",
 	"find_selected_text": true,
@@ -34,3 +40,5 @@
 	"font_size": 11,
 	"color_scheme": "Celeste.sublime-color-scheme",
 }
+
+ln -sf /usr/local/Cellar/openssl@1.1/1.1.1v/lib/libcrypto.dylib /usr/local/lib
