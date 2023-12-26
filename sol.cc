@@ -9,12 +9,28 @@ using ll = long long;
 #define debug(...) 0
 #endif
 
-void SolveOne(){
-    // TODO
+void SolveOne() {
+  // TODO
+  // hello
+  ll n, p, le, t;
+  cin >> n >> p >> le >> t;
+  debug(n);
+  ll l = 0;
+  ll r = n;
+  while (l < r) {
+    ll mid = (l + r) >> 1;
+    ll cur = min((n + 6) / 7, mid * 2) * t + le * mid;
+    if (cur < p)
+      l = mid + 1;
+    else
+      r = mid;
+  }
+  cout << n - r << '\n';
 };
 
 void Solve() {
   int t = 1;
+  cin >> t;
   while (t--) {
     SolveOne();
   }

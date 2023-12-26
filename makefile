@@ -1,18 +1,19 @@
 CC := g++
 obj := prog
 src := sol.cc
-dotSwap := .sol.*
-copySrc := copy.cc
+sol_swap := .sol.*
+copy_cc := copy.cc
 output := out
 input := in
-resetSrc := reset.cc
+reset_cc := reset.cc
 
 define re
 	echo > ${input}
-	cp ${resetSrc} ${src}
+	cp ${reset_cc} ${src}
 endef
 
-debug := "-DDEBUG"
+gdb := -g
+debug := -DDEBUG
 CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -g
 DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
 
@@ -40,10 +41,10 @@ main: ${obj}
 	./${obj} < ${input} 2>&1 | tee ${output} 
 
 clean:
-	rm -f ${dotSwap}
+	rm -f ${sol_swap}
 
 copy:
-	cp ${src} ${copySrc}
+	cp ${src} ${copy_cc}
 
 re:
 	$(re)
@@ -54,5 +55,5 @@ rev:
 
 new:
 	echo > ${input}
-	cp ${resetSrc} ${src}
+	cp ${reset_cc} ${src}
 	vim ${src} ${input}
