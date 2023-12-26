@@ -1,0 +1,48 @@
+{
+	"word_wrap": true,
+	"hot_exit": false,
+    "remember_open_files": false,
+	"find_selected_text": true,
+	"always_prompt_for_file_reload": false,
+	"font_size": 10,
+	"theme": "auto",
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"hardware_acceleration": "none",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": true,
+}
+
+[
+	{
+		"keys": ["f6"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "make"
+		}
+	},
+	{
+		"keys": ["f4"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "bash ~/j/start_ftu.sh"
+		}
+	},
+	{
+		"keys": ["f7"],
+		"command": "exec",
+		"args": {
+			"shell_cmd": "make re"
+		}
+	},
+	{ 
+	    "keys"    : ["f5"], 
+	    "command" : "refresh_folder_list" 
+	},
+	{ 	
+		"keys": ["alt+q"],
+		"command": "toggle_terminus_panel" 
+	}
+]
