@@ -6,14 +6,14 @@ prog := prog
 src := sol.cc
 input := in
 output := out
-resetSrc := reset.cc
-copySrc := copy.cc
-genSrc := gen.cc
+reset_cc := reset.cc
+copy_cc := copy.cc
+gen_cc := gen.cc
 gen := gen
 
 define re 
 	> $(input)
-	cp $(resetSrc) $(src)
+	cp $(reset_cc) $(src)
 endef
 
 .PHONY: reset gen reset revim empty
@@ -45,7 +45,7 @@ clean:
 	rm -rf .$(src)*
 
 copy:
-	cp $(src) $(copySrc)
+	cp $(src) $(copy_cc)
 
 re:
 	$(re)
@@ -55,7 +55,7 @@ new:
 	vim $(src) ${input}
 
 gen:
-	${CC} ${genSrc} -o gen
+	${CC} ${gen_cc} -o gen
 	./${gen} > $(input)
 
 empty:
