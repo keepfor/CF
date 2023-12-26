@@ -20,7 +20,7 @@ void Solve() {
   }
 }
 
-void SetIO() { cin.tie(0)->sync_with_stdio(0); }
+inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
 int32_t main() {
   SetIO();
