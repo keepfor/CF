@@ -22,7 +22,7 @@ DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsa
 all: format main copy clean 
 
 format:
-	clang-format -style=Chromium -i ${src}
+	clang-format -style=Google -i ${src}
 	
 clear:
 	clear
