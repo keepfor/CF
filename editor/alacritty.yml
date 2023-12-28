@@ -1,0 +1,6 @@
+import:
+- ~/.config/alacritty/themes/themes/ayu_light.yaml
+cursor:
+ style:
+   shape: Beam 
+
