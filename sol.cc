@@ -11,31 +11,7 @@ using ll = long long;
 
 void SolveOne() {
   // TODO
-  ll n, s;
-  cin >> n >> s;
-  int x = -1;
-  int xx = -1;
-  int cnt = -1;
-  int ans = -1;
-  ll sum = 0;
-  for (int i = 0; i < n; ++i) {
-    ll t;
-    cin >> t;
-    sum += t;
-    if (t > x) {
-      x = t;
-      xx = i;
-    }
-    if (sum <= s and i + 1 > cnt) {
-      cnt = i + 1;
-      ans = -1;
-    }
-    if (sum - x <= s and i > cnt) {
-      cnt = i;
-      ans = xx;
-    }
-  }
-  cout << ans + 1 << '\n';
+  for (int i = 0; i < 1e7; ++i) cout << i;
 };
 
 void Solve() {

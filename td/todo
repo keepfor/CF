@@ -420,7 +420,7 @@ sign some duts from hw_rd.
 crc error, can not boot by uboot.
 help hw_rd boot from uart.
 boot from uart fail.
-
+rtc test has some retest. need to update.
 
 uisp-s-plus, fcd, update mtdblock.
 uisp-s-plus, update fcd upgrade uboot.
