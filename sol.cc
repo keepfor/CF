@@ -11,6 +11,7 @@ using ll = long long;
 
 void SolveOne() {
   // TODO
+  for (int i = 0; i < 1e6; ++i) cout << i;
 }
 
 void Solve() {

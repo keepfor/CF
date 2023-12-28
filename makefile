@@ -16,6 +16,10 @@ define re
 	cp $(reset_cc) $(src)
 endef
 
+define cat_out
+	cat $(output)
+endef
+
 .PHONY: reset gen reset revim empty
 
 all: format main copy clean
