@@ -12,6 +12,10 @@ define re
 	cp ${reset_cc} ${src}
 endef
 
+define cat_out
+	cat ${output}
+endef
+
 gdb := -g
 debug := -DDEBUG
 CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -g
@@ -35,10 +39,10 @@ simple:
 
 ${obj}: ${src}
 	rm -f ${obj}*
-	$(CC) ${debug} ${src} -o ${obj} 2>&1 | tee ${output} 
+	$(CC) ${debug} ${src} -o ${obj} 2>&1 | tee ${output}
 
 main: ${obj}
-	./${obj} < ${input} 2>&1 | tee ${output} 
+	./${obj} < ${input} 2>&1 | tee ${output}
 
 clean:
 	rm -f ${sol_swap}

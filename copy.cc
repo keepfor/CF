@@ -10,13 +10,12 @@ using ll = long long;
 #endif
 
 void SolveOne() {
-  // TODO
-  for (int i = 0; i < 1e7; ++i) cout << i;
+  const int n = 1e7;
+  for (int i = 0; i < n; ++i) cout << i;
 };
 
 void Solve() {
   int t = 1;
-  cin >> t;
   while (t--) {
     SolveOne();
   }
