@@ -10,8 +10,21 @@ using ll = long long;
 #endif
 
 void SolveOne() {
-  const int n = 1e7;
-  for (int i = 0; i < n; ++i) cout << i;
+  // TODO
+  ll a, m, l, r;
+  cin >> a >> m >> l >> r;
+  --l;
+  auto f = [&](ll x, ll y) -> ll {
+    if (y < 0) {
+      y = -y;
+      x = -x;
+    }
+    if (x < 0) {
+      return (x - y + 1) / y;
+    }
+    return x / y;
+  };
+  cout << f(r - a, m) - f(l - a, m) << '\n';
 };
 
 void Solve() {

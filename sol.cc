@@ -9,9 +9,8 @@ using ll = long long;
 #define debug(...) 0
 #endif
 
-void SolveOne() {
-  const int n = 1e7;
-  for (int i = 0; i < n; ++i) cout << i;
+void SolveOne(){
+  // TODO
 };
 
 void Solve() {

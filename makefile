@@ -6,6 +6,7 @@ copy_cc := copy.cc
 output := out
 input := in
 reset_cc := reset.cc
+compile_out := compile_out
 
 define re
 	echo > ${input}
@@ -39,10 +40,15 @@ simple:
 
 ${obj}: ${src}
 	rm -f ${obj}*
-	$(CC) ${debug} ${src} -o ${obj} 2>&1 | tee ${output}
+	$(CC) ${debug} ${src} -o ${obj} 2>&1 | tee ${compile_out}
+
+define run_in
+	cat ${input}
+	./${obj} < ${input} 2>&1 | tee ${output}
+endef
 
 main: ${obj}
-	./${obj} < ${input} 2>&1 | tee ${output}
+	$(run_in)
 
 clean:
 	rm -f ${sol_swap}
