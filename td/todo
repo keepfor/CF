@@ -1,16 +1,13 @@
 ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
 ev-station-ultra, fcd, verify sr2 sample, hw issues. (PQ6 shortcut.) 
 ev-station-ultra, fcd, develop fcd.
-ev-station-ultra, fcd, update mfg fw to 0.0.3.
-ev-station-ultra, fcd, verify mfg fw 0.0.3.
-ev-station-ultra, fcd, add shell login with password.
 ev-station-ultra, ftu, many items.
 
-ftu, [System] Check the integrity (devreg)    
-ftu, [System] Check the integrity (ubnthal)   
-ftu, [System] Check SysID       
-ftu, [System] Check MAC Address 
-ftu, [System] Check Shortname   
+ev-station-ultra, ftu, [System] Check the integrity (devreg)    
+ev-station-ultra, ftu, [System] Check the integrity (ubnthal)   
+ev-station-ultra, ftu, [System] Check SysID       
+ev-station-ultra, ftu, [System] Check MAC Address 
+ev-station-ultra, ftu, [System] Check Shortname   
 
 ev-station-ultra, ftu, help EE set up ev-station-pro ftu, dhcp, ssh, putty, udm ....
 ev-station-ultra, fcd, verify US, 002a.
@@ -187,11 +184,10 @@ help dqa address ssh issues.
 help hw_rd address dut ip issues.
 
 dfu fw upgrade fail, seems ssh lost.
+help dqa. do upgrade to shipping fw for some duts. 
 
-ev-charger, fix als issues, update cmd.
-ev-charger, fix wifi issues, update adb reconnect.
-ev-charger, NFC KMS test issues.
-ev-charger, card reader issues.
+ev-charger, NFC KMS test issues from fxn.
+ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
 ev-charger, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
 ev-charger, shipping fw downgrade fail, ota_update_evcharger_release_v1.0.262.zip  
@@ -239,12 +235,9 @@ uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix
 Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
 
-
-usp-battery, lcm reset pin test.
-usp-battery, ltn issue, not install python.
 usp-battery, cmd.exe lanuage issues.
 usp-battery, python path issues.
-usp-battery, help fw team to resign fcd to fix eeprom issues.
+usp-battery, help resign fcd to fix eeprom issues.
 usp-battery, lcm shows errors. 
 usp-battery, factory lcm process issues.
 usp-battery, dut ble key missing issues from ocean.
@@ -297,20 +290,12 @@ uisp-r, update fwupgrade, support reset ftu.
 uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 uisp-r, ecof for update mobile app ver.
 
-uisp-r-plus, disk test fail.
-uisp-r-plus, get switch temperature fail.
-
-uisp-r-plus, fcd, support exit from diag and check ubnthal.
-uisp-r-plus, fcd, support exit from diag and login.
-uisp-r-plus, fcd add check info in diag shell.
-uisp-r-plus, fcd add \r for diag shell cmd.
-uisp-r-plus, back to flash-image-0.0.1.bin.uisprplus
 uisp-r-plus, check burnin result, update parser of stress loopback sfp
-uisp-r-plus, update fan expected.
+uisp-r-plus, update fan expected speed.
 uisp-r-plus, fix backup power typo.
 uisp-r-plus, update backup power checking logic.
 uisp-r-plus, update enable burnin fan env.
-uisp-r-plus, bomrev hex.
+uisp-r-plus, check bomrev by hex.
 uisp-r-plus, exec sh issue.
 uisp-r-plus, ble calculation.
 uisp-r-plus, ble parser.
@@ -421,19 +406,12 @@ crc error, can not boot by uboot.
 help hw_rd boot from uart.
 boot from uart fail.
 rtc test has some retest. need to update.
+update ble criteria.經過FXN VN調整後，BLE測試標準改為-58~-79dBm。
+update diag to support new rtc test.
 
-uisp-s-plus, fcd, update mtdblock.
-uisp-s-plus, update fcd upgrade uboot.
-uisp-s-plus, ftu, update backup power test, update checking logic.
 uisp-s-plus, fix backup power typo.
-uisp-s-plus, update ble test flow.
-uisp-s-plus, ble parser.
 uisp-s-plus, update fan criteria.
 uisp-s-plus, update system led.
-uisp-s-plus, add snake.
-uisp-s-plus, add ble.
-uisp-s-plus, update FCD for new diag fw. (DIAG_v1.0.1)
-uisp-s-plus, update FTU for new diag fw. (DIAG_v1.0.1)
 uisp-s-plus, port led not work. (DIAG_v1.0.1)
 uisp-s-plus, fcd update upgrade diag fw.DIAG_v2.0.0: uisp-s-plus_256.ubi
 uisp-s-plus, fcd add clear env.
@@ -572,6 +550,7 @@ ftu, upgrade new shipping fw fail. (md5)
 ftu, update shipping fw.UISPS.act5.v1.0.0+ubnt.33495.5623d1e.231019.1243.bin
 Update bundled shipping FW to UISPS.act5.v1.1.0.7d997e2.231114.1307.bin.
 update snake test, test flow changes.
+update ble criteria.經過FXN VN調整後，BLE測試標準改為-58~-79dBm。
 
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
@@ -663,9 +642,6 @@ update fan 100_rpm criteria to 8000~10000.
 
 
 uisp-r-pro, update security test with new parsing pattern and expected result.
-uisp-r-pro, update lcm cmd to fix lcm backlight and burnin issues.
-uisp-r-pro, update lcm cmd to fix, undecode error.
-uisp-r-pro, update shipping fw to: UISPR.alpinev2r.v3.0.1.4938c4c.221215.1246.bin.
 uisp-r-pro, rpi4, usb not mount. reported by fw andrew.
 1. Remove UISPR.alpinev2.v9.0.10.a683096.221116.0525.bin
 2. Update Diag FW to UISPR.alpinev2.v9.0.11.246ff2f.230303.0209.bin 
@@ -781,7 +757,7 @@ cancel some test cases, reduce testing time.
 fw sail upgrade firmware test timeout fail.
 add upgrade to diag fw from shipping fw.
 
-
+uisp-s-pro,
 lcm dfu cmd not work. (ucmd)
 lcm dfu cmd not work. (gpio out)
 fcd, update diag fw. (UISP-S-Pro-1.3.8-DEV09.bix)

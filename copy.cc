@@ -11,20 +11,39 @@ using ll = long long;
 
 void SolveOne() {
   // TODO
-  ll a, m, l, r;
-  cin >> a >> m >> l >> r;
-  --l;
-  auto f = [&](ll x, ll y) -> ll {
-    if (y < 0) {
-      y = -y;
-      x = -x;
+  int n;
+  cin >> n;
+  vector<pair<int, int>> a(n);
+  for (int i = 0; i < n; ++i) {
+    cin >> a[i].first;
+    a[i].second = i;
+  }
+  if (!a[0].first) {
+    cout << -1 << '\n';
+    return;
+  }
+  sort(a.begin() + 1, a.end(), greater<pair<int, int>>());
+  int j = 1;
+  vector<pair<int, int>> ans;
+  for (int i = 0; i < n; ++i) {
+    while (j < n and a[i].first) {
+      ans.emplace_back(a[i].second, a[j].second);
+      ++j;
+      --a[i].first;
     }
-    if (x < 0) {
-      return (x - y + 1) / y;
+    if (j == n) {
+      break;
     }
-    return x / y;
-  };
-  cout << f(r - a, m) - f(l - a, m) << '\n';
+  }
+  if (j != n) {
+    cout << -1 << '\n';
+    return;
+  }
+  const int m = ans.size();
+  cout << m << '\n';
+  for (int i = 0; i < m; ++i) {
+    cout << ans[i].first + 1 << ' ' << 1 + ans[i].second << '\n';
+  }
 };
 
 void Solve() {
