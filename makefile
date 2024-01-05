@@ -33,7 +33,7 @@ clear:
 	clear
 
 verbose:
-	$(CC) ${CXXFLAGS} ${debug} ${src} -o ${obj}  
+	$(CC) ${CXXFLAGS} ${debug} ${src} -o ${obj} 2>&1 | tee ${compile_out}
 
 simple:
 	$(CC) ${debug} ${src} -o ${obj}  

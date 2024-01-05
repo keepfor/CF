@@ -10,12 +10,12 @@ using namespace std;
 
 using ll = long long;
 
-void SolveOne(){
-  // TODO
+void SolveOne() {
 };
 
-void Solve() {
+void SolveAll() {
   int t = 1;
+  // cin >> t;
   while (t--) {
     SolveOne();
   }
@@ -25,6 +25,6 @@ inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
 int32_t main() {
   SetIO();
-  Solve();
+  SolveAll();
   return 0;
 }

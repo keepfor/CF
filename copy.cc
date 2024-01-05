@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-using ll = long long;
 
 #ifdef DEBUG
 #include "lib/debug.cc"
@@ -9,42 +8,9 @@ using ll = long long;
 #define debug(...) 0
 #endif
 
-void SolveOne() {
-  // TODO
-  int n;
-  cin >> n;
-  vector<pair<int, int>> a(n);
-  for (int i = 0; i < n; ++i) {
-    cin >> a[i].first;
-    a[i].second = i;
-  }
-  if (!a[0].first) {
-    cout << -1 << '\n';
-    return;
-  }
-  sort(a.begin() + 1, a.end(), greater<pair<int, int>>());
-  int j = 1;
-  vector<pair<int, int>> ans;
-  for (int i = 0; i < n; ++i) {
-    while (j < n and a[i].first) {
-      ans.emplace_back(a[i].second, a[j].second);
-      ++j;
-      --a[i].first;
-    }
-    if (j == n) {
-      break;
-    }
-  }
-  if (j != n) {
-    cout << -1 << '\n';
-    return;
-  }
-  const int m = ans.size();
-  cout << m << '\n';
-  for (int i = 0; i < m; ++i) {
-    cout << ans[i].first + 1 << ' ' << 1 + ans[i].second << '\n';
-  }
-};
+using ll = long long;
+
+void SolveOne(){};
 
 void Solve() {
   int t = 1;
