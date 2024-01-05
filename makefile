@@ -43,6 +43,7 @@ $(prog): $(src)
 	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(output)
 
 main: $(prog)
+	cat $(input)
 	./$(prog) < $(input) 2>&1 | tee $(output) 
 
 clean:

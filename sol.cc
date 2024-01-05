@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-using ll = long long;
 
 #ifdef DEBUG
 #include "lib/debug.cc"
@@ -9,13 +8,14 @@ using ll = long long;
 #define debug(...) 0
 #endif
 
+using ll = long long;
+
 void SolveOne() {
-  // TODO
-  for (int i = 0; i < 1e6; ++i) cout << i;
 }
 
-void Solve() {
+void SolveAll() {
   int t = 1;
+  //cin >> t;
   while (t--) {
     SolveOne();
   }
@@ -25,6 +25,6 @@ inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
 int32_t main() {
   SetIO();
-  Solve();
+  SolveAll();
   return 0;
 }

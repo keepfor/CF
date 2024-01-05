@@ -11,11 +11,29 @@ using ll = long long;
 
 void SolveOne() {
   // TODO
-  for (int i = 0; i < 1e6; ++i) cout << i;
+  ll a, b;
+  cin >> a >> b;
+  ll g = gcd(a, b);
+  if (a == 1) {
+    cout << b * b << '\n';
+    return;
+  }
+  if (g == 1) {
+    cout << a * b << '\n';
+    return;
+  }
+  for (int i = 2; i * i <= b; ++i) {
+    if (b % i == 0) {
+      cout << b * i << '\n';
+      return;
+    }
+  }
+  cout << b * b << '\n';
 }
 
 void Solve() {
   int t = 1;
+  cin >> t;
   while (t--) {
     SolveOne();
   }
