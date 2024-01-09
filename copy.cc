@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-using ll = long long;
 
 #ifdef DEBUG
 #include "lib/debug.cc"
@@ -9,31 +8,31 @@ using ll = long long;
 #define debug(...) 0
 #endif
 
+using ll = long long;
+
 void SolveOne() {
-  // TODO
-  ll a, b;
-  cin >> a >> b;
-  ll g = gcd(a, b);
-  if (a == 1) {
-    cout << b * b << '\n';
-    return;
+  int n;
+  cin >> n;
+  vector<ll> a(n);
+  for (auto& i : a) {
+    cin >> i;
   }
-  if (g == 1) {
-    cout << a * b << '\n';
-    return;
-  }
-  for (int i = 2; i * i <= b; ++i) {
-    if (b % i == 0) {
-      cout << b * i << '\n';
-      return;
+  sort(a.rbegin(), a.rend());
+  ll ans = 0;
+  ll x = a[0] + 1;
+  for (auto& i : a) {
+    --x;
+    if (x > i) {
+      x = i;
     }
+    ans += max(0ll, x);
   }
-  cout << b * b << '\n';
+  cout << ans << '\n';
 }
 
-void Solve() {
+void SolveAll() {
   int t = 1;
-  cin >> t;
+  // cin >> t;
   while (t--) {
     SolveOne();
   }
@@ -43,6 +42,6 @@ inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
 int32_t main() {
   SetIO();
-  Solve();
+  SolveAll();
   return 0;
 }

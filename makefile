@@ -10,6 +10,7 @@ reset_cc := reset.cc
 copy_cc := copy.cc
 gen_cc := gen.cc
 gen := gen
+compile_out := compile_out
 
 define re 
 	> $(input)
@@ -40,7 +41,7 @@ verbose:
 
 $(prog): $(src)
 	rm -rf $(prog)
-	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(output)
+	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(compile_out)
 
 main: $(prog)
 	cat $(input)
