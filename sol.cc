@@ -8,12 +8,11 @@
 
 using namespace std;
 
-void SolveOne() {
-}
+void SolveOne() {}
 
 void SolveAll() {
   int t = 1;
-  //cin >> t;
+  // cin >> t;
   while (t--) {
     SolveOne();
   }
