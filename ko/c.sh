@@ -1,0 +1,1 @@
+kotlinc sol.kt -include-runtime -d sol.jar

@@ -409,6 +409,11 @@ rtc test has some retest. need to update.
 update ble criteria.經過FXN VN調整後，BLE測試標準改為-58~-79dBm。
 update diag to support new rtc test.
 
+Update BLE RSSI range to [-58, -79] dBm.
+Update RTC test expected range to [4.99, 5.01].
+Add support of RTC test expected range user configuration.
+Add retry 2 times to RTC test.
+
 uisp-s-plus, fix backup power typo.
 uisp-s-plus, update fan criteria.
 uisp-s-plus, update system led.

@@ -1,14 +1,12 @@
 #include <bits/stdc++.h>
 
-using namespace std;
-
 #ifdef DEBUG
 #include "lib/debug.cc"
 #else
 #define debug(...) 0
 #endif
 
-using ll = long long;
+using namespace std;
 
 void SolveOne() {
 };

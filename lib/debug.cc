@@ -1,7 +1,5 @@
-#ifdef TEST
 #include <bits/stdc++.h>
 using namespace std;
-#endif
 
 template <typename A, typename B>
 string to_string(pair<A, B> p);
