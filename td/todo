@@ -185,6 +185,9 @@ help hw_rd address dut ip issues.
 
 dfu fw upgrade fail, seems ssh lost.
 help dqa. do upgrade to shipping fw for some duts. 
+* Update bundled shipping FW to UM-EVS-v0.1.5-0-2b53cae-240111.1212-M.bin.
+* Reset-to-Default ssh issues for new FW.
+* Update Reset-to-Default cmd.
 
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
@@ -413,6 +416,7 @@ Update BLE RSSI range to [-58, -79] dBm.
 Update RTC test expected range to [4.99, 5.01].
 Add support of RTC test expected range user configuration.
 Add retry 2 times to RTC test.
+update RTC range to 4.99 - 5.2.
 
 uisp-s-plus, fix backup power typo.
 uisp-s-plus, update fan criteria.
@@ -737,6 +741,7 @@ update controller app ver, ecof.
 Application FW, UISPP.v1.0.2.cb9fcc.230616.1138.bin
 cancel some test cases, reduce testing time.
 add upgrade to diag fw from shipping fw.
+Update bundled shipping FW to UISPP.v1.0.4.917f93.240102.0843.bin.
 
 
 uisp-p, update fcd with new DIAG(v9.0.8)
@@ -761,6 +766,7 @@ runtime fw upgrade issues, timeout error, two network cards and ping.
 cancel some test cases, reduce testing time.
 fw sail upgrade firmware test timeout fail.
 add upgrade to diag fw from shipping fw.
+Update bundled shipping FW to UISPP.v1.0.4.917f93.240102.0843.bin.
 
 uisp-s-pro,
 lcm dfu cmd not work. (ucmd)
