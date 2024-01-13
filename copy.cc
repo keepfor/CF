@@ -9,30 +9,19 @@
 using namespace std;
 
 void SolveOne() {
+  int r, d;
+  cin >> r >> d;
   int n;
   cin >> n;
-  vector<int> v(n);
-  for (auto& i : v) {
-    cin >> i;
-  }
-  using ll = long long;
-  vector<ll> dp(n);
-  dp[0] = 1;
-  const ll mod = 998244353;
-  const int z = 401;
-  vector<vector<ll>> b(z + 1, vector<ll>(z + 1));
-  ll ans = 0;
+  int ans = 0;
   for (int i = 0; i < n; ++i) {
-    for (int j = 1; j < z; ++j) {
-      dp[i] = (dp[i] + b[j][i % j]) % mod;
-    }
-    ans = (ans + dp[i]) % mod;
-    if (v[i] < z) {
-      b[v[i]][i % v[i]] = (b[v[i]][i % v[i]] + dp[i]) % mod;
-    } else {
-      for (int j = i + v[i]; j < n; j += v[i]) {
-        dp[j] = (dp[j] + dp[i]) % mod;
-      }
+    int x, y;
+    cin >> x >> y;
+    int c;
+    cin >> c;
+    double di = sqrt(x * x + y * y);
+    if (di - c - (r - d) >= 0 and di + c <= r) {
+      ++ans;
     }
   }
   cout << ans << '\n';
