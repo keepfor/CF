@@ -8,7 +8,20 @@
 
 using namespace std;
 
-void SolveOne() {}
+void SolveOne() {
+  int n;
+  cin >> n;
+  vector<int> a(2 * n);
+  for (auto& i : a) {
+    cin >> i;
+  }
+  sort(a.begin(), a.end());
+  if (a[n - 1] == a[n]) {
+    cout << "NO\n";
+  } else {
+    cout << "YES\n";
+  }
+}
 
 void SolveAll() {
   int t = 1;

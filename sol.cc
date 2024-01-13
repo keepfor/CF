@@ -8,12 +8,14 @@
 
 using namespace std;
 
-void SolveOne() {}
+void SolveOne() {
+
+}
 
 void SolveAll() {
-  int t = 1;
-  // cin >> t;
-  while (t--) {
+  int test_case_num = 1;
+  //cin >> test_case_num;
+  while (test_case_num--) {
     SolveOne();
   }
 }
