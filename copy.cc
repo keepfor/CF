@@ -9,27 +9,26 @@
 using namespace std;
 
 void SolveOne() {
-  int r, d;
-  cin >> r >> d;
-  int n;
-  cin >> n;
-  int ans = 0;
-  for (int i = 0; i < n; ++i) {
-    int x, y;
-    cin >> x >> y;
-    int c;
-    cin >> c;
-    double di = sqrt(x * x + y * y);
-    if (di - c - (r - d) >= 0 and di + c <= r) {
-      ++ans;
+  using ll = long long;
+  ll a, b;
+  cin >> a >> b;
+  if (a - b > 1) {
+    cout << "NO\n";
+    return;
+  }
+  ll c = a * a - b * b;
+  for (ll i = 2; i * i <= c; ++i) {
+    if (c % i == 0) {
+      cout << "NO\n";
+      return;
     }
   }
-  cout << ans << '\n';
+  cout << "YES\n";
 };
 
 void SolveAll() {
   int test_case_num = 1;
-  // cin >> test_case_num;
+  cin >> test_case_num;
   while (test_case_num--) {
     SolveOne();
   }

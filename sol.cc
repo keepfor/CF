@@ -8,23 +8,8 @@
 
 using namespace std;
 
-void SolveOne() {
-  int r, d;
-  cin >> r >> d;
-  int n;
-  cin >> n;
-  int ans = 0;
-  for (int i = 0; i < n; ++i) {
-    int x, y;
-    cin >> x >> y;
-    int c;
-    cin >> c;
-    double di = sqrt(x * x + y * y);
-    if (di - c - (r - d) >= 0 and di + c <= r) {
-      ++ans;
-    }
-  }
-  cout << ans << '\n';
+void SolveOne(){
+
 };
 
 void SolveAll() {
