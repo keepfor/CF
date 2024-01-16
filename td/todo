@@ -1,15 +1,11 @@
-ev-station-ultra, fcd, verify sr2 sample. (SR2 Power Board (11-09730-02))
-ev-station-ultra, fcd, verify sr2 sample, hw issues. (PQ6 shortcut.) 
-ev-station-ultra, fcd, develop fcd.
 ev-station-ultra, ftu, many items.
 
-ev-station-ultra, ftu, [System] Check the integrity (devreg)    
-ev-station-ultra, ftu, [System] Check the integrity (ubnthal)   
-ev-station-ultra, ftu, [System] Check SysID       
-ev-station-ultra, ftu, [System] Check MAC Address 
-ev-station-ultra, ftu, [System] Check Shortname   
+ev-station-ultra, add ftu, [System] Check the integrity (devreg)    
+ev-station-ultra, add ftu, [System] Check the integrity (ubnthal)   
+ev-station-ultra, add ftu, [System] Check SysID       
+ev-station-ultra, add ftu, [System] Check MAC Address 
+ev-station-ultra, add ftu, [System] Check Shortname   
 
-ev-station-ultra, ftu, help EE set up ev-station-pro ftu, dhcp, ssh, putty, udm ....
 ev-station-ultra, fcd, verify US, 002a.
 ev-station-ultra, ftu, add led control. 0.0.4
 ev-station-ultra, fcd, support upgrade uboot. 0.0.4
@@ -238,9 +234,8 @@ uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix
 Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
 
-usp-battery, cmd.exe lanuage issues.
+usp-battery, support different decoding for different cmd.exe lanuage. 
 usp-battery, python path issues.
-usp-battery, help resign fcd to fix eeprom issues.
 usp-battery, lcm shows errors. 
 usp-battery, factory lcm process issues.
 usp-battery, dut ble key missing issues from ocean.
@@ -284,6 +279,12 @@ leakage current.
 help tatun factory.
 fcd issues in tatun factory.
 
+add plc test.
+add boost voltage test.
+verify burnin with new test fw.
+verify multiple ble function tests with new test fw.
+調整一下boost電壓的criteria 54100mV~57500mV.
+
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.
 uisp-r, Add user config for ip after FW upgrade for FW upgrade test.
@@ -293,24 +294,29 @@ uisp-r, update fwupgrade, support reset ftu.
 uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 uisp-r, ecof for update mobile app ver.
 
-uisp-r-plus, check burnin result, update parser of stress loopback sfp
-uisp-r-plus, update fan expected speed.
 uisp-r-plus, fix backup power typo.
 uisp-r-plus, update backup power checking logic.
 uisp-r-plus, update enable burnin fan env.
-uisp-r-plus, check bomrev by hex.
 uisp-r-plus, exec sh issue.
 uisp-r-plus, ble calculation.
 uisp-r-plus, ble parser.
 uisp-r-plus, update test name of ble.
+
+uisp-r-plus, fcd, update and test diag fw. (9.0.2)
+uisp-r-plus, ftu, update expected diag fw ver. (9.0.2)
+uisp-r-plus, ftu, add poe test. (9.0.2)
+uisp-r-plus, ftu, update fan expected range. (9.0.2)
+uisp-r-plus, ftu, add new burnin env (burnFailedStop). (9.0.2)
+
 uisp-r-plus, update fan criteria.
 uisp-r-plus, add poe test.
-uisp-r-plus, poe test issue. diag v9.0.1
 uisp-r-plus, separate poe function and led.
 uisp-r-plus, burnin reboot issue, update diag.
 uisp-r-plus, fcd, emmc format issues, update fcd.
 uisp-r-plus, r+ Port LED test順序幫我修改一下
 uisp-r-plus, uisp-r-plus, update ble test flow. (init_bt)
+
+
 diag 9.0.3.
 ubnt_uispr_cn91xx_rev1_boot_0.0.3.img
 UISPR.cn91xx.v9.0.3+ubnt.136.446d52eM.230626.2359.bin
@@ -420,14 +426,8 @@ update RTC range to 4.99 - 5.2.
 
 uisp-s-plus, fix backup power typo.
 uisp-s-plus, update fan criteria.
-uisp-s-plus, update system led.
-uisp-s-plus, port led not work. (DIAG_v1.0.1)
-uisp-s-plus, fcd update upgrade diag fw.DIAG_v2.0.0: uisp-s-plus_256.ubi
-uisp-s-plus, fcd add clear env.
-uisp-s-plus, fcd add set env.
-uisp-s-plus, fcd update diag fw.
-uisp-s-plus, fcd update helper.
-uisp-s-plus, fcd update mtdblock.
+uisp-s-plus, fcd update diag fw. (new DIAG_v2.0.0) 
+uisp-s-plus, fcd update helper. (helper_MRVL_ACT5_release_04) ??
 uisp-s-plus, fine tune fcd ping timeout.
 uisp-s-plus, Production test process update for improving CT
 
