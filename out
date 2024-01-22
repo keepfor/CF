@@ -1,40 +1,6 @@
-Count = 29
-EV
-TWFCD-4918, EV-CHARGER, card reader issues from fxn.
-TWFCD-4919, EV-CHARGER, NFC KMS test issues from fxn.
-TWFCD-4988, EV-STATION-ULTRA, add ftu, [System] Check MAC Address
-TWFCD-4989, EV-STATION-ULTRA, add ftu, [System] Check Shortname
-TWFCD-4990, EV-STATION-ULTRA, add ftu, [System] Check SysID
-TWFCD-4987, EV-STATION-ULTRA, add ftu, [System] Check the integrity (devreg)
-TWFCD-4991, EV-STATION-ULTRA, add ftu, [System] Check the integrity (ubnthal)
-
-UACC
-TWFCD-4446, UACC-LTE, switch to usb mode fail in ltn. (usb cable issues)
-
-UISP
-TWFCD-4992, UISP-R-PLUS, fcd, update and test diag fw. (9.0.2)
-TWFCD-4997, UISP-R-PLUS, ftu, add new burnin env (burnFailedStop). (9.0.2)
-TWFCD-4994, UISP-R-PLUS, ftu, add poe test. (9.0.2)
-TWFCD-4995, UISP-R-PLUS, ftu, update expected diag fw ver. (9.0.2)
-TWFCD-4993, UISP-R-PLUS, ftu, update fan expected range. (9.0.2)
-TWFCD-4996, UISP-R-PLUS, update ble rssi, improve retest.
-TWFCD-4923, UISP-R-PRO, rpi4, usb not mount. reported by fw_rd.
-TWFCD-4924, UISP-R-PRO, update Diag FW to UISPR.alpinev2.v9.0.11.
-TWFCD-4925, UISP-R-PRO, update security test with new parsing pattern and expected result.
-TWFCD-4442, UISP-S, ftu, update shipping FW, rtl838x.v1.5.2.
-TWFCD-4986, UISP-S-PLUS, fine tune fcd ping timeout.
-TWFCD-4984, UISP-S-PLUS, showmac issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
-TWFCD-4983, UISP-S-PLUS, showSys issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
-TWFCD-4985, UISP-S-PLUS, update ftu fan criteria.
-TWFCD-4701, UISP-S-PRO, verify lcm dfu test cmds.
-
-USP
-TWFCD-5000, USP-BATTERY, dut ble key missing issues.
-TWFCD-4998, USP-BATTERY, factory lcm process issues.
-TWFCD-4999, USP-BATTERY, lcm shows errors.
-TWFCD-5001, USP-BATTERY, support different decoding for different cmd.exe lanuage.
-
-USW
-TWFCD-4713, USW-AGGREGATION, fix enable burnin issues with new cmd and rework burnin station.
-TWFCD-4785, USW-FLEX, ftu, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
-
+3
+3 4 5
+2 4 5
+1 4 5
+-1
+0

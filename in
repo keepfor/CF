@@ -1,58 +1,7 @@
-usp-battery, support different decoding for different cmd.exe lanuage.
-usp-battery, dut ble key missing issues.
-usp-battery, lcm shows errors.
-usp-battery, factory lcm process issues.
-uisp-r-plus, ftu, add new burnin env (burnFailedStop). (9.0.2)
-uisp-r-plus, update ble rssi, improve retest.
-uisp-r-plus, ftu, update expected diag fw ver. (9.0.2)
-uisp-r-plus, ftu, add poe test. (9.0.2)
-uisp-r-plus, ftu, update fan expected range. (9.0.2)
-uisp-r-plus, fcd, update and test diag fw. (9.0.2)
-ev-station-ultra, add ftu, [System] Check the integrity (ubnthal)
-ev-station-ultra, add ftu, [System] Check SysID
-ev-station-ultra, add ftu, [System] Check Shortname
-ev-station-ultra, add ftu, [System] Check MAC Address
-ev-station-ultra, add ftu, [System] Check the integrity (devreg)
-uisp-s-plus, fine tune fcd ping timeout.
-uisp-s-plus, showmac issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
-uisp-s-plus, update ftu fan criteria.
-uisp-s-plus, showSys issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
-uisp-r-pro, update Diag FW to UISPR.alpinev2.v9.0.11.
-uisp-r-pro, update security test with new parsing pattern and expected result.
-uisp-r-pro, rpi4, usb not mount. reported by fw_rd.
-ev-charger, NFC KMS test issues from fxn.
-ev-charger, card reader issues from fxn.
-usw-flex, ftu, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
-usw-aggregation, fix enable burnin issues with new cmd and rework burnin station.
-uisp-s-pro, verify lcm dfu test cmds.
-uacc-lte, switch to usb mode fail in ltn. (usb cable issues)
-uisp-s, ftu, update shipping FW, rtl838x.v1.5.2.
-TWFCD-5001
-TWFCD-5000
-TWFCD-4999
-TWFCD-4998
-TWFCD-4997
-TWFCD-4996
-TWFCD-4995
-TWFCD-4994
-TWFCD-4993
-TWFCD-4992
-TWFCD-4991
-TWFCD-4990
-TWFCD-4989
-TWFCD-4988
-TWFCD-4987
-TWFCD-4986
-TWFCD-4984
-TWFCD-4985
-TWFCD-4983
-TWFCD-4924
-TWFCD-4925
-TWFCD-4923
-TWFCD-4919
-TWFCD-4918
-TWFCD-4785
-TWFCD-4713
-TWFCD-4701
-TWFCD-4446
-TWFCD-4442
+3
+5
+5 -4 2 -1 2
+3
+4 3 2
+3
+-3 -2 -1

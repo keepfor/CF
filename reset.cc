@@ -1,10 +1,10 @@
-#include <bits/stdc++.h>
-
 #ifdef DEBUG
-#include "lib/debug.cc"
+#include "lib/debug.h"
 #else
-#define debug(...) 0
+#define debug(...) 7
 #endif
+
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -13,9 +13,9 @@ void SolveOne(){
 };
 
 void SolveAll() {
-  int test_case_num = 1;
-  // cin >> test_case_num;
-  while (test_case_num--) {
+  int t = 1;
+  // cin >> t;
+  while (t--) {
     SolveOne();
   }
 }

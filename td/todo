@@ -185,6 +185,9 @@ help dqa. do upgrade to shipping fw for some duts.
 * Reset-to-Default ssh issues for new FW.
 * Update Reset-to-Default cmd.
 
+ap link environment question from cm, u6 lan need ?
+fcd deploy issue from cm. deploy fail.
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
@@ -284,6 +287,29 @@ add boost voltage test.
 verify burnin with new test fw.
 verify multiple ble function tests with new test fw.
 調整一下boost電壓的criteria 54100mV~57500mV.
+
+prod fw:
+f3fb61636e37672d36fdec5972798387  upb.efr32_1.1.8+372.240116.0247.bin
+diag fw gbl:
+11b39b1ae71d54002b15ee967b13fbc5  upb.efr32app_1.1.8.gbl
+diag fw bin:
+de911037c22ff66fbe2c57eab78b7d27  upb.efr32diag_1.1.8+372.240116.0246.bin
+diag recovery fw gbl:
+6906d5ec915195f8b27455e6e926fa54  upb.efr32recovery_1.1.8.gbl
+
+update-fw fail, upb.efr32app_1.1.8.gbl. (FAIL, exceed the maximum_listen_time 30 to expect: Batt: Battery is ready!
+update update app diag fw, check ver directly.
+battery fw update fail. 一直跑出錯誤的ver(0.4.0)
+battery fw update fail. i2c error. fw change clock rate.
+verify test fw. for batt upgrade.
+lcm error for new diag fw.
+verify test fw. for lcm upgrade.
+bt connect fail. new fw.
+run fcd for bt.
+bt still fail after fcd.
+
+gbl file naming change.
+bt fail on ty.
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.
@@ -423,6 +449,7 @@ Update RTC test expected range to [4.99, 5.01].
 Add support of RTC test expected range user configuration.
 Add retry 2 times to RTC test.
 update RTC range to 4.99 - 5.2.
+update ble test expected rssi range. (-70, -50)
 
 uisp-s-plus, fix backup power typo.
 uisp-s-plus, update fan criteria.
@@ -560,6 +587,7 @@ ftu, update shipping fw.UISPS.act5.v1.0.0+ubnt.33495.5623d1e.231019.1243.bin
 Update bundled shipping FW to UISPS.act5.v1.1.0.7d997e2.231114.1307.bin.
 update snake test, test flow changes.
 update ble criteria.經過FXN VN調整後，BLE測試標準改為-58~-79dBm。
+update ble test expected rssi range. (-70, -50)
 
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
