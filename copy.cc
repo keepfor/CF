@@ -1,26 +1,18 @@
-#include <bits/stdc++.h>
-
 #ifdef DEBUG
-#include "lib/debug.cc"
+#include "lib/debug.h"
 #else
-#define debug(...) 0
+#define debug(...) 4
 #endif
+
+#include <bits/stdc++.h>
 
 using namespace std;
 
 void SolveOne() {
-  int n;
-  cin >> n;
-  vector<int> a(2 * n);
-  for (auto& i : a) {
-    cin >> i;
+  for (int i = 0; i < 100; ++i) {
+    debug(i);
   }
-  sort(a.begin(), a.end());
-  if (a[n - 1] == a[n]) {
-    cout << "NO\n";
-  } else {
-    cout << "YES\n";
-  }
+  cout << '\n';
 }
 
 void SolveAll() {

@@ -1,21 +1,24 @@
-#include <bits/stdc++.h>
-
 #ifdef DEBUG
-#include "lib/debug.cc"
+#include "lib/debug.h"
 #else
-#define debug(...) 0
+#define debug(...) 4
 #endif
+
+#include <bits/stdc++.h>
 
 using namespace std;
 
 void SolveOne() {
-
+  for (int i = 0; i < 100; ++i) {
+    debug(i);
+  }
+  cout << '\n';
 }
 
 void SolveAll() {
-  int test_case_num = 1;
-  //cin >> test_case_num;
-  while (test_case_num--) {
+  int t = 1;
+  // cin >> t;
+  while (t--) {
     SolveOne();
   }
 }
