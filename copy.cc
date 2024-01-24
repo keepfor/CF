@@ -9,30 +9,22 @@
 using namespace std;
 
 void SolveOne() {
-  using ll = long long;
   int n;
-  cin >> n;
-  vector<ll> v(n);
-  for (auto& i : v) {
-    cin >> i;
-  }
-  if (is_sorted(v.begin(), v.end())) {
-    cout << 0 << '\n';
+  string s;
+  cin >> n >> s;
+  s = "0" + s + "0";
+  bool no = s.find("11") != string::npos;
+  no |= s.find("000") != string::npos;
+  if (no) {
+    cout << "No\n";
     return;
   }
-  if (v[n - 1] < 0 or v[n - 2] > v[n - 1]) {
-    cout << -1 << '\n';
-    return;
-  }
-  cout << n - 2 << '\n';
-  for (int i = n - 3; i >= 0; --i) {
-    cout << i + 1 << ' ' << n - 1 << ' ' << n << '\n';
-  }
+  cout << "Yes\n";
 };
 
 void SolveAll() {
   int t = 1;
-  cin >> t;
+  // cin >> t;
   while (t--) {
     SolveOne();
   }

@@ -310,6 +310,7 @@ bt still fail after fcd.
 
 gbl file naming change.
 bt fail on ty.
+bt fail, rpi4 issue.
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.
