@@ -1,11 +1,5 @@
 ev-station-ultra, ftu, many items.
 
-ev-station-ultra, add ftu, [System] Check the integrity (devreg)    
-ev-station-ultra, add ftu, [System] Check the integrity (ubnthal)   
-ev-station-ultra, add ftu, [System] Check SysID       
-ev-station-ultra, add ftu, [System] Check MAC Address 
-ev-station-ultra, add ftu, [System] Check Shortname   
-
 ev-station-ultra, fcd, verify US, 002a.
 ev-station-ultra, ftu, add led control. 0.0.4
 ev-station-ultra, fcd, support upgrade uboot. 0.0.4
@@ -455,11 +449,16 @@ Add retry 2 times to RTC test.
 update RTC range to 4.99 - 5.2.
 update ble test expected rssi range. (-70, -50)
 
+uisp-r-plus, Update BLE RSSI range to [-70, -50] dBm.
+uisp-r-plus, Update RTC test expected range to [4.99, 5.2].
+uisp-r-plus, Add support of RTC test expected range user configuration.
+uisp-r-plus, Add retry 2 times to RTC test.
+
+
 uisp-s-plus, fix backup power typo.
 uisp-s-plus, update fan criteria.
 uisp-s-plus, fcd update diag fw. (new DIAG_v2.0.0) 
 uisp-s-plus, fcd update helper. (helper_MRVL_ACT5_release_04) ??
-uisp-s-plus, fine tune fcd ping timeout.
 uisp-s-plus, Production test process update for improving CT
 
 uisp-s-plus, Port LED test, cmd flow change.

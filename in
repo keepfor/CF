@@ -1,33 +1,52 @@
-3
-
-5 Gleb
-
-66-66-66
-
-55-55-55
-
-01-01-01
-
-65-43-21
-
-12-34-56
-
-3 Serega
-
-55-55-55
-
-87-65-43
-
-65-55-21
-
-5 Melnik
-
-12-42-12
-
-87-73-01
-
-36-04-12
-
-88-12-22
-
-82-11-43
+uisp-s-plus, fcd update helper. (helper_MRVL_ACT5_release_04)
+uisp-s-plus, Port LED test, flow change.
+ev-station-ultra, fcd, verify US registration, 002a.
+ev-station-ultra, fcd, support upgrade uboot.
+uisp-p, Update shipping fw.
+uisp-p-pro, Update shipping fw.
+uisp-r-plus, Update RTC test expected range to [4.99, 5.2].
+uisp-r-plus, Add support of RTC test expected range user configuration.
+uisp-r-plus, Update BLE RSSI range to [-70, -50] dBm.
+uisp-r-plus, Add retry 2 times to RTC test.
+usp-battery, Update app diag FW.
+usp-battery, dut ble key missing issues.
+usp-battery, lcm shows errors.
+usp-battery, factory lcm process issues.
+uisp-r-plus, ftu, add new burnin env (burnFailedStop). (9.0.2)
+uisp-r-plus, ftu, add poe test. (9.0.2)
+uisp-r-plus, ftu, update fan expected range. (9.0.2)
+uisp-r-pro, update Diag FW to UISPR.alpinev2.v9.0.11.
+uisp-r-pro, update security test with new parsing pattern and expected result.
+uisp-r-pro, rpi4, usb not mount. reported by fw_rd.
+ev-charger, NFC KMS test issues from fxn.
+ev-charger, card reader issues from fxn.
+usw-flex, ftu, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
+uisp-s-pro, verify lcm dfu test cmds.
+uacc-lte, switch to usb mode fail in ltn. (usb cable issues)
+uisp-s, ftu, update shipping FW, rtl838x.v1.5.2.
+TWFCD-5060
+TWFCD-5059
+TWFCD-5058
+TWFCD-5057
+TWFCD-5056
+TWFCD-5055
+TWFCD-5054
+TWFCD-5053
+TWFCD-5052
+TWFCD-5051
+TWFCD-5050
+TWFCD-5000
+TWFCD-4999
+TWFCD-4998
+TWFCD-4997
+TWFCD-4994
+TWFCD-4993
+TWFCD-4924
+TWFCD-4925
+TWFCD-4923
+TWFCD-4919
+TWFCD-4918
+TWFCD-4785
+TWFCD-4701
+TWFCD-4446
+TWFCD-4442

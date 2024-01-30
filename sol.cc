@@ -1,143 +1,144 @@
-#ifdef DEBUG
-#include "lib/debug.h"
-#else
-#define debug(...) 7
-#endif
-
 #include <bits/stdc++.h>
-
 using namespace std;
 
-struct P {
-  string s;
-  int t;
-  int p;
-  int g;
-  P() {
-    s = "";
-    t = p = g = 0;
-  }
-};
+#ifdef LOCAL
+#include "./lib/debug.h"
+#else
+#define debug(...)
+#endif
 
-void SolveOne() {
-  int n;
-  cin >> n;
-  vector<P> v;
-  int mxt = 0;
-  int mxp = 0;
-  int mxg = 0;
-  while (n--) {
-    int m;
-    string s;
-    cin >> m >> s;
-    P p;
-    p.s = s;
-    while (m--) {
-      string t;
-      cin >> t;
-      bool dec = 1;
-      bool dif = 1;
-      bool eq = 1;
-      set<char> vis;
-      char pre = -1;
-      for (auto& i : t) {
-        if (i == '-') {
-          continue;
-        }
-        if (pre != -1 and i != pre) {
-          eq = 0;
-        }
-        if (pre != -1 and i >= pre) {
-          dec = 0;
-        }
-        pre = i;
-        if (vis.count(i)) {
-          dif = 0;
-        }
-        vis.insert(i);
-      }
-      if (eq) {
-        p.t += 1;
-      } else if (dec and dif) {
-        p.p += 1;
-      } else {
-        p.g += 1;
-      }
-    }
-    v.push_back(p);
-    mxt = max(p.t, mxt);
-    mxp = max(p.p, mxp);
-    mxg = max(p.g, mxg);
-  }
-  {
-    cout << "If you want to call a taxi, you should call: ";
-    vector<P> t;
-    for (auto& i : v) {
-      if (i.t == mxt) {
-        t.push_back(i);
-      }
-    }
-    const int z = t.size();
-    for (int i = 0; i < z; ++i) {
-      cout << t[i].s;
-      if (i != z - 1) {
-        cout << ", ";
-      } else {
-        cout << ".\n";
-      }
-    }
-  }
-  {
-    cout << "If you want to order a pizza, you should call: ";
-    vector<P> t;
-    for (auto& i : v) {
-      if (i.p == mxp) {
-        t.push_back(i);
-      }
-    }
-    const int z = t.size();
-    for (int i = 0; i < z; ++i) {
-      cout << t[i].s;
-      if (i != z - 1) {
-        cout << ", ";
-      } else {
-        cout << ".\n";
-      }
-    }
-  }
-  {
-    cout << "If you want to go to a cafe with a wonderful girl, you should "
-            "call: ";
-    vector<P> t;
-    for (auto& i : v) {
-      if (i.g == mxg) {
-        t.push_back(i);
-      }
-    }
-    const int z = t.size();
-    for (int i = 0; i < z; ++i) {
-      cout << t[i].s;
-      if (i != z - 1) {
-        cout << ", ";
-      } else {
-        cout << ".\n";
-      }
-    }
-  }
-};
-
-void SolveAll() {
-  int t = 1;
-  // cin >> t;
-  while (t--) {
-    SolveOne();
+static inline void lowStr(string& s) {
+  for (auto& i : s) {
+    i = char(tolower(i));
   }
 }
 
-inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
+static inline void upStr(string& s) {
+  for (auto& i : s) {
+    i = char(toupper(i));
+  }
+}
+
+static inline void readSortedPair(vector<pair<string, string>>& csp, int& sz) {
+  string s;
+
+  while (getline(cin, s)) {
+    if (s.find("TWFCD") != string::npos) break;
+    csp.emplace_back("", s);
+  }
+
+  sz = (int)csp.size();
+  int ix = 0;
+  cout << "Count = " << sz << '\n';
+
+  csp[ix] = {csp[ix].second, s + ", " + csp[ix].second};
+  ++ix;
+  while (getline(cin, s)) {
+    csp[ix] = {csp[ix].second, s + ", " + csp[ix].second};
+    ++ix;
+  }
+  sort(csp.begin(), csp.end(),
+       [&](const pair<string, string>& lhs, const pair<string, string>& rhs) {
+         string l = lhs.first;
+         string r = rhs.first;
+         lowStr(l);
+         lowStr(r);
+         return l < r;
+       });
+}
+
+static inline void getList(vector<pair<string, string>>& csp,
+                           vector<string>& cs, int& sz) {
+  for (int i = 0; i < sz; ++i) {
+    cs[i] = csp[i].second;
+  }
+}
+
+static inline void getSplit(string& i, vector<string>& sp) {
+  string ss;
+  stringstream x(i);
+
+  while (getline(x, ss, ',')) {
+    sp.push_back(ss);
+  }
+}
+
+static inline void upProName(string& i, string& ii, vector<string>& sp) {
+  auto it = ii.find(sp[1]);
+  for (int k = 0; k < (int)sp[1].size(); ++k) {
+    i[it + k] = char(toupper(i[it + k]));
+  }
+}
+
+static inline void classify(const vector<string>& pdline, vector<string>& cs,
+                            map<string, vector<string>>& all, int& sz) {
+  for (auto& i : cs) {
+    vector<string> sp;
+    getSplit(i, sp);
+
+    bool ok = false;
+    lowStr(sp[1]);
+
+    for (auto& jj : pdline) {
+      string j = jj;
+      lowStr(j);
+
+      if (sp[1].find(j) != string::npos) {
+        string ii = i;
+        lowStr(ii);
+
+        upProName(i, ii, sp);
+        all[j].push_back(i);
+
+        --sz;
+        ok = true;
+        break;
+      }
+    }
+    assert(ok && "No productline match");
+  }
+}
+
+static inline void outP(const map<string, vector<string>>& all) {
+  for (auto& [x, y] : all) {
+    string xx = x;
+    upStr(xx);
+    cout << xx << '\n';
+
+    for (auto& z : y) {
+      cout << z << '\n';
+    }
+    cout << '\n';
+  }
+}
+
+static inline void shoudZero(int& sz) { assert(!sz && "Should be Zero\n"); }
+
+static inline void genReport() {
+  const vector<string> pdline{"uisp", "usw", "usp", "uled",
+                              "uacc", "uis", "usc", "ev"};
+
+  int sz = 0;
+  map<string, vector<string>> all;
+  vector<pair<string, string>> csp;
+  vector<string> cs;
+
+  readSortedPair(csp, sz);
+  cs.resize(sz);
+  getList(csp, cs, sz);
+
+  classify(pdline, cs, all, sz);
+  shoudZero(sz);
+  outP(all);
+}
 
 int32_t main() {
-  SetIO();
-  SolveAll();
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int TESTCASE = 1;
+  while (TESTCASE--) {
+    genReport();
+  }
   return 0;
 }
