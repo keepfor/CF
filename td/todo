@@ -309,6 +309,15 @@ get burn in log fail in ty.
 burnin log fail, not found dut ble key.
 burnin log fail, ble connection fail.
 
+burnin fail in ty.
+lcm error, a12 error.
+
+devreg check fail but registration pass.
+support devreg check in fcd.
+verify new fw's dump devreg feature,
+help check e.s.0.
+verify new fw's check devreg feature,
+
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.
 uisp-r, Add user config for ip after FW upgrade for FW upgrade test.
