@@ -1,7 +1,7 @@
 #ifdef DEBUG
 #include "lib/debug.h"
 #else
-#define debug(...)
+#define debug(...) 
 #endif
 
 #include <bits/stdc++.h>
@@ -13,7 +13,7 @@ void SolveOne(){
 };
 
 void SolveAll() {
-  int t{1};
+  int t { 1 };
   // cin >> t;
   while (t--) {
     SolveOne();

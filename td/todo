@@ -752,16 +752,12 @@ usw-flex-xg, factory default issues.
 usw-flex, update shipping fw. 6.4.18.
 usw-flex, update burnin.sh, increase delay.
 
-
-
 ux issues, cm process issues.
 usw-flex, ftu, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
 verify FCD-USW-FLEX-1.0.5-4.0.66.
 fcd not found shipping fw.
 check test flow.
 update ssh login ip to 192.168.1.20.
-
-
 
 uisp-pro, ftu, Modify typo daig_fw_version to diag_fw_version.
 uisp-pro, ftu, Update BLE test, rewrite parser and calculation.
