@@ -8,23 +8,40 @@
 
 using namespace std;
 
+class Solution {
+ public:
+  long long maximumSubarraySum(vector<int>& v, int k) {
+    using ll = long long;
+    map<ll, ll> vis;
+    const int n = v.size();
+    const ll inf = 1e15;
+    ll ans = -inf;
+    ll sum = 0;
+    for (int i = 0; i < n; ++i) {
+      if (vis.count(v[i])) {
+        vis[v[i]] = min(vis[v[i]], sum);
+      } else {
+        vis[v[i]] = sum;
+      }
+      sum += (ll)v[i];
+      if (vis.count(v[i] - k)) {
+        ans = max(ans, sum - vis[v[i] - k]);
+      }
+      if (vis.count(v[i] + k)) {
+        ans = max(ans, sum - vis[v[i] + k]);
+      }
+    }
+    if (ans <= -inf) {
+      ans = 0;
+    }
+    return ans;
+  }
+};
+
 void SolveOne() {
-  int n;
-  cin >> n;
-  set<int> x, y;
-  for (int i = 0; i < n; ++i) {
-    int a, b;
-    cin >> a >> b;
-    x.insert(a);
-    y.insert(b);
-  }
-  if (x.size() == 2 and y.size() == 2) {
-    int dx = *x.begin() - *next(x.begin());
-    int dy = *y.begin() - *next(y.begin());
-    cout << abs(dx) * abs(dy) << '\n';
-  } else {
-    cout << -1 << '\n';
-  }
+  Solution s;
+  vector<int> v{1, 2, 3, 4, 5, 6};
+  debug(s.maximumSubarraySum(v, 1));
 };
 
 void SolveAll() {

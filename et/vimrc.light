@@ -22,6 +22,7 @@ nnoremap <left> :tabp<cr>
 
 nnoremap <s-u> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
 nnoremap <s-k> :!time make<cr>
+nnoremap <s-j> :!cat > in<cr>
 nnoremap <s-q> :q!
 nnoremap <s-t> :tabedit<Space>
 
