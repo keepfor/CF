@@ -8,44 +8,48 @@
 
 using namespace std;
 
-class Solution {
- public:
-  long long maximumSubarraySum(vector<int>& v, int k) {
-    using ll = long long;
-    map<ll, ll> vis;
-    const int n = v.size();
-    const ll inf = 1e15;
-    ll ans = -inf;
-    ll sum = 0;
-    for (int i = 0; i < n; ++i) {
-      if (vis.count(v[i])) {
-        vis[v[i]] = min(vis[v[i]], sum);
-      } else {
-        vis[v[i]] = sum;
-      }
-      sum += (ll)v[i];
-      if (vis.count(v[i] - k)) {
-        ans = max(ans, sum - vis[v[i] - k]);
-      }
-      if (vis.count(v[i] + k)) {
-        ans = max(ans, sum - vis[v[i] + k]);
-      }
-    }
-    if (ans <= -inf) {
-      ans = 0;
-    }
-    return ans;
-  }
-};
-
 void SolveOne() {
-  Solution s;
-  vector<int> v{1, 2, 3, 4, 5, 6};
-  debug(s.maximumSubarraySum(v, 1));
+  int n, m, k;
+  cin >> n >> m >> k;
+  vector<vector<int>> a(n, vector<int>(m));
+  vector<vector<int>> b(n, vector<int>(m));
+  vector<vector<int>> c(n, vector<int>(m));
+  for (int i = 0; i < n; ++i) {
+    string s;
+    cin >> s;
+    for (int j = 0; j < m; ++j) {
+      cin >> a[i][j] >> b[i][j] >> c[i][j];
+    }
+  }
+  int ans = 0;
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < n; ++j) {
+      if (i == j) {
+        continue;
+      }
+      vector<int> t;
+      for (int x = 0; x < m; ++x) {
+        for (int y = 0; y < c[i][x]; ++y) {
+          t.push_back(b[j][x] - a[i][x]);
+        }
+      }
+      sort(t.rbegin(), t.rend());
+      t.resize(k);
+      int tmp = 0;
+      for (auto& i : t) {
+        if (i <= 0) {
+          break;
+        }
+        tmp += i;
+      }
+      ans = max(ans, tmp);
+    }
+  }
+  cout << ans << '\n';
 };
 
 void SolveAll() {
-  int t{1};
+  auto t{1};
   // cin >> t;
   while (t--) {
     SolveOne();
