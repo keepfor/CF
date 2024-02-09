@@ -1,7 +1,7 @@
 #ifdef DEBUG
 #include "lib/debug.h"
 #else
-#define debug(...) 4
+#define debug(...) 
 #endif
 
 #include <bits/stdc++.h>
@@ -13,7 +13,7 @@ void SolveOne() {
 }
 
 void SolveAll() {
-  int t = 1;
+  auto t {1};
   //cin >> t;
   while (t--) {
     SolveOne();
@@ -22,7 +22,7 @@ void SolveAll() {
 
 inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
-int32_t main() {
+signed main() {
   SetIO();
   SolveAll();
   return 0;
