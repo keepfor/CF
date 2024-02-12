@@ -11,38 +11,49 @@ using namespace std;
 void SolveOne() {
   int n, m, k;
   cin >> n >> m >> k;
-  vector<vector<int>> a(n, vector<int>(m));
-  vector<vector<int>> b(n, vector<int>(m));
-  vector<vector<int>> c(n, vector<int>(m));
-  for (int i = 0; i < n; ++i) {
-    string s;
-    cin >> s;
-    for (int j = 0; j < m; ++j) {
-      cin >> a[i][j] >> b[i][j] >> c[i][j];
+  vector<int> a(n + 1);
+  for (int i = 1; i <= n; ++i) {
+    cin >> a[i];
+    if (!a[i]) {
+      continue;
     }
+    a[i] += a[i - 1];
   }
-  int ans = 0;
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
-      if (i == j) {
-        continue;
+  vector<int> b(m + 1);
+  for (int i = 1; i <= m; ++i) {
+    cin >> b[i];
+    if (!b[i]) {
+      continue;
+    }
+    b[i] += b[i - 1];
+  }
+  using ll = long long;
+  ll ans = 0;
+  auto G = [&](int x, int y) -> ll {
+    if (x > n or y > m) {
+      return 0;
+    }
+    int c = 0;
+    for (int i = x; i <= n; ++i) {
+      if (a[i] - a[i - x] == x) {
+        ++c;
       }
-      vector<int> t;
-      for (int x = 0; x < m; ++x) {
-        for (int y = 0; y < c[i][x]; ++y) {
-          t.push_back(b[j][x] - a[i][x]);
-        }
+    }
+    int d = 0;
+    for (int i = y; i <= m; ++i) {
+      if (b[i] - b[i - y] == y) {
+        ++d;
       }
-      sort(t.rbegin(), t.rend());
-      t.resize(k);
-      int tmp = 0;
-      for (auto& i : t) {
-        if (i <= 0) {
-          break;
-        }
-        tmp += i;
-      }
-      ans = max(ans, tmp);
+    }
+    return (ll)c * d;
+  };
+  for (int i = 1; i * i <= k; ++i) {
+    if (k % i) {
+      continue;
+    }
+    ans += G(k / i, i);
+    if (k / i != i) {
+      ans += G(i, k / i);
     }
   }
   cout << ans << '\n';
