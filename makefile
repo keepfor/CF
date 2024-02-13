@@ -21,9 +21,13 @@ define cat_out
 	cat $(output)
 endef
 
+define format_func
+	clang-format -style=Google -i $(src)
+endef
+
 .PHONY: reset gen reset revim empty
 
-all: format main copy clean
+all: main copy clean
 	
 format:
 	clang-format -style=Google -i $(src)
@@ -42,6 +46,7 @@ verbose:
 $(prog): $(src)
 	rm -rf $(prog)
 	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(compile_out)
+	$(format_func)
 
 main: $(prog)
 	cat $(input)
