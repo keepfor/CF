@@ -233,11 +233,7 @@ uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix
 Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
 
-usp-battery, support different decoding for different cmd.exe lanuage. 
 usp-battery, python path issues.
-usp-battery, lcm shows errors. 
-usp-battery, factory lcm process issues.
-usp-battery, dut ble key missing issues from ocean.
 usp-battery, burnin issues, improve.
 usp-battery, remove disable burnin of check burnin result.
 usp-battery, new testing fw.
@@ -261,7 +257,6 @@ Support encoding BLE client ID by PC IP, AP IP and DUT-MAC.
 * FW upgrade with BLE: *Upgrade-Production-firmware and *Upgrade-testing-firmware.
 Add fwupdate_timeout test config.
 
-* Update BLE tool to battery_ftu_v1.8.tar.gz.
 * Update Getac Battery firmware to battery-fw-0.9.10.0.bin
 * Update Production firmware to upb.efr32_1.1.6+354.230406.1112.bin
 * Update Factory firmware (bin) to upb.efr32diag_1.1.7+363.230621.1357.bin
@@ -473,7 +468,6 @@ uisp-s-plus, fcd update diag fw. (new DIAG_v2.0.0)
 uisp-s-plus, fcd update helper. (helper_MRVL_ACT5_release_04) ??
 uisp-s-plus, Production test process update for improving CT
 
-uisp-s-plus, Port LED test, cmd flow change.
 uisp-s-plus, System LED test, cmd flow change.
 uisp-s-plus, DDR test, cmd flow change.
 uisp-s-plus, SFP Flash test, cmd flow change.

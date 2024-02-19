@@ -8,23 +8,26 @@ private fun readLongs() = readStrings().map { it.toLong() } // list of longs
 private fun readDoubles() = readStrings().map { it.toDouble() } // list of doubles
 
 fun main(args: Array<String>) {
-    var tt = readInt()
-    for (qq in 0 until tt) {
-        var s = readLn()
-        var ans = 0
-        var v = 0
-        for (c in s) {
-            if (c == 'w') {
-                ans += 1
-                v = 0;
-            } else {
-            	++v;
-            	if (v == 2) {
-            		++ans;
-            		v = 0;
-            	}
-            }
-        }
-        println(ans)
+    var (n, m, k) = readInts()
+    val inf = 1000000000
+    var a = IntArray(n)
+    for (i in 0 until n) {
+        a[i] = inf
     }
-}				
+    a[k - 1] = 0
+    for (i in 0 until m) {
+        var (x, y) = readInts()
+        x -= 1
+        y -= 1
+        var ax = minOf(a[x] + 1, a[y])
+        var ay = minOf(a[y] + 1, a[x])
+        a[x] = ax
+        a[y] = ay
+    }
+    for (i in 0 until n) {
+        if (a[i] == inf) {
+            a[i] = -1
+        }
+    }
+    println(a.joinToString(" "))
+}

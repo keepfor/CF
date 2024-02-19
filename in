@@ -1,3 +1,44 @@
-3 3 2
-1 0 1
-1 1 1
+uisp-s-plus, remove Bt connect test. (using rssi test is enough)
+uisp-s-plus, Burn-in test, setenv burnFailedstop 1
+ev-ultra, update/verify new diag for fcd.
+ev-ultra, display test fail, not found acm0 dev in factory.
+ev-ultra, new mfg, no loopback ip, .20
+usp-battery, verify new app diag FW on ftu.
+usp-battery, update GU (rps-pro), remove disable burnin of check burnin result.
+usp-battery, fw upgrade fail, ble connection duplication, from factory.
+uisp-s-plus, fcd update helper. (helper_MRVL_ACT5_release_04)
+uisp-s-plus, Port LED test, flow change.
+uisp-p, Update shipping fw.
+uisp-r-plus, ftu, add new burnin env (burnFailedStop). (9.0.2)
+uisp-r-plus, ftu, add poe test. (9.0.2)
+uisp-r-plus, ftu, update fan expected range. (9.0.2)
+uisp-r-pro, update Diag FW to UISPR.alpinev2.v9.0.11.
+uisp-r-pro, update security test with new parsing pattern and expected result.
+uisp-r-pro, rpi4, usb not mount. reported by fw_rd.
+ev-charger, NFC KMS test issues from fxn.
+ev-charger, card reader issues from fxn.
+uisp-s-pro, verify lcm dfu test cmds.
+uacc-lte, switch to usb mode fail in ltn. (usb cable issues)
+uisp-s, ftu, update shipping FW, rtl838x.v1.5.2.
+TWFCD-5090
+TWFCD-5089
+TWFCD-5088
+TWFCD-5087
+TWFCD-5086
+TWFCD-5085
+TWFCD-5084
+TWFCD-5083
+TWFCD-5060
+TWFCD-5059
+TWFCD-5056
+TWFCD-4997
+TWFCD-4994
+TWFCD-4993
+TWFCD-4924
+TWFCD-4925
+TWFCD-4923
+TWFCD-4919
+TWFCD-4918
+TWFCD-4701
+TWFCD-4446
+TWFCD-4442

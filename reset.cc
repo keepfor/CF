@@ -14,7 +14,7 @@ void SolveOne(){
 
 void SolveAll() {
   auto t { 1 };
-  cin >> t;
+  // cin >> t;
   while (t--) {
     SolveOne();
   }
