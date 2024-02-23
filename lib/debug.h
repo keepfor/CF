@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 template <typename A, typename B>
 string to_string(pair<A, B> p);
 
@@ -82,16 +78,12 @@ void debug_out(Head H, Tail... T) {
   debug_out(T...);
 }
 
-#ifdef DEBUG
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
-#else
-#define debug(...) 0
-#endif
 
 /*
 #ifdef DEBUG
-#include "lib/debug.cc"
+#include "lib/debug.h"
 #else
-#define debug(...) 0
+#define debug(...)
 #endif
 */
