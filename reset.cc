@@ -1,20 +1,20 @@
-#ifdef DEBUG
-#include "lib/debug.h"
-#else
-#define debug(...) 
-#endif
-
 #include <bits/stdc++.h>
 
 using namespace std;
+
+#ifdef DEBUG
+#include "lib/debug.h"
+#else
+#define debug(...)
+#endif
 
 void SolveOne() {
 
 }
 
 void SolveAll() {
-  auto t {1};
-  //cin >> t;
+  auto t{ 1 };
+  // cin >> t;
   while (t--) {
     SolveOne();
   }
