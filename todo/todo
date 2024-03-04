@@ -204,6 +204,9 @@ update shpping fw to 0.2.4.
 * Update bunled shpping FW to v0.2.4.
 * Update BT MD5 to 59244356f07ec9d5a552e512cc2b56.
 
+get pb firmware fail. ftu 100-024, fxn sam.
+shipping fw ping fail, from dqa.
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.

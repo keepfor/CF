@@ -70,6 +70,16 @@ string to_string(tuple<A, B, C, D> p) {
          to_string(get<2>(p)) + ", " + to_string(get<3>(p)) + ")";
 }
 
+template <typename T>
+string to_string(queue<T> q) {
+  vector<T> v;
+  while (q.size()) {
+    v.push_back(q.front());
+    q.pop();
+  }
+  return to_string(v);
+}
+
 void debug_out() { cerr << endl; }
 
 template <typename Head, typename... Tail>
