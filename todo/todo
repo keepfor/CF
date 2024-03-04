@@ -182,6 +182,28 @@ help dqa. do upgrade to shipping fw for some duts.
 ap link environment question from cm, u6 lan need ?
 fcd deploy issue from cm. deploy fail.
 
+pb version check fail in fxn, found 1.2.4.
+pb version downgrade issue in fxn, 1.2.4 to 1.2.0.
+wifi iperf fail in fxn.
+wifi related tests retest rate is too high in fxn.
+bt md5 fail issue.
+swap pb fw upgrade and check pb fw version.
+update shpping fw to 0.2.4.
+
+* Update upgrade uboot command.
+* Update bundled MFG FW to v.0.2.3.
+
+- FTU Changelog:
+* Update expected MFG version to v0.2.3.
+* Add a new test item, Test NFC Partitions.
+* LCM FW upgrade, using integrated LCM FW in mfg FW.
+* LCM FW check, update expected LCM FW version to v5.1.9.
+* PB FW upgrade, update expected MCU FW version to v1.2.5.
+* PB FW check, update expected MCU FW version to v1.2.5.
+* Remove setup caldata.bin patch.
+* Update bunled shpping FW to v0.2.4.
+* Update BT MD5 to 59244356f07ec9d5a552e512cc2b56.
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
@@ -190,6 +212,9 @@ ev-charger, shipping fw downgrade fail, ota_update_evcharger_release_v1.0.262.zi
 ev-charger, shipping fw upgrade fail, ota_update_evcharger_release_v1.0.262.zip  
 
 ev-station-pro, support check p/n pilot voltage for abc.
+ev-station-pro, new fcd. (EV_CHARGER_FCD_t011.20240301.122003.7z
+ev-station-pro, new fcd. (ev_charger-ota-eng_t011.20240301.122003.zip
+ev-charger, upate ftu cdt to v4_eu.
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -315,6 +340,9 @@ verify new fw's dump devreg feature,
 help check e.s.0.
 verify new fw's check devreg feature, (fw 0)
 verify new fw's check devreg feature, (fw 1)
+
+burnin config fail in ty. command not found.
+fcd devregcheck fail issue in ty.
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.

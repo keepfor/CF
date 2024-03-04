@@ -8,17 +8,15 @@ using namespace std;
 #define debug(...)
 #endif
 
-void SolveOne() {
-  for (int i = 0; i < 100; ++i) {
-    debug(i);
-  }
-};
+using ll = long long;
 
-void SolveAll() {
+void Solve() {}
+
+void Main() {
   auto t{1};
   // cin >> t;
   while (t--) {
-    SolveOne();
+    Solve();
   }
 }
 
@@ -26,6 +24,6 @@ inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
 signed main() {
   SetIO();
-  SolveAll();
+  Main();
   return 0;
 }
