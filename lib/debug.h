@@ -9,9 +9,9 @@ string to_string(tuple<A, B, C, D> p);
 
 string to_string(const string& s) { return '"' + s + '"'; }
 
-string to_string(const char* s) { return to_string((string)s); }
+string to_string(const char& c) { return '"' + string(1, c) + '"'; }
 
-string to_string(const char& c) { return string(1, c); }
+string to_string(const char* s) { return to_string((string)s); }
 
 string to_string(bool b) { return (b ? "true" : "false"); }
 
@@ -70,6 +70,16 @@ string to_string(tuple<A, B, C, D> p) {
          to_string(get<2>(p)) + ", " + to_string(get<3>(p)) + ")";
 }
 
+template <typename T>
+string to_string(queue<T> q) {
+  vector<T> v;
+  while (q.size()) {
+    v.push_back(q.front());
+    q.pop();
+  }
+  return to_string(v);
+}
+
 void debug_out() { cerr << endl; }
 
 template <typename Head, typename... Tail>
@@ -82,8 +92,8 @@ void debug_out(Head H, Tail... T) {
 
 /*
 #ifdef DEBUG
-#define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+#include "lib/debug.h"
 #else
-#define debug(...) 
+#define debug(...)
 #endif
 */
