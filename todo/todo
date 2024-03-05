@@ -206,6 +206,10 @@ update shpping fw to 0.2.4.
 
 get pb firmware fail. ftu 100-024, fxn sam.
 shipping fw ping fail, from dqa.
+shipping fw upgrade fail, in fxn vn, sam. 0.0.9 to 0.2.4
+lcm fw upgrade fail in fxn, sam.
+shipping fw upgrade fail, in fxn vn, sam. 0.2.3 to 0.2.4
+
 
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
