@@ -10,16 +10,8 @@ using namespace std;
 
 using ll = long long;
 
-class A {
- public:
-  static int x;
-  A();
-  ~A();
-};
+void Solve() { 
 
-void Solve() {
-  int A::x = 1;
-  debug(A::x);
 }
 
 void Main() {

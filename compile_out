@@ -1,4 +1,0 @@
-sol.cc: In function ‘void Solve()’:
-sol.cc:21:12: error: qualified-id in declaration before ‘=’ token
-   21 |   int A::x = 1;
-      |            ^

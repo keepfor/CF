@@ -10,16 +10,51 @@ using namespace std;
 
 using ll = long long;
 
-class A {
- public:
-  static int x;
-  A();
-  ~A();
-};
-
 void Solve() {
-  int A::x = 1;
-  debug(A::x);
+  int n, k;
+  cin >> n >> k;
+  vector<int> v(k);
+  for (auto& i : v) {
+    cin >> i;
+    --i;
+  }
+  vector<vector<int>> g(n);
+  for (int i = 0; i < n; ++i) {
+    int t;
+    cin >> t;
+    for (int j = 0; j < t; ++j) {
+      int p;
+      cin >> p;
+      --p;
+      g[i].push_back(p);
+    }
+  }
+  vector<int> co(n);
+  vector<int> ans;
+  function<void(int)> Dfs = [&](int u) -> void {
+    co[u] = 1;
+    for (auto& v : g[u]) {
+      if (co[v] == 1) {
+        cout << -1 << '\n';
+        exit(0);
+      } else if (!co[v]) {
+        Dfs(v);
+      }
+    }
+    co[u] = 2;
+    ans.push_back(u);
+  };
+  for (int i = 0; i < k; ++i) {
+    if (co[v[i]]) {
+      continue;
+    }
+    Dfs(v[i]);
+  }
+  const int z = ans.size();
+  cout << z << '\n';
+  for (int i = 0; i < z; ++i) {
+    cout << ans[i] + 1 << " \n"[i + 1 == z];
+  }
 }
 
 void Main() {

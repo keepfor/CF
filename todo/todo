@@ -209,7 +209,11 @@ shipping fw ping fail, from dqa.
 shipping fw upgrade fail, in fxn vn, sam. 0.0.9 to 0.2.4
 lcm fw upgrade fail in fxn, sam.
 shipping fw upgrade fail, in fxn vn, sam. 0.2.3 to 0.2.4
+wifi can not ping in fxn vn, sam, 0.0.9.
 
+add new test item, meter calibration.
+meter calibration issue. mcu log is wrong.
+meter calibration issue. mcu log is wrong 2. new cmd
 
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
