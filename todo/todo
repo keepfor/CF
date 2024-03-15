@@ -215,6 +215,10 @@ add new test item, meter calibration.
 meter calibration issue. mcu log is wrong.
 meter calibration issue. mcu log is wrong 2. new cmd
 
+update meter calibration, check chv chc.
+update meter calibration, remove deviation check.
+add check meter calibration, support check voltage and current with user input.
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
@@ -261,6 +265,16 @@ hw rework boost, plc.
 help tatun factory.
 ble test time too long issues, tatun.
 sz reports, rps test fail, voltage is not correct.
+
+remove lead battery test.
+remove External Batt. Start-up Charging Test.
+add new test, External Batt. Charging Test.
+External Batt. Charging Test, capacity key not found issue.
+External Batt. Charging Test, charge state is incorrect issue.
+External Batt. Charging Test, update speedup discover battery cmd.
+External Batt. Charging Test, update battery fw to 1.2.0.
+External Batt. Charging Test, "present" is false when connected.
+
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.

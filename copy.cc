@@ -11,14 +11,35 @@ using namespace std;
 using ll = long long;
 
 void Solve() {
-  for (int i = 0; i < 10000; ++i) {
-    cout << i << '\n';
+  int n, k;
+  cin >> n >> k;
+  vector<int> a(n);
+  for (auto& i : a) {
+    cin >> i;
   }
+  vector<int> x(n);
+  for (auto& i : x) {
+    cin >> i;
+    i = abs(i);
+  }
+  vector<int> ord(n);
+  iota(ord.begin(), ord.end(), 0);
+  sort(ord.begin(), ord.end(),
+       [&](int i, int j) -> bool { return x[i] < x[j]; });
+  ll sum = 0;
+  for (int i = 0; i < n; ++i) {
+    sum += 1ll * a[ord[i]];
+    if (sum > 1ll * k * x[ord[i]]) {
+      cout << "NO\n";
+      return;
+    }
+  }
+  cout << "YES\n";
 }
 
 void Main() {
   auto t{1};
-  // cin >> t;
+  cin >> t;
   while (t--) {
     Solve();
   }
