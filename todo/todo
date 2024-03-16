@@ -224,8 +224,11 @@ update check meter calibration, add set level 0 at end of test.
 update check meter calibration, update set level 1 timing.
 update meter calibration wait time to 20 secs.
 
-lcm fw is not correct in mfg 0.2.3.
+lcm reverse issue in fxn vn.
+mfg fw is incorrect(0.0.9) in fxn vn.
+lcm fw is not correct in mfg 0.2.3. (v5.1.9
 add support of lcm fw patch with /lib/firmware/gd32/usw-gd-lcm-fw.bin
+update expected lcm fw version. (v0.3.1
 lcm fw patch is not correct from fw_rd. (/lib/firmware/gd32/usw-gd-lcm-fw.bin
 support log lcm fw md5sum.
 update lcm file path to /usr/share/firmware/uc-evs-ultra-gf470-lcm-fw.bin.
