@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-d
 
 using namespace std;
 
@@ -11,11 +10,7 @@ using namespace std;
 
 using ll = long long;
 
-void Solve() {
-  for (int i = 0; i < 1e7; ++i) {
-    cout << i << '\n';
-  }
-}
+void Solve() {}
 
 void Main() {
   auto t{1};
