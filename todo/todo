@@ -215,9 +215,20 @@ add new test item, meter calibration.
 meter calibration issue. mcu log is wrong.
 meter calibration issue. mcu log is wrong 2. new cmd
 
+meter calibration, set calibration voltage can not float issue.
+
 update meter calibration, check chv chc.
 update meter calibration, remove deviation check.
 add check meter calibration, support check voltage and current with user input.
+update check meter calibration, add set level 0 at end of test.
+update check meter calibration, update set level 1 timing.
+update meter calibration wait time to 20 secs.
+
+lcm fw is not correct in mfg 0.2.3.
+add support of lcm fw patch with /lib/firmware/gd32/usw-gd-lcm-fw.bin
+lcm fw patch is not correct from fw_rd. (/lib/firmware/gd32/usw-gd-lcm-fw.bin
+support log lcm fw md5sum.
+update lcm file path to /usr/share/firmware/uc-evs-ultra-gf470-lcm-fw.bin.
 
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
@@ -270,11 +281,15 @@ remove lead battery test.
 remove External Batt. Start-up Charging Test.
 add new test, External Batt. Charging Test.
 External Batt. Charging Test, capacity key not found issue.
+External Batt. Charging Test, help verify test fw 1.
 External Batt. Charging Test, charge state is incorrect issue.
 External Batt. Charging Test, update speedup discover battery cmd.
 External Batt. Charging Test, update battery fw to 1.2.0.
 External Batt. Charging Test, "present" is false when connected.
-
+External Batt. Charging Test, help verify test fw 2.
+fcd fail. upgrade uboot fail.
+help verify test fw 3 for fcd.
+fcd pass, but shell prompt show "none".
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
@@ -368,6 +383,9 @@ verify new fw's check devreg feature, (fw 1)
 
 burnin config fail in ty. command not found.
 fcd devregcheck fail issue in ty.
+verify new fw 1.2.0.
+verify new fw 1.2.1.
+verify new fw 1.2.2.
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.

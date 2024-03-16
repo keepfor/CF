@@ -11,30 +11,40 @@ using namespace std;
 using ll = long long;
 
 void Solve() {
-  int n, k;
-  cin >> n >> k;
-  vector<int> a(n);
-  for (auto& i : a) {
-    cin >> i;
+  int n, m, x;
+  cin >> n >> m >> x;
+  vector<bool> dp(n);
+  dp[x - 1] = true;
+  for (int i = 0; i < m; ++i) {
+    vector<bool> ndp(n);
+    int r;
+    char c;
+    cin >> r >> c;
+    for (int j = 0; j < n; ++j) {
+      if (!dp[j]) {
+        continue;
+      }
+      if (c == '0' or c == '?') {
+        ndp[(j + r) % n] = 1;
+      }
+      if (c == '1' or c == '?') {
+        ndp[(n + j - r) % n] = 1;
+      }
+    }
+
+    swap(dp, ndp);
   }
-  vector<int> x(n);
-  for (auto& i : x) {
-    cin >> i;
-    i = abs(i);
-  }
-  vector<int> ord(n);
-  iota(ord.begin(), ord.end(), 0);
-  sort(ord.begin(), ord.end(),
-       [&](int i, int j) -> bool { return x[i] < x[j]; });
-  ll sum = 0;
+  vector<int> ans;
   for (int i = 0; i < n; ++i) {
-    sum += 1ll * a[ord[i]];
-    if (sum > 1ll * k * x[ord[i]]) {
-      cout << "NO\n";
-      return;
+    if (dp[i]) {
+      ans.push_back(i);
     }
   }
-  cout << "YES\n";
+  const int z = ans.size();
+  cout << z << '\n';
+  for (int i = 0; i < z; ++i) {
+    cout << ans[i] + 1 << " \n"[i + 1 == z];
+  }
 }
 
 void Main() {
@@ -51,4 +61,5 @@ signed main() {
   SetIO();
   Main();
   return 0;
-}
+
+
