@@ -1,0 +1,4 @@
+import:
+  -  ~/.config/alacritty/themes/themes/wombat.yaml
+font:
+  size: 24.0
