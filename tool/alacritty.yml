@@ -4,3 +4,10 @@ cursor:
  style:
    shape: Beam 
 
+import = [
+    "~/.config/alacritty/themes/themes/falcon.yaml"
+]
+[font]
+size= 16.0
+
+
