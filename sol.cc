@@ -10,12 +10,11 @@ using namespace std;
 
 using ll = long long;
 
-void Solve() {}
+void Solve() { 
+
+}
 
 void Main() {
-  for (int i = 0; i < 1e8; ++i) {
-    cout << i << '\n';
-  }
   auto t{1};
   // cin >> t;
   while (t--) {

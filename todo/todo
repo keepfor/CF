@@ -1,3 +1,5 @@
+usw-gen1, fcd questions from sqa.
+
 ev-station-ultra, ftu, many items.
 
 ev-station-ultra, fcd, verify US, 002a.
@@ -232,6 +234,13 @@ update expected lcm fw version. (v0.3.1
 lcm fw patch is not correct from fw_rd. (/lib/firmware/gd32/usw-gd-lcm-fw.bin
 support log lcm fw md5sum.
 update lcm file path to /usr/share/firmware/uc-evs-ultra-gf470-lcm-fw.bin.
+
+add new test item, external usb test.
+fxn reports led issue.
+fxn reports nkp partition test issue.
+fxn reports iperf issue.
+fxn reports lcm fw upgrade issue.
+add led all off to ted test.
 
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
