@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 namespace solution {
+
 using namespace std;
 
 #ifdef DEBUG
@@ -15,7 +16,7 @@ void Solve() {
   
 }
 
-void Main() {
+void Run() {
   auto t{1};
   // cin >> t;
   while (t--) {
@@ -25,13 +26,14 @@ void Main() {
 
 inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
-void main() {
+void Main() {
   SetIO();
-  Main();
+  Run();
 }
+
 }  // namespace solution
 
 signed main() {
-  solution::main();
+  solution::Main();
   return 0;
 }
