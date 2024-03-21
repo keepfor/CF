@@ -6,12 +6,17 @@ inoremap jk <esc>
 inoremap kj <esc>
 
 nnoremap <s-q> :q!
+nnoremap <s-t> :vertical terminal<cr>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-a> ggvG$
 nnoremap ; :
+
+nnoremap <s-k> :!time make<cr>
+nnoremap <s-j> :!cat > in<cr>
+nnoremap <s-u> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
 
 vnoremap jk <esc>
 vnoremap kj <esc>
