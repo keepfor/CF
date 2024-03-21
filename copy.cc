@@ -12,7 +12,11 @@ using namespace std;
 
 using ll = long long;
 
-void Solve() {}
+void Solve() {
+  string t;
+  cin >> t;
+  cout << t;
+}
 
 void Run() {
   auto t{1};

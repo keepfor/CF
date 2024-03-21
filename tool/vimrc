@@ -16,7 +16,7 @@ nnoremap ; :
 
 nnoremap <s-k> :!time make<cr>
 nnoremap <s-j> :!cat > in<cr>
-nnoremap <s-u> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
+nnoremap <s-u> :!bash /home/jackcai/tools/scripts/start_ftu.sh<cr>
 
 vnoremap jk <esc>
 vnoremap kj <esc>
