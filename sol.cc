@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 
+namespace solution {
 using namespace std;
 
 #ifdef DEBUG
@@ -10,8 +11,8 @@ using namespace std;
 
 using ll = long long;
 
-void Solve() { 
-
+void Solve() {
+  
 }
 
 void Main() {
@@ -24,8 +25,13 @@ void Main() {
 
 inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
-signed main() {
+void main() {
   SetIO();
   Main();
+}
+}  // namespace solution
+
+signed main() {
+  solution::main();
   return 0;
 }
