@@ -10,7 +10,7 @@ nnoremap <s-u> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
 nnoremap <s-k> :!time make<cr>
 nnoremap <s-j> :!cat > in<cr>
 nnoremap <s-q> :q!
-nnoremap <s-t> :rightb vert term
+nnoremap <s-t> :rightb vert term <cr>
 nnoremap <c-l> :e ~/j/ftu_log_folder <cr> 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
