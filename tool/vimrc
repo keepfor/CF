@@ -16,11 +16,13 @@ nnoremap ; :
 vnoremap jk <esc>
 vnoremap kj <esc>
 
+tnoremap <c-l> <C-w>l
+
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
 set timeoutlen=50 mouse=a
-set splitbelow expandtab nocompatible 
+set expandtab nocompatible 
 set backupcopy=yes
 set autochdir autoread
 set clipboard^=unnamed,unnamedplus 

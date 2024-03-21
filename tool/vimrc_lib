@@ -1,10 +1,12 @@
 
+set splitbelow expandtab nocompatible 
 nnoremap <c-l> :e ~/j/ftu_log_folder <cr> 
 nnoremap <s-u> :!bash /home/jackcai/scripts/start_ftu.sh<cr>
 nnoremap <c-t> :tab ter<cr>
 nnoremap <s-t> :rightb vert term <cr>
 nnoremap <s-k> :!time make<cr>
 nnoremap <s-j> :!cat > in<cr>
+
 tnoremap <left> <C-W>:tabprevious<CR>
 tnoremap <right> <C-W>:tabnext<CR>
 
