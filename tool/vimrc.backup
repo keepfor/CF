@@ -1,3 +1,4 @@
+nnoremap <s-t> :tabedit<Space> 
 
 nnoremap <F7> :!make re<cr>
 nnoremap <F5> :e input.txt<cr>
