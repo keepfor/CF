@@ -12,12 +12,12 @@ struct Solver {
   using ll = long long;
 
   void Solve() {
-
+    cout << "Hello\n";
   }
 
   void Run() {
     auto t{1};
-    // cin >> t;
+    cin >> t;
     while (t--) {
       Solve();
     }
