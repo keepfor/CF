@@ -8,10 +8,10 @@ using namespace std;
 #define debug(...)
 #endif
 
-using ll = long long;
-
 struct Solver {
-  void Solve() {}
+  using ll = long long;
+
+  void Solve() { debug(1); }
 
   void Run() {
     auto t{1};

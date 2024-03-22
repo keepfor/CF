@@ -24,7 +24,7 @@ DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsa
 
 .PHONY: format all reset new main
 
-all: format main copy clean 
+all: main copy clean 
 
 format:
 	clang-format -style=Google -i ${src}
