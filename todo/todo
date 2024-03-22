@@ -254,6 +254,8 @@ ev-station-pro, new fcd. (EV_CHARGER_FCD_t011.20240301.122003.7z
 ev-station-pro, new fcd. (ev_charger-ota-eng_t011.20240301.122003.zip
 ev-charger, upate ftu cdt to v4_eu.
 
+update shipping fw. ota_update_evcharger_release_v1.2.25.zip
+
 usw, fw / fcd / ftu ver.
 usw, project owner.
 
@@ -302,6 +304,14 @@ External Batt. Charging Test, help verify test fw 2.
 fcd fail. upgrade uboot fail.
 help verify test fw 3 for fcd.
 fcd pass, but shell prompt show "none".
+
+1. Update bundled FW to UM.mt7621_ch-usw-1321+15634.240314.0421-uboot.bin. 
+
+1. Add a new test item, External Batt. Charging Test.
+2. Deactivate External Batt. Start-up Charging Test.
+3. Deactivate Lead-acid Battery Test.
+4. Update expected FW version to "ch-usw-1321".
+5. Add External Batt. Discharging Test to 1.
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
@@ -398,6 +408,7 @@ fcd devregcheck fail issue in ty.
 verify new fw 1.2.0.
 verify new fw 1.2.1.
 verify new fw 1.2.2.
+
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.

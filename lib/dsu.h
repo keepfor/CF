@@ -1,13 +1,9 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-class dsu {
+class DSU {
  public:
   vector<int> p;
   int n;
 
-  dsu(int _n) : n(_n) {
+  DSU(int n_) : n(n_) {
     p.resize(n);
     iota(p.begin(), p.end(), 0);
   }

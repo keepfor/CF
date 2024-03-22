@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 
-namespace solution {
-
 using namespace std;
 
 #ifdef DEBUG
@@ -12,28 +10,29 @@ using namespace std;
 
 using ll = long long;
 
-void Solve() {
-  
-}
+struct Solver {
+  void Solve() {
 
-void Run() {
-  auto t{1};
-  // cin >> t;
-  while (t--) {
-    Solve();
   }
-}
 
-inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
+  void Run() {
+    auto t{1};
+    // cin >> t;
+    while (t--) {
+      Solve();
+    }
+  }
 
-void Main() {
-  SetIO();
-  Run();
-}
+  inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
 
-}  // namespace solution
+  void Main() {
+    SetIO();
+    Run();
+  }
+};
 
 signed main() {
-  solution::Main();
+  Solver solver;
+  solver.Main();
   return 0;
 }
