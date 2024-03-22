@@ -8,9 +8,9 @@ using namespace std;
 #define debug(...)
 #endif
 
-using ll = long long;
-
 struct Solver {
+  using ll = long long;
+
   void Solve() {
 
   }
