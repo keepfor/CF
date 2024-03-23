@@ -8,40 +8,31 @@ using namespace std;
 #define debug(...)
 #endif
 
-struct Solver {
-  using ll = long long;
-
-  void Solve() {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    for (auto& i : a) {
-      cin >> i;
-    }
-    sort(a.begin(), a.end());
-    int x = a[n / 2];
-    int ans = 0;
-    for (int i = (n - 1) / 2; i < n; ++i) {
-      ans += i == x;
-    }
-    cout << ans << '\n';
-  }
-
-  void Run() {
-    auto t{1};
-    cin >> t;
-    while (t--) {
-      Solve();
-    }
-  }
-
-  inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
-
-  void Main() {
+class Solver {
+ public:
+  inline void Main() {
     SetIO();
     Run();
   }
+
+ private:
+  using ll = long long;
+
+  inline void SetIO() const { cin.tie(0)->sync_with_stdio(0); }
+
+  void Solve() const;
+  void Run() const;
 };
+
+void Solver::Solve() const {}
+
+void Solver::Run() const {
+  auto tt{1};
+  // cin >> tt;
+  while (tt--) {
+    Solve();
+  }
+}
 
 signed main() {
   Solver solver;

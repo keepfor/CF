@@ -51,7 +51,6 @@ verbose:
 $(prog): $(src)
 	rm -rf $(prog)
 	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(compile_out)
-	$(format_func)
 
 main: $(prog)
 	cat $(input)
