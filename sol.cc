@@ -1,8 +1,5 @@
 #include <bits/stdc++.h>
 
-using ll = long long;
-
-namespace sol {
 using namespace std;
 
 #ifdef DEBUG
@@ -11,31 +8,37 @@ using namespace std;
 #define debug(...)
 #endif
 
-void test() {
-  string x = to_string(111);
-  cerr << x << '\n';
-  ;x
-
-'
-
-}
-}  // namespace sol
-
-void Solve() { sol::test(); }
-
-void Main() {
-  auto t{1};
-  // cin >> t;
-  while (t--) {
-    Solve();
+class Solver {
+ public:
+  inline void Main() {
+    SetIO();
+    Run();
   }
-}
 
-using namespace std;
-inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
+ private:
+  using ll = long long;
+
+  inline void SetIO() const {
+    cin.tie(0)->sync_with_stdio(0);
+  }
+
+  void Solve() const;
+
+  void Run() const {
+    auto tt{1};
+    // cin >> tt;
+    while (tt--) {
+      Solve();
+    }
+  }
+};
+
+void Solver::Solve() const {
+
+}
 
 signed main() {
-  SetIO();
-  Main();
+  Solver solver;
+  solver.Main();
   return 0;
 }

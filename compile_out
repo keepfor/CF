@@ -1,8 +1,0 @@
-In file included from sol.cc:9:
-./lib/debug.h:45:22: error: invalid range expression of type 'int'; no viable 'begin' function available
-  for (const auto& x : v) {
-                     ^ ~
-sol.cc:15:14: note: in instantiation of function template specialization 'sol::to_string<int>' requested here
-  string x = to_string(111);
-             ^
-1 error generated.
