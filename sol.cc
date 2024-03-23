@@ -8,28 +8,32 @@ using namespace std;
 #define debug(...)
 #endif
 
-struct Solver {
-  using ll = long long;
-
-  void Solve() {
-
-  }
-
-  void Run() {
-    auto t{1};
-    // cin >> t;
-    while (t--) {
-      Solve();
-    }
-  }
-
-  inline void SetIO() { cin.tie(0)->sync_with_stdio(0); }
-
-  void Main() {
+class Solver {
+ public:
+  inline void Main() {
     SetIO();
     Run();
   }
+
+ private:
+  using ll = long long;
+
+  inline void SetIO() const { cin.tie(0)->sync_with_stdio(0); }
+
+  void Solve() const;
+
+  void Run() const {
+    auto tt{1};
+    // cin >> tt;
+    while (tt--) {
+      Solve();
+    }
+  }
 };
+
+void Solver::Solve() const {
+
+}
 
 signed main() {
   Solver solver;
