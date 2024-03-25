@@ -10,7 +10,7 @@ using namespace std;
 
 class Solver {
  public:
-  inline void Main() {
+  inline void Main() const {
     SetIO();
     Run();
   }
@@ -23,18 +23,19 @@ class Solver {
   }
 
   void Solve() const;
-
-  void Run() const {
-    auto tt{1};
-    // cin >> tt;
-    while (tt--) {
-      Solve();
-    }
-  }
+  void Run() const;
 };
 
 void Solver::Solve() const {
 
+}
+
+void Solver::Run() const {
+  auto tt{1};
+  // cin >> tt;
+  while (tt--) {
+    Solve();
+  }
 }
 
 signed main() {
