@@ -52,7 +52,6 @@ inoremap <silent><expr> <down>
       \ CheckBackspace() ? "\<down>" :
       \ coc#refresh()
 inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
