@@ -27,7 +27,6 @@ class Solver {
 };
 
 void Solver::Solve() const {
-
 }
 
 void Solver::Run() const {

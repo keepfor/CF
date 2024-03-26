@@ -421,6 +421,9 @@ verify new fw 1.2.2.
 fcd fail in factory. devreg check fail.
 fcd fail in factory. i2c fail.
 fcd fail in factory. preload issue.
+fcd fail in factory. dut can not find battery.
+
+fw 1.2.3, new lcm fw upgrade fail. not found flash string.
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.
