@@ -246,6 +246,9 @@ shipping fw 0.3.1.
 nkp test fail issue from fw_rd.
 rework pp1 shipping fw for testing.
 
+factory scp issue. after update pc.
+factory iperf issue. after update pc.
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
