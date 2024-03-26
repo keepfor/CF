@@ -17,7 +17,7 @@ nnoremap <c-l> <c-w>l
 
 nnoremap <c-n> :tabnext<cr>
 nnoremap <c-p> :tabprevious<cr>
-nnoremap <c-t> :tabedit<cr>
+nnoremap <c-t> :tabedit
 
 nnoremap <s-k> :!time make<cr>
 nnoremap <s-j> :!cat > in<cr>
