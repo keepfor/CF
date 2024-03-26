@@ -248,6 +248,7 @@ rework pp1 shipping fw for testing.
 
 factory scp issue. after update pc.
 factory iperf issue. after update pc.
+add delay between scp and ssh-send-cmd.
 
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
