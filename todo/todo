@@ -3,7 +3,7 @@ usw-gen1, fcd questions from sqa.
 ev-station-ultra, ftu, many items.
 
 ev-station-ultra, fcd, verify US, 002a.
-ev-station-ultra, ftu, add led control. 0.0.4
+ev-station-ultra, ftu, add led breath control. 0.0.4
 ev-station-ultra, fcd, support upgrade uboot. 0.0.4
 ev-station-ultra, ftu, no loopback ip, .20 . 0.0.4
 ev-station-ultra, ftu, display test fail, not found acm0 dev. 0.0.4
@@ -242,6 +242,10 @@ fxn reports iperf issue.
 fxn reports lcm fw upgrade issue.
 add led all off to ted test.
 
+shipping fw 0.3.1.
+nkp test fail issue from fw_rd.
+rework pp1 shipping fw for testing.
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
@@ -296,11 +300,15 @@ remove External Batt. Start-up Charging Test.
 add new test, External Batt. Charging Test.
 External Batt. Charging Test, capacity key not found issue.
 External Batt. Charging Test, help verify test fw 1.
+External Batt. Charging Test, dut can not find usp-battery.
 External Batt. Charging Test, charge state is incorrect issue.
 External Batt. Charging Test, update speedup discover battery cmd.
 External Batt. Charging Test, update battery fw to 1.2.0.
+External Batt. Charging Test, update battery fw to 1.2.1.
 External Batt. Charging Test, "present" is false when connected.
 External Batt. Charging Test, help verify test fw 2.
+External Batt. Charging Test, update hw.
+
 fcd fail. upgrade uboot fail.
 help verify test fw 3 for fcd.
 fcd pass, but shell prompt show "none".
@@ -312,6 +320,7 @@ fcd pass, but shell prompt show "none".
 3. Deactivate Lead-acid Battery Test.
 4. Update expected FW version to "ch-usw-1321".
 5. Add External Batt. Discharging Test to 1.
+
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
@@ -409,6 +418,9 @@ verify new fw 1.2.0.
 verify new fw 1.2.1.
 verify new fw 1.2.2.
 
+fcd fail in factory. devreg check fail.
+fcd fail in factory. i2c fail.
+fcd fail in factory. preload issue.
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.

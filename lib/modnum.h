@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 template <typename T>
 T mod_inv_in_range(T a, T m) {
   // assert(0 <= a && a < m);

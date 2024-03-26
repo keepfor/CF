@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 template <typename T>
 T inverse(T a, T m) {
   T u = 0, v = 1;
