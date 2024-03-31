@@ -1,15 +1,33 @@
-alias v='vim'
-alias s='subl'
+alias p='~/j/ip.sh'
+alias n='make new'
 alias k='time make'
-alias p="sh ~/scripts/p192-168-1.sh"
-alias c="code"
+alias v='vim'
+alias c='code '
+alias s='subl'
+alias m='md5sum'
+alias j='cd ~/j'
+alias u='bash ~/j/start_ftu.sh'
+alias h='bash ~/j/ssh-rpi4.sh'
+alias f='bash ~/j/f.sh'
+alias t='tmux'
 
-alias p8="ping 8.8.8.8"
-alias py="python3"
+alias pi='dolphin ~/Pictures'
+alias fa='bash ~/j/f.sh "*.py"'
+alias py='python3'
+alias cl='clear'
 alias rr='make re'
+alias cf='clang-format -style=Google -i'
+alias vz='v ~/.zshrc'
+alias tm='tmux kill-server;tmux;'
+alias sl='. ~/j/slog.sh'
+alias lo='subl ~/ftu/logs'
+alias tk='tmux kill-session'
 
 alias alg='cd ~/alg'
 alias dow='cd ~/Downloads'
+alias ftu='cd ~/ftu'
+
+alias gtmp='gc -m "tmp"'
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
