@@ -1,6 +1,40 @@
+colorscheme koehler
+
 inoremap { {}<left>
 inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
 inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+
+inoremap jk <esc>
+inoremap kj <esc>
+vnoremap jk <esc>
+vnoremap kj <esc>
+
+nnoremap <s-q> :q!
+nnoremap <c-a> ggvG$
+nnoremap ; :
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+nnoremap <s-k> :!time make<cr>
+nnoremap <s-j> :!cat > in<cr>
+
+set shiftwidth=2 softtabstop=2 tabstop=2
+set visualbell nobackup
+set t_ti= t_te= t_TI= t_TE=
+set timeoutlen=40 mouse=a
+set expandtab nocompatible 
+set backupcopy=yes
+set autochdir autoread
+set clipboard^=unnamed,unnamedplus 
+set smartindent autoindent cindent
+set backspace=indent,eol,start
+set ignorecase smartcase 
+set incsearch hlsearch nu
+
+command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -20,41 +54,3 @@ inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
-nnoremap <left> :tabprevious<cr>
-nnoremap <right> :tabnext<cr>
-
-nnoremap <s-t> :tabedit<space>
-nnoremap <s-q> :q!
-nnoremap <s-k> :!time make<cr>
-nnoremap <s-j> :!cat > in<cr>
-
-nnoremap <c-a> ggvG$
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-nnoremap <c-q> :tab ter<cr>
-
-nnoremap ; :
-
-inoremap jk <esc>
-inoremap kj <esc>
-vnoremap jk <esc>
-vnoremap kj <esc>
-
-tnoremap <left> <C-W>:tabprevious<CR>
-tnoremap <right> <C-W>:tabnext<CR>
-
-set timeoutlen=50
-set splitbelow autoread 
-set clipboard=unnamed
-set nocompatible expandtab nu 
-set t_ti= t_te=   
-set shiftwidth=2 softtabstop=2 tabstop=2 
-set autochdir nobackup 
-set backupcopy=yes 
-set ignorecase smartcase 
-set incsearch hlsearch 
-set cindent smartindent autoindent
-set backspace=indent,eol,start
-set belloff=all
