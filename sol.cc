@@ -26,7 +26,8 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-
+  vector<bool> a(1);
+  debug(a[0]);
 }
 
 void Solver::Run() const {

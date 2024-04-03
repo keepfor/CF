@@ -250,6 +250,12 @@ factory scp issue. after update pc.
 factory iperf issue. after update pc.
 add delay between scp and ssh-send-cmd.
 
+shipping fw 0.3.1 wifi issue from user.
+downgrade issue 0.2.4 -> 0.2.3.
+calibration issue, input format.
+update calibration input format.
+check calibration fail in factory. input issue.
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
@@ -263,6 +269,21 @@ ev-station-pro, new fcd. (ev_charger-ota-eng_t011.20240301.122003.zip
 ev-charger, upate ftu cdt to v4_eu.
 
 update shipping fw. ota_update_evcharger_release_v1.2.25.zip
+update shipping fw issue, can not connect dut after upgrade.
+update enable adb method in shipping fw.
+get adb key fail.
+reset to default and get adb key fail.
+quick click menu to prevent e04.
+quick click menu to prevent e04 -> not work, need click 'next'
+set up env on ev lab. udm .... need 220v.
+set up windows notebook for ev-station-pro ftu dev.
+shipping fw downgrade fail.
+curl fail.
+update enable adb debug.
+update update shipping fw.
+update downgrade shipping fw.
+update to shipping fw, connection refused.
+need click current menu, then can enable adb. 
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -325,6 +346,7 @@ fcd pass, but shell prompt show "none".
 4. Update expected FW version to "ch-usw-1321".
 5. Add External Batt. Discharging Test to 1.
 
+batt charging test, higher voltage issue.
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
@@ -428,6 +450,11 @@ fcd fail in factory. preload issue.
 fcd fail in factory. dut can not find battery.
 
 fw 1.2.3, new lcm fw upgrade fail. not found flash string.
+i2c error, factory hw component reverse. 
+plc shipping fw upgrade fail. method not found.
+update usp rps fw to update plc fw upgrade .
+update plc fw upgrade cmd.
+lcm fw upgrade fail, timeout. lcm v1.0.3.0.
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.

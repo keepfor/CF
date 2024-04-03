@@ -15,6 +15,8 @@ string to_string(const char* s) { return to_string((string)s); }
 
 string to_string(bool b) { return (b ? "true" : "false"); }
 
+string to_string(_Bit_reference b) { return (b ? "true" : "false"); }
+
 string to_string(vector<bool> v) {
   bool first = true;
   string res = "{";
