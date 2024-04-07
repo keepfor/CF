@@ -8,15 +8,6 @@ using namespace std;
 #define debug(...)
 #endif
 
-using ll = long long;
-
-class Solution {
-public:
-    int minimumDistance(vector<vector<int>>& points) {
-      return 0;
-    }
-};
-
 class Solver {
  public:
   inline void Main() const {
@@ -35,14 +26,15 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  Solution s;
-  vector<vector<int>> t{{3,10},{5,15},{10,2},{4,4}};
-  debug(s.minimumDistance(t));
+  vector<bool> b(6);
+  debug(b);
+  debug(b[0]);
+  for (const auto& i : b) cout << i << '\n';
 }
 
 void Solver::Run() const {
   auto tt{1};
-  //cin >> tt;
+  // cin >> tt;
   while (tt--) {
     Solve();
   }
