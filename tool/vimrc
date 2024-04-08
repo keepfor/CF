@@ -4,10 +4,11 @@ inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
 inoremap jk <esc>
 inoremap kj <esc>
+vnoremap jk <esc>
+vnoremap kj <esc>
 
 nnoremap <c-a> ggvG$
 nnoremap <s-q> :q!
-nnoremap <s-t> :vertical terminal<cr>
 nnoremap ; :
 
 nnoremap <c-h> <c-w>h
@@ -22,11 +23,6 @@ nnoremap <c-t> :tabedit
 nnoremap <s-k> :!time make<cr>
 nnoremap <s-j> :!cat > in<cr>
 nnoremap <s-u> :!bash /home/jackcai/tools/scripts/start_ftu.sh<cr>
-
-vnoremap jk <esc>
-vnoremap kj <esc>
-
-tnoremap <c-l> <C-w>l
 
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
@@ -60,4 +56,4 @@ inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
-colorscheme koehler
+colorscheme slate

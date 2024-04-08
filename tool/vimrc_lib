@@ -1,3 +1,6 @@
+nnoremap <s-t> :vertical terminal<cr>
+tnoremap <c-l> <C-w>l
+"split vertical terminal to left and c-l to back to editor
 
 set splitbelow expandtab nocompatible 
 nnoremap <c-l> :e ~/j/ftu_log_folder <cr> 
