@@ -10,21 +10,28 @@ using namespace std;
 
 class Solver {
  public:
-  inline void Main() {
+  inline void Main() const {
     SetIO();
     Run();
   }
 
  private:
-  using ll = long long;
-
-  inline void SetIO() const { cin.tie(0)->sync_with_stdio(0); }
-
+  inline void SetIO() const {
+    cin.tie(0)->sync_with_stdio(0);
+  }
   void Solve() const;
   void Run() const;
 };
 
-void Solver::Solve() const {}
+using ll = long long;
+
+void Solver::Solve() const {
+  vector<bool> a(1);
+  debug(a[0]);
+  debug(a);
+  for (auto i : a) debug(i);
+
+}
 
 void Solver::Run() const {
   auto tt{1};
