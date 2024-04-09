@@ -1,0 +1,14 @@
+heidark commented on Dec 8, 2020
+Reducing transparency will completely eliminate the stutter:
+System Preferences - Accessibility - Display - Reduce transparency
+
+
+Changing the background_opacity setting doesn't seem to have any effect on the stutter and even with "Reduce transparency" on, the background will still be transparent.
+
+=====================================================
+sdjespersen commented on Dec 16, 2020
+I'm on a 16-inch 2019 MacBook Pro, 2 GPUs, Intel UHD Graphics 630 (built-in) and AMD Radeon Pro 5300M (PCIe).
+
+The automatic GPU switching in Big Sur really seems to be to blame. I ended up disabling automatic graphics switching at a system-wide level by going to System Preferences > Battery > Battery and unchecking Automatic graphics switching. Pour one out for my battery life 🍺, but my Alacritty experience is back to being speedy and amazing.
+====================================================
+https://github.com/alacritty/alacritty/issues/4474

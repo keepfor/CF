@@ -285,6 +285,11 @@ update downgrade shipping fw.
 update to shipping fw, connection refused.
 need click current menu, then can enable adb. 
 
+shipping fw update fail in factory. not in fcd image.
+shipping fw downgrade fail in factory, they use old ftu.
+
+update fcd image download, support eu cdt.
+
 usw, fw / fcd / ftu ver.
 usw, project owner.
 
@@ -347,6 +352,8 @@ fcd pass, but shell prompt show "none".
 5. Add External Batt. Discharging Test to 1.
 
 batt charging test, higher voltage issue.
+rps test, higher voltage issue.
+update batt charging test expected voltage range.
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
