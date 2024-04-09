@@ -1,5 +1,3 @@
-colorscheme koehler
-
 inoremap { {}<left>
 inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
 inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
@@ -50,7 +48,7 @@ inoremap <silent><expr> <down>
       \ CheckBackspace() ? "\<down>" :
       \ coc#refresh()
 inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
+colorscheme sorbet

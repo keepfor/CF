@@ -26,10 +26,7 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  vector<bool> b(6);
-  debug(b);
-  debug(b[0]);
-  for (const auto& i : b) cout << i << '\n';
+
 }
 
 void Solver::Run() const {
