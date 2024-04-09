@@ -1,3 +1,6 @@
+nnoremap <s-t> :vertical terminal<cr>
+tnoremap <c-l> <C-w>
+"terminal split
 
 nnoremap <s-l> :!make r<cr>
 inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm()
