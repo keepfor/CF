@@ -2,24 +2,23 @@ inoremap { {}<left>
 inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
 inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
+nnoremap ; :
+
 inoremap jk <esc>
 inoremap kj <esc>
 vnoremap jk <esc>
 vnoremap kj <esc>
 
 nnoremap <c-a> ggvG$
-nnoremap <s-q> :q!
-nnoremap ; :
-
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
-
 nnoremap <c-n> :tabnext<cr>
 nnoremap <c-p> :tabprevious<cr>
 nnoremap <c-t> :tabedit
 
+nnoremap <s-q> :q!
 nnoremap <s-k> :!time make<cr>
 nnoremap <s-j> :!cat > in<cr>
 nnoremap <s-u> :!bash /home/jackcai/tools/scripts/start_ftu.sh<cr>
