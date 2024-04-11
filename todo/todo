@@ -256,6 +256,11 @@ calibration issue, input format.
 update calibration input format.
 check calibration fail in factory. input issue.
 
+update shipping fw. (0.3.5) fix adopt issue.
+update iperf criteria. RX > 650 , TX> 480
+update meter calibration, update user input format.
+update check meter calibration, update user input format.
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
@@ -354,6 +359,7 @@ fcd pass, but shell prompt show "none".
 batt charging test, higher voltage issue.
 rps test, higher voltage issue.
 update batt charging test expected voltage range.
+rps guard test, gu issue. (udm vs usw)
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.

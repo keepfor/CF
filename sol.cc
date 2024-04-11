@@ -26,12 +26,27 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  cout << "safety\n";
+  int n, m, k;
+  cin >> n >> m >> k;
+  vector<int> a(n);
+  for (auto& i : a) {
+    cin >> i;
+  }
+  sort(a.begin(), a.end());
+  ll ans = 0;
+  ll ad = 0;
+  for (auto& i : a) {
+    ll b = min(m, k);
+    k -= b;
+    ans += b * (i + ad);
+    ad += b;
+  }
+  cout << ans << '\n';
 }
 
 void Solver::Run() const {
   auto tt{1};
-  // cin >> tt;
+  cin >> tt;
   while (tt--) {
     Solve();
   }
