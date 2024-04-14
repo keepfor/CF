@@ -16,7 +16,9 @@ class Solver {
   }
 
  private:
-  inline void SetIO() const { cin.tie(0)->sync_with_stdio(0); }
+  inline void SetIO() const {
+    cin.tie(0)->sync_with_stdio(0);
+  }
   void Solve() const;
   void Run() const;
 };
@@ -24,26 +26,17 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  int n, c, d;
-  cin >> n >> c >> d;
-  multiset<int> vis;
-  for (int i = 0; i < n * n; ++i) {
+  int k, q;
+  cin >> k >> q;
+  vector<int> a(k);
+  for (auto& i : a) {
+    cin >> i;
+  }
+  while (q--) {
     int t;
     cin >> t;
-    vis.insert(t);
+    cout << min(a[0] - 1, t) << " \n"[!q];
   }
-  for (int i = 0; i < n; ++i) {
-    int t = 1 + i * c;
-    for (int j = 0; j < n; ++j) {
-      if (!vis.count(t)) {
-        cout << "NO\n";
-        return;
-      }
-      vis.erase(vis.find(t));
-      t  += d;
-    }
-  }
-  cout << "YES\n";
 }
 
 void Solver::Run() const {
