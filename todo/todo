@@ -1,4 +1,13 @@
-usw-gen1, fcd questions from sqa.
+check a12 in ftu.
+USP-Battery
+USP-RPS-Pro
+UISP-P
+UISP-P-Pro
+UISP-R
+UISP-R-Pro
+UISP-S
+UISP-S-Pro
+USP-RPS
 
 ev-station-ultra, ftu, many items.
 
@@ -261,6 +270,14 @@ update iperf criteria. RX > 650 , TX> 480
 update meter calibration, update user input format.
 update check meter calibration, update user input format.
 
+support general update mcu fw. 
+support general update shipping fw. 
+general update mcu fw, version issue. 
+
+update product name.
+add check region.
+=======================================================================
+
 ev-charger, NFC KMS test issues from fxn.
 ev-charger, card reader issues from fxn.
 ev-charger, increae fcd retry count. te propose.
@@ -294,6 +311,7 @@ shipping fw update fail in factory. not in fcd image.
 shipping fw downgrade fail in factory, they use old ftu.
 
 update fcd image download, support eu cdt.
+=======================================================================
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -304,6 +322,7 @@ usw-industrial,tests,test_bomrev_check.py
 usw-industrial,tests,test_upgrade_to_shipping_fw.py
 
 UISP-Console-Carrier, npi.
+==========================================================
 
 usp-rps-pro, update lead acid battery, add config for slow charging current.
 update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
@@ -358,8 +377,16 @@ fcd pass, but shell prompt show "none".
 
 batt charging test, higher voltage issue.
 rps test, higher voltage issue.
-update batt charging test expected voltage range.
+update batt charging test expected voltage range. 50.4~53.6V
 rps guard test, gu issue. (udm vs usw)
+update rps test, expected voltage range. 53.5
+update burnin script.
+
+1. Update External Batt. Charging Test, remove discharging part.
+2. Add a test item, External Batt. Discharging Test.
+
+help verify check a12.
+===============================================================
 
 uisp-s, refactor snake.
 uisp-s, refactor port speed.
@@ -367,6 +394,7 @@ uisp-s, refactor port information.
 uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix 
 Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
+===============================================================
 
 usp-battery, python path issues.
 usp-battery, burnin issues, improve.
@@ -468,6 +496,10 @@ plc shipping fw upgrade fail. method not found.
 update usp rps fw to update plc fw upgrade .
 update plc fw upgrade cmd.
 lcm fw upgrade fail, timeout. lcm v1.0.3.0.
+
+ble update shipping fw fail in factory.
+=================================================================
+
 
 uisp-r, Add FW upgrade test with UISPR.mt7621.v3.1.0.e65004b.230217.1120.bin
 uisp-r, Add user config for expected FW version for FW upgrade test.
@@ -613,7 +645,8 @@ uisp-r-plus, Update BLE RSSI range to [-70, -50] dBm.
 uisp-r-plus, Update RTC test expected range to [4.99, 5.2].
 uisp-r-plus, Add support of RTC test expected range user configuration.
 uisp-r-plus, Add retry 2 times to RTC test.
-
+new shipping fw. UISPR.cn91xxr.v5.0.0.dbe8bc8.240410.1220.bin
+verify ftu, provide log.
 
 uisp-s-plus, fix backup power typo.
 uisp-s-plus, update fan criteria.

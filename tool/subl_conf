@@ -1,18 +1,14 @@
 {
+	"find_selected_text": true,
 	"word_wrap": true,
 	"hot_exit": false,
     "remember_open_files": false,
-	"find_selected_text": true,
+	/*"find_selected_text": true,*/
 	"always_prompt_for_file_reload": false,
-	"font_size": 10,
-	"theme": "auto",
-	"color_scheme": "Monokai.sublime-color-scheme",
+	"font_size":13,
 	"hardware_acceleration": "none",
-	"ignored_packages":
-	[
-		"Vintage",
-	],
 	"index_files": true,
+	"color_scheme": "Mariana.sublime-color-scheme",
 }
 
 [
