@@ -28,20 +28,19 @@ using ll = long long;
 void Solver::Solve() const {
   int n;
   cin >> n;
-  int ans = 0;
-  for (int i = 1; i <= n; ++i) {
-    ans += (2 * i - 1) * i;
-  }
-  cout << ans << ' ';
-  cout << 2 * n << '\n';
-  for (int j = n; j >= 1; --j) {
-    for (int k : {1, 2}) {
-      cout << k << ' ' << j << ' ';
-      for (int x = 1; x <= n; ++x) {
-        cout << x << " \n"[x == n];
+  int pre = -1;
+  ll ans = 0;
+  for (int i = 0; i < n; ++i) {
+    int t;
+    cin >> t;
+    if (pre != -1) {
+      if (t < pre) {
+        ans += 1ll * (pre - t);
       }
     }
+    pre = t;
   }
+  cout << ans << '\n';
 }
 
 void Solver::Run() const {

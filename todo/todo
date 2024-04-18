@@ -276,6 +276,8 @@ general update mcu fw, version issue.
 
 update product name.
 add check region.
+Normal state ground fail (GMO), retest issue.
+power board的calibration issue. FA.
 =======================================================================
 
 ev-charger, NFC KMS test issues from fxn.
@@ -386,6 +388,9 @@ update burnin script.
 2. Add a test item, External Batt. Discharging Test.
 
 help verify check a12.
+add check a12.
+update fcd shipping fw to UM.mt7621_ch-usw-1321+15649.240415.0515.
+update ftu expected fw version to UM.mt7621_ch-usw-1321+15649.240415.0515. verbose.
 ===============================================================
 
 uisp-s, refactor snake.
@@ -498,6 +503,10 @@ update plc fw upgrade cmd.
 lcm fw upgrade fail, timeout. lcm v1.0.3.0.
 
 ble update shipping fw fail in factory.
+verify usp-battery new burnin.
+
+update all fw to 1.2.4.
+update verify burnin. include battery and rps-pro.
 =================================================================
 
 
