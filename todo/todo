@@ -507,6 +507,22 @@ verify usp-battery new burnin.
 
 update all fw to 1.2.4.
 update verify burnin. include battery and rps-pro.
+
+1.2.4, recovery fw upgrade fail. send error.
+1.2.4, app fw upgrade fail.  send error.
+verify app fw upgrade without pp45.
+verify recovery fw upgrade without pp45.
+verify new fw for send error for upgrade fail 1.2.4.
+plc upgrade to 1.2.3 and xmodem upgrade to 1.2.4 pass.
+verify xmodem upgrade with plc upgrade, time consuming.
+
+md5 issue when verify testing fw for bind issue.
+xmodem default mode pass, but 1k mode fail.
+buffer overflow, update xmodem to 128 mode.
+
+battery does not enter burnin mode. lcm does not change.
+add set battery num feature.
+
 =================================================================
 
 

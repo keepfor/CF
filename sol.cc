@@ -26,19 +26,14 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  int n;
-  cin >> n;
-  int pre = -1;
-  ll ans = 0;
-  for (int i = 0; i < n; ++i) {
-    int t;
-    cin >> t;
-    if (pre != -1) {
-      if (t < pre) {
-        ans += 1ll * (pre - t);
-      }
-    }
-    pre = t;
+  int x, n;
+  cin >> x >> n;
+  int ans = 0;
+  for (int i = 1; i * i <= x; ++i) {
+     if (x % i == 0) {
+      if (x / i >= n) ans = max(ans, i);
+      if (x / (x / i) >= n) ans = max(ans, x / i);
+     }
   }
   cout << ans << '\n';
 }
