@@ -522,7 +522,7 @@ buffer overflow, update xmodem to 128 mode.
 
 battery does not enter burnin mode. lcm does not change.
 add set battery num feature.
-
+sip, battery ble behavior change.
 =================================================================
 
 

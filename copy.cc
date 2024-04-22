@@ -26,21 +26,12 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  int x, n;
-  cin >> x >> n;
-  int ans = 0;
-  for (int i = 1; i * i <= x; ++i) {
-     if (x % i == 0) {
-      if (x / i >= n) ans = max(ans, i);
-      if (x / (x / i) >= n) ans = max(ans, x / i);
-     }
-  }
-  cout << ans << '\n';
+
 }
 
 void Solver::Run() const {
   auto tt{1};
-  cin >> tt;
+  // cin >> tt;
   while (tt--) {
     Solve();
   }

@@ -8,6 +8,12 @@ input := in
 reset_cc := reset.cc
 compile_out := compile_out
 
+gdb := -g
+debug := -DDEBUG 
+CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion
+
+DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
+
 define re
 	echo > ${input}
 	cp ${reset_cc} ${src}
@@ -17,12 +23,10 @@ define cat_out
 	cat ${output}
 endef
 
-gdb := -g
-debug := -DDEBUG
-CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -g
-DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
-
-.PHONY: format all reset new main
+define run_in
+	cat ${input}
+	./${obj} < ${input} 2>&1 | tee ${output}
+endef
 
 all: main copy clean 
 
@@ -41,11 +45,6 @@ simple:
 ${obj}: ${src}
 	rm -f ${obj}*
 	$(CC) ${debug} ${src} -o ${obj} 2>&1 | tee ${compile_out}
-
-define run_in
-	cat ${input}
-	./${obj} < ${input} 2>&1 | tee ${output}
-endef
 
 main: ${obj}
 	$(run_in)
@@ -67,3 +66,5 @@ new:
 	echo > ${input}
 	cp ${reset_cc} ${src}
 	vim ${src} ${input}
+
+.PHONY: format all reset new main
