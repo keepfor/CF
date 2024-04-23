@@ -44,7 +44,7 @@ simple:
 
 ${obj}: ${src}
 	rm -f ${obj}*
-	$(CC) ${debug} ${src} -o ${obj} 2>&1 | tee ${compile_out}
+	$(CC) ${debug} ${src} -g -o ${obj} 2>&1 | tee ${compile_out}
 
 main: ${obj}
 	$(run_in)

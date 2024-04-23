@@ -392,6 +392,8 @@ help verify check a12.
 add check a12.
 update fcd shipping fw to UM.mt7621_ch-usw-1321+15649.240415.0515.
 update ftu expected fw version to UM.mt7621_ch-usw-1321+15649.240415.0515. verbose.
+
+rps-pro a12 can ping. issue.
 ===============================================================
 
 uisp-s, refactor snake.
@@ -532,6 +534,7 @@ manually input burnin commands. fail. not into burnin mode.
 add check adoption of rps-pro and usp-battery.
 verify new burnin.sh, flash commmands change.
 update rps burnin cmd, flash commands change.
+burnin, active count error.
 =================================================================
 
 
