@@ -313,7 +313,8 @@ shipping fw update fail in factory. not in fcd image.
 shipping fw downgrade fail in factory, they use old ftu.
 
 update fcd image download, support eu cdt.
-=======================================================================
+usb port test issue. complicance.
+===============================================================
 
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -523,6 +524,14 @@ buffer overflow, update xmodem to 128 mode.
 battery does not enter burnin mode. lcm does not change.
 add set battery num feature.
 sip, battery ble behavior change.
+factory reports plc fail, send 1000 but rec 1001.
+
+update data len of plc test to 999.
+manually input burnin commands. fail. not into burnin mode.
+
+add check adoption of rps-pro and usp-battery.
+verify new burnin.sh, flash commmands change.
+update rps burnin cmd, flash commands change.
 =================================================================
 
 
@@ -672,27 +681,20 @@ uisp-r-plus, Add support of RTC test expected range user configuration.
 uisp-r-plus, Add retry 2 times to RTC test.
 new shipping fw. UISPR.cn91xxr.v5.0.0.dbe8bc8.240410.1220.bin
 verify ftu, provide log.
+===================================================
 
 uisp-s-plus, fix backup power typo.
-uisp-s-plus, update fan criteria.
 uisp-s-plus, fcd update diag fw. (new DIAG_v2.0.0) 
-uisp-s-plus, fcd update helper. (helper_MRVL_ACT5_release_04) ??
-uisp-s-plus, Production test process update for improving CT
 
 uisp-s-plus, System LED test, cmd flow change.
 uisp-s-plus, DDR test, cmd flow change.
 uisp-s-plus, SFP Flash test, cmd flow change.
 uisp-s-plus, NAND Flash test, remove.
-uisp-s-plus, Bt connect, remove.
-uisp-s-plus, FAN test, criteria change.
 uisp-s-plus, BLE RSSI test, add and verify.
 uisp-s-plus, Port LED test, cmd flow change.
 uisp-s-plus, Burn-in test, setenv burnTimeout 16200.
-uisp-s-plus, Burn-in test, setenv burnFailedstop 1.
 uisp-s-plus, Burn-in test, sync r-pro.
 uisp-s-plus, Upgrade runtime Image. *UISPS.act5.recovery.v0.0.1-dev1+ubnt.28073.76a3f79.230406.1100.bin
-uisp-s-plus, showmac issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
-uisp-s-plus, showSys issues. *DIAG_v2.0.0: uisp-s-plus_256.ubi
 uisp-s-plus, S+ Port LED test順序幫我修改一下
 
 uisp-s-plus, fcd DIAG_v2.0.3: uisp-s-plus_256.ubi.
