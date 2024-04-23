@@ -50,7 +50,7 @@ verbose:
 
 $(prog): $(src)
 	rm -rf $(prog)
-	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(compile_out)
+	$(cc) $(dfg) $(src) -g -o $(prog) 2>&1 | tee $(compile_out)
 
 main: $(prog)
 	cat $(input)
