@@ -278,6 +278,10 @@ update product name.
 add check region.
 Normal state ground fail (GMO), retest issue.
 power board的calibration issue. FA.
+
+rename model name in ftu.
+update shipping fw v.1.0.0.
+get pb version fail after upgrade to shipping fw.
 =======================================================================
 
 ev-charger, NFC KMS test issues from fxn.
@@ -534,7 +538,14 @@ manually input burnin commands. fail. not into burnin mode.
 add check adoption of rps-pro and usp-battery.
 verify new burnin.sh, flash commmands change.
 update rps burnin cmd, flash commands change.
+
 burnin, active count error.
+roll back bundled fw to 1.2.3.
+
+1.2.3 plc log format change.
+1.2.3 plc needs add delay.
+
+verify 1.2.5.
 =================================================================
 
 

@@ -73,6 +73,16 @@ string to_string(tuple<A, B, C, D> p) {
 }
 
 template <typename T>
+string to_string(priority_queue<T> q) {
+  vector<T> v;
+  while (q.size()) {
+    v.push_back(q.top());
+    q.pop();
+  }
+  return to_string(v);
+}
+
+template <typename T>
 string to_string(queue<T> q) {
   vector<T> v;
   while (q.size()) {
