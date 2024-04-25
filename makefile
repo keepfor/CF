@@ -8,9 +8,10 @@ input := in
 reset_cc := reset.cc
 compile_out := compile_out
 
+o2 := -O2
 gdb := -g
-debug := -DDEBUG 
-CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion
+debug := -DDEBUG
+CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -Wl,-z,stack-size=256000000
 
 DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
 
@@ -44,7 +45,7 @@ simple:
 
 ${obj}: ${src}
 	rm -f ${obj}*
-	$(CC) ${debug} ${src} -g -o ${obj} 2>&1 | tee ${compile_out}
+	$(CC) ${src} ${debug} ${gdb} ${CXXFLAGS} -o ${obj} 2>&1 | tee ${compile_out}
 
 main: ${obj}
 	$(run_in)
