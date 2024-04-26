@@ -546,6 +546,10 @@ roll back bundled fw to 1.2.3.
 1.2.3 plc needs add delay.
 
 verify 1.2.5.
+verify binding with rps-pro.
+update disable burnin.
+verify 1.2.6.
+
 =================================================================
 
 
