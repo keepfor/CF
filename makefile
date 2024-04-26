@@ -43,7 +43,7 @@ clear:
 	clear
 	rm -rf $(prog)
 	rm -rf .$(src)
-	rm -rf prog.dSYM/
+	rm -rf $(prog).dSYM/
 
 simple:
 	$(cc) $(dfg) $(src) -o $(prog)
