@@ -13,7 +13,7 @@ class Solver {
   inline void Main() const {
     SetIO();
     Run();
-  }
+  }////
 
  private:
   inline void SetIO() const {
@@ -26,7 +26,7 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-
+  cout << "hello\n";
 }
 
 void Solver::Run() const {
