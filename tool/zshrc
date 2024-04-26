@@ -25,6 +25,7 @@ alias vl='bash ~/j/vlog.sh'
 alias lo='subl ~/ftu/logs'
 alias to='subl ~/alg/todo/todo'
 alias gs='git status'
+alias kc='make clean'
 
 alias alg='cd ~/alg'
 alias dow='cd ~/Downloads'
