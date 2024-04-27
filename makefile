@@ -53,7 +53,7 @@ verbose:
 
 $(prog): $(src)
 	rm -rf $(prog)*
-	$(cc) $(src) ${CXXFLAGS} $(dfg) $(gdb) -o $(prog) 2>&1 | tee $(compile_out)
+	$(cc) $(src) $(CXXFLAGS) $(dfg) $(gdb) -o $(prog) 2>&1 | tee $(compile_out)
 
 main: $(prog)
 	cat $(input)
@@ -72,11 +72,11 @@ re:
 
 new: 
 	$(re)
-	vim $(src) ${input}
+	vim $(src) $(input)
 
 gen:
-	${CC} ${gen_cc} -o gen
-	./${gen} > $(input)
+	$(CC) $(gen_cc) -o gen
+	./$(gen) > $(input)
 
 empty:
 	echo "" > $(src)

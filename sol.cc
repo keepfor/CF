@@ -26,7 +26,7 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  debug(123);
+
 }
 
 void Solver::Run() const {
