@@ -34,7 +34,7 @@ endef
 
 .PHONY: reset gen reset revim empty
 
-all: main copy clean
+all: main copy 
 	
 format:
 	clang-format -style=Google -i $(src)
@@ -61,6 +61,8 @@ main: $(prog)
 
 clean:
 	rm -rf .$(src)*
+	rm -rf $(prog)
+	rm -rf $(prog).dSYM/
 
 copy:
 	cp $(src) $(copy_cc)
