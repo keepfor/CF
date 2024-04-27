@@ -26,30 +26,7 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  int n;
-  cin >> n;
-  debug(n);
-  vector<int> a(n);
-  int g = 0;
-  for (auto& i : a) {
-    cin >> i;
-    g = gcd(g, i);
-  }
-  debug(g);
-  for (auto& i : a) {
-    i /= g;
-    while (i % 2 == 0) {
-      i /= 2;
-    }
-    while (i % 3 == 0) {
-      i /= 3;
-    }
-    if (i != 1) {
-      cout << "NO\n";
-      return;
-    }
-  }
-  cout << "YES\n";
+  debug(123);
 }
 
 void Solver::Run() const {
@@ -61,8 +38,7 @@ void Solver::Run() const {
 }
 
 signed main() {
-  debug("hello\n");
-  // Solver solver;
-  // solver.Main();
+  Solver solver;
+  solver.Main();
   return 0;
 }
