@@ -7,7 +7,9 @@ debug := -DDEBUG
 
 CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlong-long -Wshift-overflow -Wunknown-warning-option -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -Wl,-stack_size,256000000
 
-DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
+mac_os_clang_bug := -fsanitize=address
+
+DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC  -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
 
 prog := prog
 src := sol.cc
@@ -53,7 +55,7 @@ verbose:
 
 $(prog): $(src)
 	rm -rf $(prog)*
-	$(cc) $(src) $(CXXFLAGS) $(dfg) $(gdb) -o $(prog) 2>&1 | tee $(compile_out)
+	$(cc) $(src) $(CXXFLAGS) $(DEBUGFLAGS) $(dfg) $(gdb) -o $(prog) 2>&1 | tee $(compile_out)
 
 main: $(prog)
 	cat $(input)
