@@ -1,10 +1,12 @@
-cc := g++ -std=gnu++2a
+cc := g++
 cfg := -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions  -g 
 dfg := -DDEBUG
 
 gdb := -g
 debug := -DDEBUG
-CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -g
+
+CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlong-long -Wshift-overflow -Wunknown-warning-option -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -g -Wl,-stack_size,256000000
+
 DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
 
 prog := prog
@@ -39,8 +41,9 @@ format:
 
 clear:
 	clear
-	rm -rf $(prog)*
-	rm -rf .$(src)*
+	rm -rf $(prog)
+	rm -rf .$(src)
+	rm -rf $(prog).dSYM/
 
 simple:
 	$(cc) $(dfg) $(src) -o $(prog)
@@ -49,8 +52,8 @@ verbose:
 	$(cc) $(dfg) $(cfg) $(src) -o $(prog)
 
 $(prog): $(src)
-	rm -rf $(prog)
-	$(cc) $(dfg) $(src) -o $(prog) 2>&1 | tee $(compile_out)
+	rm -rf $(prog)*
+	$(cc) $(src) $(DEBUGFLAGS) $(gdb) $(dfg) ${CXXFLAGS} -o $(prog) 2>&1 | tee $(compile_out)
 
 main: $(prog)
 	cat $(input)
