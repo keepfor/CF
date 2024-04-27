@@ -1,3 +1,4 @@
+alias a='cat > in'
 alias p='~/j/ip.sh'
 alias n='make new'
 alias k='time make'
@@ -22,6 +23,7 @@ alias tm='tmux kill-server;tmux;'
 alias sl='. ~/j/slog.sh'
 alias lo='subl ~/ftu/logs'
 alias tk='tmux kill-session'
+alias kc='make clean'
 
 alias alg='cd ~/alg'
 alias dow='cd ~/Downloads'
