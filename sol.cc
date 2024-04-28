@@ -26,7 +26,7 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-
+  for (int i = 0; i < 100000; ++i) cout << i;
 }
 
 void Solver::Run() const {
