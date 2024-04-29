@@ -6,8 +6,6 @@ nnoremap ; :
 
 inoremap jk <esc>
 inoremap kj <esc>
-vnoremap jk <esc>
-vnoremap kj <esc>
 
 nnoremap <c-a> ggvG$
 nnoremap <c-h> <c-w>h
