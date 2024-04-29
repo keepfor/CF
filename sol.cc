@@ -28,24 +28,13 @@ using ll = long long;
 void Solver::Solve() const {
   int n;
   cin >> n;
-  vector<ll> a(n + 1);
-  for (int i = 1; i <= n; ++i) {
-    cin >> a[i];
-    a[i] += a[i - 1];
+  int sum = 0;
+  for (int i = 0; i < n; ++i) {
+    int t;
+    cin >> t;
+    sum |= t;
+    cout << int(sum ^ t) << " \n"[i + 1 == n]; 
   }
-  for (int i = 1; i <= n; ++i) {
-    int nx = 0;
-    for (int j = 0; j <= n; ++j) {
-      if (nx == a[j]) {
-        nx += a[i];
-      }
-    }
-    if (nx == a[n] + a[i]) {
-      cout << n - a[n] / a[i] << '\n';
-      return;
-    }
-  }
-  assert(0);
 }
 
 void Solver::Run() const {
