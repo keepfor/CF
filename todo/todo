@@ -282,6 +282,15 @@ power board的calibration issue. FA.
 rename model name in ftu.
 update shipping fw v.1.0.0.
 get pb version fail after upgrade to shipping fw.
+
+update lcm test, single pattern check for factory.
+check pb ver fail, not upd config. v1.2.8
+check pb ver fail, buffer issue. shipping 1.0.0
+
+shipping upgrade concern, te mentioned.
+ovp voltage issues. 270 ?
+proximity sensor discussion. yuwei
+
 =======================================================================
 
 ev-charger, NFC KMS test issues from fxn.
@@ -398,6 +407,9 @@ update fcd shipping fw to UM.mt7621_ch-usw-1321+15649.240415.0515.
 update ftu expected fw version to UM.mt7621_ch-usw-1321+15649.240415.0515. verbose.
 
 rps-pro a12 can ping. issue.
+rps-pro fw ver issue, same fw but diff ver in lcm.
+
+
 ===============================================================
 
 uisp-s, refactor snake.
@@ -549,6 +561,9 @@ verify 1.2.5.
 verify binding with rps-pro.
 update disable burnin.
 verify 1.2.6.
+verify new burnin.sh burnin.cfg
+verify new lcm fw. 1.0.4
+remove enable fast charging mode in discharging test.
 
 =================================================================
 
