@@ -565,6 +565,7 @@ verify new burnin.sh burnin.cfg
 verify new lcm fw. 1.0.4
 remove enable fast charging mode in discharging test.
 
+charge test fail. 1.2.6
 =================================================================
 
 
