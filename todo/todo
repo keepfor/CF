@@ -408,7 +408,7 @@ update ftu expected fw version to UM.mt7621_ch-usw-1321+15649.240415.0515. verbo
 
 rps-pro a12 can ping. issue.
 rps-pro fw ver issue, same fw but diff ver in lcm.
-
+cpu id invalid issue. ty factory.
 
 ===============================================================
 
