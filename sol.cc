@@ -28,13 +28,26 @@ using ll = long long;
 void Solver::Solve() const {
   int n;
   cin >> n;
-  int sum = 0;
-  for (int i = 0; i < n; ++i) {
-    int t;
-    cin >> t;
-    sum |= t;
-    cout << int(sum ^ t) << " \n"[i + 1 == n]; 
+  vector<int> a(4 * n);
+  for (int i = 0; i < 4 * n; ++i) {
+    cin >> a[i];
   }
+  sort(a.begin(), a.end());
+  for (int i = 0; i + 1 < 4 * n; i += 2) {
+    if (a[i] != a[i + 1]) {
+      cout << "NO\n";
+      return ;
+    }
+  }
+  int b = a[0] * a.back();
+  debug(b);
+  for (int i = 2; i < n; i += 4) {
+    if (a[i] * a[4 * n - 2 * i] != b) {
+      cout << "NO\n";
+      return ;
+    }
+  }
+  cout << "YES\n";
 }
 
 void Solver::Run() const {

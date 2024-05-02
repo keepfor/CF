@@ -291,6 +291,9 @@ shipping upgrade concern, te mentioned.
 ovp voltage issues. 270 ?
 proximity sensor discussion. yuwei
 
+add lcm test many colors.
+add workaround of check mcu version in shipping fw.
+
 =======================================================================
 
 ev-charger, NFC KMS test issues from fxn.
@@ -409,6 +412,8 @@ update ftu expected fw version to UM.mt7621_ch-usw-1321+15649.240415.0515. verbo
 rps-pro a12 can ping. issue.
 rps-pro fw ver issue, same fw but diff ver in lcm.
 cpu id invalid issue. ty factory.
+
+verify test helper from fw rd.
 
 ===============================================================
 
@@ -566,6 +571,7 @@ verify new lcm fw. 1.0.4
 remove enable fast charging mode in discharging test.
 
 charge test fail. 1.2.6
+add disable charging  state machine to charge test.
 =================================================================
 
 
@@ -715,6 +721,7 @@ uisp-r-plus, Add support of RTC test expected range user configuration.
 uisp-r-plus, Add retry 2 times to RTC test.
 new shipping fw. UISPR.cn91xxr.v5.0.0.dbe8bc8.240410.1220.bin
 verify ftu, provide log.
+new shipping fw. v5.0.1.
 ===================================================
 
 uisp-s-plus, fix backup power typo.
