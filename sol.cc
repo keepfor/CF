@@ -57,7 +57,6 @@ void Solver::Solve() const {
   } else {
     d[pos] = 0;
     if (pos == m - 1) {
-      d.push_bac
     }
   }
 }
