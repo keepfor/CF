@@ -2,11 +2,11 @@ CC := g++
 prog := prog
 src := sol.cc
 sol_swap := .sol.*
-copy_cc := copy.cc
+last_cc := last.cc
 output := out
 input := in
 reset_cc := reset.cc
-compile_out := compile_out
+cout := cout
 
 o2 := -O2
 gdb := -g
@@ -35,14 +35,14 @@ format:
 	clang-format -style=Google -i $(src)
 	
 verbose:
-	$(CC) $(src) $(CXXFLAGS) $(debug) $(gdb) $(DEBUGFLAGS) -o $(prog) 2>&1 | tee $(compile_out)
+	$(CC) $(src) $(CXXFLAGS) $(debug) $(gdb) $(DEBUGFLAGS) -o $(prog) 2>&1 | tee $(cout)
 
 simple:
 	$(CC) $(src) -o $(prog)  
 
 $(prog): $(src)
 	rm -f $(prog)
-	$(CC) $(src) -o $(prog) 2>&1 | tee $(compile_out)
+	$(CC) $(src) -o $(prog) 2>&1 | tee $(cout)
 
 main: $(prog)
 	$(run_in)
@@ -52,7 +52,7 @@ clean:
 	rm -f $(prog)
 
 copy:
-	cp $(src) $(copy_cc)
+	cp $(src) $(last_cc)
 
 re:
 	$(re)
