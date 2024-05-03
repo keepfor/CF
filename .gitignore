@@ -2,4 +2,4 @@ in
 out
 prog
 copy.cc
-compile_out
+cout

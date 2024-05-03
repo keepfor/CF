@@ -28,26 +28,38 @@ using ll = long long;
 void Solver::Solve() const {
   int n;
   cin >> n;
-  vector<int> a(4 * n);
-  for (int i = 0; i < 4 * n; ++i) {
-    cin >> a[i];
+  int x = n;
+  
+  vector<int> d;
+  bool ok = true;
+  while (x) {
+    int y = x % 3;
+    if (y > 1) {
+      ok = false;
+    }
+    d.push_back(y);
+    x /= 3;
   }
-  sort(a.begin(), a.end());
-  for (int i = 0; i + 1 < 4 * n; i += 2) {
-    if (a[i] != a[i + 1]) {
-      cout << "NO\n";
-      return ;
+  if (ok) {
+    cout << n << '\n';
+    return;
+  }
+  const int m = d.size();
+  int pos = -1;
+  for (int i = m - 1; i >= 0; --i) {
+    if (d[i] == 2) {
+      pos = i;
+      break;
     }
   }
-  int b = a[0] * a.back();
-  debug(b);
-  for (int i = 2; i <= 4 * n - 4; i += 4) {
-    if (a[i] * a[4 * n - 2 * i] != b) {
-      cout << "NO\n";
-      return ;
+  if (pos == -1) {
+    d.push_back(1);
+  } else {
+    d[pos] = 0;
+    if (pos == m - 1) {
+      d.push_bac
     }
   }
-  cout << "YES\n";
 }
 
 void Solver::Run() const {
@@ -63,3 +75,4 @@ signed main() {
   solver.Main();
   return 0;
 }
+  
