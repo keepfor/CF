@@ -42,7 +42,7 @@ simple:
 
 $(prog): $(src)
 	rm -f $(prog)
-	$(CC) $(src) -o $(prog) 2>&1 | tee $(cout)
+	$(CC) $(src) $(debug) -o $(prog) 2>&1 | tee $(cout)
 
 main: $(prog)
 	$(run_in)
