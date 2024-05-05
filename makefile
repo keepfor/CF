@@ -49,11 +49,11 @@ simple:
 	$(cc) $(dfg) $(src) -o $(prog)
 
 verbose:
-	$(cc) $(dfg) $(cfg) $(src) -o $(prog)
+	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
 
 $(prog): $(src)
 	rm -rf $(prog)*
-	$(cc) $(src) $(CXXFLAGS) $(DEBUGFLAGS) $(dfg) $(gdb) -o $(prog) 2>&1 | tee $(compile_out)
+	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
 
 main: $(prog)
 	cat $(input)
