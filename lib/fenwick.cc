@@ -128,47 +128,43 @@ struct Max {
 
 template <typename T>
 struct Fenwick {
-    int n;
-    std::vector<T> a;
-    
-    Fenwick(int n_ = 0) {
-        init(n_);
+  int n;
+  std::vector<T> a;
+
+  Fenwick(int n_ = 0) { init(n_); }
+
+  void init(int n_) {
+    n = n_;
+    a.assign(n, T{});
+  }
+
+  void add(int x, const T &v) {
+    for (int i = x + 1; i <= n; i += i & -i) {
+      a[i - 1] = a[i - 1] + v;
     }
-    
-    void init(int n_) {
-        n = n_;
-        a.assign(n, T{});
+  }
+
+  T sum(int x) {
+    T ans{};
+    for (int i = x; i > 0; i -= i & -i) {
+      ans = ans + a[i - 1];
     }
-    
-    void add(int x, const T &v) {
-        for (int i = x + 1; i <= n; i += i & -i) {
-            a[i - 1] = a[i - 1] + v;
-        }
+    return ans;
+  }
+
+  T rangeSum(int l, int r) { return sum(r) - sum(l); }
+
+  int select(const T &k) {
+    int x = 0;
+    T cur{};
+    for (int i = 1 << std::__lg(n); i; i /= 2) {
+      if (x + i <= n && cur + a[x + i - 1] <= k) {
+        x += i;
+        cur = cur + a[x - 1];
+      }
     }
-    
-    T sum(int x) {
-        T ans{};
-        for (int i = x; i > 0; i -= i & -i) {
-            ans = ans + a[i - 1];
-        }
-        return ans;
-    }
-    
-    T rangeSum(int l, int r) {
-        return sum(r) - sum(l);
-    }
-    
-    int select(const T &k) {
-        int x = 0;
-        T cur{};
-        for (int i = 1 << std::__lg(n); i; i /= 2) {
-            if (x + i <= n && cur + a[x + i - 1] <= k) {
-                x += i;
-                cur = cur + a[x - 1];
-            }
-        }
-        return x;
-    }
+    return x;
+  }
 };
 int main() {
   std::ios::sync_with_stdio(false);
@@ -323,48 +319,48 @@ class Fenwick {
 };
 
 class Solution {
-public:
-    vector<int> resultArray(vector<int>& v) {
-        const int n = v.size();
-        vector<int> ord(n);
-        vector<int> sv = v;
-        sort(sv.begin(), sv.end());
-        for (int i = 0; i < n; ++i) {
-            ord[i] = lower_bound(sv.begin(), sv.end(), v[i]) - sv.begin();
-        }
-        vector<int> a{ord[0]};
-        vector<int> b{ord[1]};
-        Fenwick<int> fa(n);
-        Fenwick<int> fb(n);
-        fa.modify(ord[0], 1);
-        fb.modify(ord[1], 1);
-        for (int i = 2; i < n; ++i) {
-            int ga = fa.get(n - 1) - fa.get(ord[i]);
-            int gb = fb.get(n - 1) - fb.get(ord[i]);
-            if (ga > gb) {
-                a.push_back(ord[i]);
-                fa.modify(ord[i], 1);
-            } else if (gb > ga) {
-                b.push_back(ord[i]);
-                fb.modify(ord[i], 1);
-            } else {
-                if (a.size() <= b.size()) {
-                    a.push_back(ord[i]);
-                    fa.modify(ord[i], 1);
-                } else {
-                    b.push_back(ord[i]);
-                    fb.modify(ord[i], 1);
-                }
-            }
-        }
-        vector<int> ans;
-        for (auto& i : a) {
-            ans.push_back(sv[i]);
-        }
-        for (auto& i : b) {
-            ans.push_back(sv[i]);
-        }
-        return ans;
+ public:
+  vector<int> resultArray(vector<int> &v) {
+    const int n = v.size();
+    vector<int> ord(n);
+    vector<int> sv = v;
+    sort(sv.begin(), sv.end());
+    for (int i = 0; i < n; ++i) {
+      ord[i] = lower_bound(sv.begin(), sv.end(), v[i]) - sv.begin();
     }
+    vector<int> a{ord[0]};
+    vector<int> b{ord[1]};
+    Fenwick<int> fa(n);
+    Fenwick<int> fb(n);
+    fa.modify(ord[0], 1);
+    fb.modify(ord[1], 1);
+    for (int i = 2; i < n; ++i) {
+      int ga = fa.get(n - 1) - fa.get(ord[i]);
+      int gb = fb.get(n - 1) - fb.get(ord[i]);
+      if (ga > gb) {
+        a.push_back(ord[i]);
+        fa.modify(ord[i], 1);
+      } else if (gb > ga) {
+        b.push_back(ord[i]);
+        fb.modify(ord[i], 1);
+      } else {
+        if (a.size() <= b.size()) {
+          a.push_back(ord[i]);
+          fa.modify(ord[i], 1);
+        } else {
+          b.push_back(ord[i]);
+          fb.modify(ord[i], 1);
+        }
+      }
+    }
+    vector<int> ans;
+    for (auto &i : a) {
+      ans.push_back(sv[i]);
+    }
+    for (auto &i : b) {
+      ans.push_back(sv[i]);
+    }
+    return ans;
+  }
 };
-}
+}  // namespace le

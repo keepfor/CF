@@ -16,18 +16,14 @@ class Solver {
   }
 
  private:
-  inline void SetIO() const {
-    cin.tie(0)->sync_with_stdio(0);
-  }
+  inline void SetIO() const { cin.tie(0)->sync_with_stdio(0); }
   void Solve() const;
   void Run() const;
 };
 
 using ll = long long;
 
-void Solver::Solve() const {
-
-}
+void Solver::Solve() const {}
 
 void Solver::Run() const {
   auto tt{1};

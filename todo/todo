@@ -410,6 +410,18 @@ verify test helper from fw rd.
 find mtk7621 model, fw rd ask.
 verify test fw.
 support uid request for new cpu_id.
+
+FP.7 External Batt. Charging Test
+Add force manage command to ignore host adoption limitation
+Finetune connection timer to 15 sec
+Finetune bind timer to 15 sec
+Burn-in Setup
+Add chmod 755 burnin.sh
+Change save config command
+disable burnin
+Add chmod 755 burnin.sh
+Change save config command
+
 ===============================================================
 
 uisp-s, refactor snake.
@@ -540,6 +552,7 @@ md5 issue when verify testing fw for bind issue.
 xmodem default mode pass, but 1k mode fail.
 buffer overflow, update xmodem to 128 mode.
 
+rps does not into burnin mode. after reboot.
 battery does not enter burnin mode. lcm does not change.
 add set battery num feature.
 sip, battery ble behavior change.
@@ -562,6 +575,9 @@ verify 1.2.5.
 verify binding with rps-pro.
 update disable burnin.
 verify 1.2.6.
+plc test fail, not response.
+battery seems not bind by rps. lcm not change to blue.
+sometimes battery does not into burnin, lcm not change.
 verify new burnin.sh burnin.cfg
 verify new lcm fw. 1.0.4
 remove enable fast charging mode in discharging test.

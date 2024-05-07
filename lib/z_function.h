@@ -26,17 +26,14 @@ vector<int> z_function(const T &s) {
 
 int z[N + 10];
 
-void get_z(string & s) {
-    int n = (int)s.length();
-    for (int i = 1, l = 0, r = 0; i < n; ++i) {
-        if (i <= r)
-            z[i] = min(r - i + 1, z[i - l]);
-        while (i + z[i] < n && s[z[i]] == s[i + z[i]])
-            ++z[i];
-        if (i + z[i] - 1 > r)
-            l = i, r = i + z[i] - 1;
-    }
-    return;
+void get_z(string &s) {
+  int n = (int)s.length();
+  for (int i = 1, l = 0, r = 0; i < n; ++i) {
+    if (i <= r) z[i] = min(r - i + 1, z[i - l]);
+    while (i + z[i] < n && s[z[i]] == s[i + z[i]]) ++z[i];
+    if (i + z[i] - 1 > r) l = i, r = i + z[i] - 1;
+  }
+  return;
 }
 
 void SolveOne() {
@@ -67,7 +64,7 @@ void SolveOne() {
   string s;
   cin >> n >> m >> s;
   vector<int> y(m);
-  for (auto& i : y) {
+  for (auto &i : y) {
     cin >> i;
     --i;
   }
@@ -97,19 +94,16 @@ void SolveOne() {
   cout << ans << '\n';
 };
 
-
 vector<int> z_function(const string &s) {
-    int n = s.size(), l = 0, r = 0;
-    vector<int> z(n);
-    for(int i = 1; i < n; i++) {
-        if(i < r)
-            z[i] = min(r - i, z[i - l]);
-        while(i + z[i] < n && s[z[i]] == s[i + z[i]])
-            z[i]++;
-        if(i + z[i] > r) {
-            l = i;
-            r = i + z[i];
-        }
+  int n = s.size(), l = 0, r = 0;
+  vector<int> z(n);
+  for (int i = 1; i < n; i++) {
+    if (i < r) z[i] = min(r - i, z[i - l]);
+    while (i + z[i] < n && s[z[i]] == s[i + z[i]]) z[i]++;
+    if (i + z[i] > r) {
+      l = i;
+      r = i + z[i];
     }
-    return z;
+  }
+  return z;
 }

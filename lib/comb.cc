@@ -12,29 +12,27 @@ namespace comb_one_loop {
 const int mod = 1e9 + 7, mx = 2e3 + 10;
 int fac[mx], inv[mx], invfac[mx];
 class Solution {
-public:
-    int mul(int a, int b) {
-        return (1ll * a * b) % mod;
+ public:
+  int mul(int a, int b) { return (1ll * a * b) % mod; }
+  void init() {
+    fac[0] = fac[1] = invfac[0] = invfac[1] = inv[1] = 1;
+    for (int i = 2; i < mx; ++i) {
+      fac[i] = mul(fac[i - 1], i);
+      inv[i] = mul(inv[mod % i], mod - mod / i);
+      invfac[i] = mul(invfac[i - 1], inv[i]);
+      // cout << fac[i] << ',' << invfac[i] << '\n';
     }
-    void init() {
-        fac[0] = fac[1] = invfac[0] = invfac[1] = inv[1] = 1;
-        for (int i = 2; i < mx; ++i) {
-            fac[i] = mul(fac[i - 1], i);
-            inv[i] = mul(inv[mod % i], mod - mod / i);
-            invfac[i] = mul(invfac[i - 1], inv[i]);
-            //cout << fac[i] << ',' << invfac[i] << '\n';
-        }
-    }
-    int cnr(int n, int r) {
-        if (r > n) return 0;
-        return (((1LL * fac[n] * invfac[n - r]) % mod) * 1LL * invfac[r]) % mod;
-    }
-    int numberOfSets(int n, int k) {
-        init();
-        return cnr(n + k - 1, 2 * k);
-    }
+  }
+  int cnr(int n, int r) {
+    if (r > n) return 0;
+    return (((1LL * fac[n] * invfac[n - r]) % mod) * 1LL * invfac[r]) % mod;
+  }
+  int numberOfSets(int n, int k) {
+    init();
+    return cnr(n + k - 1, 2 * k);
+  }
 };
-}
+}  // namespace comb_one_loop
 
 class comb {
   long long mod;
@@ -42,7 +40,7 @@ class comb {
   vector<long long> fac, inv;
 
  public:
-  void init(const long long _mod=2000000011, const int _m=1000) {
+  void init(const long long _mod = 2000000011, const int _m = 1000) {
     mod = _mod;
     m = _m + 1;
     fac.resize(m);

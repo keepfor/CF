@@ -4,4 +4,3 @@ inline void Freopen() {
   freopen("output.txt", "w", stdout);
 #endif
 }
-
