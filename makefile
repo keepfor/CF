@@ -35,14 +35,14 @@ format:
 	clang-format -style=Google -i $(src)
 	
 verbose:
-	$(CC) $(src) $(CXXFLAGS) $(debug) $(gdb) $(DEBUGFLAGS) -o $(prog) 2>&1 | tee $(cout)
+	$(CC) $(src) -o $(prog) $(CXXFLAGS) $(debug) $(gdb) $(DEBUGFLAGS)  2>&1 | tee $(cout)
 
 simple:
 	$(CC) $(src) -o $(prog)  
 
 $(prog): $(src)
 	rm -f $(prog)
-	$(CC) $(src) $(debug) -o $(prog) 2>&1 | tee $(cout)
+	$(CC) $(src) -o $(prog) $(CXXFLAGS) $(debug) $(gdb) $(DEBUGFLAGS)  2>&1 | tee $(cout)
 
 main: $(prog)
 	$(run_in)

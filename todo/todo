@@ -9,13 +9,6 @@ UISP-S
 UISP-S-Pro
 USP-RPS
 
-ev-station-ultra, ftu, many items.
-
-ev-station-ultra, fcd, verify US, 002a.
-ev-station-ultra, ftu, add led breath control. 0.0.4
-ev-station-ultra, fcd, support upgrade uboot. 0.0.4
-ev-station-ultra, ftu, no loopback ip, .20 . 0.0.4
-ev-station-ultra, ftu, display test fail, not found acm0 dev. 0.0.4
 ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
 ev-station-ultra, ftu, nfc test show some errors. 0.0.4
 ev-station-ultra, fcd, upgrade fcd img .0.0.5
@@ -414,7 +407,9 @@ rps-pro fw ver issue, same fw but diff ver in lcm.
 cpu id invalid issue. ty factory.
 
 verify test helper from fw rd.
-
+find mtk7621 model, fw rd ask.
+verify test fw.
+support uid request for new cpu_id.
 ===============================================================
 
 uisp-s, refactor snake.
@@ -423,6 +418,7 @@ uisp-s, refactor port information.
 uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix 
 Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
+new shipping v1.8.1.
 ===============================================================
 
 usp-battery, python path issues.
@@ -722,9 +718,9 @@ uisp-r-plus, Add retry 2 times to RTC test.
 new shipping fw. UISPR.cn91xxr.v5.0.0.dbe8bc8.240410.1220.bin
 verify ftu, provide log.
 new shipping fw. v5.0.1.
+check a12 checking from te.
 ===================================================
 
-uisp-s-plus, fix backup power typo.
 uisp-s-plus, fcd update diag fw. (new DIAG_v2.0.0) 
 
 uisp-s-plus, System LED test, cmd flow change.
@@ -733,8 +729,6 @@ uisp-s-plus, SFP Flash test, cmd flow change.
 uisp-s-plus, NAND Flash test, remove.
 uisp-s-plus, BLE RSSI test, add and verify.
 uisp-s-plus, Port LED test, cmd flow change.
-uisp-s-plus, Burn-in test, setenv burnTimeout 16200.
-uisp-s-plus, Burn-in test, sync r-pro.
 uisp-s-plus, Upgrade runtime Image. *UISPS.act5.recovery.v0.0.1-dev1+ubnt.28073.76a3f79.230406.1100.bin
 uisp-s-plus, S+ Port LED test順序幫我修改一下
 
@@ -852,6 +846,12 @@ update snake test, test flow changes.
 update ble criteria.經過FXN VN調整後，BLE測試標準改為-58~-79dBm。
 update ble test expected rssi range. (-70, -50)
 
+new shipping v1.8.1.
+sync ble rssi criteria with r+.
+update to diag from shipping fail. no cat command in shipping fw.
+check a12 checking from te.
+
+==============================================================================
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
 usw-enterprise-8-poe, update poe test board setting.
@@ -939,7 +939,7 @@ update lead battery test, support check lth battery status.
 fix snake1 and snake2 issues. git reset
 improve portlink test retest, rewrite with swctrl.
 update fan 100_rpm criteria to 8000~10000.
-
+=============================================================================
 
 uisp-r-pro, update security test with new parsing pattern and expected result.
 uisp-r-pro, rpi4, usb not mount. reported by fw andrew.
@@ -996,15 +996,10 @@ uisp-r-pro, update controller app ver, ecof.
 ftu lcm burnin test,  'exec "lcm-control --command test.burnin --parameter 30 --sender fcd"'
 ubnt-upgrade UISPR.alpinev2.v9.0.11.246ff2f.230303.0209.bin, dut不會自動reboot
 
-?usw-flex-xg, ltn reports burnin retest rate increases.
-usw-flex-xg, power consumption.
-usw-flex-xg, factory default issues.
-
 usw-flex, update shipping fw. 6.4.18.
 usw-flex, update burnin.sh, increase delay.
 
 ux issues, cm process issues.
-usw-flex, ftu, add shipping fw upgrade to ftu. (from fcd 1.0.5-4.0.66)
 verify FCD-USW-FLEX-1.0.5-4.0.66.
 fcd not found shipping fw.
 check test flow.
@@ -1054,6 +1049,8 @@ cancel some test cases, reduce testing time.
 fw sail upgrade firmware test timeout fail.
 add upgrade to diag fw from shipping fw.
 Update bundled shipping FW to UISPP.v1.0.4.917f93.240102.0843.bin.
+==================================================================================
+
 
 uisp-s-pro,
 lcm dfu cmd not work. (ucmd)
@@ -1062,6 +1059,8 @@ fcd, update diag fw. (UISP-S-Pro-1.3.8-DEV09.bix)
 ftu, update diag fw. (UISPS.rtl930x.v1.5.2.bix.)
 fcd, booting issues, not in burnin mode, but env wait_time works.
 Update bundled shipping FW to UISPS.rtl930x.v1.6.0.bix.
+new shipping v1.8.1.
+==================================================================
 
 //uled-bar, add 2nd id test. 
 //uled-bar, add switch to another edge instruction window to 2nd check-id-test.
