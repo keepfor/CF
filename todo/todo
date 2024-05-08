@@ -422,6 +422,22 @@ disable burnin
 Add chmod 755 burnin.sh
 Change save config command
 
+1.FP.7 External Batt. Charging Test
+  1-1. Add force manage command to ignore host adoption limitation
+  1-2. Finetune connection timer to 15 sec
+  1-3. Finetune bind timer to 15 sec
+
+2. Burn-in Setup
+  1-1. Add chmod 755 burnin.sh
+  1-2. Change save config command
+
+3. FP3.3 Disable Burnin test
+  1-1. Add disable burnin operations
+  1-2. Add chmod 755 burnin.sh
+  1-3. Change save config command
+
+new shipping fw 7.1.4. fcd
+new shipping fw 7.1.4. ftu.
 ===============================================================
 
 uisp-s, refactor snake.
@@ -867,6 +883,7 @@ sync ble rssi criteria with r+.
 update to diag from shipping fail. no cat command in shipping fw.
 check a12 checking from te.
 
+scp fail in new shipping.
 ==============================================================================
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
