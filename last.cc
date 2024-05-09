@@ -26,22 +26,25 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  int n, k;
-  cin >> n >> k;
-  if (n == 1) {
-    cout << k << '\n';
-    return;
-  }
-  int x = 1;
-  while (((x << 1) + 1) <= k) {
-    x <<= 1;
-    ++x;
-  }
-  cout << x << ' ' << k - x;
-  for (int i = 0; i < n - 2; ++i) {
-    cout << ' ' << 0;
-  }
-  cout << '\n';
+    int n, x;
+    cin >> n >> x;
+    int c = 0;
+    int s = 0;
+    for (int i = 0; i < n; ++i) {
+        int t;
+        cin >> t;
+        if (t == x) {
+            ++c;
+        }
+        s += t;
+    }
+    if (c == n) {
+        cout << 0 << '\n';
+    } else if (s == n * x) {
+        cout << 1 << '\n';
+    } else {
+        cout << 2 << '\n';
+    }
 }
 
 void Solver::Run() const {
