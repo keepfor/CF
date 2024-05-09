@@ -26,7 +26,7 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-
+  cout << "He\n";
 }
 
 void Solver::Run() const {
