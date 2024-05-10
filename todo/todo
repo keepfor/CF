@@ -600,6 +600,11 @@ remove enable fast charging mode in discharging test.
 
 charge test fail. 1.2.6
 add disable charging  state machine to charge test.
+
+ty burnin fail.
+ty plc fail 123->126.
+ty burnin fail when bat num 1.
+ty burnin fail when bat num 3. show error.
 =================================================================
 
 
@@ -884,6 +889,11 @@ update to diag from shipping fail. no cat command in shipping fw.
 check a12 checking from te.
 
 scp fail in new shipping.
+verify web gui upload diag fw.
+verify run shell.
+verify enable scp.
+ssh fail not exit code.
+try ssh expect fail.
 ==============================================================================
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
