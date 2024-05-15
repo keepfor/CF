@@ -605,6 +605,7 @@ ty burnin fail.
 ty plc fail 123->126.
 ty burnin fail when bat num 1.
 ty burnin fail when bat num 3. show error.
+
 =================================================================
 
 
@@ -616,7 +617,10 @@ uisp-r, update burnin test tool.
 uisp-r, update fwupgrade, support reset ftu.
 uisp-r, fw 3.0.1 factory reset port 9 can not ping.
 uisp-r, ecof for update mobile app ver.
-
+add a12.
+new shipping 501.
+passitive test issues. (git reset.)
+================================================================
 uisp-r-plus, fix backup power typo.
 uisp-r-plus, update backup power checking logic.
 uisp-r-plus, update enable burnin fan env.
@@ -756,6 +760,8 @@ new shipping fw. UISPR.cn91xxr.v5.0.0.dbe8bc8.240410.1220.bin
 verify ftu, provide log.
 new shipping fw. v5.0.1.
 check a12 checking from te.
+Looks like port 6 will fail at Wirespeed stress loopback when high temperature.
+uboot can not boot into kernel. fw  ken.
 ===================================================
 
 uisp-s-plus, fcd update diag fw. (new DIAG_v2.0.0) 
@@ -894,6 +900,11 @@ verify run shell.
 verify enable scp.
 ssh fail not exit code.
 try ssh expect fail.
+use allow_agent.
+try not exec_cmd.
+try run shell\rls.
+try run shell\rls /tmp/;exit.
+update to diag,can not enter kernel.. IOEXP init...
 ==============================================================================
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
@@ -1038,7 +1049,9 @@ uisp-r-pro, Production test process update for improving CT
 uisp-r-pro, update controller app ver, ecof.
 ftu lcm burnin test,  'exec "lcm-control --command test.burnin --parameter 30 --sender fcd"'
 ubnt-upgrade UISPR.alpinev2.v9.0.11.246ff2f.230303.0209.bin, dut不會自動reboot
-
+shipping 5.0.1
+security.
+=============================================================================
 usw-flex, update shipping fw. 6.4.18.
 usw-flex, update burnin.sh, increase delay.
 
