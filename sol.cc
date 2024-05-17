@@ -26,7 +26,7 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  cout << "He\n";
+  cout << (2 % 4 * 2) << '\n';
 }
 
 void Solver::Run() const {
