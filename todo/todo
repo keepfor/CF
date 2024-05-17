@@ -447,6 +447,7 @@ uisp-s, ftu, update shipping fw, to UISPS.rtl838x.v1.6.0-beta.2.bix
 Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
 new shipping v1.8.1.
+new shipping v1.8.x.
 ===============================================================
 
 usp-battery, python path issues.
@@ -905,6 +906,8 @@ try not exec_cmd.
 try run shell\rls.
 try run shell\rls /tmp/;exit.
 update to diag,can not enter kernel.. IOEXP init...
+new shipping v1.8.x.
+
 ==============================================================================
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
@@ -1116,6 +1119,7 @@ ftu, update diag fw. (UISPS.rtl930x.v1.5.2.bix.)
 fcd, booting issues, not in burnin mode, but env wait_time works.
 Update bundled shipping FW to UISPS.rtl930x.v1.6.0.bix.
 new shipping v1.8.1.
+new shipping v1.8.x.
 ==================================================================
 
 //uled-bar, add 2nd id test. 
