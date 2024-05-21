@@ -16,8 +16,8 @@ class Solver {
   }
 
  private:
-  inline void SetIO() const {
-    cin.tie(0)->sync_with_stdio(0);
+  inline void SetIO() const { 
+    cin.tie(0)->sync_with_stdio(0); 
   }
   void Solve() const;
   void Run() const;
@@ -25,25 +25,83 @@ class Solver {
 
 using ll = long long;
 
-void Solver::Solve() const {
+template <class T, int MOD>
+struct StringHash {
   int n;
-  cin >> n;
-  string ans;
+  vector<T> h;
+  vector<T> p;
+  const T mod = MOD;
+
+  void init(string s) {
+    this->n = s.size();
+    const T ba = 256;
+    h.assign(n + 1, 0);
+    p.assign(n + 1, 1);
+    for (int i = 0; i < n; ++i) {
+      p[i + 1] = p[i] * ba % mod;
+      h[i + 1] = ((h[i] * ba % mod) + s[i]) % mod;
+    }
+  }
+  T get(int left, int right) {
+    T len = right - left + 1;
+    T ans = h[right + 1] - (h[left] * p[len] % mod);
+    if (ans < 0) {
+      ans += mod;
+    }
+    return ans % mod;
+  }
+};
+
+const int md1 = 1e9 + 7;
+const int md2 = 1e9 + 9;
+
+void Solver::Solve() const {
+  int n, m;
+  cin >> n >> m;
+  multiset<pair<ll, ll>> h;
   for (int i = 0; i < n; ++i) {
     string t;
     cin >> t;
-    t += "@" + ans.substr(max(0, ans.size() - t.size()), t.size());
-    const int m = t.size();
-    vector<int> lps(m);
-    lps[0] = -1;
-    for (int j = 1; j < m; ++j) {
-      lps[j] = lps[j - 1];
-      while (j >= 0 and t[lps[j] + 1] != t[j]) j = lps[j - 1];
-      if (t[j] == t[lps[j] + 1]) {
-        ++lps[j];
+    const int z = t.size();
+    StringHash<ll, md1> now;
+    now.init(t);
+    StringHash<ll, md2> now1;
+    now1.init(t);
+    for (int j = 0; j < z; ++j) {
+      for (auto& c : {'a', 'b', 'c'}) {
+        if (t[j] != c) {
+          ll x = now.get(0, j - 1) * now.p[z - j];          
+          ll y = now.get(j + 1, z - 1);          
+          ll add = c * now.p[z - 1 - j] % now.mod;
+          x = ((x + y) % now.mod + add) % now.mod;
+
+          ll xx = now1.get(0, j - 1) * now1.p[z - j];          
+          ll yy = now1.get(j + 1, z - 1);          
+          ll add1 = c * now1.p[z - 1 - j] % now1.mod;
+          xx = ((xx + yy) % now1.mod + add1) % now1.mod;
+
+          h.emplace(x, xx);
+        }
       }
-    } 
-    for  (int j = lps.back() + 1; 
+    }
+  }
+  while (m--) {
+    string s;
+    cin >> s;
+    const int sz = s.size();
+    StringHash<ll, md1> now;
+    now.init(s);
+    ll x = now.get(0, sz - 1);
+    StringHash<ll, md2> now1;
+    now1.init(s);
+    ll y = now1.get(0, sz - 1);
+    auto p = make_pair(x, y);
+    const int n = s.size();
+    if (h.count(p)) {
+      cout << "YES\n";
+    } else {
+      cout << "NO\n";
+    }
   }
 }
 
