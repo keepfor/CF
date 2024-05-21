@@ -26,7 +26,7 @@ class Solver {
 using ll = long long;
 
 template <class T, int MOD>
-struct StringHash {
+struct StringHashing {
   int n;
   vector<T> h;
   vector<T> p;
@@ -63,9 +63,9 @@ void Solver::Solve() const {
     string t;
     cin >> t;
     const int z = t.size();
-    StringHash<ll, md1> now;
+    StringHashing<ll, md1> now;
     now.init(t);
-    StringHash<ll, md2> now1;
+    StringHashing<ll, md2> now1;
     now1.init(t);
     for (int j = 0; j < z; ++j) {
       for (auto& c : {'a', 'b', 'c'}) {
@@ -89,10 +89,10 @@ void Solver::Solve() const {
     string s;
     cin >> s;
     const int sz = s.size();
-    StringHash<ll, md1> now;
+    StringHashing<ll, md1> now;
     now.init(s);
     ll x = now.get(0, sz - 1);
-    StringHash<ll, md2> now1;
+    StringHashing<ll, md2> now1;
     now1.init(s);
     ll y = now1.get(0, sz - 1);
     auto p = make_pair(x, y);
