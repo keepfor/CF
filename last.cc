@@ -45,36 +45,6 @@ class MaxFlow {
     int res = 0, tmp = 0;
     while (bfs(s, t)) {
       memset(e_try, 0, sizeof(e_try));
-      do {
-        tmp = dfs(s, t, numeric_limits<int>::max());
-        res += tmp;
-      } while (tmp);
-    }
-    return res;
-  }
- private:
-  int v, d[MAXN], e_try[MAXN];
-  bool bfs(int s, int t) {
-    memset(d, -1, sizeof(d));
-    queue <int> q; q.push(s);
-    d[s] = 0;
-    while (!q.empty()) {
-      int x = q.front(); q.pop();
-      for (auto &e : g[x]) {
-        if (d[e.x] == -1 && e.rest() > 0) {
-          d[e.x] = d[x] + 1;
-          q.push(e.x);
-        }
-      }
-    }
-    return d[t] != -1;
-  }
-  int dfs(int x, int t, int flow) {
-    if (x == t) return flow;
-    for (int& i = e_try[x]; i < g[x].size(); i++) {
-      E &e = g[x][i];
-      if (e.rest() > 0 && d[e.x] == d[x] + 1) {
-        int tmp = dfs(e.x, t, min(flow, e.rest()));
         if (tmp > 0) {
           E &re = g[e.x][e.inv];
           e.flow += tmp;

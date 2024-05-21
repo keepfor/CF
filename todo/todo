@@ -286,20 +286,20 @@ proximity sensor discussion. yuwei
 
 add lcm test many colors.
 add workaround of check mcu version in shipping fw.
-
+power board calbration fail rate high.
 =======================================================================
 
-ev-charger, NFC KMS test issues from fxn.
-ev-charger, card reader issues from fxn.
-ev-charger, increae fcd retry count. te propose.
-ev-charger, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
-ev-charger, shipping fw downgrade fail, ota_update_evcharger_release_v1.0.262.zip  
-ev-charger, shipping fw upgrade fail, ota_update_evcharger_release_v1.0.262.zip  
+ev-station-pro, NFC KMS test issues from fxn.
+ev-station-pro, card reader issues from fxn.
+ev-station-pro, increae fcd retry count. te propose.
+ev-station-pro, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
+ev-station-pro, shipping fw downgrade fail, ota_update_evcharger_release_v1.0.262.zip  
+ev-station-pro, shipping fw upgrade fail, ota_update_evcharger_release_v1.0.262.zip  
 
 ev-station-pro, support check p/n pilot voltage for abc.
 ev-station-pro, new fcd. (EV_CHARGER_FCD_t011.20240301.122003.7z
 ev-station-pro, new fcd. (ev_charger-ota-eng_t011.20240301.122003.zip
-ev-charger, upate ftu cdt to v4_eu.
+ev-station-pro, upate ftu cdt to v4_eu.
 
 update shipping fw. ota_update_evcharger_release_v1.2.25.zip
 update shipping fw issue, can not connect dut after upgrade.
@@ -323,8 +323,9 @@ shipping fw downgrade fail in factory, they use old ftu.
 
 update fcd image download, support eu cdt.
 usb port test issue. complicance.
-===============================================================
 
+update download fcd img, update cdt rule for eu build.
+===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
 
@@ -607,6 +608,7 @@ ty plc fail 123->126.
 ty burnin fail when bat num 1.
 ty burnin fail when bat num 3. show error.
 
+support forced update to all fw_upgrade.
 =================================================================
 
 
@@ -944,7 +946,7 @@ uacc-lte, Enable RRC inactivity timer
 
 uacc-lte, update fw upgrade method of HL7800 FW, reduce time. 
 uacc-lte, update fw downgrade method of HL7800 FW, reduce time. 
-
+======================================================================================
 usw-mission-critical, external battery test, update mcu power setting.
 usw-mission-critical, lcm reset pin test.
 usw-mission-critical, update external battery test.
