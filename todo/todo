@@ -287,6 +287,7 @@ proximity sensor discussion. yuwei
 add lcm test many colors.
 add workaround of check mcu version in shipping fw.
 power board calbration fail rate high.
+iperf 6 pcs fail. pp3
 =======================================================================
 
 ev-station-pro, NFC KMS test issues from fxn.
@@ -325,6 +326,9 @@ update fcd image download, support eu cdt.
 usb port test issue. complicance.
 
 update download fcd img, update cdt rule for eu build.
+cur.exe not supported.
+Uploading  Image using Sahara protocol failed, download fcd img.
+ERROR: function: sahara_rx_data:286 Command packet length 2130731135 too large to fit
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.

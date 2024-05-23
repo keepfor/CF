@@ -1,0 +1,17 @@
+{
+  "explorer.confirmDelete": false,
+  "editor.wordWrap": "on",
+  "workbench.statusBar.visible": true,
+  "editor.minimap.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "extensions.ignoreRecommendations": true,
+  "window.zoomLevel": 0,
+  "git.openRepositoryInParentFolders": "never",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "editor.stickyScroll.enabled": false,
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "C_Cpp.default.compilerPath": "/usr/bin/g++-11"
+}

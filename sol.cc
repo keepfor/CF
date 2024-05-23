@@ -25,83 +25,30 @@ class Solver {
 
 using ll = long long;
 
-template <class T, int MOD>
-struct StringHash {
-  int n;
-  vector<T> h;
-  vector<T> p;
-  const T mod = MOD;
-
-  void init(string s) {
-    this->n = s.size();
-    const T ba = 256;
-    h.assign(n + 1, 0);
-    p.assign(n + 1, 1);
-    for (int i = 0; i < n; ++i) {
-      p[i + 1] = p[i] * ba % mod;
-      h[i + 1] = ((h[i] * ba % mod) + s[i]) % mod;
-    }
-  }
-  T get(int left, int right) {
-    T len = right - left + 1;
-    T ans = h[right + 1] - (h[left] * p[len] % mod);
-    if (ans < 0) {
-      ans += mod;
-    }
-    return ans % mod;
-  }
-};
-
-const int md1 = 1e9 + 7;
-const int md2 = 1e9 + 9;
-
 void Solver::Solve() const {
-  int n, m;
-  cin >> n >> m;
-  multiset<pair<ll, ll>> h;
+  int n;
+  cin >> n;
+  vector<tuple<int, int, int>> p(n);
   for (int i = 0; i < n; ++i) {
-    string t;
-    cin >> t;
-    const int z = t.size();
-    StringHash<ll, md1> now;
-    now.init(t);
-    StringHash<ll, md2> now1;
-    now1.init(t);
-    for (int j = 0; j < z; ++j) {
-      for (auto& c : {'a', 'b', 'c'}) {
-        if (t[j] != c) {
-          ll x = now.get(0, j - 1) * now.p[z - j];          
-          ll y = now.get(j + 1, z - 1);          
-          ll add = c * now.p[z - 1 - j] % now.mod;
-          x = ((x + y) % now.mod + add) % now.mod;
-
-          ll xx = now1.get(0, j - 1) * now1.p[z - j];          
-          ll yy = now1.get(j + 1, z - 1);          
-          ll add1 = c * now1.p[z - 1 - j] % now1.mod;
-          xx = ((xx + yy) % now1.mod + add1) % now1.mod;
-
-          h.emplace(x, xx);
-        }
-      }
-    }
+    cin >> get<0>(p[i]) >> get<1>(p[i]);
+    get<2>(p[i]) = i;
   }
-  while (m--) {
-    string s;
-    cin >> s;
-    const int sz = s.size();
-    StringHash<ll, md1> now;
-    now.init(s);
-    ll x = now.get(0, sz - 1);
-    StringHash<ll, md2> now1;
-    now1.init(s);
-    ll y = now1.get(0, sz - 1);
-    auto p = make_pair(x, y);
-    const int n = s.size();
-    if (h.count(p)) {
-      cout << "YES\n";
-    } else {
-      cout << "NO\n";
+  sort(p.begin(), p.end());
+  reverse(p.begin(), p.end());
+  vector<tuple<int, int, int>> st;
+  for (auto& [i,j,k] : p) {
+    if (st.size() and j > get<1>(st.back())) {
+      continue;
     }
+    st.push_back(make_tuple(i, j, k));
+  }
+  sort(st.begin(), st.end(), [&](auto x, auto y) -> bool {
+    return get<2>(x) < get<2>(y);
+  });
+  const int m = st.size();
+  cout << m << '\n';
+  for (int i = 0; i < m; ++i) {
+    cout << get<2>(st[i]) + 1 << " \n"[i + 1 == m];
   }
 }
 
