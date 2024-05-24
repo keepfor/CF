@@ -25,36 +25,92 @@ class Solver {
 
 using ll = long long;
 
-void Solver::Solve() const {
-  int n;
-  cin >> n;
-  vector<tuple<int, int, int>> p(n);
-  for (int i = 0; i < n; ++i) {
-    cin >> get<0>(p[i]) >> get<1>(p[i]);
-    get<2>(p[i]) = i;
+template<int MAXN, typename T>
+class MaxFlow {
+ public: 
+  class E {
+   public:
+    T x, inv, cap, flow;
+    E(T t, T c, T z) : x(t), inv(z), cap(c), flow(0) {}
+    T rest() const { return cap - flow; }
+  };
+
+  vector <E> g[MAXN];
+  MaxFlow(T v_) : v(v_) {}
+  void addEdge(T a, T b, T ab, T ba = 0) {
+    T as = g[a].size(), bs = g[b].size();
+    g[a].push_back({ b, ab, bs });
+    g[b].push_back({ a, ba, as });
   }
-  sort(p.begin(), p.end());
-  reverse(p.begin(), p.end());
-  vector<tuple<int, int, int>> st;
-  for (auto& [i,j,k] : p) {
-    if (st.size() and j > get<1>(st.back())) {
-      continue;
+  
+  T go(T s, T t) {
+    T res = 0, tmp = 0;
+    while (bfs(s, t)) {
+      memset(e_try, 0, sizeof(e_try));
+      do {
+        tmp = dfs(s, t, numeric_limits<T>::max());
+        res += tmp;
+      } while (tmp);
     }
-    st.push_back(make_tuple(i, j, k));
+    return res;
   }
-  sort(st.begin(), st.end(), [&](auto x, auto y) -> bool {
-    return get<2>(x) < get<2>(y);
-  });
-  const int m = st.size();
-  cout << m << '\n';
-  for (int i = 0; i < m; ++i) {
-    cout << get<2>(st[i]) + 1 << " \n"[i + 1 == m];
+ private:
+  T v, d[MAXN], e_try[MAXN];
+  bool bfs(T s, T t) {
+    memset(d, -1, sizeof(d));
+    queue <T> q; q.push(s);
+    d[s] = 0;
+    while (!q.empty()) {
+      T x = q.front(); q.pop();
+      for (auto &e : g[x]) {
+        if (d[e.x] == -1 && e.rest() > 0) {
+          d[e.x] = d[x] + 1;
+          q.push(e.x);
+        }
+      }
+    }
+    return d[t] != -1;
   }
+  T dfs(T x, T t, T flow) {
+    if (x == t) return flow;
+    for (T& i = e_try[x]; i < g[x].size(); i++) {
+      E &e = g[x][i];
+      if (e.rest() > 0 && d[e.x] == d[x] + 1) {
+        T tmp = dfs(e.x, t, min(flow, e.rest()));
+        if (tmp > 0) {
+          E &re = g[e.x][e.inv];
+          e.flow += tmp;
+          re.flow = -e.flow;
+          return tmp;
+        }
+      }
+    }
+    return 0;
+  }
+};
+
+constexpr ll inf = 1e18;
+constexpr int mxn = 1e18;
+
+void Solver::Solve() const {
+    int n;
+    cin >> n;
+    vector<string> s(n);
+    for (auto& i : s) {
+        cin >> i;
+    }
+    vector<int> a(n);
+    MaxFlow<mxn, ll> mf;
+    for (int i = 0; i < n; ++i) {
+        cin >> a[i];
+
+    }
+
 }
 
 void Solver::Run() const {
   auto tt{1};
-  // cin >> tt;
+  cin >> tt;
   while (tt--) {
     Solve();
   }

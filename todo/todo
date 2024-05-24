@@ -329,6 +329,8 @@ update download fcd img, update cdt rule for eu build.
 cur.exe not supported.
 Uploading  Image using Sahara protocol failed, download fcd img.
 ERROR: function: sahara_rx_data:286 Command packet length 2130731135 too large to fit
+typec issues fcd download img.
+show qualcom driver but still fail.
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -443,6 +445,10 @@ Change save config command
 
 new shipping fw 7.1.4. fcd
 new shipping fw 7.1.4. ftu.
+
+1.RPS Test，rework dut Port8 not light.
+2.RPS Guard Test Fail，RPS Test-Checking LINK STATUS for port 8 Fail.
+3.External Batt. Charging Test，power.psu.2 status voltage <= 50.4. ([50.4, 53.6])
 ===============================================================
 
 uisp-s, refactor snake.

@@ -26,35 +26,51 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  int n;
-  cin >> n;
-  vector<tuple<int, int, int>> p(n);
-  for (int i = 0; i < n; ++i) {
-    cin >> get<0>(p[i]) >> get<1>(p[i]);
-    get<2>(p[i]) = i;
-  }
-  sort(p.begin(), p.end());
-  reverse(p.begin(), p.end());
-  vector<tuple<int, int, int>> st;
-  for (auto& [i,j,k] : p) {
-    if (st.size() and j > get<1>(st.back())) {
-      continue;
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto& i : a) {
+        cin >> i;
     }
-    st.push_back(make_tuple(i, j, k));
-  }
-  sort(st.begin(), st.end(), [&](auto x, auto y) -> bool {
-    return get<2>(x) < get<2>(y);
-  });
-  const int m = st.size();
-  cout << m << '\n';
-  for (int i = 0; i < m; ++i) {
-    cout << get<2>(st[i]) + 1 << " \n"[i + 1 == m];
-  }
+    vector<int> dp;
+    vector<int> l(n);
+    vector<int> r(n);
+    for (int i = 0; i < n; ++i) {
+        auto it = lower_bound(dp.begin(), dp.end(), a[i]);
+        l[i] = int(it - dp.begin());
+        if (it == dp.end()) {
+            dp.push_back(a[i]);
+        } else {
+            *it = a[i];
+        }
+    }
+    int x = dp.size();
+    dp.clear();
+    for (int i = n - 1; i >= 0; --i) {
+        auto it = lower_bound(dp.begin(), dp.end(), -a[i]);
+        r[i] = int(it - dp.begin());
+        if (it == dp.end()) {
+            dp.push_back(-a[i]);
+        } else {
+            *it = -a[i];
+        }
+    }
+    vector<int> ans;
+    for (int i = 0; i < n; ++i) {
+        if (l[i] + r[i] + 1 == x) {
+            ans.push_back(i + 1);
+        }
+    }
+    const int z = ans.size();
+    cout << z << '\n';
+    for (int i = 0; i < z; ++i) {
+        cout << ans[i] << " \n"[i + 1 == z];
+    }
 }
 
 void Solver::Run() const {
   auto tt{1};
-  // cin >> tt;
+  cin >> tt;
   while (tt--) {
     Solve();
   }
