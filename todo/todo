@@ -331,6 +331,8 @@ Uploading  Image using Sahara protocol failed, download fcd img.
 ERROR: function: sahara_rx_data:286 Command packet length 2130731135 too large to fit
 typec issues fcd download img.
 show qualcom driver but still fail.
+
+add show fw to download fcd img.
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.

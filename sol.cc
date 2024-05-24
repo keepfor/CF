@@ -25,6 +25,39 @@ class Solver {
 
 using ll = long long;
 
+#include <bits/stdc++.h>
+using namespace std;
+
+template <typename STRING>  
+class IsSubstring {
+ public:
+  vector<int> z_algorithm(const STRING& s) {
+    int n = int(s.size());
+    if (n == 0) return {};
+    vector<int> z(n);
+    z[0] = 0;
+    for (int i = 1, j = 0; i < n; i++) {
+      int& k = z[i];
+      k = (j + z[j] <= i) ? 0 : min(j + z[j] - i, z[i - j]);
+      while (i + k < n && s[k] == s[i + k]) k++;
+      if (j + z[j] < i + z[i]) j = i;
+    }
+    z[0] = n;
+    return z;
+  }
+  bool is_substring(STRING& S, STRING& T) {
+    int n = int(S.size()), m = int(T.size());
+    STRING ST;
+    for (auto&& x: S) ST.push_back(x);
+    for (auto&& x: T) ST.push_back(x);
+    auto Z = z_algorithm(ST);
+    for (int i = n; i < n + m; ++i) {
+      if (Z[i] >= n) return true;
+    }
+    return false;
+  }
+};
+
 template<int MAXN, typename T>
 class MaxFlow {
  public: 
@@ -89,8 +122,8 @@ class MaxFlow {
   }
 };
 
-constexpr ll inf = 1e18;
-constexpr int mxn = 1e18;
+constexpr ll inf = numeric_limits<ll>::max();
+constexpr int mxn = 250;
 
 void Solver::Solve() const {
     int n;
@@ -99,18 +132,39 @@ void Solver::Solve() const {
     for (auto& i : s) {
         cin >> i;
     }
-    vector<int> a(n);
-    MaxFlow<mxn, ll> mf;
+    vector<ll> a(n);
+    MaxFlow<mxn, ll> mf(2 * n + 2);
+    int src = 2 * n;
+    int t = 2 * n + 1;
+    ll sum = 0;
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
-
+        sum += 1ll * a[i];
+        mf.addEdge(src, 2 * i, a[i]);
+        mf.addEdge(2 * i + 1, t, a[i]);
     }
-
+    IsSubstring<string> is_substring;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (i == j or !is_substring.is_substring(s[i], s[j])) {
+                continue;
+            }
+            if (s[i] == s[j]) {
+                if (i < j) {
+                    mf.addEdge(2 * i, 2 * j + 1, inf);
+                }
+            } else {
+                mf.addEdge(2 * i, 2 * j + 1, inf);
+            }
+        }
+    }
+    ll mxf = mf.go(src,t);
+    cout << sum - mxf << '\n';
 }
 
 void Solver::Run() const {
   auto tt{1};
-  cin >> tt;
+  // cin >> tt;
   while (tt--) {
     Solve();
   }
