@@ -333,6 +333,7 @@ typec issues fcd download img.
 show qualcom driver but still fail.
 
 add show fw to download fcd img.
+serial num not found fail. fcd eu.
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -451,6 +452,9 @@ new shipping fw 7.1.4. ftu.
 1.RPS Test，rework dut Port8 not light.
 2.RPS Guard Test Fail，RPS Test-Checking LINK STATUS for port 8 Fail.
 3.External Batt. Charging Test，power.psu.2 status voltage <= 50.4. ([50.4, 53.6])
+
+因52V PSU有重工下修電壓值避免RPS port current sharing問題，因此後續會在調整criteria至49.5~52.5V，此次重工build如在此範圍內可先視為PASS，後續再行調整FTU criteri
+plc fail. 999->500?
 ===============================================================
 
 uisp-s, refactor snake.

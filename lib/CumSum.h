@@ -1,0 +1,24 @@
+template <class T> struct CumSum {
+    vector<vector<T>> data;
+    bool is_built = false;
+
+    CumSum(int W, int H) : data(W + 1, vector<T>(H + 1, 0)) {}
+
+    void add(int x, int y, T z) {
+        ++x, ++y;
+        if(x >= data.size() || y >= data[0].size()) return;
+        data[x][y] += z;
+    }
+
+    void build() {
+        for(int i = 1; i < data.size(); i++) {
+            for(int j = 1; j < data[i].size(); j++) { data[i][j] += data[i][j - 1] + data[i - 1][j] - data[i - 1][j - 1]; }
+        }
+        is_built = true;
+    }
+
+    T query(int sx, int sy, int gx, int gy) {
+        assert(is_built);
+        return (data[gx][gy] - data[sx][gy] - data[gx][sy] + data[sx][sy]);
+    }
+};
