@@ -26,7 +26,7 @@ set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
 set timeoutlen=50 mouse=a
 set expandtab nocompatible 
-set backupcopy=yes
+set backupcopy=auto
 set autochdir autoread
 set clipboard^=unnamed,unnamedplus 
 set smartindent autoindent cindent

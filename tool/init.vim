@@ -18,8 +18,10 @@ nnoremap <s-t> :tabedit
 
 nnoremap <s-q> :q!
 nnoremap <s-k> :!time make<cr>
+
 nnoremap <s-j> :split \| terminal<CR>
 tnoremap jk <C-\><C-n>
+
 nnoremap <s-u> :!bash /home/jackcai/tools/scripts/start_ftu.sh<cr>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
@@ -27,7 +29,7 @@ set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
 set timeoutlen=50 mouse=a
 set expandtab nocompatible 
-set backupcopy=yes
+set backupcopy=auto
 set autochdir autoread
 set clipboard^=unnamed,unnamedplus 
 set smartindent autoindent cindent
