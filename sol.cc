@@ -26,12 +26,31 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  cout << (2 % 4 * 2) << '\n';
+  int n;
+  string s;
+  cin >> n >> s;
+  string t = s;
+  sort(t.begin(), t.end());
+  t.resize(unique(t.begin(), t.end()) - t.begin());
+  map<char, char> to;
+  int l = 0;
+  int r = (int) t.size() - 1;
+  while (l <= r) {
+    to[t[l]] = t[r];
+    char tmp = t[l];
+    to[t[r]] = tmp;
+    ++l;
+    --r;
+  }
+  for (auto& i : s) {
+    i = to[i];
+  }
+  cout << s << '\n';
 }
 
 void Solver::Run() const {
   auto tt{1};
-  // cin >> tt;
+  cin >> tt;
   while (tt--) {
     Solve();
   }

@@ -1,0 +1,6 @@
+import = [
+    "~/.config/alacritty/themes/themes/enfocado_light.toml"
+]
+
+[font]
+size = 13.0
