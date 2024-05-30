@@ -18,7 +18,8 @@ nnoremap <s-t> :tabedit
 
 nnoremap <s-q> :q!
 nnoremap <s-k> :!time make<cr>
-nnoremap <s-j> :e in<cr>
+nnoremap <s-j> :split \| terminal<CR>
+tnoremap jk <C-\><C-n>
 nnoremap <s-u> :!bash /home/jackcai/tools/scripts/start_ftu.sh<cr>
 
 set shiftwidth=2 softtabstop=2 tabstop=2

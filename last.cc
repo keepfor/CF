@@ -26,21 +26,9 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  ll n;
+  int n;
   cin >> n;
-  --n;
-  if (!n) {
-  cout << 0 << '\n';
-  return;
-  }
-  string ans;
-  const vector<int> d{0,2,4,6,8};
-  while (n) {
-    ans += to_string(d[n % 5]);
-    n /= 5;
-  }
-  reverse(ans.begin(), ans.end());
-  cout << ans << '\n';
+  cout << string(n, char('0' + n)) << '\n';
 }
 
 void Solver::Run() const {
