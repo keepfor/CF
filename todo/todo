@@ -335,6 +335,8 @@ show qualcom driver but still fail.
 add show fw to download fcd img.
 serial num not found fail. fcd eu.
 ftu check region.
+check cdt
+check cdt xxd cmd fail
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
