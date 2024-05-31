@@ -7,7 +7,7 @@ nnoremap ; :
 inoremap jk <esc>
 inoremap kj <esc>
 
-nnoremap <c-a> ggvG$
+nnoremap <c-a> gg^vG$
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -39,22 +39,21 @@ set incsearch hlsearch nu
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
 
+colorscheme candycode
+
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-inoremap <silent><expr> <down>
+inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<down>" :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-colorscheme astroboy 
