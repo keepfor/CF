@@ -1,3 +1,5 @@
+nnoremap <s-k> :!time make<cr>
+nnoremap <s-j> :!cat > in<cr>
 nnoremap <s-t> :vertical terminal<cr>
 tnoremap <c-l> <C-w>l
 
