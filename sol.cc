@@ -26,7 +26,25 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-
+  string s;
+  cin >> s;
+  set<int> v;
+  string a;
+  for (auto& i : s) {
+    if (i == '.') {
+      v.insert(stoi(a));
+      a = "";
+    } else {
+      a += i;
+    }
+  }
+  debug(v);
+  debug(v.size());
+  for (int i = 1; i <= 86; ++i) {
+    if (!v.count(i)) {
+      cout << i << ' ';
+    }
+  }
 }
 
 void Solver::Run() const {

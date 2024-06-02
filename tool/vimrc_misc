@@ -1,11 +1,20 @@
+
+
+nnoremap <s-j> :split \| terminal<CR> "for nvim
+tnoremap jk <C-\><C-n> "for nvim
+
+nnoremap <s-u> :!bash /home/jackcai/tools/scripts/start_ftu.sh<cr>
+
 nnoremap <s-t> :vertical terminal<cr>
 tnoremap <c-l> <C-w>
 "terminal split
 
+nnoremap <s-k> :!time make<cr>
 nnoremap <s-l> :!make r<cr>
+nnoremap <s-j> :e input.txt<cr>
+
 inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<tab>"
-nnoremap <s-j> :e input.txt<cr>
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
