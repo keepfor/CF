@@ -15,9 +15,9 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-nnoremap <right> :tabnext<cr>
-nnoremap <left> :tabprevious<cr>
-nnoremap <s-t> :tabedit
+nnoremap <c-n> :tabnext<cr>
+nnoremap <c-p> :tabprevious<cr>
+nnoremap <c-t> :tabedit
 
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
