@@ -26,11 +26,7 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  ll n;
-  cin >> n;
-  while (n % 2 == 0) n /= 2;
-  while (n % 3 == 0) n /= 3;
-  cout << (n == 1 ? "Yes" : "No") << '\n';
+
 }
 
 void Solver::Run() const {

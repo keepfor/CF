@@ -1,13 +1,14 @@
-colorscheme candycode 
+inoremap <c-del> <C-o>de
+inoremap <a-up> <C-o>O
+inoremap <a-down> <C-o>o
+inoremap <a-left> <C-o>^
+inoremap <a-right> <C-o>$
 
-inoremap { {}<left>
-inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
-inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+colorscheme candycode 
 
 nnoremap ; :
 inoremap jk <esc>
 inoremap kj <esc>
-inoremap <c-del> <C-o>de
 nnoremap <s-q> :q!
 nnoremap <c-a> gg^vG$
 
@@ -34,6 +35,10 @@ set ignorecase smartcase
 set incsearch hlsearch nu
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
+
+inoremap { {}<left>
+inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
+inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
