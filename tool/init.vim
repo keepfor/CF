@@ -1,11 +1,11 @@
 colorscheme candycode 
 
 nnoremap ; :
-inoremap jk <esc>
-inoremap kj <esc>
-
 nnoremap <s-q> :q!
 nnoremap <c-a> gg^vG$
+
+inoremap jk <esc>
+inoremap kj <esc>
 
 inoremap <c-del> <C-o>de
 inoremap <c-x> <C-o>dd

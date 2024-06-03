@@ -338,6 +338,8 @@ ftu check region.
 check cdt
 check cdt xxd cmd fail
 wifi test fail
+
+type c not test. need add ?
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
