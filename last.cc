@@ -26,19 +26,11 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  int n;
+  ll n;
   cin >> n;
-  int pre = -1;
-  for (int i = 0; i < n; ++i) {
-    int a;
-    cin >> a;
-    if (pre != -1 and pre != a) {
-      cout << "No\n";
-      return;
-    }
-    pre = a;
-  }
-  cout << "Yes\n";
+  while (n % 2 == 0) n /= 2;
+  while (n % 3 == 0) n /= 3;
+  cout << (n == 1 ? "Yes" : "No") << '\n';
 }
 
 void Solver::Run() const {

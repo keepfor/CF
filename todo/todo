@@ -471,15 +471,11 @@ new shipping v1.8.1.
 new shipping v1.8.x.
 ===============================================================
 
-usp-battery, python path issues.
-usp-battery, burnin issues, improve.
-usp-battery, remove disable burnin of check burnin result.
 usp-battery, new testing fw.
 usp-battery, fw upgrade fail, key duplication, from ltn.	
 usp-battery, fw upgrade fail, connect to dut ble timeout 60 seconds, from ltn.	
 usp-battery, fw upgrade fail, lcm behavior diff. 
 usp-battery, new testing fw. 
-usp-battery, update rps-pro's check burnin result, do not disable burnin. 
 usp-battery, add disable burnin. 
 usp-battery, burin fail in ltn, issues of batteries connected in series. 
 usp-battery, dfm of ltn.
