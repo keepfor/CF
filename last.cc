@@ -26,11 +26,41 @@ class Solver {
 using ll = long long;
 
 void Solver::Solve() const {
-  ll n;
-  cin >> n;
-  while (n % 2 == 0) n /= 2;
-  while (n % 3 == 0) n /= 3;
-  cout << (n == 1 ? "Yes" : "No") << '\n';
+  int n;
+  string t;
+  cin >> n >> t;
+  auto F = [](string& a, string& b) -> bool {
+    if (a == b) {
+      return true;
+    }
+    const int x = a.size();
+    const int y = b.size();
+    if (abs(x - y) > 1) {
+      return false;
+    }
+    int i = 0;
+    int j = 0;
+    while (i < x and i < y and a[i] == b[i]) {
+      ++i;
+    }
+    while (x - j - 1 >= 0 and y - j - 1 >= 0 and a[x - j - 1] == b[y - j - 1]) {
+      ++j;
+    }
+    return i + j >= (max(x, y) - 1);
+  };
+  vector<int> ans;
+  for (int i = 0; i < n; ++i) {
+    string s;
+    cin >> s;
+    if (F(s, t)) {
+      ans.push_back(i + 1);
+    }
+  }
+  const int m = ans.size();
+  cout << m << '\n';
+  for (int i = 0; i < m; ++i) {
+    cout << ans[i] << " \n"[i + 1 == m];
+  }
 }
 
 void Solver::Run() const {
