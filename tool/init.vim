@@ -28,7 +28,7 @@ nnoremap <c-t> :tabedit
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
-set timeoutlen=50 mouse=a
+set timeoutlen=50 mouse=r
 set expandtab nocompatible 
 set backupcopy=auto
 set autochdir autoread
