@@ -3,10 +3,12 @@ colorscheme candycode
 nnoremap ; :
 inoremap jk <esc>
 inoremap kj <esc>
-nnoremap <s-q> :q!
 
+nnoremap <s-q> :q!
 nnoremap <c-a> gg^vG$
+
 inoremap <c-del> <C-o>de
+inoremap <c-x> <C-o>dd
 inoremap <c-c> <C-o>yy
 inoremap <c-v> <C-o>p
 inoremap <a-up> <C-o>O
