@@ -289,7 +289,7 @@ add workaround of check mcu version in shipping fw.
 power board calbration fail rate high.
 iperf 6 pcs fail. pp3
 =======================================================================
-
+efa0
 ev-station-pro, NFC KMS test issues from fxn.
 ev-station-pro, card reader issues from fxn.
 ev-station-pro, increae fcd retry count. te propose.
@@ -340,6 +340,8 @@ check cdt xxd cmd fail
 wifi test fail
 
 type c not test. need add ?
+131  [Charge] Normal state started   和  Normal state suspend fail.
+131  [Charge] Normal state started     1       1/0   [OK, 0]测试项目是pass的，但看log 显示没有抓到电压值。
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
