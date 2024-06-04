@@ -2,4 +2,5 @@ in
 out
 prog*
 copy.cc
+sol.cc
 compile_out

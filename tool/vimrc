@@ -1,14 +1,21 @@
-colorscheme habamax
-
-inoremap { {}<left>
-inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
-inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+colorscheme habamax 
 
 nnoremap ; :
-inoremap jk <esc>
-inoremap kj <esc>
 nnoremap <s-q> :q!
 nnoremap <c-a> gg^vG$
+
+inoremap jk <esc>
+inoremap kj <esc>
+
+inoremap <c-del> <C-o>de
+inoremap <c-z> <C-o>u
+inoremap <c-x> <C-o>dd
+inoremap <c-c> <C-o>yy
+inoremap <c-v> <C-o>p
+inoremap <c-k> <C-o>O
+inoremap <c-j> <C-o>o
+inoremap <c-h> <C-o>^
+inoremap <c-l> <C-o>$
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
@@ -33,6 +40,10 @@ set ignorecase smartcase
 set incsearch hlsearch nu
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
+
+inoremap { {}<left>
+inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
+inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
