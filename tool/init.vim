@@ -1,15 +1,21 @@
-colorscheme habamax
-
-inoremap { {}<left>
-inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
-inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+colorscheme habamax 
 
 nnoremap ; :
+nnoremap <s-q> :q!
+nnoremap <c-a> gg^vG$
+
 inoremap jk <esc>
 inoremap kj <esc>
 
-nnoremap <c-a> gg^vG$
-nnoremap <s-q> :q!
+inoremap <c-d> <C-o>de
+inoremap <c-x> <C-o>dd
+inoremap <c-c> <C-o>yy
+inoremap <c-v> <C-o>p
+inoremap <c-k> <C-o>O
+inoremap <c-j> <C-o>o
+inoremap <c-h> <C-o>^
+inoremap <c-l> <C-o>$
+
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -22,7 +28,7 @@ nnoremap <c-t> :tabedit
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
-set timeoutlen=50 mouse=a
+set timeoutlen=50 mouse=r
 set expandtab nocompatible 
 set backupcopy=auto
 set autochdir autoread
@@ -33,6 +39,10 @@ set ignorecase smartcase
 set incsearch hlsearch nu
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
+
+inoremap { {}<left>
+inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
+inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
