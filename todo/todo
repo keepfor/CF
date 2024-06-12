@@ -342,6 +342,24 @@ wifi test fail
 type c not test. need add ?
 131  [Charge] Normal state started   和  Normal state suspend fail.
 131  [Charge] Normal state started     1       1/0   [OK, 0]测试项目是pass的，但看log 显示没有抓到电压值。
+burnin fail, dut not output.
+upgrade-shipping-fw fail, product type incorrect.
+DUT上的界面没有显示电流电压以及功率信息
+update aboot for type issue.
+ota update shipping to solve aboot issue.
+update mcu fw for burnin.
+update burnin use ssh ?
+prod name is ev station but expect station pro.
+update update to shipping fw. update type.
+update downgrade to fcd img. update type.
+update enable adb. update type.
+update shipping fw fail, Failed to connect to 192.168.1.135 port 8080.
+downgrade to fcd fw fail,  Not Authorized!.
+update to shipping fw, te can not click next fail.
+add prompt for click next to update to shipping fw.
+add retry to get adb dut key.
+e06 error in shipping fw, curl fail.
+cdt v4 but type name is not ...pro.
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -353,7 +371,7 @@ usw-industrial,tests,test_upgrade_to_shipping_fw.py
 
 UISP-Console-Carrier, npi.
 ==========================================================
-
+ed13
 usp-rps-pro, update lead acid battery, add config for slow charging current.
 update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
 update lead acid battery test, add charging voltage config.
@@ -463,6 +481,16 @@ new shipping fw 7.1.4. ftu.
 
 因52V PSU有重工下修電壓值避免RPS port current sharing問題，因此後續會在調整criteria至49.5~52.5V，此次重工build如在此範圍內可先視為PASS，後續再行調整FTU criteri
 
+FP3.4 RPS Battery Power Guard Test
+New test item for new HW(rev 25 upper)
+FP.7 External Batt. Charging Test
+change voltage range from “50.4” ~ “53.6” to “49.5” ~ “52.5”
+FP.7 External Batt. Discharging Test
+change power check from “larger than 5” to “equal to 0”
+FP.8 BLE Test
+remove this test item, because it is unused.
+
+update check power off of RPS Battery Power Guard Test
 ===============================================================
 
 uisp-s, refactor snake.
