@@ -1,11 +1,11 @@
 colorscheme habamax 
 
+inoremap jk <esc>
+inoremap kj <esc>
+
 nnoremap ; :
 nnoremap <s-q> :q!
 nnoremap <c-a> gg^vG$
-
-inoremap jk <esc>
-inoremap kj <esc>
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
