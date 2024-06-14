@@ -360,6 +360,8 @@ add prompt for click next to update to shipping fw.
 add retry to get adb dut key.
 e06 error in shipping fw, curl fail.
 cdt v4 but type name is not ...pro.
+add item: check region.
+add item: check burnin result.
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
