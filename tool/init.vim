@@ -7,6 +7,8 @@ nnoremap ; :
 nnoremap * *``
 nnoremap <s-q> :q!
 nnoremap <c-a> gg^vG$
+nnoremap <c-d> *``cgn
+nnoremap <c-c> :noh<cr>
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
