@@ -1,20 +1,14 @@
 colorscheme habamax 
 
-nnoremap ; :
-nnoremap <s-q> :q!
-nnoremap <c-a> gg^vG$
-
 inoremap jk <esc>
 inoremap kj <esc>
 
-inoremap <c-d> <C-o>de
-inoremap <c-x> <C-o>dd
-inoremap <c-c> <C-o>yy
-inoremap <c-v> <C-o>p
-inoremap <c-k> <C-o>O
-inoremap <c-j> <C-o>o
-inoremap <c-h> <C-o>^
-inoremap <c-l> <C-o>$
+nnoremap ; :
+nnoremap * *``
+nnoremap <s-q> :q!
+nnoremap <c-a> gg^vG$
+nnoremap <c-d> *``cgn
+nnoremap <c-c> :noh<cr>
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
@@ -28,7 +22,7 @@ nnoremap <c-t> :tabedit
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
-set timeoutlen=50 mouse=r
+set timeoutlen=50 mouse=a
 set expandtab nocompatible 
 set backupcopy=auto
 set autochdir autoread
