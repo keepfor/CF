@@ -34,10 +34,6 @@ set incsearch hlsearch nu
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
 
-inoremap { {}<left>
-inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"
-inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
