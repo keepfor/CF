@@ -1,4 +1,3 @@
-
 inoremap <c-del> <C-o>de
 inoremap <c-z> <C-o>u
 inoremap <c-x> <C-o>dd

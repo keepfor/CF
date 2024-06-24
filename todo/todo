@@ -12,7 +12,7 @@ USP-RPS
 ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
 ev-station-ultra, ftu, nfc test show some errors. 0.0.4
 ev-station-ultra, fcd, upgrade fcd img .0.0.5
-ev-station-ultra, ftu, remove some cmds of led test .0.0.5
+//ev-station-ultra, ftu, remove some cmds of led test .0.0.5
 ev-station-ultra, ftu, power board get version fail .0.0.5
 ev-station-ultra, ftu, lcm upgrade get tty fail .0.0.5
 ev-station-ultra, ftu, reset button test wiil reboot .0.0.5
@@ -288,6 +288,7 @@ add lcm test many colors.
 add workaround of check mcu version in shipping fw.
 power board calbration fail rate high.
 iperf 6 pcs fail. pp3
+pb fw issue. raw board and assambled.
 =======================================================================
 efa0
 ev-station-pro, NFC KMS test issues from fxn.
@@ -362,6 +363,7 @@ e06 error in shipping fw, curl fail.
 cdt v4 but type name is not ...pro.
 add item: check region.
 add item: check burnin result.
+check mac fail in shipping fw.
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -373,9 +375,8 @@ usw-industrial,tests,test_upgrade_to_shipping_fw.py
 
 UISP-Console-Carrier, npi.
 ==========================================================
-ed13
-usp-rps-pro, update lead acid battery, add config for slow charging current.
-update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
+//usp-rps-pro, update lead acid battery, add config for slow charging current.
+//update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
 update lead acid battery test, add charging voltage config.
 Add Test config
 voltlower = 46
@@ -388,7 +389,7 @@ Update Burn-in Setup, an operation that rename rpspro_burnin.cfg to burnin.cfg
 Update Burn-in Setup, burnin.sh - ver 20230301.
 Add getting RPS-Oring, PSU, Outlet, Charge status
 add, lcm reset pin test.
-add instruction prepare 46~50V lead-acid battery.
+//add instruction prepare 46~50V lead-acid battery.
 update instruction prepare 46~51.5V lead-acid battery.
 Change current threshold in fast charge.
 FCD UM.mt7621_6.5.39.
@@ -493,6 +494,14 @@ FP.8 BLE Test
 remove this test item, because it is unused.
 
 update check power off of RPS Battery Power Guard Test
+ups cable, udm-se burned.
+with udm-pro rps fail. searching not standby.
+with usw-pro rps fail. disconnected not standby.
+discharge fail. power not 0.
+check power format issue.
+我這遇到一個issue. capacity=0, 但有插battery.s
+rps battery rps guard fail. 2468 not zero.
+ed13
 ===============================================================
 
 uisp-s, refactor snake.
@@ -681,9 +690,9 @@ uisp-r-plus, fix backup power typo.
 uisp-r-plus, update backup power checking logic.
 uisp-r-plus, update enable burnin fan env.
 uisp-r-plus, exec sh issue.
-uisp-r-plus, ble calculation.
-uisp-r-plus, ble parser.
-uisp-r-plus, update test name of ble.
+//uisp-r-plus, ble calculation.
+//uisp-r-plus, ble parser.
+//uisp-r-plus, update test name of ble.
 
 uisp-r-plus, fcd, update and test diag fw. (9.0.2)
 uisp-r-plus, ftu, update expected diag fw ver. (9.0.2)
@@ -756,7 +765,7 @@ burnin mode telnet fail.
 Update shipping FW to UISPR.cn91xxr.v3.2.2-rc.3.6cfc757.230721.1021.bin.
 rewrite reset button, last three seconds.
 rewrite reset button, destruct dialog window.
-rewrite reset button, clear telnet io.
+rewrite reset button, clear telnet
 rewrite reset button, only 19 secs.
 verify update to diag from runtime code.
 setup sz environment for upgrade-shipping.
