@@ -289,8 +289,9 @@ add workaround of check mcu version in shipping fw.
 power board calbration fail rate high.
 iperf 6 pcs fail. pp3
 pb fw issue. raw board and assambled.
+pb fw upgrade fail. ic broken adfter burnin.
+a6a0
 =======================================================================
-efa0
 ev-station-pro, NFC KMS test issues from fxn.
 ev-station-pro, card reader issues from fxn.
 ev-station-pro, increae fcd retry count. te propose.
@@ -364,6 +365,7 @@ cdt v4 but type name is not ...pro.
 add item: check region.
 add item: check burnin result.
 check mac fail in shipping fw.
+efa0
 ===============================================================
 usw, fw / fcd / ftu ver.
 usw, project owner.
@@ -501,6 +503,10 @@ discharge fail. power not 0.
 check power format issue.
 我這遇到一個issue. capacity=0, 但有插battery.s
 rps battery rps guard fail. 2468 not zero.
+Battery Power Guard Test, adjust pop-window size.
+Battery Power Guard Test, searching state too long fail.
+Battery Power Guard Test, support control usp-pdu.
+Battery Power Guard Test, state overloaded fail.
 ed13
 ===============================================================
 

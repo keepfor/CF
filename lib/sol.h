@@ -10,13 +10,13 @@ using namespace std;
 
 class Solver {
  public:
-  inline void Main() const {
+  void Main() const {
     SetIO();
     Run();
   }
 
  private:
-  inline void SetIO() const { 
+  void SetIO() const { 
     cin.tie(0)->sync_with_stdio(0); 
   }
   void Solve() const;
