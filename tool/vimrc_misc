@@ -1,4 +1,6 @@
 
+command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
+
 inoremap <c-del> <C-o>de
 inoremap <c-z> <C-o>u
 inoremap <c-x> <C-o>dd
