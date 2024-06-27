@@ -1,5 +1,7 @@
 colorscheme candycode 
 
+tnoremap <Esc> <C-\><C-n>
+
 inoremap jk <esc>
 inoremap kj <esc>
 
@@ -12,7 +14,7 @@ nnoremap <c-c> :noh<cr>
 
 nnoremap <c-n> :tabnext<cr>
 nnoremap <c-p> :tabprevious<cr>
-nnoremap <c-t> :tabedit
+nnoremap <c-t> :tabedit<cr>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup

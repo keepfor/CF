@@ -1,3 +1,6 @@
+tnoremap <Esc> <C-\><C-n>
+exit from terminal mode for neovim.
+
 inoremap <c-del> <C-o>de
 inoremap <c-z> <C-o>u
 inoremap <c-x> <C-o>dd
