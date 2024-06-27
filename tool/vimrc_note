@@ -13,7 +13,7 @@ vnoremap kj <esc>
 
 nnoremap <s-t> :vertical terminal<cr>
 tnoremap <c-l> <C-w>l
-"split vertical terminal to left and c-l to back to editor
+split vertical terminal to left and c-l to back to editor
 
 set splitbelow expandtab nocompatible 
 nnoremap <c-l> :e ~/j/ftu_log_folder <cr> 
@@ -45,6 +45,7 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 filetype plugin indent on
 
 set number 
+
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -83,9 +84,6 @@ map <F4> :! . ~/ff/start_ftu.sh
 map <F3> :e ~/ff/latestftulog 
 
 command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
-
-set timeoutlen=50
-" Set keystroke waiting time to 50 ms.
 
 set t_TI= t_TE=
 " To fix weired charater on Ubuntu.
@@ -146,157 +144,5 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-	filetype plugin indent on    " 必須載入vim自帶和外掛相應的語法和檔案型別相關指令碼
-  Plugin 'tmsvg/pear-tree'
-
-	"vim包管理工具
-	Plugin 'gmarik/Vundle.vim'
-	
-	"彩虹括號
-	Plugin 'kien/rainbow_parentheses.vim'
- 
-	"檔案目錄分屏
-	Plugin 'scrooloose/nerdtree'
-
-   "狀態列
-  Plugin 'vim-airline/vim-airline'
-  Plugin 'vim-airline/vim-airline-themes'
-
-  Plugin 'enricobacis/vim-airline-clock'
-  
-  "顯示檔案修改痕跡
-  Plugin 'chrisbra/changesPlugin'
-  
-  "json viewer
-  Plugin 'elzr/vim-json'
-
-  " vim script library 用法詳見src
-  Plugin 'L9'
-
-  "查詢檔案
-  Plugin 'junegunn/fzf'
-
-  Plugin 'octol/vim-cpp-enhanced-highlight'
-  Plugin 'Valloric/YouCompleteMe'
-call vundle#end()
-
-":FZF 從當前目錄查詢
-":FZF ~ 從home目錄查詢
-nnoremap <leader>f :FZF ~<CR>
-nnoremap <leader>F :FZF<CR>
-
-"往前跳和往後跳的快捷鍵為Ctrl+O以及Ctrl+I
-let g:ycm_key_list_select_completion=['<tab>', '<c-n>']
-let g:ycm_key_list_previous_completion = ['<s-tab>', '<c-p>'] " s tab not work in some lunix dis.
-
-let g:ycm_auto_hover=''
-" Disable hint prompt.
-
-set completeopt=menu  "關閉preview window
-let g:ycm_confirm_extra_conf='$HOME/.vim/bundle/YouCompleteMe/ycm_extra_conf.py' " C++ 20
-let g:ycm_collect_identifiers_from_tags_files=1 " 開啟 YCM 基於標籤引擎
-let g:ycm_min_num_of_chars_for_completion=1 " 從第1個鍵入字元就開始羅列匹配項
-let g:ycm_cache_omnifunc=0 " 禁止快取匹配項,每次都重新生成匹配項
-let g:ycm_seed_identifiers_with_syntax=1 " 語法關鍵字補全
-let g:ycm_complete_in_comments = 1 "在註釋輸入中也能補全
-let g:ycm_complete_in_strings = 1 "在字串輸入中也能補全
-let g:ycm_collect_identifiers_from_comments_and_strings = 0 "註釋和字串中的文字也會被收入補全
-let g:ycm_max_num_identifier_candidates = 50
-let g:ycm_auto_trigger = 1
-let g:ycm_error_symbol = '>>'
-let g:ycm_warning_symbol = '>'
-
-let g:airline#extensions#clock#format = '%H:%M:%S'
-let g:airline_powerline_fonts = 1   " 使用powerline打過補丁的字型
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" 關閉當前 buffer
-"<leader>1~9 切到 buffer1~9
-nnoremap <leader>1 :b 1<CR>
-nnoremap <leader>2 :b 2<CR>
-nnoremap <leader>3 :b 3<CR>
-nnoremap <leader>4 :b 4<CR>
-nnoremap <leader>5 :b 5<CR>
-nnoremap <leader>6 :b 6<CR>
-nnoremap <leader>7 :b 7<CR>
-nnoremap <leader>8 :b 8<CR>
-nnoremap <leader>9 :b 9<CR>
-
-"Vim 在與螢幕/鍵盤互動時使用的編碼(取決於實際的終端的設定)        
-set encoding=utf-8
-set langmenu=zh_CN.UTF-8
-" 設定開啟檔案的編碼格式  
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
-set fileencoding=utf-8
-" 解決選單亂碼
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
-" 設定中文幫助
-set helplang=cn
-" 設定為雙字寬顯示，否則無法完整顯示如:☆
-set ambiwidth=double
-
-" 總是顯示狀態列 
-let laststatus = 2
-
-" 開啟tabline
-let g:airline#extensions#tabline#enabled = 1      "tabline中當前
-let g:airline#extensions#tabline#left_sep = ' '   "buffer兩端的分隔字元
-let g:airline#extensions#tabline#left_alt_sep = '|'      "tabline中
-let g:airline#extensions#tabline#buffer_nr_show = 1      "buffer顯示編號
-
-" 對映切換buffer的鍵位
-nnoremap [b :bp<CR>
-nnoremap ]b :bn<CR>
-" 設定字型 
-set guifont=Powerline_Consolas:h14:cANSI
-
-let NERDTreeHighlightCursorline = 1       " 高亮當前行
-let NERDTreeShowLineNumbers     = 1       " 顯示行號
-" 忽略列表中的檔案
-let NERDTreeIgnore = [ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.egg$', '^\.git$', '^\.repo$', '^\.svn$', '^\.hg$' ]
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end
-
-nnoremap <leader>nt :NERDTreeToggle<CR>
-nnoremap <leader>tc :tabc<CR>
-nnoremap <leader>to :tabo<CR>
-nnoremap <leader>ts :tabs<CR>
-nnoremap <leader>tp :tabp<CR>
-nnoremap <leader>tn :tabn<CR
-
-" Default rules for matching:
-let g:pear_tree_pairs = {
-        \ '(': {'closer': ')'},
-        \ '[': {'closer': ']'},
-        \ '{': {'closer': '}'},
-        \ "'": {'closer': "'"},
-        \ '"': {'closer': '"'}
-        \ }
-" See pear-tree/after/ftplugin/ for filetype-specific matching rules
-
-" Pear Tree is enabled for all filetypes by default:
-let g:pear_tree_ft_disabled = []
-
-" Pair expansion is dot-repeatable by default:
-let g:pear_tree_repeatable_expand = 0
-
-" Smart pairs are disabled by default:
-let g:pear_tree_smart_openers = 0
-let g:pear_tree_smart_closers = 0
-let g:pear_tree_smart_backspace = 0
-
-" If enabled, smart pair functions timeout after 60ms:
-let g:pear_tree_timeout = 60
-
-" Automatically map <BS>, <CR>, and <Esc>
-let g:pear_tree_map_special_keys = 1
-
-" Default mappings:
-imap <BS> <Plug>(PearTreeBackspace)
-imap <CR> <Plug>(PearTreeExpand)
-imap <Esc> <Plug>(PearTreeFinishExpansion)
+command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
+search without regex
