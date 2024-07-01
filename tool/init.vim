@@ -1,4 +1,4 @@
-colorscheme habamax 
+colorscheme torte 
 
 inoremap jk <esc>
 inoremap kj <esc>
@@ -10,14 +10,9 @@ nnoremap <c-a> gg^vG$
 nnoremap <c-d> *``cgn
 nnoremap <c-c> :noh<cr>
 
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-
 nnoremap <c-n> :tabnext<cr>
 nnoremap <c-p> :tabprevious<cr>
-nnoremap <c-t> :tabedit
+nnoremap <c-t> :tabedit<cr>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
@@ -31,8 +26,6 @@ set smartindent autoindent cindent
 set backspace=indent,eol,start
 set ignorecase smartcase 
 set incsearch hlsearch nu
-
-command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
