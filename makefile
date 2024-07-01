@@ -9,6 +9,7 @@ reset_cc := reset.cc
 cout := cout
 
 o2 := -O2
+valgrind_line := -ggdb3
 gdb := -g
 debug := -DDEBUG
 CXXFLAGS ?= -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -Wl,-z,stack-size=256000000
@@ -45,7 +46,7 @@ usual:
 
 $(prog): $(src)
 	rm -f $(prog)
-	$(CC) $(src) -o $(prog) $(debug)  2>&1 | tee $(cout)
+	$(CC) $(src) -o $(prog) $(debug) 2>&1 | tee $(cout)
 
 main: $(prog)
 	$(run_in)

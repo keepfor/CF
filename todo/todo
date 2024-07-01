@@ -9,8 +9,8 @@ UISP-S
 UISP-S-Pro
 USP-RPS
 
-ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
-ev-station-ultra, ftu, nfc test show some errors. 0.0.4
+//ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
+//ev-station-ultra, ftu, nfc test show some errors. 0.0.4
 ev-station-ultra, fcd, upgrade fcd img .0.0.5
 //ev-station-ultra, ftu, remove some cmds of led test .0.0.5
 ev-station-ultra, ftu, power board get version fail .0.0.5
@@ -520,33 +520,6 @@ new shipping v1.8.1.
 new shipping v1.8.x.
 ===============================================================
 
-usp-battery, new testing fw.
-usp-battery, fw upgrade fail, key duplication, from ltn.	
-usp-battery, fw upgrade fail, connect to dut ble timeout 60 seconds, from ltn.	
-usp-battery, fw upgrade fail, lcm behavior diff. 
-usp-battery, new testing fw. 
-usp-battery, add disable burnin. 
-usp-battery, burin fail in ltn, issues of batteries connected in series. 
-usp-battery, dfm of ltn.
-00001198-0001-0040-0000-${MAC}
-LTN这边用950不会有乱码
-
-* Test cases related to BLE tools: (Restart-burnin, Burnin-log, Upgrade-Production-firmware and Upgrade-testing-firmware)
-Add reset-to-default pop-up.
-Add AP IP test config.
-Add PC IP test config.
-Support encoding BLE client ID by PC IP, AP IP and DUT-MAC.
-
-* FW upgrade with BLE: *Upgrade-Production-firmware and *Upgrade-testing-firmware.
-Add fwupdate_timeout test config.
-
-* Update Getac Battery firmware to battery-fw-0.9.10.0.bin
-* Update Production firmware to upb.efr32_1.1.6+354.230406.1112.bin
-* Update Factory firmware (bin) to upb.efr32diag_1.1.7+363.230621.1357.bin
-* Update Factory firmware (gbl) to upb.efr32diag_1.1.7.gbl
-* Update Recovery firmware to upb.efr32recovery_1.1.6.gbl
-* Update LCM firmware to v1.0.0.0
-
 * Update expected pattern of LCM upgrade.
 * Update LCM burnin commands.
 * Disable removing burnin log of RPS-Pro check-burnin-result.
@@ -677,6 +650,7 @@ support forced update to all fw_upgrade.
 plc fail. 999->500?
 update burnin.sh.
 update check burnin result.
+ee76
 =================================================================
 
 
@@ -692,13 +666,6 @@ add a12.
 new shipping 501.
 passitive test issues. (git reset.)
 ================================================================
-uisp-r-plus, fix backup power typo.
-uisp-r-plus, update backup power checking logic.
-uisp-r-plus, update enable burnin fan env.
-uisp-r-plus, exec sh issue.
-//uisp-r-plus, ble calculation.
-//uisp-r-plus, ble parser.
-//uisp-r-plus, update test name of ble.
 
 uisp-r-plus, fcd, update and test diag fw. (9.0.2)
 uisp-r-plus, ftu, update expected diag fw ver. (9.0.2)
@@ -727,7 +694,7 @@ fcd ftu change.
 PoE test, update FW commands sequence.
 Memory test, update FW command.
 
-Port LED test, Add ledscan 0/1.
+//Port LED test, Add ledscan 0/1.
 Port LED test, Update FW commands sequence.
 
 System LED test, Update FW commands sequence.
@@ -874,10 +841,8 @@ update upgrade_diag.sh
 
 FCD Changlog:
 Update setenv function.
-Update bundled DIAG FW to DIAG_v2.0.5: uisp-s-plus_160623.1308.ubi 
 
 FTU Changlog:
-Update bundled Runtime FW to RT_FW_v0.1.0: UISPS.act5.v0.1.0.a21755e.230515.1435.bin
 Add PID control to fan test.
 
 Burn-in test 
@@ -888,8 +853,6 @@ Add Check Application version test case.
 Add Upgrade to DIAG image (from Application image) test case and related tools.
 Update Check DIAG to v2.0.5.
 
-FCD, DIAG_v2.0.6: uisp-s-plus_170623.1034.ubi 
-FTU, DIAG_v2.0.6: uisp-s-plus_170623.1034.ubi 
 
 FCD Changlog:
 Update setenv function.
