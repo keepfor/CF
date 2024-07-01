@@ -1,7 +1,5 @@
 colorscheme candycode 
 
-tnoremap <Esc> <C-\><C-n>
-
 inoremap jk <esc>
 inoremap kj <esc>
 
