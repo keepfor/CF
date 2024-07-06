@@ -10,23 +10,16 @@ using namespace std;
 
 class Solver {
  public:
-  inline void Main() const {
-    SetIO();
-    Run();
-  }
+  void Main() const;
 
  private:
-  inline void SetIO() const {
-    cin.tie(0)->sync_with_stdio(0);
-  }
-  void Solve() const;
+  void SetIO() const;
   void Run() const;
+  void Solve() const;
 };
 
-using ll = long long;
-
 void Solver::Solve() const {
-
+  using ll = long long;
 }
 
 void Solver::Run() const {
@@ -35,6 +28,15 @@ void Solver::Run() const {
   while (tt--) {
     Solve();
   }
+}
+
+inline void Solver::SetIO() const { 
+  cin.tie(0)->sync_with_stdio(0); 
+}
+
+void Solver::Main() const {
+  SetIO();
+  Run();
 }
 
 signed main() {
