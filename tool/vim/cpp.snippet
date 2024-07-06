@@ -1,0 +1,75 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet j "sol.h" b
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#ifdef DEBUG
+#include "lib/debug.h"
+#else
+#define debug(...)
+#endif
+
+class Solver {
+ public:
+  void Main() const;
+
+ private:
+  void SetIO() const;
+  void Run() const;
+  void Solve() const;
+};
+
+void Solver::Solve() const {
+  using ll = long long;
+	${0}
+}
+
+void Solver::Run() const {
+  auto tt{1};
+  // cin >> tt;
+  while (tt--) {
+    Solve();
+  }
+}
+
+inline void Solver::SetIO() const { 
+  cin.tie(0)->sync_with_stdio(0); 
+}
+
+void Solver::Main() const {
+  SetIO();
+  Run();
+}
+
+signed main() {
+  Solver solver;
+  solver.Main();
+  return 0;
+}
+endsnippet
