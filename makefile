@@ -16,7 +16,7 @@ src := sol.cc
 input := in
 output := out
 reset_cc := reset.cc
-copy_cc := copy.cc
+last_cc := last.cc
 gen_cc := gen.cc
 gen := gen
 compile_out := compile_out
@@ -67,7 +67,7 @@ clean:
 	rm -rf $(prog).dSYM/
 
 copy:
-	cp $(src) $(copy_cc)
+	cp $(src) $(last_cc)
 
 re:
 	$(re)
