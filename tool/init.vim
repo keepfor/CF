@@ -10,9 +10,9 @@ nnoremap <c-a> gg^vG$
 nnoremap <c-d> *``cgn
 nnoremap <c-c> :noh<cr>
 
+nnoremap <c-t> :tabedit<cr>
 nnoremap <c-n> :tabnext<cr>
 nnoremap <c-p> :tabprevious<cr>
-nnoremap <c-t> :tabedit<cr>
 
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup

@@ -290,6 +290,7 @@ power board calbration fail rate high.
 iperf 6 pcs fail. pp3
 pb fw issue. raw board and assambled.
 pb fw upgrade fail. ic broken adfter burnin.
+new shipping fw to ftu.  UM-EVS-v1.1.2-0-3731a6e-240620.1840-M.bin
 a6a0
 =======================================================================
 ev-station-pro, NFC KMS test issues from fxn.
@@ -365,6 +366,11 @@ cdt v4 but type name is not ...pro.
 add item: check region.
 add item: check burnin result.
 check mac fail in shipping fw.
+update rf fw. fcd.
+update rf fw. fcd shipping.
+pull WCNSS_qcom_cfg.ini.
+not found country in WCNSS_qcom_cfg.ini.
+
 efa0
 ===============================================================
 usw, fw / fcd / ftu ver.
@@ -500,13 +506,17 @@ ups cable, udm-se burned.
 with udm-pro rps fail. searching not standby.
 with usw-pro rps fail. disconnected not standby.
 discharge fail. power not 0.
-check power format issue.
+check power format issue. 0 -> 0.00 
 我這遇到一個issue. capacity=0, 但有插battery.s
 rps battery rps guard fail. 2468 not zero.
 Battery Power Guard Test, adjust pop-window size.
 Battery Power Guard Test, searching state too long fail.
 Battery Power Guard Test, support control usp-pdu.
 Battery Power Guard Test, state overloaded fail.
+burin fail. rps port not detect. 
+burin fail. lcm goto idle pattern. 
+burin fail. reboot reburnin log exist issue. 
+T4 Battery Guard 的 issue, 發現治具頂針 有頂不回去的狀況，當下 更換 治具頂針後，復測 都 pass
 ed13
 ===============================================================
 
