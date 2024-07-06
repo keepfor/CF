@@ -22,12 +22,11 @@ class Solver {
 
 void Solver::Solve() const {
   using ll = long long;
-  ${1}
 }
 
 void Solver::Run() const {
   auto tt{1};
-  // cin >> tt;
+  ${1}// cin >> tt;
   while (tt--) {
     Solve();
   }
