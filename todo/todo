@@ -370,7 +370,9 @@ update rf fw. fcd.
 update rf fw. fcd shipping.
 pull WCNSS_qcom_cfg.ini.
 not found country in WCNSS_qcom_cfg.ini.
-
+update NV file.
+new fcd fw.t011.20240709.140837
+check md5sum of nv file.adb shell "md5sum /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin"
 efa0
 ===============================================================
 usw, fw / fcd / ftu ver.
@@ -517,6 +519,7 @@ burin fail. rps port not detect.
 burin fail. lcm goto idle pattern. 
 burin fail. reboot reburnin log exist issue. 
 T4 Battery Guard 的 issue, 發現治具頂針 有頂不回去的狀況，當下 更換 治具頂針後，復測 都 pass
+update burnin.sh.
 ed13
 ===============================================================
 
