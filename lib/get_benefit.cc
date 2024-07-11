@@ -67,6 +67,7 @@ int main(void)
   
   string benefit = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL";
   // 上市個股日本益比、殖利率及股價淨值比（依代碼查詢）
+  // https://openapi.twse.com.tw/#/%E8%AD%89%E5%88%B8%E4%BA%A4%E6%98%93/get_exchangeReport_BWIBBU_ALL
 
   string url = benefit;
   string res = "";
