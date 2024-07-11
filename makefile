@@ -9,6 +9,7 @@ reset_cc := reset.cc
 cout := cout
 
 o2 := -O2
+lib_curl := -lcurl
 valgrind_line := -ggdb3
 gdb := -g
 debug := -DDEBUG
