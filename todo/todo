@@ -293,10 +293,8 @@ pb fw upgrade fail. ic broken adfter burnin.
 new shipping fw to ftu.  UM-EVS-v1.1.2-0-3731a6e-240620.1840-M.bin
 a6a0
 =======================================================================
-ev-station-pro, NFC KMS test issues from fxn.
-ev-station-pro, card reader issues from fxn.
 ev-station-pro, increae fcd retry count. te propose.
-ev-station-pro, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
+//ev-station-pro, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
 ev-station-pro, shipping fw downgrade fail, ota_update_evcharger_release_v1.0.262.zip  
 ev-station-pro, shipping fw upgrade fail, ota_update_evcharger_release_v1.0.262.zip  
 
@@ -305,7 +303,7 @@ ev-station-pro, new fcd. (EV_CHARGER_FCD_t011.20240301.122003.7z
 ev-station-pro, new fcd. (ev_charger-ota-eng_t011.20240301.122003.zip
 ev-station-pro, upate ftu cdt to v4_eu.
 
-update shipping fw. ota_update_evcharger_release_v1.2.25.zip
+//update shipping fw. ota_update_evcharger_release_v1.2.25.zip
 update shipping fw issue, can not connect dut after upgrade.
 update enable adb method in shipping fw.
 get adb key fail.
@@ -385,8 +383,6 @@ usw-industrial,tests,test_upgrade_to_shipping_fw.py
 
 UISP-Console-Carrier, npi.
 ==========================================================
-//usp-rps-pro, update lead acid battery, add config for slow charging current.
-//update lead acid battery test, update charging voltage criteria. (46~51V => 46~51.5V)
 update lead acid battery test, add charging voltage config.
 Add Test config
 voltlower = 46
@@ -399,8 +395,6 @@ Update Burn-in Setup, an operation that rename rpspro_burnin.cfg to burnin.cfg
 Update Burn-in Setup, burnin.sh - ver 20230301.
 Add getting RPS-Oring, PSU, Outlet, Charge status
 add, lcm reset pin test.
-//add instruction prepare 46~50V lead-acid battery.
-update instruction prepare 46~51.5V lead-acid battery.
 Change current threshold in fast charge.
 FCD UM.mt7621_6.5.39.
 FTU UM.mt7621_6.5.39.
@@ -520,6 +514,12 @@ burin fail. lcm goto idle pattern.
 burin fail. reboot reburnin log exist issue. 
 T4 Battery Guard 的 issue, 發現治具頂針 有頂不回去的狀況，當下 更換 治具頂針後，復測 都 pass
 update burnin.sh.
+
+Battery Power Guard Test, ask check rps port if fail and retry check.
+outlet測試時，幫我新增提示框(Frame或LabelFrame)；OP再進到這測項時，有時會措手不及.
+Battery Power Guard Test, support pdu power off.
+Battery Power Guard Test, reduce testing time, refine test. check 16 ports in one sitting.
+
 ed13
 ===============================================================
 
@@ -533,11 +533,9 @@ new shipping v1.8.1.
 new shipping v1.8.x.
 ===============================================================
 
-* Update expected pattern of LCM upgrade.
+//* Update expected pattern of LCM upgrade.
 * Update LCM burnin commands.
-* Disable removing burnin log of RPS-Pro check-burnin-result.
-* Update LCM upgrade timeout to 600s.
-upgrade prod fw issue, ble can not be connected.
+//* Disable removing burnin log of RPS-Pro check-burnin-result.
 leakage current.
 help tatun factory.
 fcd issues in tatun factory.
@@ -815,25 +813,6 @@ Looks like port 6 will fail at Wirespeed stress loopback when high temperature.
 uboot can not boot into kernel. fw  ken.
 ===================================================
 
-uisp-s-plus, fcd update diag fw. (new DIAG_v2.0.0) 
-
-uisp-s-plus, System LED test, cmd flow change.
-uisp-s-plus, DDR test, cmd flow change.
-uisp-s-plus, SFP Flash test, cmd flow change.
-uisp-s-plus, NAND Flash test, remove.
-uisp-s-plus, BLE RSSI test, add and verify.
-uisp-s-plus, Port LED test, cmd flow change.
-uisp-s-plus, Upgrade runtime Image. *UISPS.act5.recovery.v0.0.1-dev1+ubnt.28073.76a3f79.230406.1100.bin
-uisp-s-plus, S+ Port LED test順序幫我修改一下
-
-uisp-s-plus, fcd DIAG_v2.0.3: uisp-s-plus_256.ubi.
-uisp-s-plus, fcd update setenv.
-uisp-s-plus, ftu DIAG_v2.0.3: uisp-s-plus_256.ubi
-uisp-s-plus, ftu UISPS.act5.recovery.v0.1.0.a21755e.230515.1450.bin
-uisp-s-plus, ftu support check shipping ver.
-uisp-s-plus, update udapi.py.
-uisp-s-plus, update check shipping fw, use power class of udapi.
-uisp-s-plus, ftu update mem test.
 upgrade_fw
 
 uisp-s-plus, fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
@@ -953,7 +932,7 @@ try run shell\rls.
 try run shell\rls /tmp/;exit.
 update to diag,can not enter kernel.. IOEXP init...
 new shipping v1.8.x.
-
+ee7c
 ==============================================================================
 usw-enterprise-8-poe, power consumption.
 usw-enterprise-8-poe, at poe test issues.
@@ -991,7 +970,6 @@ uacc-lte, Enable RRC inactivity timer
 uacc-lte, update fw upgrade method of HL7800 FW, reduce time. 
 uacc-lte, update fw downgrade method of HL7800 FW, reduce time. 
 ======================================================================================
-usw-mission-critical, external battery test, update mcu power setting.
 usw-mission-critical, lcm reset pin test.
 usw-mission-critical, update external battery test.
 usw-mission-critical, remove external battery test.
