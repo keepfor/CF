@@ -8,7 +8,11 @@ UISP-R-Pro
 UISP-S
 UISP-S-Pro
 USP-RPS
-
+===========================================================================
+new model, EVS-Lite-EU.
+uid registration.
+a6a7
+===========================================================================
 //ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
 //ev-station-ultra, ftu, nfc test show some errors. 0.0.4
 ev-station-ultra, fcd, upgrade fcd img .0.0.5

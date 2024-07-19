@@ -30,10 +30,12 @@ set incsearch hlsearch nu
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
