@@ -72,7 +72,7 @@ ev-station-ultra, ftu, update unplug test expected string, lowercase to uppercas
 ev-station-ultra, ftu, update gmo test expected string, lowercase to uppercase,  0.0.7.
 
 ev-station-ultra, fcd, upgrade fcd img. 0.0.8
-ev-station-ultra, ftu, update reset button, kill burnin process. 0.0.8
+//ev-station-ultra, ftu, update reset button, kill burnin process. 0.0.8
 ev-station-ultra, ftu, use ac power source for 220V. 0.0.8
 ev-station-ultra, ftu, leakage fail, ma -> mA. 0.0.8
 ev-station-ultra, ftu, charge test, availabe to prepareing2 fail. 0.0.8
@@ -538,13 +538,13 @@ new shipping v1.8.x.
 ===============================================================
 
 //* Update expected pattern of LCM upgrade.
-* Update LCM burnin commands.
+//* Update LCM burnin commands.
 //* Disable removing burnin log of RPS-Pro check-burnin-result.
 leakage current.
 help tatun factory.
 fcd issues in tatun factory.
 
-add plc test.
+//add plc test.
 add boost voltage test.
 verify burnin with new test fw.
 verify multiple ble function tests with new test fw.
