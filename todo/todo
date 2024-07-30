@@ -816,22 +816,6 @@ check a12 checking from te.
 Looks like port 6 will fail at Wirespeed stress loopback when high temperature.
 uboot can not boot into kernel. fw  ken.
 ===================================================
-
-upgrade_fw
-
-uisp-s-plus, fcd DIAG_v2.0.4: uisp-s-plus_256.ubi.
-uisp-s-plus, ftu check version of DIAG_v2.0.4: uisp-s-plus_256.ubi.
-uisp-s-plus, ftu, add check shipping fw version, single test item.
-uisp-s-plus, fcd fail from sz. (usb networking interface)
-uisp-s-plus, ble retest issues.
-uisp-s-plus, ble fail from sz. (bt addr not update)
-uisp-s-plus, burnin fail in sz. (loopback fail)
-uisp-s-plus, poe test issues (2 pair) (from sz te)
-uisp-s-plus, poe test board power issues (from sz te)
-uisp-s-plus, fan test fail in sz.
-uisp-s-plus, fcd serial io error.
-uisp-s-plus, 2nd source flash. (uid application)
-
 pid stop has some errors
 update upgrade_diag.sh
 
@@ -839,15 +823,15 @@ FCD Changlog:
 Update setenv function.
 
 FTU Changlog:
-Add PID control to fan test.
+//Add PID control to fan test.
 
-Burn-in test 
-Update setenv burnCmd 0x8f. 
-Update setenv burnDelay 600. 
+//Burn-in test 
+//Update setenv burnCmd 0x8f. 
+//Update setenv burnDelay 600. 
 
-Add Check Application version test case.
-Add Upgrade to DIAG image (from Application image) test case and related tools.
-Update Check DIAG to v2.0.5.
+//Add Check Application version test case.
+//Add Upgrade to DIAG image (from Application image) test case and related tools.
+//Update Check DIAG to v2.0.5.
 
 
 FCD Changlog:
@@ -856,12 +840,7 @@ Update bundled DIAG FW to DIAG_v2.0.6: uisp-s-plus_170623.1034.ubi
 FTU Changlog:
 Update Check DIAG to v2.0.6.
 Update bundled Runtime FW to RT_FW_v0.1.0: UISPS.act5.v0.1.0.a21755e.230515.1435.bin
-Fan test. Add PID start.
-Fan test. Add PID stop.
-Burn-in test, Update setenv burnCmd 0x8f.
-Burn-in test, Update setenv burnDelay 600.
-Add Check Application version test case.
-Add Upgrade to DIAG image (from Application image) test case and related tools.
+
 upgrade_fw issue, uboot issues.
 update fcd diag.
 update fcd helper.
