@@ -11,6 +11,9 @@ USP-RPS
 ===========================================================================
 new model, EVS-Lite-EU.
 uid registration.
+update wifi num.
+update mac to 4, uid.
+accode fcd fail.
 a6a7
 ===========================================================================
 //ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4

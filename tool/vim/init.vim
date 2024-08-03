@@ -10,7 +10,7 @@ nnoremap <c-a> gg^vG$
 nnoremap <c-d> *``cgn
 nnoremap <c-c> :noh<cr>
 
-nnoremap <c-t> :tabedit<cr>
+nnoremap <c-t> :tabedit
 nnoremap <c-n> :tabnext<cr>
 nnoremap <c-p> :tabprevious<cr>
 
