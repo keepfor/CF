@@ -31,7 +31,10 @@ define run_in
 	./$(prog) < $(input) 2>&1 | tee $(output)
 endef
 
-all: main copy  
+all: lint main format copy  
+
+lint:
+	cpplint $(src) 2>&1 | tee $(cout)
 
 format:
 	clang-format -style=Google -i $(src)
