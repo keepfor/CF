@@ -31,7 +31,7 @@ define run_in
 	./$(prog) < $(input) 2>&1 | tee $(output)
 endef
 
-all: lint main format copy  
+all: main copy  
 
 lint:
 	cpplint $(src) 2>&1 | tee $(cout)
