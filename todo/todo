@@ -527,6 +527,9 @@ outlet測試時，幫我新增提示框(Frame或LabelFrame)；OP再進到這測�
 Battery Power Guard Test, support pdu power off.
 Battery Power Guard Test, reduce testing time, refine test. check 16 ports in one sitting.
 
+swap test order of 9001 9002
+add config for enabling pdu. battery rps guard test.
+add recover pdu function to battery rps guard test.
 ed13
 ===============================================================
 
