@@ -12,6 +12,7 @@ alias h='bash ~/j/ssh_rpi.sh'
 alias t='tmux'
 alias z='~/.zshrc'
 
+alias jb='js-beautify -r '
 alias pg='ping 8.8.8.8'
 alias so='s sol.cc'
 alias cs='c sol.cc'
@@ -21,13 +22,14 @@ alias pf='bash ~/j/py_format.sh'
 alias pi='nautilus ~/Pictures'
 alias pa='python3 a.py'
 alias fa='bash ~/j/f.sh "*.py"'
-alias py='python3'
 alias cl='clear'
 alias cf='clang-format -style=Google -i'
 alias lo='~/j/lastest_ftu_log'
 alias to='~/alg/todo/todo'
 alias gs='git status'
 alias kc='make clean'
+alias py='~/j/run_py.sh '
+alias js='~/j/run_js.sh '
 
 alias dow='cd ~/Downloads'
 alias ftu='cd ~/ftu'
@@ -35,7 +37,6 @@ alias gre='git reset --soft HEAD^'
 alias val='bash ~/j/valgrind_memory_leak.sh'
 
 alias gtmp='gc -m "tmp"'
-
 
 bindkey '^[[Z' reverse-menu-complete
 

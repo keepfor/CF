@@ -8,6 +8,11 @@ UISP-R-Pro
 UISP-S
 UISP-S-Pro
 USP-RPS
+==============
+UACC-Visor
+NPI
+=============
+UISP-S-Carrier
 ===========================================================================
 new model, EVS-Lite-EU.
 uid registration.
@@ -534,6 +539,22 @@ Battery Power Guard Test, reduce testing time, refine test. check 16 ports in on
 swap test order of 9001 9002
 add config for enabling pdu. battery rps guard test.
 add recover pdu function to battery rps guard test.
+
+
+FP7 PP45 Discharging Test
+Add new test with dummy load fixture
+FP8 PLC test
+Add new test with USP-Battery, but it doesn’t have battery module
+FP3.4 RPS Battery Power Guard Test - Setup
+Change USP-Battery to 48V adapter fixture
+Change drawing power 10W to 5W
+FP3.4 RPS Battery Power Guard Test
+Add AC GPIO pin check
+Change result check power_54v_power 10W to 5W
+FP.7 External Batt. Charging Test
+Remove this slide because battery restriction on CM side
+FP.7 External Batt. Discharging Test
+Remove this slide because battery restriction on CM side
 
 ed13
 ===============================================================
