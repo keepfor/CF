@@ -2,7 +2,7 @@
 namespace {
 using namespace std;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
-#define rrep(i, n) for (int i = (int)(n)-1; i >= 0; i--)
+#define rrep(i, n) for (int i = (int)(n) - 1; i >= 0; i--)
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
 template <class T>

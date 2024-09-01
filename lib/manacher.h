@@ -30,7 +30,7 @@ vector<int> manacher(int n, const T &s) {
 
 template <typename T>
 vector<int> manacher(const T &s) {
-  return manacher((int) s.size(), s);
+  return manacher((int)s.size(), s);
 }
 
 int main() {
@@ -41,7 +41,7 @@ int main() {
   while (tt--) {
     string s;
     cin >> s;
-    int n = (int) s.size();
+    int n = (int)s.size();
     vector<int> res = manacher(s);
     int match = 0;
     while (2 * match + 2 <= n && s[match] == s[n - 1 - match]) {
@@ -75,7 +75,9 @@ int main() {
         afrom = from;
       }
     }
-    cout << (s.substr(0, match) + s.substr(afrom, ans) + s.substr(n - match, match)) << '\n';
+    cout << (s.substr(0, match) + s.substr(afrom, ans) +
+             s.substr(n - match, match))
+         << '\n';
   }
   return 0;
 }

@@ -67,58 +67,56 @@ class Trie {
 };
 
 class Trie {
-public:
-    vector<vector<int>> v;
-    vector<int> nw;
-    vector<int> end;
+ public:
+  vector<vector<int>> v;
+  vector<int> nw;
+  vector<int> end;
 
-    void nd() {
-        v.emplace_back(vector<int>(26, -1));
-        end.push_back(0);
-    }
+  void nd() {
+    v.emplace_back(vector<int>(26, -1));
+    end.push_back(0);
+  }
 
-    Trie() {
+  Trie() { nd(); }
+
+  void insert(string w) {
+    int cur = 0;
+    for (auto& i : w) {
+      int x = i - 'a';
+      if (v[cur][x] == -1) {
+        v[cur][x] = v.size();
+      }
+      cur = v[cur][x];
+      if (cur == v.size()) {
         nd();
+      }
     }
-    
-    void insert(string w) {
-        int cur = 0;
-        for (auto& i : w) {
-            int x = i - 'a';
-            if (v[cur][x] == -1) {
-                v[cur][x] = v.size();
-            }
-            cur = v[cur][x];
-            if (cur == v.size()) {
-                nd();
-            }
-        }
-        end[cur] = 1;
+    end[cur] = 1;
+  }
+
+  bool search(string w) {
+    int cur = 0;
+    for (auto& i : w) {
+      int x = i - 'a';
+      if (v[cur][x] == -1) {
+        return false;
+      }
+      cur = v[cur][x];
     }
-    
-    bool search(string w) {
-        int cur = 0;
-        for (auto& i : w) {
-            int x = i - 'a';
-            if (v[cur][x] == -1) {
-                return false;
-            }
-            cur = v[cur][x];
-        }
-        return end[cur];
+    return end[cur];
+  }
+
+  bool startsWith(string w) {
+    int cur = 0;
+    for (auto& i : w) {
+      int x = i - 'a';
+      if (v[cur][x] == -1) {
+        return false;
+      }
+      cur = v[cur][x];
     }
-    
-    bool startsWith(string w) {
-        int cur = 0;
-        for (auto& i : w) {
-            int x = i - 'a';
-            if (v[cur][x] == -1) {
-                return false;
-            }
-            cur = v[cur][x];
-        }
-        return true;
-    }
+    return true;
+  }
 };
 
 /**

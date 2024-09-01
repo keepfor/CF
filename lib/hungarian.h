@@ -1,7 +1,7 @@
 /**
  *    author:  tourist
  *    created: 08.04.2024 10:55:02
-**/
+ **/
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -82,9 +82,7 @@ class hungarian {
     } while (j0 != m);
   }
 
-  inline T current_score() {
-    return -v[m];
-  }
+  inline T current_score() { return -v[m]; }
 
   inline T solve() {
     for (int i = 0; i < n; i++) {
@@ -109,7 +107,8 @@ int main() {
     vector<int> x(k), y(k), p(k);
     for (int i = 0; i < k; i++) {
       cin >> x[i] >> y[i] >> p[i];
-      --x[i]; --y[i];
+      --x[i];
+      --y[i];
     }
     const int MAX = 20;
     hungarian<int64_t> h(MAX, k + MAX);
