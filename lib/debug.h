@@ -15,11 +15,13 @@ string to_string(const char* s) { return to_string((string)s); }
 
 string to_string(bool b) { return (b ? "true" : "false"); }
 
+/*
 template <typename T>
 string to_string(const __bit_reference<T>& b) {
   return (b ? "true" : "false");
 }
 // macos
+*/
 
 // string to_string(_Bit_reference b) { return (b ? "true" : "false"); }
 //  ubuntu
