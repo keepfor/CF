@@ -1,25 +1,24 @@
-cc := /usr/local/Cellar/gcc/14.2.0/bin/g++-14
-cfg := -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions  -g 
-dfg := -DDEBUG
+cc ?= /usr/local/Cellar/gcc/14.2.0/bin/g++-14
+pure_g++ ?= /usr/local/Cellar/gcc/14.2.0/bin/g++-14
+cfg ?= -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions  -g 
+dfg ?= -DDEBUG
+gdb ?= -g
+std ?= -std=c++2a 
+prog ?= prog
+src ?= sol.cc
+input ?= in
+output ?= out
+reset_cc ?= reset.cc
+last_cc ?= last.cc
+gen_cc ?= gen.cc
+gen ?= gen
+compile_out ?= compile_out
 
-gdb := -g
-debug := -DDEBUG
+CXXFLAGS ?= -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal  -Wconversion -Wlong-long -Wshift-overflow -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -Wl,-stack_size,256000000 
 
-std ?= -std=c++2a
+DEBUGFLAGS ?= -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC  -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
 
-CXXFLAGS ?=  -std=c++2a -O3 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlong-long -Wshift-overflow -Wunknown-warning-option -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion -Wl,-stack_size,256000000
-
-DEBUGFLAGS := -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector -D_FORTIFY_SOURCE=2
-
-prog := prog
-src := sol.cc
-input := in
-output := out
-reset_cc := reset.cc
-last_cc := last.cc
-gen_cc := gen.cc
-gen := gen
-compile_out := compile_out
+mac_g++_no ?= -fsanitize=undefined -fsanitize=address -Wunknown-warning-option
 
 define re 
 	> $(input)
@@ -51,11 +50,11 @@ simple:
 	$(cc) $(src) -o $(prog) $(std) $(dfg) 
 
 verbose:
-	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
+	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(std) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
 
 $(prog): $(src)
 	rm -rf $(prog)*
-	$(cc) $(src) -o $(prog) $(std) $(dfg) 
+	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(std) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
 
 main: $(prog)
 	cat $(input)
