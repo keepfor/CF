@@ -1,4 +1,4 @@
-colorscheme torte 
+colorscheme wildcharm 
 
 inoremap jk <esc>
 inoremap kj <esc>
@@ -12,7 +12,7 @@ nnoremap <c-c> :noh<cr>
 
 nnoremap <c-n> :tabnext<cr>
 nnoremap <c-p> :tabprevious<cr>
-nnoremap <c-t> :tabedit<cr>
+nnoremap <c-t> :tabedit
 
 set shiftwidth=2 softtabstop=2 tabstop=2
 set visualbell nobackup
@@ -31,6 +31,11 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
@@ -38,7 +43,3 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
