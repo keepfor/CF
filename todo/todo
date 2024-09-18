@@ -21,6 +21,9 @@ update mac to 4, uid.
 accode fcd fail.
 new bsp fw.
 factory image and FCD back to ART image to v2 for EVS-Lite EU production
+try to upgrade MFG.
+new mfg. 9/15
+lcm show wait two minutes, but wait over 30 minutes.
 a6a7
 ===========================================================================
 //ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
@@ -307,27 +310,20 @@ pb fw upgrade fail. ic broken adfter burnin.
 new shipping fw to ftu.  UM-EVS-v1.1.2-0-3731a6e-240620.1840-M.bin
 new shipping fw to ftu.  UM-EVS-v1.2.3
 
+fix iperf, remove dealy.
+
 a6a0
 =======================================================================
 ev-station-pro, increae fcd retry count. te propose.
-//ev-station-pro, update shipping fw. ota_update_evcharger_release_v1.0.262.zip  
-ev-station-pro, shipping fw downgrade fail, ota_update_evcharger_release_v1.0.262.zip  
-ev-station-pro, shipping fw upgrade fail, ota_update_evcharger_release_v1.0.262.zip  
 
 ev-station-pro, support check p/n pilot voltage for abc.
-ev-station-pro, new fcd. (EV_CHARGER_FCD_t011.20240301.122003.7z
-ev-station-pro, new fcd. (ev_charger-ota-eng_t011.20240301.122003.zip
-ev-station-pro, upate ftu cdt to v4_eu.
 
-//update shipping fw. ota_update_evcharger_release_v1.2.25.zip
 update shipping fw issue, can not connect dut after upgrade.
-update enable adb method in shipping fw.
 get adb key fail.
 reset to default and get adb key fail.
 quick click menu to prevent e04.
 quick click menu to prevent e04 -> not work, need click 'next'
 set up env on ev lab. udm .... need 220v.
-set up windows notebook for ev-station-pro ftu dev.
 shipping fw downgrade fail.
 curl fail.
 update enable adb debug.
@@ -335,9 +331,6 @@ update update shipping fw.
 update downgrade shipping fw.
 update to shipping fw, connection refused.
 need click current menu, then can enable adb. 
-
-shipping fw update fail in factory. not in fcd image.
-shipping fw downgrade fail in factory, they use old ftu.
 
 update fcd image download, support eu cdt.
 usb port test issue. complicance.
@@ -359,7 +352,6 @@ wifi test fail
 type c not test. need add ?
 131  [Charge] Normal state started   和  Normal state suspend fail.
 131  [Charge] Normal state started     1       1/0   [OK, 0]测试项目是pass的，但看log 显示没有抓到电压值。
-burnin fail, dut not output.
 upgrade-shipping-fw fail, product type incorrect.
 DUT上的界面没有显示电流电压以及功率信息
 update aboot for type issue.
@@ -399,14 +391,6 @@ usw-industrial,tests,test_upgrade_to_shipping_fw.py
 
 UISP-Console-Carrier, npi.
 ==========================================================
-update lead acid battery test, add charging voltage config.
-Add Test config
-voltlower = 46
-voltupper = 51.5
-currLowerForFastCharging = 0.4
-currUpperForFastCharging = 1.2
-currLowerForSlowCharging = 0.1
-currUpperForSlowCharging = 0.6
 Update Burn-in Setup, an operation that rename rpspro_burnin.cfg to burnin.cfg
 Update Burn-in Setup, burnin.sh - ver 20230301.
 Add getting RPS-Oring, PSU, Outlet, Charge status
@@ -556,6 +540,8 @@ Remove this slide because battery restriction on CM side
 FP.7 External Batt. Discharging Test
 Remove this slide because battery restriction on CM side
 
+pyinstaller module issue from TE's PC.
+
 ed13
 ===============================================================
 
@@ -568,16 +554,9 @@ Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 new shipping v1.8.1.
 new shipping v1.8.x.
 ===============================================================
-
-//* Update expected pattern of LCM upgrade.
-//* Update LCM burnin commands.
-//* Disable removing burnin log of RPS-Pro check-burnin-result.
 leakage current.
 help tatun factory.
-fcd issues in tatun factory.
 
-//add plc test.
-add boost voltage test.
 verify burnin with new test fw.
 verify multiple ble function tests with new test fw.
 調整一下boost電壓的criteria 54100mV~57500mV.
@@ -1035,6 +1014,11 @@ update lead battery test, support check lth battery status.
 fix snake1 and snake2 issues. git reset
 improve portlink test retest, rewrite with swctrl.
 update fan 100_rpm criteria to 8000~10000.
+
+update lcm touch.
+lte test remove concern.
+burnin issue. risk.
+ed2c.
 =============================================================================
 
 uisp-r-pro, update security test with new parsing pattern and expected result.
