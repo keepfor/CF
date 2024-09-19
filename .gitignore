@@ -5,3 +5,4 @@ copy.cc
 sol.cc
 last.cc
 compile_out
+gen*s
