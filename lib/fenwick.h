@@ -1,10 +1,10 @@
 template <typename T>
-class fenwick {
+class Fenwick {
  public:
   vector<T> fenw;
   int n;
 
-  fenwick(int _n) : n(_n) { fenw.resize(n); }
+  Fenwick(int _n) : n(_n) { fenw.resize(n); }
 
   void modify(int x, T v) {
     while (x < n) {
