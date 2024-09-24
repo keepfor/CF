@@ -1,23 +1,41 @@
 alias i='cat > in'
-alias n='make new'
+alias a='cd ~/alg'
+alias p='ping 8.8.8.8'
 alias k='time make'
-alias v='vim'
+alias v='nvim '
 alias c='code '
-alias s='subl'
+alias s='subl '
 alias m='md5sum'
 alias j='cd ~/j'
+alias u='bash ~/j/start_ftu.sh'
+alias h='bash ~/j/ssh_rpi.sh'
 alias t='tmux'
+alias z='~/.zshrc'
 
+alias pg='ping 8.8.8.8'
+alias so='s sol.cc'
+alias cs='c sol.cc'
+alias vs='v sol.cc'
+alias tk='tmux kill-server'
+alias pf='bash ~/j/py_format.sh'
+alias pi='nautilus ~/Pictures'
+alias pa='python3 a.py'
+alias fa='bash ~/j/f.sh "*.py"'
 alias py='python3'
 alias cl='clear'
 alias cf='clang-format -style=Google -i'
-alias vz='v ~/.zshrc'
-alias tm='tmux kill-server;tmux;'
-alias tk='tmux kill-session'
+alias lo='~/j/lastest_ftu_log'
+alias to='~/alg/todo/todo'
+alias gs='git status'
 alias kc='make clean'
 
-alias alg='cd ~/alg'
 alias dow='cd ~/Downloads'
+alias ftu='cd ~/ftu'
+alias gre='git reset --soft HEAD^'
+alias val='bash ~/j/valgrind_memory_leak.sh'
+
+alias gtmp='gc -m "tmp"'
+alias g++='/usr/local/Cellar/gcc/14.2.0/bin/g++-14'
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -138,3 +156,4 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source <(fzf --zsh)
