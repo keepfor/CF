@@ -18,7 +18,9 @@ class Solver {
   void Solve() const;
 };
 
-void Solver::Solve() const { using ll = long long; }
+void Solver::Solve() const { 
+
+}
 
 void Solver::Run() const {
   auto tt{1};
@@ -28,7 +30,9 @@ void Solver::Run() const {
   }
 }
 
-inline void Solver::SetIO() const { cin.tie(0)->sync_with_stdio(0); }
+inline void Solver::SetIO() const { 
+  cin.tie(0)->sync_with_stdio(0); 
+}
 
 void Solver::Main() const {
   SetIO();
