@@ -47,14 +47,14 @@ clear:
 	rm -rf $(prog).dSYM/
 
 simple:
-	$(cc) $(src) -o $(prog) $(std) $(dfg) 
+	$(cc) $(src) -o $(prog) $(std) $(dfg) 2>&1 | tee $(compile_out) 
 
 verbose:
 	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(std) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
 
 $(prog): $(src)
 	rm -rf $(prog)*
-	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(std) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
+	$(cc) $(src) -o $(prog) $(std) $(dfg) 2>&1 | tee $(compile_out) 
 
 main: $(prog)
 	cat $(input)
