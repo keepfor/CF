@@ -1,3 +1,4 @@
+namespace Frac{
 #include <bits/stdc++.h>
 
 using i64 = long long;
@@ -143,8 +144,9 @@ int main() {
     
     return 0;
 }
+}
 
-
+namespace frac {
 #include<bits/stdc++.h>
 using namespace std;
 #define rep(i,l,r)for(ll i=(l);i<(r);i++)
@@ -274,4 +276,5 @@ int main(){
         ans=max(ans,tans);
     }
     cout << n-ans << endl;
+}    
 }
