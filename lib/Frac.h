@@ -143,4 +143,135 @@ int main() {
     
     return 0;
 }
-        
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define rep(i,l,r)for(ll i=(l);i<(r);i++)
+
+using ll=long long;
+using point=array<ll,3>;
+using line=array<point,2>;
+
+class frac{
+public:
+    ll nume,deno;
+
+    frac() : nume(0), deno(1) {}
+    frac(ll n): nume(n), deno(1) {}
+    frac(ll n,ll d){
+        //assert(d);
+        if(d<0){
+            nume=-n;
+            deno=-d;
+        }else{
+            nume=n;
+            deno=d;
+        }
+    }
+    void reduce(){
+        ll d=gcd(nume,deno);
+        nume/=d;
+        deno/=d;
+    }
+    frac operator-(ll n){return frac(nume-n*deno,deno);}
+    frac operator+(ll n){return frac(nume+n*deno,deno);}
+    frac operator*(frac&x){return frac(nume*x.nume,deno*x.deno);}
+    bool operator<(ll x){return nume<x*deno;}
+    
+    friend bool operator==(const frac&x,const frac&y){return x.nume*y.deno==x.deno*y.nume;}
+    friend bool operator<(const frac&x,const frac&y){return x.nume*y.deno<y.nume*x.deno;}
+};
+
+array<frac,2> get_vec(point&p,point&q){
+    frac dy=frac(p[1]-q[1],p[0]-q[0]);
+    frac dz=frac(p[2]-q[2],p[0]-q[0]);
+    return {dy,dz};
+}
+
+using point_frac=array<frac,3>;
+pair<point_frac,bool> get_intersect(line l1,line l2){
+    //z=0に射影して交点(x,y)を求める。平行でない、x=aの平面上にない
+    ll deno=(l1[0][0]-l1[1][0])*(l2[0][1]-l2[1][1])-(l2[0][0]-l2[1][0])*(l1[0][1]-l1[1][1]);
+    if(!deno){
+        //平行でない2直線がz=0に射影して平行⇒射影した結果同一直線上にある、すなわち平面px+qy=0上にある
+        //平面x=aの上にないので、y=0に射影すれば平行でない。y,zをswapしてやりなおし
+        swap(l1[0][1],l1[0][2]);
+        swap(l1[1][1],l1[1][2]);
+        swap(l2[0][1],l2[0][2]);
+        swap(l2[1][1],l2[1][2]);
+        auto[p,f]=get_intersect(l1,l2);
+        swap(p[1],p[2]);
+        return{p,f};
+    }
+    ll xnume=  l1[0][0]*l2[0][0]*(l1[1][1]-l2[1][1])-l1[0][0]*l2[1][0]*(l1[1][1]-l2[0][1])-l1[1][0]*l2[0][0]*(l1[0][1]-l2[1][1])+l1[1][0]*l2[1][0]*(l1[0][1]-l2[0][1]);
+    ll ynume=-(l1[0][1]*l2[0][1]*(l1[1][0]-l2[1][0])-l1[0][1]*l2[1][1]*(l1[1][0]-l2[0][0])-l1[1][1]*l2[0][1]*(l1[0][0]-l2[1][0])+l1[1][1]*l2[1][1]*(l1[0][0]-l2[0][0]));
+    frac x=frac(xnume,deno),y=frac(ynume,deno);
+    //z座標が等しいか確認
+    frac dz1=frac(l1[0][2]-l1[1][2],l1[0][0]-l1[1][0]);
+    frac dz2=frac(l2[0][2]-l2[1][2],l2[0][0]-l2[1][0]);
+    frac z1=(x-l1[0][0])*dz1+l1[0][2];
+    frac z2=(x-l2[0][0])*dz2+l2[0][2];
+    if(z1==z2)return {{x,y,z1},true};
+    return {{},false};
+}
+
+int main(){
+    int n;
+    cin >> n;
+    vector<point>p(n);
+    rep(i,0,n)cin >> p[i][0] >> p[i][1] >> p[i][2];
+    
+    //極大な線分を列挙する
+    //その直線の端から見たとき何個の点が隠れるか数えておく
+    vector<line>L;
+    vector<int>count;
+    rep(i,0,n)rep(j,0,n){
+        if(p[i][0]>=p[j][0])continue;
+        //pix<pjx
+        auto dxdy=get_vec(p[i],p[j]);
+        int cnt=0;
+        bool ok=true;
+        rep(k,0,n){
+            if(p[i][0]==p[k][0]||p[k][0]==p[j][0])continue;
+            if(dxdy==get_vec(p[i],p[k])){
+                if(p[i][0]<=p[k][0]&&p[k][0]<=p[j][0]){
+                    cnt++;
+                }else{
+                    ok=false;
+                    break;
+                }
+            }
+        }
+        if(ok){
+            L.push_back({p[i],p[j]});
+            count.push_back(cnt+1);
+        }
+    }
+    
+    int nn=L.size();
+    if(nn==0){
+        cout << n << endl;
+        return 0;
+    }
+
+    //直線の交点をkeyに、その交点を通る直線のsetを持つ
+    map<point_frac,set<int>>temp;
+    rep(i,0,nn)rep(j,i+1,nn){
+        if(get_vec(L[i][0],L[i][1])==get_vec(L[j][0],L[j][1]))continue;
+        auto[p,f]=get_intersect(L[i],L[j]);
+        if(!f)continue;
+        if(p[0]<0){
+            temp[p].insert(i);
+            temp[p].insert(j);
+        }
+    }
+    
+    int ans=*max_element(count.begin(),count.end());
+    for(auto[_,s]:temp){
+        int tans=0;
+        for(auto i:s)tans+=count[i];
+        ans=max(ans,tans);
+    }
+    cout << n-ans << endl;
+}
