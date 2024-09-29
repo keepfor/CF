@@ -61,3 +61,27 @@ vector<int> Z(I first, I last) {
   }
   return zf;
 }
+
+
+class Solution {
+public:
+    int minStartingIndex(string s, string a) {
+        string b = a + s;
+        auto pre = Z(b.begin(), b.end());
+        reverse(s.begin(), s.end());
+        reverse(a.begin(), a.end());
+        b = a + s;
+        auto suf = Z(b.begin(), b.end());
+        const int n = s.size();
+        const int m = a.size();
+        for (int i = m; i < m + n; ++i) {
+          if (pre[i] == n) {
+            return i - m;
+          }
+          if (suf[i] + pre[i] == n) {
+            return i - m;
+          }
+        }
+        return -1;
+    }
+};
