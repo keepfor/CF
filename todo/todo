@@ -24,6 +24,7 @@ factory image and FCD back to ART image to v2 for EVS-Lite EU production
 try to upgrade MFG.
 new mfg. 9/15
 lcm show wait two minutes, but wait over 30 minutes.
+new mfg can not enable burnin.
 a6a7
 ===========================================================================
 //ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
@@ -336,7 +337,6 @@ update fcd image download, support eu cdt.
 usb port test issue. complicance.
 
 update download fcd img, update cdt rule for eu build.
-cur.exe not supported.
 Uploading  Image using Sahara protocol failed, download fcd img.
 ERROR: function: sahara_rx_data:286 Command packet length 2130731135 too large to fit
 typec issues fcd download img.
@@ -351,7 +351,6 @@ wifi test fail
 
 type c not test. need add ?
 131  [Charge] Normal state started   和  Normal state suspend fail.
-131  [Charge] Normal state started     1       1/0   [OK, 0]测试项目是pass的，但看log 显示没有抓到电压值。
 upgrade-shipping-fw fail, product type incorrect.
 DUT上的界面没有显示电流电压以及功率信息
 update aboot for type issue.
@@ -379,6 +378,9 @@ not found country in WCNSS_qcom_cfg.ini.
 update NV file.
 new fcd fw.t011.20240709.140837
 check md5sum of nv file.adb shell "md5sum /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin"
+prepare downgrade flow for hwrd.
+oba e12 error.
+
 efa0
 ===============================================================
 usw, fw / fcd / ftu ver.
@@ -541,6 +543,7 @@ FP.7 External Batt. Discharging Test
 Remove this slide because battery restriction on CM side
 
 pyinstaller module issue from TE's PC.
+gd lcm for ?
 
 ed13
 ===============================================================
@@ -558,17 +561,7 @@ leakage current.
 help tatun factory.
 
 verify burnin with new test fw.
-verify multiple ble function tests with new test fw.
-調整一下boost電壓的criteria 54100mV~57500mV.
 
-prod fw:
-f3fb61636e37672d36fdec5972798387  upb.efr32_1.1.8+372.240116.0247.bin
-diag fw gbl:
-11b39b1ae71d54002b15ee967b13fbc5  upb.efr32app_1.1.8.gbl
-diag fw bin:
-de911037c22ff66fbe2c57eab78b7d27  upb.efr32diag_1.1.8+372.240116.0246.bin
-diag recovery fw gbl:
-6906d5ec915195f8b27455e6e926fa54  upb.efr32recovery_1.1.8.gbl
 
 update-fw fail, upb.efr32app_1.1.8.gbl. (FAIL, exceed the maximum_listen_time 30 to expect: Batt: Battery is ready!
 update update app diag fw, check ver directly.
@@ -585,8 +578,6 @@ gbl file naming change.
 bt fail on ty.
 bt fail, rpi4 issue.
 get burn in log fail in ty. 
-burnin log fail, not found dut ble key.
-burnin log fail, ble connection fail.
 
 burnin fail in ty.
 lcm error, a12 error.
@@ -676,6 +667,16 @@ support forced update to all fw_upgrade.
 plc fail. 999->500?
 update burnin.sh.
 update check burnin result.
+V1.1.0 Change Notes
+Update UPB firmware v1.3.1 (FP.2.3, FP.2.4, ASSY1.1.6)
+Update LCM firmware v1.0.8 (FP.2.1)
+update expected fw version string for update diag fw by xmodem. (add v) 
+update expected fw version string for update diag fw by plc. (add v) 
+update expected fw version string for update production fw by plc. (add v) 
+update expected fw version string for update recovery fw by xmodem. (add v) 
+lcm fw upgrade fail.
+need new gd lcm battery for testing. 
+
 ee76
 =================================================================
 

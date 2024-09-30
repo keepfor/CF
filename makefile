@@ -43,16 +43,14 @@ verbose:
 	$(CC) $(src) -o $(prog) $(CXXFLAGS) $(debug) $(gdb) $(DEBUGFLAGS)  2>&1 | tee $(cout)
 
 simple:
-	$(CC) $(src) -o $(prog)  
+	$(CC) $(src) -o $(prog) $(debug) 2>&1 | tee $(cout)
 
 usual:
 	$(CC) $(src) -o $(prog) $(debug)
 
 $(prog): $(src)
 	rm -f $(prog)
-	$(CC) $(src) -o $(prog) $(CXXFLAGS) $(debug) $(gdb) $(DEBUGFLAGS)  2>&1 | tee $(cout)
-
-
+	$(CC) $(src) -o $(prog) $(debug) 2>&1 | tee $(cout)
 
 main: $(prog)
 	$(run_in)
