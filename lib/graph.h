@@ -1,7 +1,7 @@
 /**
  *    author:  tourist
  *    created: 06.07.2024 15:08:38
-**/
+ **/
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -25,9 +25,7 @@ class graph {
   vector<vector<int>> g;
   int n;
 
-  graph(int _n) : n(_n) {
-    g.resize(n);
-  }
+  graph(int _n) : n(_n) { g.resize(n); }
 
   virtual int add(int from, int to, T cost) = 0;
 };
@@ -39,12 +37,11 @@ class forest : public graph<T> {
   using graph<T>::g;
   using graph<T>::n;
 
-  forest(int _n) : graph<T>(_n) {
-  }
+  forest(int _n) : graph<T>(_n) {}
 
   int add(int from, int to, T cost = 1) {
     assert(0 <= from && from < n && 0 <= to && to < n);
-    int id = (int) edges.size();
+    int id = (int)edges.size();
     assert(id < n - 1);
     g[from].push_back(id);
     g[to].push_back(id);
@@ -70,8 +67,7 @@ class dfs_forest : public forest<T> {
   vector<int> depth;
   vector<T> dist;
 
-  dfs_forest(int _n) : forest<T>(_n) {
-  }
+  dfs_forest(int _n) : forest<T>(_n) {}
 
   void init() {
     pv = vector<int>(n, -1);
@@ -99,7 +95,7 @@ class dfs_forest : public forest<T> {
 
  private:
   void do_dfs(int v) {
-    pos[v] = (int) order.size();
+    pos[v] = (int)order.size();
     order.push_back(v);
     sz[v] = 1;
     for (int id : g[v]) {
@@ -116,7 +112,7 @@ class dfs_forest : public forest<T> {
       do_dfs(to);
       sz[v] += sz[to];
     }
-    end[v] = (int) order.size() - 1;
+    end[v] = (int)order.size() - 1;
   }
 
   void do_dfs_from(int v) {
@@ -146,7 +142,7 @@ class dfs_forest : public forest<T> {
         do_dfs_from(v);
       }
     }
-    assert((int) order.size() == n);
+    assert((int)order.size() == n);
   }
 };
 
@@ -160,7 +156,8 @@ int main() {
   for (int i = 0; i < n - 1; i++) {
     int a, b, c;
     cin >> a >> b >> c;
-    --a; --b;
+    --a;
+    --b;
     g.add(a, b, c);
     total += c;
   }

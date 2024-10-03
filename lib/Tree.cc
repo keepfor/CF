@@ -63,9 +63,9 @@ using pqg = priority_queue<T, vector<T>, greater<T>>;
 #define FOR2(i, a) for (ll i = 0; i < ll(a); ++i)
 #define FOR3(i, a, b) for (ll i = a; i < ll(b); ++i)
 #define FOR4(i, a, b, c) for (ll i = a; i < ll(b); i += (c))
-#define FOR1_R(a) for (ll i = (a)-1; i >= ll(0); --i)
-#define FOR2_R(i, a) for (ll i = (a)-1; i >= ll(0); --i)
-#define FOR3_R(i, a, b) for (ll i = (b)-1; i >= ll(a); --i)
+#define FOR1_R(a) for (ll i = (a) - 1; i >= ll(0); --i)
+#define FOR2_R(i, a) for (ll i = (a) - 1; i >= ll(0); --i)
+#define FOR3_R(i, a, b) for (ll i = (b) - 1; i >= ll(a); --i)
 #define overload4(a, b, c, d, e, ...) e
 #define overload3(a, b, c, d, ...) d
 #define FOR(...) overload4(__VA_ARGS__, FOR4, FOR3, FOR2, FOR1)(__VA_ARGS__)
@@ -117,7 +117,7 @@ pair<T, T> divmod(T x, U y) {
 template <typename T, typename U>
 T SUM(const vector<U> &A) {
   T sum = 0;
-  for (auto &&a: A) sum += a;
+  for (auto &&a : A) sum += a;
   return sum;
 }
 
@@ -300,7 +300,9 @@ struct Scanner {
       st++;
     }
     ref = T(0);
-    while (isdigit(line[st])) { ref = 10 * ref + (line[st++] & 0xf); }
+    while (isdigit(line[st])) {
+      ref = 10 * ref + (line[st++] & 0xf);
+    }
     if (neg) ref = -ref;
     return true;
   }
@@ -324,7 +326,7 @@ struct Scanner {
   }
   template <class T>
   bool read_single(vector<T> &ref) {
-    for (auto &d: ref) {
+    for (auto &d : ref) {
       if (!read_single(d)) return false;
     }
     return true;
@@ -348,7 +350,7 @@ struct Scanner {
   }
   void read() {}
   template <class H, class... T>
-  void read(H &h, T &... t) {
+  void read(H &h, T &...t) {
     bool f = read_single(h);
     assert(f);
     read(t...);
@@ -381,18 +383,20 @@ struct Printer {
     }
     if (val < 0) {
       write('-');
-      val = -val; // todo min
+      val = -val;  // todo min
     }
     size_t len = 0;
     while (val) {
       small[len++] = char(0x30 | (val % 10));
       val /= 10;
     }
-    for (size_t i = 0; i < len; i++) { line[pos + i] = small[len - 1 - i]; }
+    for (size_t i = 0; i < len; i++) {
+      line[pos + i] = small[len - 1 - i];
+    }
     pos += len;
   }
   void write(const string s) {
-    for (char c: s) write(c);
+    for (char c : s) write(c);
   }
   void write(const char *s) {
     size_t len = strlen(s);
@@ -432,7 +436,9 @@ struct Printer {
   template <size_t N = 0, typename T>
   void write_tuple(const T t) {
     if constexpr (N < std::tuple_size<T>::value) {
-      if constexpr (N > 0) { write(' '); }
+      if constexpr (N > 0) {
+        write(' ');
+      }
       const auto x = std::get<N>(t);
       write(x);
       write_tuple<N + 1>(t);
@@ -473,7 +479,7 @@ Printer printer = Printer(stdout);
 void flush() { printer.flush(); }
 void print() { printer.write('\n'); }
 template <class Head, class... Tail>
-void print(Head &&head, Tail &&... tail) {
+void print(Head &&head, Tail &&...tail) {
   printer.write(head);
   if (sizeof...(Tail)) printer.write(' ');
   print(forward<Tail>(tail)...);
@@ -481,13 +487,13 @@ void print(Head &&head, Tail &&... tail) {
 
 void read() {}
 template <class Head, class... Tail>
-void read(Head &head, Tail &... tail) {
+void read(Head &head, Tail &...tail) {
   scanner.read(head);
   read(tail...);
 }
-} // namespace fastio
-using fastio::print;
+}  // namespace fastio
 using fastio::flush;
+using fastio::print;
 using fastio::read;
 
 #define INT(...)   \
@@ -540,21 +546,25 @@ struct Graph {
   bool prepared;
 
   class OutgoingEdges {
-  public:
-    OutgoingEdges(const Graph* G, int l, int r) : G(G), l(l), r(r) {}
+   public:
+    OutgoingEdges(const Graph *G, int l, int r) : G(G), l(l), r(r) {}
 
-    const edge_type* begin() const {
-      if (l == r) { return 0; }
+    const edge_type *begin() const {
+      if (l == r) {
+        return 0;
+      }
       return &G->csr_edges[l];
     }
 
-    const edge_type* end() const {
-      if (l == r) { return 0; }
+    const edge_type *end() const {
+      if (l == r) {
+        return 0;
+      }
       return &G->csr_edges[r];
     }
 
-  private:
-    const Graph* G;
+   private:
+    const Graph *G;
     int l, r;
   };
 
@@ -606,14 +616,16 @@ struct Graph {
     assert(!prepared);
     prepared = true;
     indptr.assign(N + 1, 0);
-    for (auto&& e: edges) {
+    for (auto &&e : edges) {
       indptr[e.frm + 1]++;
       if (!directed) indptr[e.to + 1]++;
     }
-    for (int v = 0; v < N; ++v) { indptr[v + 1] += indptr[v]; }
+    for (int v = 0; v < N; ++v) {
+      indptr[v + 1] += indptr[v];
+    }
     auto counter = indptr;
     csr_edges.resize(indptr.back() + 1);
-    for (auto&& e: edges) {
+    for (auto &&e : edges) {
       csr_edges[counter[e.frm]++] = e;
       if (!directed)
         csr_edges[counter[e.to]++] = edge_type({e.to, e.frm, e.cost, e.id});
@@ -654,11 +666,11 @@ struct Graph {
     print("Graph");
     if (!prepared) {
       print("frm to cost id");
-      for (auto&& e: edges) print(e.frm, e.to, e.cost, e.id);
+      for (auto &&e : edges) print(e.frm, e.to, e.cost, e.id);
     } else {
       print("indptr", indptr);
       print("frm to cost id");
-      FOR(v, N) for (auto&& e: (*this)[v]) print(e.frm, e.to, e.cost, e.id);
+      FOR(v, N) for (auto &&e : (*this)[v]) print(e.frm, e.to, e.cost, e.id);
     }
   }
 
@@ -668,7 +680,7 @@ struct Graph {
     map<int, int> MP;
     FOR(i, n) MP[V[i]] = i;
     Graph<T, directed> G(n);
-    for (auto&& e: edges) {
+    for (auto &&e : edges) {
       if (MP.count(e.frm) && MP.count(e.to)) {
         G.add(MP[e.frm], MP[e.to], e.cost);
       }
@@ -677,24 +689,26 @@ struct Graph {
     return G;
   }
 
-private:
+ private:
   void calc_deg() {
     assert(vc_deg.empty());
     vc_deg.resize(N);
-    for (auto&& e: edges) vc_deg[e.frm]++, vc_deg[e.to]++;
+    for (auto &&e : edges) vc_deg[e.frm]++, vc_deg[e.to]++;
   }
 
   void calc_deg_inout() {
     assert(vc_indeg.empty());
     vc_indeg.resize(N);
     vc_outdeg.resize(N);
-    for (auto&& e: edges) { vc_indeg[e.to]++, vc_outdeg[e.frm]++; }
+    for (auto &&e : edges) {
+      vc_indeg[e.to]++, vc_outdeg[e.frm]++;
+    }
   }
 };
 #line 3 "library/graph/shortest_path/bfs01.hpp"
 
 template <typename T, typename GT>
-pair<vc<T>, vc<int>> bfs01(GT& G, int v) {
+pair<vc<T>, vc<int>> bfs01(GT &G, int v) {
   assert(G.is_prepared());
   int N = G.N;
   vc<T> dist(N, infty<T>);
@@ -706,7 +720,7 @@ pair<vc<T>, vc<int>> bfs01(GT& G, int v) {
   while (!que.empty()) {
     auto v = que.front();
     que.pop_front();
-    for (auto&& e: G[v]) {
+    for (auto &&e : G[v]) {
       if (dist[e.to] == infty<T> || dist[e.to] > dist[e.frm] + e.cost) {
         dist[e.to] = dist[e.frm] + e.cost;
         par[e.to] = e.frm;
@@ -722,7 +736,7 @@ pair<vc<T>, vc<int>> bfs01(GT& G, int v) {
 
 // 多点スタート。[dist, par, root]
 template <typename T, typename GT>
-tuple<vc<T>, vc<int>, vc<int>> bfs01(GT& G, vc<int> vs) {
+tuple<vc<T>, vc<int>, vc<int>> bfs01(GT &G, vc<int> vs) {
   assert(G.is_prepared());
   int N = G.N;
   vc<T> dist(N, infty<T>);
@@ -730,7 +744,7 @@ tuple<vc<T>, vc<int>, vc<int>> bfs01(GT& G, vc<int> vs) {
   vc<int> root(N, -1);
   deque<int> que;
 
-  for (auto&& v: vs) {
+  for (auto &&v : vs) {
     dist[v] = 0;
     root[v] = v;
     que.push_front(v);
@@ -739,7 +753,7 @@ tuple<vc<T>, vc<int>, vc<int>> bfs01(GT& G, vc<int> vs) {
   while (!que.empty()) {
     auto v = que.front();
     que.pop_front();
-    for (auto&& e: G[v]) {
+    for (auto &&e : G[v]) {
       if (dist[e.to] == infty<T> || dist[e.to] > dist[e.frm] + e.cost) {
         dist[e.to] = dist[e.frm] + e.cost;
         root[e.to] = root[e.frm];
@@ -754,7 +768,7 @@ tuple<vc<T>, vc<int>, vc<int>> bfs01(GT& G, vc<int> vs) {
   return {dist, par, root};
 }
 #line 1 "library/graph/shortest_path/restore_path.hpp"
-vector<int> restore_path(vector<int> par, int t){
+vector<int> restore_path(vector<int> par, int t) {
   vector<int> pth = {t};
   while (par[pth.back()] != -1) pth.eb(par[pth.back()]);
   reverse(all(pth));
@@ -763,10 +777,10 @@ vector<int> restore_path(vector<int> par, int t){
 #line 3 "library/graph/tree_diameter.hpp"
 
 template <typename T, typename GT>
-pair<T, vc<int>> tree_diameter(GT& G) {
+pair<T, vc<int>> tree_diameter(GT &G) {
   assert(G.is_prepared());
   T sm = 0;
-  for (auto&& e: G.edges) {
+  for (auto &&e : G.edges) {
     sm += e.cost;
     assert(sm < infty<T>);
   }
@@ -840,7 +854,9 @@ struct Tree {
       VtoE[e.to] = e.id;
       dfs_sz(e.to, v);
       sz[v] += sz[e.to];
-      if (hld && chmax(hld_sz, sz[e.to]) && l < i) { swap(csr[l], csr[i]); }
+      if (hld && chmax(hld_sz, sz[e.to]) && l < i) {
+        swap(csr[l], csr[i]);
+      }
     }
   }
 
@@ -849,7 +865,7 @@ struct Tree {
     RID[v] += LID[v];
     V[LID[v]] = v;
     bool heavy = true;
-    for (auto &&e: G[v]) {
+    for (auto &&e : G[v]) {
       if (depth[e.to] <= depth[v]) continue;
       head[e.to] = (heavy ? head[v] : e.to);
       heavy = false;
@@ -861,7 +877,7 @@ struct Tree {
     vc<int> P = {v};
     while (1) {
       int a = P.back();
-      for (auto &&e: G[a]) {
+      for (auto &&e : G[a]) {
         if (e.to != parent[a] && head[e.to] == v) {
           P.eb(e.to);
           break;
@@ -933,7 +949,7 @@ struct Tree {
 
   vc<int> collect_child(int v) {
     vc<int> res;
-    for (auto &&e: G[v])
+    for (auto &&e : G[v])
       if (e.to != parent[v]) res.eb(e.to);
     return res;
   }
@@ -960,7 +976,7 @@ struct Tree {
 
   vc<int> restore_path(int u, int v) {
     vc<int> P;
-    for (auto &&[a, b]: get_path_decomposition(u, v, 0)) {
+    for (auto &&[a, b] : get_path_decomposition(u, v, 0)) {
       if (a <= b) {
         FOR(i, a, b + 1) P.eb(V[i]);
       } else {
@@ -974,7 +990,7 @@ struct Tree {
 
 struct UnionFind {
   int n, n_comp;
-  vc<int> dat; // par or (-size)
+  vc<int> dat;  // par or (-size)
   UnionFind(int n = 0) { build(n); }
 
   void build(int m) {
@@ -987,7 +1003,9 @@ struct UnionFind {
   int operator[](int x) {
     while (dat[x] >= 0) {
       int pp = dat[dat[x]];
-      if (pp < 0) { return dat[x]; }
+      if (pp < 0) {
+        return dat[x];
+      }
       x = dat[x] = pp;
     }
     return x;
@@ -1027,7 +1045,7 @@ void solve() {
 
   vi ANS(N + 1);
   FOR_R(k, N + 1) {
-    for (auto&& x: V[k]) uf.merge(x, L);
+    for (auto &&x : V[k]) uf.merge(x, L);
     ANS[k] = uf.n_comp;
   }
   ANS.erase(ANS.begin());

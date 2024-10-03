@@ -43,34 +43,34 @@ vc<ll> min_plus_convolution(vc<ll> A, vc<ll> B) {
   return C;
 }
 
-int main(){
-	ios_base::sync_with_stdio(false), cin.tie(nullptr);
-	int N, W;
-	cin >> N >> W;
-	vector<ll> dp(W+1, 1e18);
-	dp[0] = 0;
-	// max
-	for(int i = 0; i < N; i++){
-		int w;
-		ll v;
-		cin >> w >> v;
-    for(int d = 0; d < w; d++){
+int main() {
+  ios_base::sync_with_stdio(false), cin.tie(nullptr);
+  int N, W;
+  cin >> N >> W;
+  vector<ll> dp(W + 1, 1e18);
+  dp[0] = 0;
+  // max
+  for (int i = 0; i < N; i++) {
+    int w;
+    ll v;
+    cin >> w >> v;
+    for (int d = 0; d < w; d++) {
       vector<ll> cost;
       vector<ll> pdp;
-      for(int x = d; x <= W; x += w){
+      for (int x = d; x <= W; x += w) {
         int cnt = x / w;
         cost.push_back(-(v * cnt - cnt * cnt));
         pdp.push_back(dp[x]);
       }
       vector<ll> ndp = min_plus_convolution(pdp, cost);
-      for(int x = d; x <= W; x += w){
+      for (int x = d; x <= W; x += w) {
         dp[x] = ndp[x / w];
       }
     }
-	}
-	ll ans = 0;
-	for(int i = 0; i <= W; i++){
-		ans = max(ans, -dp[i]);
-	}
-	cout << (ans) << '\n';
+  }
+  ll ans = 0;
+  for (int i = 0; i <= W; i++) {
+    ans = max(ans, -dp[i]);
+  }
+  cout << (ans) << '\n';
 }

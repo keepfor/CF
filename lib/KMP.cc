@@ -8,7 +8,7 @@ using namespace std;
 #define debug(...)
 #endif
 
-template<typename T>
+template <typename T>
 class KMP {
  public:
   // template <typename T>
@@ -45,37 +45,37 @@ class Solver {
 };
 
 class Solution {
-public:
-    int minValidStrings(vector<string>& w, string t) {
-        const int m = t.size();
-        KMP<string> kmp;
-        vector<int> lps(m);
-        for (auto& i : w) {
-          vector<int> tlps = kmp.GetLps(i + "$" + t);
-          for (int j = 0; j < m; ++j) {
-            lps[j] = max(lps[j], tlps[(int) i.size() + 1 + j]);
-          }
-        }      
-        int ans = 0;
-        int now = m - 1;
-        while (now >= 0) {
-          if (lps[now] == 0) {
-            return -1;
-          }
-          ++ans;
-          now -= lps[now];
-        }
-        return ans;
+ public:
+  int minValidStrings(vector<string>& w, string t) {
+    const int m = t.size();
+    KMP<string> kmp;
+    vector<int> lps(m);
+    for (auto& i : w) {
+      vector<int> tlps = kmp.GetLps(i + "$" + t);
+      for (int j = 0; j < m; ++j) {
+        lps[j] = max(lps[j], tlps[(int)i.size() + 1 + j]);
+      }
     }
+    int ans = 0;
+    int now = m - 1;
+    while (now >= 0) {
+      if (lps[now] == 0) {
+        return -1;
+      }
+      ++ans;
+      now -= lps[now];
+    }
+    return ans;
+  }
 };
 
 void Solver::Solve() const {
   using ll = int64_t;
   Solution so;
-  vector<string> a{"abc","aaaaa","bcdef"};
+  vector<string> a{"abc", "aaaaa", "bcdef"};
   string s = "aabcdabc";
   debug(so.minValidStrings(a, s));
-  //Input: words = [], target = "aabcdabc"
+  // Input: words = [], target = "aabcdabc"
 }
 
 void Solver::Run() const {
@@ -86,9 +86,7 @@ void Solver::Run() const {
   }
 }
 
-inline void Solver::SetIO() const { 
-  cin.tie(0)->sync_with_stdio(0); 
-}
+inline void Solver::SetIO() const { cin.tie(0)->sync_with_stdio(0); }
 
 void Solver::Main() const {
   SetIO();

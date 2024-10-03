@@ -8,9 +8,14 @@ using namespace std;
 #define debug(...)
 #endif
 
-uint64_t random_address() { char *p = new char; delete p; return uint64_t(p); }
+uint64_t random_address() {
+  char *p = new char;
+  delete p;
+  return uint64_t(p);
+}
 
-const uint64_t SEED = chrono::steady_clock::now().time_since_epoch().count() * (random_address() | 1);
+const uint64_t SEED = chrono::steady_clock::now().time_since_epoch().count() *
+                      (random_address() | 1);
 
 mt19937_64 rng(SEED);
 
@@ -35,7 +40,6 @@ void Solver::Solve() const {
       cout << (rng() % z) << " \n"[i + 1 == n];
     }
   }
-
 }
 
 void Solver::Run() const {
@@ -46,9 +50,7 @@ void Solver::Run() const {
   }
 }
 
-inline void Solver::SetIO() const { 
-  cin.tie(0)->sync_with_stdio(0); 
-}
+inline void Solver::SetIO() const { cin.tie(0)->sync_with_stdio(0); }
 
 void Solver::Main() const {
   SetIO();
