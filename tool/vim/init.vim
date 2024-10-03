@@ -15,15 +15,16 @@ nnoremap <c-p> :tabprevious<cr>
 nnoremap <c-t> :tabedit
 
 set shiftwidth=2 softtabstop=2 tabstop=2
+set expandtab nocompatible 
+set smartindent autoindent cindent
+
+set backspace=indent,eol,start
 set visualbell nobackup
 set t_ti= t_te= t_TI= t_TE=
 set timeoutlen=50 mouse=a
-set expandtab nocompatible 
 set backupcopy=auto
 set autochdir autoread
 set clipboard^=unnamed,unnamedplus 
-set smartindent autoindent cindent
-set backspace=indent,eol,start
 set ignorecase smartcase 
 set incsearch hlsearch nu
 
