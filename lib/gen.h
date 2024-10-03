@@ -8,30 +8,11 @@ using namespace std;
 #define debug(...)
 #endif
 
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i,a,n) for (int i=a;i<n;i++)
-#define per(i,a,n) for (int i=n-1;i>=a;i--)
-#define pb push_back
-#define eb emplace_back
-#define mp make_pair
-#define all(x) (x).begin(),(x).end()
-#define fi first
-#define se second
-#define SZ(x) ((int)(x).size())
-typedef vector<int> VI;
-typedef basic_string<int> BI;
-typedef long long ll;
-typedef pair<int,int> PII;
-typedef double db;
-ll powmod(ll a,ll b) {ll res=1;a%=mod; assert(b>=0); for(;b;b>>=1){if(b&1)res=res*a%mod;a=a*a%mod;}return res;}
-ll gcd(ll a,ll b) { return b?gcd(b,a%b):a;}
-const ll mod=998244353;
-// head
+uint64_t random_address() { char *p = new char; delete p; return uint64_t(p); }
 
+const uint64_t SEED = chrono::steady_clock::now().time_since_epoch().count() * (random_address() | 1);
 
-mt19937_64 mrand(random_device{}()); 
-int rnd(int x) { return mrand() % x;}
+mt19937_64 rng(SEED);
 
 class Solver {
  public:
@@ -44,18 +25,15 @@ class Solver {
 };
 
 void Solver::Solve() const {
-  int t = 10000;
+  int t = 100;
   cout << t << '\n';
   while (t--) {
-    int n = mrand() % int(1e9 - 2);
-    n += 3;
-    int m = 2;
-    int q = 1;
-    cout << n << ' ' << m << ' ' << q << '\n';
-    for (int i = 0; i < m; ++i) {
-      cout << (mrand() % n) + 1 << " \n"[i + 1 == m];
+    int n = 5000;
+    cout << n << '\n';
+    int z = 1e6 + 1;
+    for (int i = 0; i < n; ++i) {
+      cout << (rng() % z) << " \n"[i + 1 == n];
     }
-    cout << (mrand() % n) + 1 << '\n';
   }
 
 }
