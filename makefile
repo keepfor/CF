@@ -27,7 +27,6 @@ define cat_out
 endef
 
 define run_in
-	cat $(input)
 	./$(prog) < $(input) 2>&1 | tee $(output)
 endef
 
@@ -50,7 +49,7 @@ usual:
 
 $(prog): $(src)
 	rm -f $(prog)
-	$(CC) $(src) -o $(prog) $(debug) 2>&1 | tee $(cout)
+	$(CC) $(src) -o $(prog) $(CXXFLAGS) $(debug) $(gdb) $(DEBUGFLAGS)  2>&1 | tee $(cout)
 
 main: $(prog)
 	$(run_in)

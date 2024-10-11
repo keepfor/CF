@@ -25,6 +25,16 @@ try to upgrade MFG.
 new mfg. 9/15
 lcm show wait two minutes, but wait over 30 minutes.
 new mfg can not enable burnin.
+
+verify new mfg 0.0.3.
+verify fcd 0.0.3.
+nkp fail.
+nfc remove fail.
+5g ping fail.
+update nkp tool.
+ping fail sometimes.
+can not login kernel.
+
 a6a7
 ===========================================================================
 //ev-station-ultra, ftu, sometimes, display test fail, can not get lcm ver, not found acm0 dev. 0.0.4
@@ -311,7 +321,6 @@ pb fw upgrade fail. ic broken adfter burnin.
 new shipping fw to ftu.  UM-EVS-v1.1.2-0-3731a6e-240620.1840-M.bin
 new shipping fw to ftu.  UM-EVS-v1.2.3
 
-fix iperf, remove dealy.
 
 a6a0
 =======================================================================
@@ -556,6 +565,11 @@ Update bundled shipping FW to UISPS.rtl838x.v1.6.0.bix.
 
 new shipping v1.8.1.
 new shipping v1.8.x.
+
+
+new shipping 1.9.0.
+
+ee6f
 ===============================================================
 leakage current.
 help tatun factory.
@@ -692,6 +706,11 @@ uisp-r, ecof for update mobile app ver.
 add a12.
 new shipping 501.
 passitive test issues. (git reset.)
+
+
+new shipping fw. 5.0.4
+
+ee6e
 ================================================================
 
 uisp-r-plus, fcd, update and test diag fw. (9.0.2)
@@ -927,6 +946,14 @@ try run shell\rls.
 try run shell\rls /tmp/;exit.
 update to diag,can not enter kernel.. IOEXP init...
 new shipping v1.8.x.
+
+new shipping 1.9.0.
+update shell prompt.
+release ftu 1.9.0.
+
+mac shell prompt issue.
+support dynamic mac shell prompt.
+
 ee7c
 ==============================================================================
 usw-enterprise-8-poe, power consumption.
