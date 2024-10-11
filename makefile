@@ -54,10 +54,9 @@ verbose:
 
 $(prog): $(src)
 	rm -rf $(prog)*
-	$(cc) $(src) -o $(prog) $(std) $(dfg) 2>&1 | tee $(compile_out) 
+	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(std) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
 
 main: $(prog)
-	cat $(input)
 	./$(prog) < $(input) 2>&1 | tee $(output) 
 
 clean:
