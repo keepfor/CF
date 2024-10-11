@@ -46,10 +46,10 @@ clear:
 	rm -rf .$(src)
 	rm -rf $(prog).dSYM/
 
-simple:
+simple_compile:
 	$(cc) $(src) -o $(prog) $(std) $(dfg) 2>&1 | tee $(compile_out) 
 
-verbose:
+verbose_compile:
 	$(cc) $(src) -o $(prog) $(CXXFLAGS) $(DEBUGFLAGS) $(std) $(dfg) $(gdb)  2>&1 | tee $(compile_out)
 
 $(prog): $(src)
