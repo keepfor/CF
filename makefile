@@ -3,7 +3,7 @@ pure_g++ ?= /usr/local/Cellar/gcc/14.2.0/bin/g++-14
 cfg ?= -O3 -Wall -Werror -Wshadow  -Wc++2a-extensions  -g 
 dfg ?= -DDEBUG
 gdb ?= -g
-std ?= -std=c++2a 
+std ?= -std=c++2b 
 prog ?= prog
 src ?= sol.cc
 input ?= in
