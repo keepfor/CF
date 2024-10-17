@@ -40,12 +40,6 @@ all: main copy
 format:
 	clang-format -style=Google -i $(src)
 
-clear:
-	clear
-	rm -rf $(prog)
-	rm -rf .$(src)
-	rm -rf $(prog).dSYM/
-
 simple_compile:
 	$(cc) $(src) -o $(prog) $(std) $(dfg) 2>&1 | tee $(compile_out) 
 
@@ -63,6 +57,8 @@ clean:
 	rm -rf .$(src)*
 	rm -rf $(prog)
 	rm -rf $(prog).dSYM/
+	echo "" > $(input)
+	echo "" > $(output)
 
 copy:
 	cp $(src) $(last_cc)
