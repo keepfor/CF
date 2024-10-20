@@ -1,4 +1,4 @@
-class Hashing {
+class StringHashing {
  public:
     using ll = int64_t;
     static constexpr ll mod = 903547;
@@ -6,7 +6,7 @@ class Hashing {
     vector<ll> p;
     vector<ll> h;
     vector<ll> rev;
-    Hashing(const string& v) {
+    StringHashing(const string& v) {
         const int n = v.size();
         p.assign(n + 1, 1);
         h.assign(n + 1, 0);
@@ -56,7 +56,7 @@ public:
       };
       Dfs(Dfs, 0, -1);
       vector<bool> ans(n);
-      Hashing hash(t);
+      StringHashing hash(t);
       for (int i = 0; i < n; ++i) {
         int a = hash.getH(l[i], r[i]);
         int b = hash.getR(l[i], r[i]);
