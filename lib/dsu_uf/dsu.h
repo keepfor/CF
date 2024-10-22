@@ -1,5 +1,243 @@
 #include <bits/stdc++.h>
 
+using i64 = long long;
+using u64 = unsigned long long;
+using u32 = unsigned;
+// TODO: Dynamic ModInt
+
+template<typename T>
+constexpr T power(T a, u64 b) {
+    T res {1};
+    for (; b != 0; b /= 2, a *= a) {
+        if (b % 2 == 1) {
+            res *= a;
+        }
+    }
+    return res;
+}
+
+template<u32 P>
+constexpr u32 mulMod(u32 a, u32 b) {
+    return 1ULL * a * b % P;
+}
+
+template<u64 P>
+constexpr u64 mulMod(u64 a, u64 b) {
+    u64 res = a * b - u64(1.L * a * b / P - 0.5L) * P;
+    res %= P;
+    return res;
+}
+
+template<typename U, U P>
+requires std::unsigned_integral<U>
+struct ModIntBase {
+public:
+    constexpr ModIntBase() : x(0) {}
+    
+    template<typename T>
+    requires std::integral<T>
+    constexpr ModIntBase(T x_) : x(norm(x_ % T {P})) {}
+    
+    constexpr static U norm(U x) {
+        if ((x >> (8 * sizeof(U) - 1) & 1) == 1) {
+            x += P;
+        }
+        if (x >= P) {
+            x -= P;
+        }
+        return x;
+    }
+    
+    constexpr U val() const {
+        return x;
+    }
+    
+    constexpr ModIntBase operator-() const {
+        ModIntBase res;
+        res.x = norm(P - x);
+        return res;
+    }
+    
+    constexpr ModIntBase inv() const {
+        return power(*this, P - 2);
+    }
+    
+    constexpr ModIntBase &operator*=(const ModIntBase &rhs) & {
+        x = mulMod<P>(x, rhs.val());
+        return *this;
+    }
+    
+    constexpr ModIntBase &operator+=(const ModIntBase &rhs) & {
+        x = norm(x + rhs.x);
+        return *this;
+    }
+    
+    constexpr ModIntBase &operator-=(const ModIntBase &rhs) & {
+        x = norm(x - rhs.x);
+        return *this;
+    }
+    
+    constexpr ModIntBase &operator/=(const ModIntBase &rhs) & {
+        return *this *= rhs.inv();
+    }
+    
+    friend constexpr ModIntBase operator*(ModIntBase lhs, const ModIntBase &rhs) {
+        lhs *= rhs;
+        return lhs;
+    }
+    
+    friend constexpr ModIntBase operator+(ModIntBase lhs, const ModIntBase &rhs) {
+        lhs += rhs;
+        return lhs;
+    }
+    
+    friend constexpr ModIntBase operator-(ModIntBase lhs, const ModIntBase &rhs) {
+        lhs -= rhs;
+        return lhs;
+    }
+    
+    friend constexpr ModIntBase operator/(ModIntBase lhs, const ModIntBase &rhs) {
+        lhs /= rhs;
+        return lhs;
+    }
+    
+    friend constexpr std::ostream &operator<<(std::ostream &os, const ModIntBase &a) {
+        return os << a.val();
+    }
+    
+    friend constexpr bool operator==(ModIntBase lhs, ModIntBase rhs) {
+        return lhs.val() == rhs.val();
+    }
+    
+    friend constexpr bool operator!=(ModIntBase lhs, ModIntBase rhs) {
+        return lhs.val() != rhs.val();
+    }
+    
+    friend constexpr bool operator<(ModIntBase lhs, ModIntBase rhs) {
+        return lhs.val() < rhs.val();
+    }
+    
+private:
+    U x;
+};
+
+template<u32 P>
+using ModInt = ModIntBase<u32, P>;
+
+template<u64 P>
+using ModInt64 = ModIntBase<u64, P>;
+
+constexpr u32 P = 998244353;
+using Z = ModInt<P>;
+struct DSU {
+    std::vector<int> f, siz;
+    
+    DSU() {}
+    DSU(int n) {
+        init(n);
+    }
+    
+    void init(int n) {
+        f.resize(n);
+        std::iota(f.begin(), f.end(), 0);
+        siz.assign(n, 1);
+    }
+    
+    int find(int x) {
+        while (x != f[x]) {
+            x = f[x] = f[f[x]];
+        }
+        return x;
+    }
+    
+    bool same(int x, int y) {
+        return find(x) == find(y);
+    }
+    
+    bool merge(int x, int y) {
+        x = find(x);
+        y = find(y);
+        if (x == y) {
+            return false;
+        }
+        siz[x] += siz[y];
+        f[y] = x;
+        return true;
+    }
+    
+    int size(int x) {
+        return siz[find(x)];
+    }
+};
+struct Node {
+    i64 num;
+    i64 den;
+    int i;
+};
+
+bool operator<(const Node &a, const Node &b) {
+    return a.num * b.den < b.num * a.den;
+}
+
+void solve() {
+    int N;
+    std::cin >> N;
+    
+    std::vector<int> p(N + 1);
+    for (int i = 1; i <= N; i++) {
+        std::cin >> p[i];
+    }
+    std::vector<int> a(N + 1);
+    for (int i = 1; i <= N; i++) {
+        std::cin >> a[i];
+    }
+    
+    std::priority_queue<Node> q;
+    std::vector cnt(N + 1, 1);
+    DSU dsu(N + 1);
+    for (int i = 1; i <= N; i++) {
+        q.push({a[i], 1, i});
+    }
+    
+    i64 ans = 0;
+    while (!q.empty()) {
+        auto [num, den, i] = q.top();
+        q.pop();
+        
+        if (dsu.find(i) != i || den != cnt[i]) {
+            continue;
+        }
+        
+        int x = dsu.find(p[i]);
+        ans += 1LL * cnt[x] * a[i];
+        cnt[x] += cnt[i];
+        a[x] += a[i];
+        dsu.merge(x, i);
+        if (x > 0) {
+            q.push({a[x], cnt[x], x});
+        }
+    }
+    std::cout << Z(ans) / a[0] << "\n";
+}
+
+int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    
+    int T;
+    std::cin >> T;
+    
+    while (T--) {
+        solve();
+    }
+    
+    return 0;
+}
+
+
+
+#include <bits/stdc++.h>
+
 struct DSU {
   std::vector<int> f, siz;
   DSU(int n) : f(n), siz(n, 1) { std::iota(f.begin(), f.end(), 0); }
