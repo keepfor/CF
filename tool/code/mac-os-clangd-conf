@@ -13,33 +13,6 @@
     "explorer.confirmDelete": false,
     "workbench.statusBar.visible": true,
     "editor.tabSize": 2,
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "editor.fontSize": 14,
-    "window.zoomLevel": 0,
-    "terminal.integrated.fontSize": 14,
-}
-
-
-{
-    "editor.wordWrap": "on",
-    "editor.minimap.enabled": false,
-    "editor.suggestSelection": "first",
-    "extensions.ignoreRecommendations": true,
-    "git.openRepositoryInParentFolders": "never",
-    "terminal.integrated.enableMultiLinePasteWarning": "never",
-    "editor.stickyScroll.enabled": false,
-    "window.commandCenter": false,
-    "workbench.layoutControl.enabled": false,
-    "workbench.editor.enablePreview": false,
-    "editor.accessibilitySupport": "off",
-    "explorer.confirmDelete": false,
-    "workbench.statusBar.visible": true,
-    "editor.tabSize": 2,
     "editor.fontSize": 12,
     "window.zoomLevel": 0,
     "terminal.integrated.fontSize": 12,
